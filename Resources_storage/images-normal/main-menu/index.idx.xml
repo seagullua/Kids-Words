@@ -6,5 +6,25 @@
 		<name>facebook_logo.png</name>
 	</file>
 	
+	<file>
+		<name>name_en.png</name>
+	</file>
+		
+	<file>
+		<name>name_ru.png</name>
+	</file>
+		
+	<file>
+		<name>name_uk.png</name>
+	</file>
+		
+	<file>
+		<name>play-button.png</name>
+	</file>
+		
+	<file>
+		<name>settings-button.png</name>
+	</file>
+	
 	
 </directory>

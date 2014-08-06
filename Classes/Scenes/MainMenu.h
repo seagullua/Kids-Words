@@ -15,6 +15,9 @@ private:
 
     bool init();
     void onBackClick();
+    void onPlayClick();
+    void onSettingsClick();
+
 };
 
 #endif // MAINSCENE_H
