@@ -130,17 +130,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     CCSize designResolutionSize = designResolutionSize_;
 
-    if(frameSize.width > frameSize.height)
-    {
-        //Mode for Samsung who launches in wrong mode
-        ADAds::disableAds();
-        pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionShowAll);
-    }
-    else
-    {
+
         // Set the design resolution
-        pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionNoBorder);
-    }
+    pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionNoBorder);
     CCSize vsize = pEGLView->getVisibleSize();
 
 
