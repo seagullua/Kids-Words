@@ -1,4 +1,5 @@
 #include "MainMenu.h"
+#include "Settings.h"
 #include <ADLib/ADString.h>
 
 using namespace cocos2d;
@@ -108,5 +109,6 @@ void MainMenu::onPlayClick()
 }
 void MainMenu::onSettingsClick()
 {
-    CCLog("Settings Clicked");
+    //CCLog("Settings Clicked");
+    CCDirector::sharedDirector()->replaceScene(Settings::scene());
 }

@@ -94,11 +94,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     ADInfo::getStore();
 
     //Language init
-    std::string latin_font = "fonts/Fredoka One.ttf";
-    std::string latin_bmfont = "fonts/Fredoka One.fnt";
+    std::string latin_font = "fonts/Comfortaa.ttf";
+    std::string latin_bmfont = "fonts/Comfortaa.fnt";
 
-    //std::string cyrilic_font = "fonts/Lasco-Bold.ttf";
-    //std::string cyrilic_bmfont = "fonts/Lasco-Bold.fnt";
+    //std::string cyrilic_font = "fonts/Comfortaa.ttf";
+    //std::string cyrilic_bmfont = "fonts/Comfortaa.fnt";
 
     ADLanguage::addSupportedLanguage("en", latin_font, latin_bmfont);
     //ADLanguage::addSupportedLanguage("uk", cyrilic_font, cyrilic_bmfont);

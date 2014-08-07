@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+
+
+	<file>
+		<name>music-on.png</name>
+	</file>
+	
+	<file>
+		<name>music-off.png</name>
+	</file>
+		
+	<file>
+		<name>sounds-on.png</name>
+	</file>
+		
+	<file>
+		<name>sounds-off.png</name>
+	</file>
+		
+	<file>
+		<name>pinguine.png</name>
+	</file>
+		
+	<file>
+		<name>no_ads_tile.png</name>
+	</file>
+	
+	
+</directory>

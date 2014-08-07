@@ -48,7 +48,8 @@ SOURCES += main.cpp \
     PurchaseEmulator.cpp \
     ../Classes/Scenes/MainMenu.cpp \
     ../Classes/Scenes/SceneStyle.cpp \
-    ../Classes/Scenes/Loading.cpp
+    ../Classes/Scenes/Loading.cpp \
+    ../Classes/Scenes/Settings.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -56,6 +57,7 @@ HEADERS += \
     main.h \
     ../Classes/Scenes/MainMenu.h \
     ../Classes/Scenes/SceneStyle.h \
-    ../Classes/Scenes/Loading.h
+    ../Classes/Scenes/Loading.h \
+    ../Classes/Scenes/Settings.h
 
 
