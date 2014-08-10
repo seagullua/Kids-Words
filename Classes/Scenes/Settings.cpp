@@ -72,7 +72,7 @@ bool Settings::init()
     CCSprite* button_back_image = CCSprite::create("universal/back-button.png");
 
     ADMenuItem* button_back = ADMenuItem::create(button_back_image);
-     float padding = 35/SCALE;
+     float padding = 25/SCALE;
     button_back->setPositionX(
                 ORIGIN.x
                 + padding
@@ -88,10 +88,11 @@ bool Settings::init()
     CCSprite* button_music_on_image = CCSprite::create("settings/music-on.png");
 
     ADMenuItem* button_music_on = ADMenuItem::create(button_music_on_image);
-    float padding_music_x = VISIBLE_SIZE.width/3;
-    float padding_music_y = 55/SCALE;
+    float padding_music_x2 = VISIBLE_SIZE.width/2;
+    float padding_music_x = 160/SCALE;
+    float padding_music_y = 40/SCALE;
     button_music_on->setPositionX(
-                ORIGIN.x + padding_music_x);
+                ORIGIN.x + padding_music_x2-padding_music_x);
 
     button_music_on->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_music_y -
                                   button_music_on->getContentSize().height*0.5f);
@@ -106,7 +107,7 @@ bool Settings::init()
     ADMenuItem* button_sounds_on = ADMenuItem::create(button_sounds_on_image);
 
     button_sounds_on->setPositionX(
-                ORIGIN.x + 2*padding_music_x);
+                ORIGIN.x +  padding_music_x2+padding_music_x);
 
     button_sounds_on->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_music_y -
                                   button_music_on->getContentSize().height*0.5f);
