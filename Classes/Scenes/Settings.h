@@ -17,6 +17,10 @@ private:
     void onBackClick();
     void onMusicOnClick();
     void onSoundsOnClick();
+    void onDevelopersClick();
+    void onRestorePurchaseClick();
+    void onTurnOffAdsClick();
+    void onX4EnjoyClick();
 };
 
 #endif // MAINSCENE_H
