@@ -1,6 +1,7 @@
 #include "Settings.h"
 #include <ADLib/ADString.h>
 #include "InfoStyles.h"
+#include "developers.h"
 using namespace cocos2d;
 
 Settings::Settings()
@@ -92,7 +93,7 @@ bool Settings::init()
     ADMenuItem* button_music_on = ADMenuItem::create(button_music_on_image);
     float padding_x2 = VISIBLE_SIZE.width/2;
     float padding_music_x = 160/SCALE;
-    float padding_music_y = 40/SCALE;
+    float padding_music_y = 30/SCALE;
     button_music_on->setPositionX(
                 ORIGIN.x + padding_x2-padding_music_x);
 
@@ -130,7 +131,7 @@ bool Settings::init()
 
     button_developers->setPositionX(
                 ORIGIN.x +  padding_x2);
-    float button_sounds_on_position = button_sounds_on->getPositionY()-button_sounds_on->getContentSize().height*0.75f;
+    float button_sounds_on_position = button_sounds_on->getPositionY()-button_sounds_on->getContentSize().height*0.5f;
 
 
     button_developers->setPositionY(button_sounds_on_position);
@@ -205,14 +206,14 @@ bool Settings::init()
     CCSprite* button_x4enjoy_image = CCSprite::create("universal/x4enjoy_small.png");
 
     ADMenuItem* button_x4enjoy = ADMenuItem::create(button_x4enjoy_image);
-    float padding4enjoy = 10/SCALE;
+    float padding4enjoy = 5/SCALE;
     button_x4enjoy->setPositionX(
                 ORIGIN.x + VISIBLE_SIZE.width
                 - padding4enjoy
-                - button_x4enjoy->getContentSize().width*0.5f);
+                - button_x4enjoy->getContentSize().width*0.45f);
 
     button_x4enjoy->setPositionY(ORIGIN.y + padding4enjoy +
-                                  button_x4enjoy->getContentSize().height*0.5f);
+                                  button_x4enjoy->getContentSize().height*0.45f);
     CONNECT(button_x4enjoy->signalOnClick, this, &Settings::onX4EnjoyClick);
 
     menu->addChild(button_x4enjoy);
@@ -230,8 +231,10 @@ void Settings::onSoundsOnClick()
 
 void Settings::onDevelopersClick()
 {
-    CCLog("Developers Clicked");
+    CCDirector::sharedDirector()->replaceScene(Developers::scene());
 }
+
+
 void Settings::onRestorePurchaseClick()
 {
     CCLog("RestorePurchase Clicked");

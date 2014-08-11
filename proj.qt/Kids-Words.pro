@@ -50,7 +50,8 @@ SOURCES += main.cpp \
     ../Classes/Scenes/SceneStyle.cpp \
     ../Classes/Scenes/Loading.cpp \
     ../Classes/Scenes/Settings.cpp \
-    ../Classes/InfoStyles.cpp
+    ../Classes/InfoStyles.cpp \
+    ../Classes/Scenes/developers.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -60,6 +61,7 @@ HEADERS += \
     ../Classes/Scenes/SceneStyle.h \
     ../Classes/Scenes/Loading.h \
     ../Classes/Scenes/Settings.h \
-    ../Classes/InfoStyles.h
+    ../Classes/InfoStyles.h \
+    ../Classes/Scenes/developers.h
 
 

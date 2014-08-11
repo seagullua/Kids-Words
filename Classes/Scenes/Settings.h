@@ -23,4 +23,4 @@ private:
     void onX4EnjoyClick();
 };
 
-#endif // MAINSCENE_H
+#endif // SETTINGS_H
