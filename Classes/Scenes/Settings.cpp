@@ -175,19 +175,29 @@ bool Settings::init()
 
     CCSprite* button_pinguine_image = CCSprite::create("settings/pinguine.png");
 
- CCSize button_size(button_restore_purchase->getContentSize());
-    button_pinguine_image->setContentSize(button_size);
+    CCSize button_size(button_turn_off_ads_image->getContentSize());
+    button_pinguine_image->setScale(0.8f * button_size.height / button_pinguine_image->getContentSize().height);
+    float button_half_height = button_size.height * 0.5f;
+    button_pinguine_image->setPosition(ccp(button_half_height, button_half_height));
     button_turn_off_ads->addChild(button_pinguine_image);
 
-    cocos2d::CCLabelTTF* settings_scene_turn_off_ads_title;
-    settings_scene_turn_off_ads_title = CCLabelTTF::create(_("settings_scene_turn_off_ads_title.title"),
+    cocos2d::CCLabelTTF* turn_off_ads_title;
+    turn_off_ads_title = CCLabelTTF::create(_("settings_scene_turn_off_ads_title.title"),
                                            ADLanguage::getFontName(),
                                           InfoStyles::SIZE_SETTINGS_BUTTON_TURN);
+    turn_off_ads_title->setAnchorPoint(ccp(0, 0.5f));
+    turn_off_ads_title->setPosition(ccp(button_half_height*2,
+                                                       button_half_height));
+    turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
 
-    settings_scene_turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
+    float label_max_width = button_size.width - button_half_height*2.5f;
+    float label_width = turn_off_ads_title->getContentSize().width;
+    if(label_width > label_max_width)
+    {
+        turn_off_ads_title->setScale(label_max_width/turn_off_ads_title->getContentSize().width);
+    }
 
-
-    button_turn_off_ads->addChild(settings_scene_turn_off_ads_title);
+    button_turn_off_ads->addChild(turn_off_ads_title);
     //settings_scene_turn_off_ads_title->setPositionX();
     menu->addChild(button_turn_off_ads);
 
