@@ -87,19 +87,67 @@ bool Developers::init()
 
     menu->addChild(button_back);
 
+
+    CCNode* node = CCNode::create();
+    //node->setContentSize(ccp(400, 500));
+    node->setAnchorPoint(ccp(0.5f,0.5f));
+    //node->setScale(0.5f);
+    this->addChild(node);
+    //ruslana
+    CCSprite* ruslana_image = CCSprite::create("developers/ruslana.png");
+
+    ruslana_image->setPositionX(0);
+
+    ruslana_image->setPositionY(0);
+    ruslana_image->setAnchorPoint(ccp(0,0));
+
+    node->addChild(ruslana_image);
+    cocos2d::CCLabelTTF* developers_scene_ruslana_title;
+    developers_scene_ruslana_title = CCLabelTTF::create(_("developers_scene_ruslana.title"),
+                                                       ADLanguage::getFontName(),
+                                                       InfoStyles::SIZE_DEVELOPERS_TITLE);
+
+    developers_scene_ruslana_title->setColor(InfoStyles::COLOR_WHITE);
+
+    developers_scene_ruslana_title->setAnchorPoint(ccp(0,0));
+    developers_scene_ruslana_title->setPositionX(
+                ruslana_image->getContentSize().width+padding);
+
+    developers_scene_ruslana_title->setPositionY(ruslana_image->getContentSize().height*0.4f);
+
+    node->addChild(developers_scene_ruslana_title);
+
+    //andrii
+     cocos2d::CCLabelTTF* developers_scene_andrii_title;
+    developers_scene_andrii_title = CCLabelTTF::create(_("developers_scene_andrii.title"),
+            ADLanguage::getFontName(),
+            InfoStyles::SIZE_DEVELOPERS_TITLE);
+    developers_scene_andrii_title->setColor(InfoStyles::COLOR_WHITE);
+    developers_scene_andrii_title->setPositionX(padding);
+    developers_scene_andrii_title->setAnchorPoint(ccp(0,0));
+    node->addChild(developers_scene_andrii_title);
+
+    CCSprite* andrii_image = CCSprite::create("developers/andrii.png");
+    andrii_image->setAnchorPoint(ccp(0,0));
+
+    andrii_image->setPositionX(
+                developers_scene_andrii_title->getContentSize().width+padding);
+    andrii_image->setPositionY(ruslana_image->getContentSize().height*0.75f);
+    developers_scene_andrii_title->setPositionY(ruslana_image->getContentSize().height*0.75f+andrii_image->getContentSize().height*0.4f);
+
+    node->addChild(andrii_image);
+
+
     //diana
     CCSprite* diana_image = CCSprite::create("developers/diana.png");
 
-    float padding_x2 = VISIBLE_SIZE.width/3;
-    float padding_image_x = 160/SCALE;
-    float padding_image_y = VISIBLE_SIZE.height/4;
-    diana_image->setPositionX(
-                ORIGIN.x + padding_x2-padding_image_x);
+    diana_image->setPositionX(0);
 
-    diana_image->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_image_y -
-                              diana_image->getContentSize().height*0.5f);
+    diana_image->setPositionY(0);
+    diana_image->setAnchorPoint(ccp(0,0));
+    diana_image->setPositionY(ruslana_image->getContentSize().height*1.5);
 
-    this->addChild(diana_image);
+    node->addChild(diana_image);
     cocos2d::CCLabelTTF* developers_scene_diana_title;
     developers_scene_diana_title = CCLabelTTF::create(_("developers_scene_diana.title"),
                                                       ADLanguage::getFontName(),
@@ -107,60 +155,16 @@ bool Developers::init()
 
     developers_scene_diana_title->setColor(InfoStyles::COLOR_WHITE);
 
+    developers_scene_diana_title->setAnchorPoint(ccp(0,0));
     developers_scene_diana_title->setPositionX(
-                ORIGIN.x + padding_x2*2);
+                ruslana_image->getContentSize().width+padding);
 
-    developers_scene_diana_title->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_image_y -
-                              diana_image->getContentSize().height*0.5f);
+    developers_scene_diana_title->setPositionY(ruslana_image->getContentSize().height*1.9f);
 
-    this->addChild(developers_scene_diana_title);
-    //andrii
-    CCSprite* andrii_image = CCSprite::create("developers/andrii.png");
+    node->addChild(developers_scene_diana_title);
+    float padding_node_x = ruslana_image->getContentSize().width*2.5f+padding;
+    float padding_node_y = ruslana_image->getContentSize().height*2.5f;
 
-    andrii_image->setPositionX(
-                ORIGIN.x + padding_x2-padding_image_x);
-
-    andrii_image->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_image_y*2 -
-                               andrii_image->getContentSize().height*0.5f);
-
-    this->addChild(andrii_image);
-    cocos2d::CCLabelTTF* developers_scene_andrii_title;
-    developers_scene_andrii_title = CCLabelTTF::create(_("developers_scene_andrii.title"),
-                                                       ADLanguage::getFontName(),
-                                                       InfoStyles::SIZE_DEVELOPERS_TITLE);
-
-    developers_scene_andrii_title->setColor(InfoStyles::COLOR_WHITE);
-    developers_scene_andrii_title->setPositionX(
-                ORIGIN.x + padding_x2*3);
-
-    developers_scene_andrii_title->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_image_y*2 -
-                               andrii_image->getContentSize().height*0.5f);
-
-
-    this->addChild(developers_scene_andrii_title);
-    //ruslana
-    CCSprite* ruslana_image = CCSprite::create("developers/ruslana.png");
-
-    ruslana_image->setPositionX(
-                ORIGIN.x + padding_x2-padding_image_x);
-
-    ruslana_image->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_image_y*3 -
-                               ruslana_image->getContentSize().height*0.5f);
-
-    this->addChild(ruslana_image);
-    cocos2d::CCLabelTTF* developers_scene_ruslana_title;
-    developers_scene_ruslana_title = CCLabelTTF::create(_("developers_scene_ruslana.title"),
-                                                       ADLanguage::getFontName(),
-                                                       InfoStyles::SIZE_DEVELOPERS_TITLE);
-
-    developers_scene_ruslana_title->setColor(InfoStyles::COLOR_WHITE);
-    developers_scene_ruslana_title->setPositionX(
-                ORIGIN.x + padding_x2*2);
-
-    developers_scene_ruslana_title->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_image_y*3 -
-                               ruslana_image->getContentSize().height*0.5f);
-
-    this->addChild(developers_scene_ruslana_title);
 
     // 4 enjoy
     CCSprite* button_x4enjoy_image = CCSprite::create("universal/x4enjoy_small.png");
@@ -177,6 +181,16 @@ bool Developers::init()
     CONNECT(button_x4enjoy->signalOnClick, this, &Developers::onX4EnjoyClick);
 
     menu->addChild(button_x4enjoy);
+    node->setContentSize(ccp(padding_node_x, padding_node_y));
+    //node->setPosition(button_back->getContentSize().width,button_x4enjoy->getContentSize().height+ padding4enjoy);
+    node->setPositionX(ORIGIN.x +VISIBLE_SIZE.width*0.5f);
+    node->setPositionY(ORIGIN.y +VISIBLE_SIZE.height*0.5f);
+    float padding_node = 15/SCALE;
+    float node_scale = (VISIBLE_SIZE.height-padding_node)/padding_node_y;
+    if(node_scale < 1)
+    {
+          node->setScale(node_scale);
+    }
 
     return true;
 }
