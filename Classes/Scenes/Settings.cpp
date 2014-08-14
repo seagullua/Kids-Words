@@ -2,6 +2,7 @@
 #include <ADLib/ADString.h>
 #include "InfoStyles.h"
 #include "developers.h"
+#include "MainMenu.h"
 using namespace cocos2d;
 
 Settings::Settings()
@@ -43,8 +44,10 @@ Settings* Settings::create()
 
 void Settings::onBackClick()
 {
-    CCLog("Back clicked");
+
+    CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
 }
+
 
 bool Settings::init()
 {
@@ -58,34 +61,15 @@ bool Settings::init()
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     const float SCALE = ADScreen::getScaleFactor();
 
-    //background
-    CCSprite* background = CCSprite::create("universal/background_night.jpg");
-
-    background->setPosition(ORIGIN + VISIBLE_SIZE*0.5f);
-    this->addChild(background);
-
+    showBackground(BackgroundType::Dark);
 
     //menu
     CCMenu* menu =CCMenu::create();
     menu->setPosition(ccp(0,0));
 
     this->addChild(menu);
-    CCSprite* button_back_image = CCSprite::create("universal/back-button.png");
 
-    ADMenuItem* button_back = ADMenuItem::create(button_back_image);
-     float padding = 25/SCALE;
-    //button back
-    button_back->setPositionX(
-                ORIGIN.x
-                + padding
-                + button_back->getContentSize().width*0.5f);
-
-    button_back->setPositionY(ORIGIN.y +
-                              + VISIBLE_SIZE.height-padding -
-                                  button_back->getContentSize().height*0.5f);
-    CONNECT(button_back->signalOnClick, (SceneStyle*)this, &SceneStyle::simulateBackClick);
-
-    menu->addChild(button_back);
+    showButtonBack();
 
     // 4 enjoy
     CCSprite* button_x4enjoy_image = CCSprite::create("universal/x4enjoy_small.png");
@@ -168,7 +152,7 @@ bool Settings::init()
 
     cocos2d::CCLabelTTF* settings_scene_restore_purchase_title;
     settings_scene_restore_purchase_title = CCLabelTTF::create(_("settings_scene_restore_purchase.title"),
-                                           ADLanguage::getFontName(),
+                                          ADLanguage::getFontName(),
                                           InfoStyles::SIZE_SETTINGS_BUTTON);
 
     settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_WHITE);

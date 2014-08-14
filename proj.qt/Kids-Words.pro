@@ -51,7 +51,10 @@ SOURCES += main.cpp \
     ../Classes/Scenes/Loading.cpp \
     ../Classes/Scenes/Settings.cpp \
     ../Classes/InfoStyles.cpp \
-    ../Classes/Scenes/developers.cpp
+    ../Classes/Scenes/developers.cpp \
+    ../Classes/Draw/Card.cpp \
+    ../Classes/Draw/Stars.cpp \
+    ../Classes/Scenes/SelectCollection.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -62,6 +65,9 @@ HEADERS += \
     ../Classes/Scenes/Loading.h \
     ../Classes/Scenes/Settings.h \
     ../Classes/InfoStyles.h \
-    ../Classes/Scenes/developers.h
+    ../Classes/Scenes/developers.h \
+    ../Classes/Draw/Card.h \
+    ../Classes/Draw/Stars.h \
+    ../Classes/Scenes/SelectCollection.h
 
 

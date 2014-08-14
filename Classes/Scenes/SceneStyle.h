@@ -6,6 +6,12 @@
 #ifndef WIN32
 #define final
 #endif
+enum class BackgroundType
+{
+    Dark,
+    Light,
+    None
+};
 
 class SceneStyle : public cocos2d::CCLayerColor, public HasSlots
 {
@@ -14,7 +20,8 @@ public:
 protected:
     SceneStyle();
     bool init();
-
+    void showBackground(const BackgroundType );
+    void showButtonBack();
     ADPopUpWindowManager _pop_up_manager;
     virtual void onBackClick()=0;
 

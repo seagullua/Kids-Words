@@ -1,5 +1,6 @@
 #include "MainMenu.h"
 #include "Settings.h"
+#include "SelectCollection.h"
 #include <ADLib/ADString.h>
 
 using namespace cocos2d;
@@ -58,11 +59,7 @@ bool MainMenu::init()
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     const float SCALE = ADScreen::getScaleFactor();
 
-    //background
-    CCSprite* background = CCSprite::create("universal/background_day.jpg");
-
-    background->setPosition(ORIGIN + VISIBLE_SIZE*0.5f);
-    this->addChild(background);
+    showBackground(BackgroundType::Light);
 
     //logo
     CCSprite* logo = CCSprite::create("main-menu/name_en.png");
@@ -105,7 +102,8 @@ bool MainMenu::init()
 
 void MainMenu::onPlayClick()
 {
-    CCLog("Play Clicked");
+    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+
 }
 void MainMenu::onSettingsClick()
 {

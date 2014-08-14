@@ -1,6 +1,7 @@
 #include "developers.h"
 #include <ADLib/ADString.h>
 #include "InfoStyles.h"
+#include "Settings.h"
 using namespace cocos2d;
 
 Developers::Developers()
@@ -43,8 +44,10 @@ Developers* Developers::create()
 
 void Developers::onBackClick()
 {
-    CCLog("Back clicked");
+    CCDirector::sharedDirector()->replaceScene(Settings::scene());
 }
+
+
 
 bool Developers::init()
 {
@@ -58,11 +61,7 @@ bool Developers::init()
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     const float SCALE = ADScreen::getScaleFactor();
 
-    //background
-    CCSprite* background = CCSprite::create("universal/background_night.jpg");
-
-    background->setPosition(ORIGIN + VISIBLE_SIZE*0.5f);
-    this->addChild(background);
+    showBackground(BackgroundType::Dark);
 
 
     //menu
@@ -70,23 +69,8 @@ bool Developers::init()
     menu->setPosition(ccp(0,0));
 
     this->addChild(menu);
-    CCSprite* button_back_image = CCSprite::create("universal/back-button.png");
-
-    ADMenuItem* button_back = ADMenuItem::create(button_back_image);
     float padding = 25/SCALE;
-    //button back
-    button_back->setPositionX(
-                ORIGIN.x
-                + padding
-                + button_back->getContentSize().width*0.5f);
-
-    button_back->setPositionY(ORIGIN.y +
-                              + VISIBLE_SIZE.height-padding -
-                              button_back->getContentSize().height*0.5f);
-    CONNECT(button_back->signalOnClick, (SceneStyle*)this, &SceneStyle::simulateBackClick);
-
-    menu->addChild(button_back);
-
+    showButtonBack();
 
     CCNode* node = CCNode::create();
     //node->setContentSize(ccp(400, 500));
@@ -104,8 +88,8 @@ bool Developers::init()
     node->addChild(ruslana_image);
     cocos2d::CCLabelTTF* developers_scene_ruslana_title;
     developers_scene_ruslana_title = CCLabelTTF::create(_("developers_scene_ruslana.title"),
-                                                       ADLanguage::getFontName(),
-                                                       InfoStyles::SIZE_DEVELOPERS_TITLE);
+                                                        ADLanguage::getFontName(),
+                                                        InfoStyles::SIZE_DEVELOPERS_TITLE);
 
     developers_scene_ruslana_title->setColor(InfoStyles::COLOR_WHITE);
 
@@ -118,10 +102,10 @@ bool Developers::init()
     node->addChild(developers_scene_ruslana_title);
 
     //andrii
-     cocos2d::CCLabelTTF* developers_scene_andrii_title;
+    cocos2d::CCLabelTTF* developers_scene_andrii_title;
     developers_scene_andrii_title = CCLabelTTF::create(_("developers_scene_andrii.title"),
-            ADLanguage::getFontName(),
-            InfoStyles::SIZE_DEVELOPERS_TITLE);
+                                                       ADLanguage::getFontName(),
+                                                       InfoStyles::SIZE_DEVELOPERS_TITLE);
     developers_scene_andrii_title->setColor(InfoStyles::COLOR_WHITE);
     developers_scene_andrii_title->setPositionX(padding);
     developers_scene_andrii_title->setAnchorPoint(ccp(0,0));
@@ -189,7 +173,7 @@ bool Developers::init()
     float node_scale = (VISIBLE_SIZE.height-padding_node)/padding_node_y;
     if(node_scale < 1)
     {
-          node->setScale(node_scale);
+        node->setScale(node_scale);
     }
 
     return true;
