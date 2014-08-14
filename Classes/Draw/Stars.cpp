@@ -28,8 +28,8 @@ Stars::Stars(int stars_number)
         }
         color_star->setAnchorPoint(ccp(0,0));
         color_star->setPositionY(0);
-        color_star->setPositionX(color_star->getContentSize().width*(i));
-        node_width = node_width+color_star->getContentSize().width;
+        color_star->setPositionX(color_star->getContentSize().width*(i)*0.75f);
+        node_width = node_width+color_star->getContentSize().width*0.75f;
         node_height = color_star->getContentSize().height;
 
 

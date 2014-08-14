@@ -25,9 +25,8 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
         _border_image = CCSprite::create("card/paper.png");
         _border_image->setAnchorPoint(ccp(0.5f,0.5f));
         _border_image->setPosition(_border_image->getContentSize()*0.5f);
-        _border_image->setScale(1.05f);
-        _border_image->setColor(InfoStyles::COLOR_BLUE);
-         this->addChild(_border_image);
+        _border_image->setScale(1.075f);
+        this->addChild(_border_image);
     }
     //paper
     CCSprite* paper_image = CCSprite::create("card/paper.png");
@@ -52,7 +51,7 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
 
     float line_image_height = _line_image->getContentSize().height;
     float line_image_title_width = _line_image_title->getContentSize().width;
-    float line_image_width = _line_image->getContentSize().width;
+    float line_image_width = _line_image->getContentSize().width-padding_shadow;
     if (line_image_title_width>line_image_width)
     {
         _line_image_title->setScale((line_image_width-padding_shadow)/ line_image_title_width);
@@ -74,13 +73,13 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
     this->addChild(image);
     Stars* stars_node = Stars::create(3);
     stars_node->setAnchorPoint(ccp(0.5f,0.5f));
-    stars_node->setPositionX(padding_node_x*0.5f);
+    stars_node->setPositionX(padding_node_x*0.45f);
     stars_node->setPositionY(padding_node_y*0.25f*0.6f);
     float stars_node_width = stars_node->getContentSize().width;
 
-    if (stars_node_width>line_image_width)
+    if (stars_node_width>line_image_width-padding_shadow*0.5f)
     {
-        stars_node->setScale((line_image_width-padding_shadow)/ stars_node_width);
+        stars_node->setScale((line_image_width-padding_shadow*0.5f)/ stars_node_width);
     }
 
     this->addChild(stars_node);
@@ -102,5 +101,16 @@ void Card::setStarsNumber(int stars_number)
 }
 void Card::setBorderType(BorderType type)
 {
-
+    if (type == BorderType::Easy)
+    {
+     _border_image->setColor(InfoStyles::COLOR_YELLOW);
+    }
+    else if (type == BorderType::Middle)
+    {
+       _border_image->setColor(InfoStyles::COLOR_GREEN);
+    }
+    else if (type == BorderType::Difficult)
+    {
+         _border_image->setColor(InfoStyles::COLOR_RED);
+    }
 }

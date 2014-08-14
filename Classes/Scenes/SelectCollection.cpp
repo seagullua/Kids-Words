@@ -58,10 +58,28 @@ bool SelectCollection::init()
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     const float SCALE = ADScreen::getScaleFactor();
-
+    float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
+float padding = 25/SCALE;
     showBackground(BackgroundType::Dark);
 
     showButtonBack();
+
+    //window title
+    cocos2d::CCLabelTTF* title_select_collection;
+    title_select_collection = CCLabelTTF::create(_("select_collection.title"),
+                                           ADLanguage::getFontName(),
+                                           InfoStyles::SIZE_MENU_TITLE);
+    //title_select_collection->setAnchorPoint(ccp(0.5, 1));
+    title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
+
+    title_select_collection->setPositionY(ORIGIN.y +
+                              + VISIBLE_SIZE.height-padding*0.25f -
+                                  title_select_collection->getContentSize().height*0.5f);
+
+    title_select_collection->setColor(InfoStyles::COLOR_WHITE);
+    this->addChild(title_select_collection);
+
+
     Card* card = Card::create(CCSprite::create("card/color.png"),
                               "dddd ",
                               2,CardType::WithBorder);
@@ -74,6 +92,7 @@ bool SelectCollection::init()
     this->addChild(card);
     card->setCardColor(InfoStyles::COLOR_BLUE);
     card->setTitleColor(InfoStyles::COLOR_WHITE);
+    card->setBorderType(BorderType::Easy);
     return true;
 
 }
