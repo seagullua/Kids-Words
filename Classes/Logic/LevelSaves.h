@@ -12,8 +12,8 @@ public:
     const std::vector<Level> getLevels(CollectionID coll_id);
     void readLevels();
 
-    private:
-        std::vector<Collection> _collections;
+private:
+    std::vector<Collection> _collections;
 
 };
 

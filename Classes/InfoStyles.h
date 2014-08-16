@@ -18,6 +18,7 @@ public:
     static const cocos2d::ccColor3B COLOR_GREEN;
     static const cocos2d::ccColor3B COLOR_YELLOW;
     static const cocos2d::ccColor3B COLOR_ORANGE;
+    static const cocos2d::ccColor3B COLOR_MAGENTA;
 };
 
 #endif // INFOSTYLES_H
