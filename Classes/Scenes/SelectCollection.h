@@ -14,7 +14,7 @@ private:
 
     bool init();
     void onBackClick();
-
+    void onCardClick();
 
 };
 

@@ -25,7 +25,8 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
         _border_image = CCSprite::create("card/paper.png");
         _border_image->setAnchorPoint(ccp(0.5f,0.5f));
         _border_image->setPosition(_border_image->getContentSize()*0.5f);
-        _border_image->setScale(1.075f);
+        _border_image->setScaleX(1.075f);
+        _border_image->setScaleY(1.05f);
         this->addChild(_border_image);
     }
     //paper
@@ -103,14 +104,14 @@ void Card::setBorderType(BorderType type)
 {
     if (type == BorderType::Easy)
     {
-     _border_image->setColor(InfoStyles::COLOR_YELLOW);
+        _border_image->setColor(InfoStyles::COLOR_YELLOW);
     }
     else if (type == BorderType::Middle)
     {
-       _border_image->setColor(InfoStyles::COLOR_GREEN);
+        _border_image->setColor(InfoStyles::COLOR_GREEN);
     }
     else if (type == BorderType::Difficult)
     {
-         _border_image->setColor(InfoStyles::COLOR_RED);
+        _border_image->setColor(InfoStyles::COLOR_RED);
     }
 }

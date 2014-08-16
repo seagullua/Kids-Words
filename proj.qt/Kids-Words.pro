@@ -54,7 +54,12 @@ SOURCES += main.cpp \
     ../Classes/Scenes/developers.cpp \
     ../Classes/Draw/Card.cpp \
     ../Classes/Draw/Stars.cpp \
-    ../Classes/Scenes/SelectCollection.cpp
+    ../Classes/Scenes/SelectCollection.cpp \
+    ../Classes/Logic/Collection.cpp \
+    ../Classes/Logic/Word.cpp \
+    ../Classes/Logic/Level.cpp \
+    ../Classes/Logic/CollectionPart.cpp \
+    ../Classes/Logic/LevelSaves.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -68,6 +73,11 @@ HEADERS += \
     ../Classes/Scenes/developers.h \
     ../Classes/Draw/Card.h \
     ../Classes/Draw/Stars.h \
-    ../Classes/Scenes/SelectCollection.h
+    ../Classes/Scenes/SelectCollection.h \
+    ../Classes/Logic/Collection.h \
+    ../Classes/Logic/Word.h \
+    ../Classes/Logic/Level.h \
+    ../Classes/Logic/CollectionPart.h \
+    ../Classes/Logic/LevelSaves.h
 
 
