@@ -95,6 +95,7 @@ void Card::setTitleColor(ccColor3B color)
 {
     _line_image_title->setColor(color);
 }
+
 void Card::setStarsNumber(int stars_number)
 {
 

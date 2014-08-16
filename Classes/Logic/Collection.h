@@ -19,7 +19,10 @@ public:
     void setCollectionPartEasy(CollectionPart part);
     void setCollectionPartMiddle(CollectionPart part);
     void setCollectionPartDifficult(CollectionPart part);
-
+    const CollectionID getID() const;
+    const std::string getImage() const;
+    const cocos2d::ccColor3B getColor() const;
+    const std::string getName() const;
 private:
     CollectionID _id;
     cocos2d::ccColor3B _color;

@@ -39,3 +39,20 @@ void Collection::setCollectionPartDifficult(CollectionPart part)
 {
     _difficult = part;
 }
+
+const CollectionID Collection::getID() const
+{
+    return _id;
+}
+const std::string Collection::getImage() const
+{
+    return _image;
+}
+const cocos2d::ccColor3B Collection::getColor() const
+{
+      return _color;
+}
+const std::string Collection::getName() const
+{
+    return _name;
+}

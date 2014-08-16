@@ -82,65 +82,53 @@ bool SelectCollection::init()
     title_select_collection->setColor(InfoStyles::COLOR_WHITE);
     this->addChild(title_select_collection);
 
-
-    Card* card = Card::create(CCSprite::create("card/color.png"),
-                              "dddd ",
-                              2,CardType::WithBorder);
     //Card* card = Card::create(CCSprite::create("card/color.png"),
     //                          "dddd ",
     //                          2,CardType::WithoutBorder);
-     //menu
-    CCMenu* menu =CCMenu::create();
-    menu->setPosition(ccp(0,0));
 
-    this->addChild(menu);
+
 
     //LevelSaves::readLevels();
     LevelSaves s;
     s.readLevels();
     const std::vector<Collection>& collect = s.getCollections();
+    //menu
+    CCMenu* menu =CCMenu::create();
+    menu->setPosition(ccp(0,0));
 
-    //i = 0
-    ADMenuItem* button_card = ADMenuItem::create(card);
-    //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
-    button_card->setAnchorPoint(ccp(0,0));
-    button_card->setPositionY(200/SCALE);
-    button_card->setPositionX(200/SCALE);
+    this->addChild(menu);
 
-    auto x =[](bool gg, std::string){
-        //fdffffd
-    };
+    for(unsigned int i = 0; i < collect.size(); ++i)
+    {
 
 
-    x(false, "dsdsdsdsd");
+        Card* card = Card::create(CCSprite::create(collect[i].getImage().c_str()),
+                                  collect[i].getName(),
+                                  2,CardType::WithoutBorder);
+
+        ADMenuItem* button_card = ADMenuItem::create(card);
+        //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
+        button_card->setAnchorPoint(ccp(0,0));
+        button_card->setPositionY(200/SCALE);
+        button_card->setPositionX(200+i*200 +i*100/SCALE);
+        CollectionID id = collect[i].getID();
+        button_card->setClickAction([id](){
+            CCLog("Collection click: %d", id);
+        });
+        menu->addChild(button_card);
+
+        card->setCardColor(collect[i].getColor());
+        card->setTitleColor(InfoStyles::COLOR_WHITE);
+        //card->setBorderType(BorderType::None);
+    }
 
 
-//    button_card->setClickAction([=](){
-//        openSelectLevel(i);
-//    });
 
-    menu->addChild(button_card);
-
-    card->setCardColor(InfoStyles::COLOR_BLUE);
-    card->setTitleColor(InfoStyles::COLOR_WHITE);
-    card->setBorderType(BorderType::Easy);
     return true;
 
-    std::vector<std::string> a;
-    a.push_back("aaaaaa");
 
-    a[0] = "gg";
-    //a.resize(5);
 
-    for(unsigned int i = 0; i < a.size(); ++i)
-    {
-        //a[i]
-    }
 
-    for(std::string el : a)
-    {
-
-    }
 }
 void SelectCollection::onCardClick()
 {
