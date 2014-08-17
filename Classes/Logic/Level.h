@@ -2,7 +2,7 @@
 #define LEVEL_H
 #include <string>
 #include "Word.h"
-
+//#include "Collection.h"
 class Level
 {
 public:
@@ -13,6 +13,10 @@ public:
 
     Word _word;
     std::string _translation;
+    void setID(LevelID id);
+    void setImage(std::string image);
+    const LevelID getID() const;
+    const std::string getImage() const;
 
 };
 

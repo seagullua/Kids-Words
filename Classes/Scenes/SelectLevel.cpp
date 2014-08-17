@@ -1,3 +1,4 @@
+#include "SelectLevel.h"
 #include "SelectCollection.h"
 #include "MainMenu.h"
 #include "Draw/Card.h"
@@ -6,20 +7,19 @@
 #include "Logic/Collection.h"
 #include <vector>
 #include <ADLib/Rendering/ADScrollView.h>
-#include "SelectLevel.h"
 using namespace cocos2d;
 
-SelectCollection::SelectCollection()
+SelectLevel::SelectLevel(CollectionID id)
 {
 }
 
-CCScene* SelectCollection::scene()
+CCScene* SelectLevel::scene(CollectionID id)
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
 
     // 'layer' is an autorelease object
-    SelectCollection *layer = SelectCollection::create();
+    SelectLevel *layer = SelectLevel::create(id);
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -29,10 +29,10 @@ CCScene* SelectCollection::scene()
 }
 
 
-SelectCollection* SelectCollection::create()
+SelectLevel* SelectLevel::create(CollectionID id)
 {
 
-    SelectCollection *pRet = new SelectCollection();
+    SelectLevel *pRet = new SelectLevel(id);
     if (pRet && pRet->init())
     {
         pRet->autorelease();
@@ -46,14 +46,14 @@ SelectCollection* SelectCollection::create()
     }
 }
 
-void SelectCollection::onBackClick()
+void SelectLevel::onBackClick()
 {
 
     CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
 }
 
 
-bool SelectCollection::init()
+bool SelectLevel::init()
 
 {
     if(!SceneStyle::init())
@@ -71,7 +71,7 @@ bool SelectCollection::init()
 
     //window title
     cocos2d::CCLabelTTF* title_select_collection;
-    title_select_collection = CCLabelTTF::create(_("select_collection.title"),
+    title_select_collection = CCLabelTTF::create(_("select_level.title"),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
     //title_select_collection->setAnchorPoint(ccp(0.5, 1));
@@ -91,66 +91,77 @@ bool SelectCollection::init()
 
 
     //LevelSaves::readLevels();
-    const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
+    const std::vector<Level>& level = LevelSaves::getInstance().getLevels(id);
+
     //menu
     CCMenu* menu =CCMenu::create();
+    //    menu->setPosition(ccp(0,0));
     float position_menu_y = VISIBLE_SIZE.height -padding*0.25f -
             title_select_collection->getContentSize().height*0.5f;
 
-    //this->addChild(menu);
+
     float collection_width = 0;
     float card_height = 0;
-    for(unsigned int i = 0; i < collect.size(); ++i)
+
+
+    for(unsigned int i = 0; i < level.size(); ++i)
     {
 
+        if (i=0)
+        {
+            Card* card = Card::create(CCSprite::create(level[i].getImage().c_str()),
+                                      _("select_level.easy",
+                                        2,CardType::WithBorder);
 
-        Card* card = Card::create(CCSprite::create(collect[i].getImage().c_str()),
-                                  collect[i].getName(),
-                                  2,CardType::WithoutBorder);
+        }
+        else if (i=1)
+        {
+            Card* card = Card::create(CCSprite::create(level[i].getImage().c_str()),
+                                      _("select_level.middle",
+                                        2,CardType::WithBorder);
+
+        }
+        else if (i=2)
+        {
+            Card* card = Card::create(CCSprite::create(level[i].getImage().c_str()),
+                                      _("select_level.difficult",
+                                        2,CardType::WithBorder);
+
+        }
 
         ADMenuItem* button_card = ADMenuItem::create(card);
         //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
         button_card->setAnchorPoint(ccp(0.5f,0.5f));
-        float one_card_width = 400/SCALE;
-        card_height=button_card->getContentSize().height;
+        float one_card_width = 340/SCALE;
         collection_width += one_card_width;
+        card_height=button_card->getContentSize().height;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*i + button_card->getContentSize().width*0.5f);
-        CollectionID id = collect[i].getID();
+        CollectionID id = level[i].getID();
         button_card->setClickAction([id](){
-            //CCLog("Collection click: %d", id);
-            CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
+            CCLog("Level click: %d", id);
         });
-
-
         menu->addChild(button_card);
 
-        card->setCardColor(collect[i].getColor());
+        card->setCardColor(InfoStyles::COLOR_ORANGE);
         card->setTitleColor(InfoStyles::COLOR_WHITE);
-        //card->setBorderType(BorderType::None);
+        if (i=0)
+        {
+            card->setBorderType(BorderType::Easy);
+        }
+        else if (i=1)
+        {
+            card->setBorderType(BorderType::Middle);
+        }
+        else if (i=2)
+        {
+            card->setBorderType(BorderType::Difficult);
+        }
     }
 
     menu->setAnchorPoint(ccp(0,0));
     menu->setPosition(ccp(100/SCALE,(position_menu_y-card_height)*0.5f));
-
-    CCSize zone_size(VISIBLE_SIZE.width, VISIBLE_SIZE.height);
-    CCSize collections_size(collection_width, zone_size.height);
-
-    //Create layer to fit all tiles
-    CCLayer *layer = CCLayer::create();
-    layer->setContentSize(collections_size);
-
-    //Create scroll view for this layer
-    ADScrollView* collections_scroll_view =
-            ADScrollView::create(zone_size, layer);
-    this->addChild(collections_scroll_view);
-    collections_scroll_view->addChild(menu);
-    collections_scroll_view->setPosition(ORIGIN);
-    collections_scroll_view->updateInset();
-    collections_scroll_view->setDirection(ADScrollView::Direction::Horizontal);
-    collections_scroll_view->setContentOffset(collections_scroll_view->maxContainerOffset(), false);
-    collections_scroll_view->addHighPriorityTouchListener(menu);
-
+    this->addChild(menu);
     //menu->setPosition();
     return true;
 
@@ -158,7 +169,7 @@ bool SelectCollection::init()
 
 
 }
-void SelectCollection::onCardClick()
+void SelectLevel::onCardClick()
 {
     CCLog("CardClick Clicked");
 }

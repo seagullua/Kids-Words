@@ -59,7 +59,8 @@ SOURCES += main.cpp \
     ../Classes/Logic/Word.cpp \
     ../Classes/Logic/Level.cpp \
     ../Classes/Logic/CollectionPart.cpp \
-    ../Classes/Logic/LevelSaves.cpp
+    ../Classes/Logic/LevelSaves.cpp \
+    ../Classes/Scenes/SelectLevel.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -78,6 +79,7 @@ HEADERS += \
     ../Classes/Logic/Word.h \
     ../Classes/Logic/Level.h \
     ../Classes/Logic/CollectionPart.h \
-    ../Classes/Logic/LevelSaves.h
+    ../Classes/Logic/LevelSaves.h \
+    ../Classes/Scenes/SelectLevel.h
 
 

@@ -3,6 +3,7 @@
 #include "SimpleAudioEngine.h"
 #include <ADLib/Device/ADInApp.h>
 #include "Scenes/MainMenu.h"
+#include "Logic/LevelSaves.h"
 using namespace cocos2d;
 Loading::Loading() : _sprites_to_load(0), _loaded_sprites(0)
 {
@@ -128,7 +129,9 @@ void Loading::addAll()
 //    addSpriteToLoad("universal/white-background.png");
 //    addSpriteToLoad("universal/x4Enjoy.png");
 
-
+    LevelSaves::getInstance().readLevels();
+    LevelSaves::getInstance().readLevels();
+    LevelSaves::getInstance().readLevels();
     ADInApp::loadStore(ADInApp::Mode::Production);
 
 //    //addSoundToLoad("music/silly_fun.mp3");

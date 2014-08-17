@@ -6,6 +6,8 @@ class CollectionPart
 public:
     CollectionPart();
     std::string _image;
+    void setImage(std::string image);
+    const std::string getImage() const;
 
 };
 
