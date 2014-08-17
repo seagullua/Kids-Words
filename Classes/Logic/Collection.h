@@ -23,6 +23,10 @@ public:
     const std::string getImage() const;
     const cocos2d::ccColor3B getColor() const;
     const std::string getName() const;
+    const CollectionPart getCollectionPartEasy() const;
+    const CollectionPart getCollectionPartMiddle() const;
+    const CollectionPart getCollectionPartDifficult() const;
+
 private:
     CollectionID _id;
     cocos2d::ccColor3B _color;

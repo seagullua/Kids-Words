@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-08-15 01:04+0200\n"
+"POT-Creation-Date: 2014-08-18 01:16+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,9 +30,26 @@ msgstr "Successfully restored purchases"
 msgid "iap.restore_purchases.failed"
 msgstr "Restore Purchase failed"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:69
+#: ../../Classes/Scenes/SelectCollection.cpp:74
 msgid "select_collection.title"
 msgstr "Collections"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:74
+#, fuzzy
+msgid "select_level.title"
+msgstr "Collections"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:119
+msgid "select_level.easy"
+msgstr "Easy"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:126
+msgid "select_level.middle"
+msgstr "Middle"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:133
+msgid "select_level.difficult"
+msgstr "Difficult"
 
 #: ../../Classes/Scenes/Settings.cpp:127
 msgid "settings_scene_developers.title"

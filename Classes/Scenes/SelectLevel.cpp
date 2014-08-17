@@ -48,8 +48,7 @@ SelectLevel* SelectLevel::create(CollectionID id)
 
 void SelectLevel::onBackClick()
 {
-
-    CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
 }
 
 
@@ -68,10 +67,13 @@ bool SelectLevel::init()
     showBackground(BackgroundType::Dark);
 
     showButtonBack();
-
+    const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
+    int i = 0;
     //window title
     cocos2d::CCLabelTTF* title_select_collection;
-    title_select_collection = CCLabelTTF::create(_("select_level.title"),
+
+
+    title_select_collection = CCLabelTTF::create(collect[i].getName().c_str(),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
     //title_select_collection->setAnchorPoint(ccp(0.5, 1));
@@ -90,8 +92,7 @@ bool SelectLevel::init()
 
 
 
-    //LevelSaves::readLevels();
-    const std::vector<Level>& level = LevelSaves::getInstance().getLevels(id);
+
 
     //menu
     CCMenu* menu =CCMenu::create();
@@ -102,30 +103,37 @@ bool SelectLevel::init()
 
     float collection_width = 0;
     float card_height = 0;
+    float card_width = 0;
+    //    for(unsigned int i = 0; i < collect.size(); ++i)
+    //    {
+    //        if (collect[i].getID() =)
+    //        {
 
+    //        }
+    //    }
 
-    for(unsigned int i = 0; i < level.size(); ++i)
+    for(unsigned int j = 0; j < 3; ++j)
     {
-
-        if (i=0)
+        Card* card;
+        if (j == 0)
         {
-            Card* card = Card::create(CCSprite::create(level[i].getImage().c_str()),
-                                      _("select_level.easy",
-                                        2,CardType::WithBorder);
-
-        }
-        else if (i=1)
-        {
-            Card* card = Card::create(CCSprite::create(level[i].getImage().c_str()),
-                                      _("select_level.middle",
-                                        2,CardType::WithBorder);
+            card = Card::create(CCSprite::create(collect[i].getCollectionPartEasy().getImage().c_str()),
+                                _("select_level.easy"),
+                                2,CardType::WithBorder);
 
         }
-        else if (i=2)
+        else if (j == 1)
         {
-            Card* card = Card::create(CCSprite::create(level[i].getImage().c_str()),
-                                      _("select_level.difficult",
-                                        2,CardType::WithBorder);
+            card = Card::create(CCSprite::create(collect[i].getCollectionPartMiddle().getImage().c_str()),
+                                _("select_level.middle"),
+                                2,CardType::WithBorder);
+
+        }
+        else if (j == 2)
+        {
+            card = Card::create(CCSprite::create(collect[i].getCollectionPartDifficult().getImage().c_str()),
+                                _("select_level.difficult"),
+                                2,CardType::WithBorder);
 
         }
 
@@ -134,10 +142,11 @@ bool SelectLevel::init()
         button_card->setAnchorPoint(ccp(0.5f,0.5f));
         float one_card_width = 340/SCALE;
         collection_width += one_card_width;
-        card_height=button_card->getContentSize().height;
+        card_height = button_card->getContentSize().height;
+        card_width = button_card->getContentSize().width;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
-        button_card->setPositionX(one_card_width*i + button_card->getContentSize().width*0.5f);
-        CollectionID id = level[i].getID();
+        button_card->setPositionX(one_card_width*j + button_card->getContentSize().width*0.5f);
+        CollectionID id = collect[i].getID();
         button_card->setClickAction([id](){
             CCLog("Level click: %d", id);
         });
@@ -145,22 +154,24 @@ bool SelectLevel::init()
 
         card->setCardColor(InfoStyles::COLOR_ORANGE);
         card->setTitleColor(InfoStyles::COLOR_WHITE);
-        if (i=0)
+        if (j == 0)
         {
             card->setBorderType(BorderType::Easy);
         }
-        else if (i=1)
+        else if (j == 1)
         {
             card->setBorderType(BorderType::Middle);
         }
-        else if (i=2)
+        else if (j == 2)
         {
             card->setBorderType(BorderType::Difficult);
         }
     }
 
     menu->setAnchorPoint(ccp(0,0));
-    menu->setPosition(ccp(100/SCALE,(position_menu_y-card_height)*0.5f));
+    float position_menu_x = VISIBLE_SIZE.width -collection_width ;
+    menu->setPositionX(ORIGIN.x +position_menu_x*0.5f);
+    menu->setPositionY((position_menu_y-card_height)*0.5f);
     this->addChild(menu);
     //menu->setPosition();
     return true;

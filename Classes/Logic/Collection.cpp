@@ -56,3 +56,20 @@ const std::string Collection::getName() const
 {
     return _name;
 }
+
+const CollectionPart Collection::getCollectionPartEasy() const
+{
+return _easy;
+
+}
+const CollectionPart Collection::getCollectionPartMiddle() const
+{
+    return _middle;
+
+}
+
+const CollectionPart Collection::getCollectionPartDifficult() const
+{
+    return _difficult;
+
+}
