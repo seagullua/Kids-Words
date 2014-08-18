@@ -9,7 +9,8 @@ class LevelSaves
 public:
     static LevelSaves& getInstance();
     const std::vector<Collection>& getCollections();
-    const std::vector<Level>& getLevels(CollectionID coll_id);
+ //   const std::vector<Level>& getLevels(CollectionID coll_id);
+    const Collection* getCollectionById(CollectionID coll_id);
     void readLevels();
 
 private:

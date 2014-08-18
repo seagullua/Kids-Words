@@ -10,7 +10,9 @@
 using namespace cocos2d;
 
 SelectLevel::SelectLevel(CollectionID id)
+
 {
+    _collection_id = id;
 }
 
 CCScene* SelectLevel::scene(CollectionID id)
@@ -57,6 +59,10 @@ bool SelectLevel::init()
 {
     if(!SceneStyle::init())
         return false;
+    //Get curren collection
+    const Collection* current_collection;
+    current_collection =LevelSaves::getInstance().getCollectionById(
+                _collection_id);
 
     //Get the screen start of cordinates
     const CCPoint ORIGIN = ADScreen::getOrigin();
@@ -73,7 +79,7 @@ bool SelectLevel::init()
     cocos2d::CCLabelTTF* title_select_collection;
 
 
-    title_select_collection = CCLabelTTF::create(collect[i].getName().c_str(),
+    title_select_collection = CCLabelTTF::create(current_collection->getName().c_str(),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
     //title_select_collection->setAnchorPoint(ccp(0.5, 1));
@@ -104,34 +110,27 @@ bool SelectLevel::init()
     float collection_width = 0;
     float card_height = 0;
     float card_width = 0;
-    //    for(unsigned int i = 0; i < collect.size(); ++i)
-    //    {
-    //        if (collect[i].getID() =)
-    //        {
-
-    //        }
-    //    }
 
     for(unsigned int j = 0; j < 3; ++j)
     {
         Card* card;
         if (j == 0)
         {
-            card = Card::create(CCSprite::create(collect[i].getCollectionPartEasy().getImage().c_str()),
+            card = Card::create(CCSprite::create(current_collection->getCollectionPartEasy().getImage().c_str()),
                                 _("select_level.easy"),
                                 2,CardType::WithBorder);
 
         }
         else if (j == 1)
         {
-            card = Card::create(CCSprite::create(collect[i].getCollectionPartMiddle().getImage().c_str()),
+            card = Card::create(CCSprite::create(current_collection->getCollectionPartMiddle().getImage().c_str()),
                                 _("select_level.middle"),
                                 2,CardType::WithBorder);
 
         }
         else if (j == 2)
         {
-            card = Card::create(CCSprite::create(collect[i].getCollectionPartDifficult().getImage().c_str()),
+            card = Card::create(CCSprite::create(current_collection->getCollectionPartDifficult().getImage().c_str()),
                                 _("select_level.difficult"),
                                 2,CardType::WithBorder);
 
@@ -146,7 +145,7 @@ bool SelectLevel::init()
         card_width = button_card->getContentSize().width;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*j + button_card->getContentSize().width*0.5f);
-        CollectionID id = collect[i].getID();
+        CollectionID id = current_collection->getID();
         button_card->setClickAction([id](){
             CCLog("Level click: %d", id);
         });

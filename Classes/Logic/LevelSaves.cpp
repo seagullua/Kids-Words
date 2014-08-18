@@ -10,16 +10,28 @@ const std::vector<Collection>& LevelSaves::getCollections()
 {
     return _collections;
 }
-const std::vector<Level>& LevelSaves::getLevels(CollectionID coll_id)
-{
-    return _levels;
-}
+//const std::vector<Level>& LevelSaves::getLevels(CollectionID coll_id)
+//{
+//    return _levels;
+//}
 LevelSaves& LevelSaves::getInstance()
 {
     static LevelSaves obj;
     return obj;
 }
+const Collection* LevelSaves::getCollectionById(CollectionID coll_id)
+{
+    for(unsigned int i = 0; i < _collections.size(); ++i)
+    {
+        if (_collections[i].getID() == coll_id)
+        {
+            return &_collections[i];
 
+        }
+    }
+    return nullptr;
+
+}
 void LevelSaves::readLevels()
 
 {
@@ -43,12 +55,12 @@ void LevelSaves::readLevels()
     collect.setName("Animals");
     CollectionPart collect_part_easy;
     CollectionPart collect_part_dificult;
-      CollectionPart collect_part_middle;
-      collect_part_easy.setImage("collections/c1.png");
+    CollectionPart collect_part_middle;
+    collect_part_easy.setImage("collections/c1.png");
     collect_part_dificult.setImage("collections/c2.png");
     collect_part_middle.setImage("collections/c3.png");
     collect.setCollectionPartEasy(collect_part_easy);
-     collect.setCollectionPartMiddle(collect_part_middle);
+    collect.setCollectionPartMiddle(collect_part_middle);
     collect.setCollectionPartDifficult(collect_part_dificult);
     _collections.push_back(collect);
     Collection collect1;
@@ -57,7 +69,7 @@ void LevelSaves::readLevels()
     collect1.setImage("collections/c2.png");
     collect1.setName("Food");
     collect1.setCollectionPartEasy(collect_part_dificult);
-     collect1.setCollectionPartMiddle(collect_part_middle);
+    collect1.setCollectionPartMiddle(collect_part_middle);
     collect1.setCollectionPartDifficult( collect_part_easy);
 
     _collections.push_back(collect1);
@@ -67,7 +79,7 @@ void LevelSaves::readLevels()
     collect2.setImage("collections/c3.png");
     collect2.setName("Family");
     collect2.setCollectionPartEasy(collect_part_easy);
-     collect2.setCollectionPartMiddle(collect_part_dificult);
+    collect2.setCollectionPartMiddle(collect_part_dificult);
     collect2.setCollectionPartDifficult( collect_part_middle);
 
     _collections.push_back(collect2);

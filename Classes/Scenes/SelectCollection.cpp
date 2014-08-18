@@ -94,8 +94,10 @@ bool SelectCollection::init()
     const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
     //menu
     CCMenu* menu =CCMenu::create();
-    float position_menu_y = VISIBLE_SIZE.height -padding*0.25f -
+    float padding_title = padding*0.25f +
             title_select_collection->getContentSize().height*0.5f;
+
+    float position_menu_y = VISIBLE_SIZE.height -padding_title;
 
     //this->addChild(menu);
     float collection_width = 0;
@@ -111,7 +113,7 @@ bool SelectCollection::init()
         ADMenuItem* button_card = ADMenuItem::create(card);
         //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
         button_card->setAnchorPoint(ccp(0.5f,0.5f));
-        float one_card_width = 400/SCALE;
+        float one_card_width = 340/SCALE;
         card_height=button_card->getContentSize().height;
         collection_width += one_card_width;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
@@ -133,7 +135,7 @@ bool SelectCollection::init()
     menu->setAnchorPoint(ccp(0,0));
     menu->setPosition(ccp(100/SCALE,(position_menu_y-card_height)*0.5f));
 
-    CCSize zone_size(VISIBLE_SIZE.width, VISIBLE_SIZE.height);
+    CCSize zone_size(VISIBLE_SIZE.width, VISIBLE_SIZE.height-padding_title*3);
     CCSize collections_size(collection_width, zone_size.height);
 
     //Create layer to fit all tiles
