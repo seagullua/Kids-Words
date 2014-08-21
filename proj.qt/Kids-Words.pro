@@ -60,7 +60,8 @@ SOURCES += main.cpp \
     ../Classes/Logic/Level.cpp \
     ../Classes/Logic/CollectionPart.cpp \
     ../Classes/Logic/LevelSaves.cpp \
-    ../Classes/Scenes/SelectLevel.cpp
+    ../Classes/Scenes/SelectLevel.cpp \
+    ../Classes/Scenes/LevelScene.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -80,6 +81,7 @@ HEADERS += \
     ../Classes/Logic/Level.h \
     ../Classes/Logic/CollectionPart.h \
     ../Classes/Logic/LevelSaves.h \
-    ../Classes/Scenes/SelectLevel.h
+    ../Classes/Scenes/SelectLevel.h \
+    ../Classes/Scenes/LevelScene.h
 
 
