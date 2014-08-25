@@ -1,6 +1,8 @@
 #ifndef INFOSTYLES_H
 #define INFOSTYLES_H
 #include "cocos2d.h"
+#include <vector>
+#include <string>
 class InfoStyles
 {
 public:
@@ -19,6 +21,7 @@ public:
     static const cocos2d::ccColor3B COLOR_YELLOW;
     static const cocos2d::ccColor3B COLOR_ORANGE;
     static const cocos2d::ccColor3B COLOR_MAGENTA;
+
 };
 
 #endif // INFOSTYLES_H

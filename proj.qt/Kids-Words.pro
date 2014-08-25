@@ -61,7 +61,12 @@ SOURCES += main.cpp \
     ../Classes/Logic/CollectionPart.cpp \
     ../Classes/Logic/LevelSaves.cpp \
     ../Classes/Scenes/SelectLevel.cpp \
-    ../Classes/Scenes/LevelScene.cpp
+    ../Classes/Scenes/LevelScene.cpp \
+    ../Classes/Logic/Alphabete.cpp \
+    ../Classes/Logic/StatusLetter.cpp \
+    ../Classes/Logic/Letter.cpp \
+    ../Classes/Logic/Task.cpp \
+    ../Classes/Draw/TopPanell.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -82,6 +87,11 @@ HEADERS += \
     ../Classes/Logic/CollectionPart.h \
     ../Classes/Logic/LevelSaves.h \
     ../Classes/Scenes/SelectLevel.h \
-    ../Classes/Scenes/LevelScene.h
+    ../Classes/Scenes/LevelScene.h \
+    ../Classes/Logic/Alphabete.h \
+    ../Classes/Logic/StatusLetter.h \
+    ../Classes/Logic/Letter.h \
+    ../Classes/Logic/Task.h \
+    ../Classes/Draw/TopPanell.h
 
 

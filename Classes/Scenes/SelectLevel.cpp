@@ -4,6 +4,8 @@
 #include "Draw/Card.h"
 #include "InfoStyles.h"
 #include "Logic/LevelSaves.h"
+#include "Logic/Level.h"
+#include "LevelScene.h"
 #include "Logic/Collection.h"
 #include <vector>
 #include <ADLib/Rendering/ADScrollView.h>
@@ -73,8 +75,8 @@ bool SelectLevel::init()
     showBackground(BackgroundType::Dark);
 
     showButtonBack();
-    const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
-    int i = 0;
+    //const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
+    //int i = 0;
     //window title
     cocos2d::CCLabelTTF* title_select_collection;
 
@@ -110,9 +112,11 @@ bool SelectLevel::init()
     float collection_width = 0;
     float card_height = 0;
     float card_width = 0;
-
+    int current_dificult;
+    current_dificult = 0;
     for(unsigned int j = 0; j < 3; ++j)
     {
+        current_dificult = j;
         Card* card;
         if (j == 0)
         {
@@ -146,8 +150,10 @@ bool SelectLevel::init()
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*j + button_card->getContentSize().width*0.5f);
         CollectionID id = current_collection->getID();
-        button_card->setClickAction([id](){
-            CCLog("Level click: %d", id);
+        button_card->setClickAction([id,current_dificult](){
+            // CCLog("Level click: %d", id);
+             CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,current_dificult));
+
         });
         menu->addChild(button_card);
 

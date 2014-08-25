@@ -3,6 +3,7 @@
 #include "CollectionPart.h"
 #include "Level.h"
 #include "InfoStyles.h"
+#include "Alphabete.h"
 LevelSaves::LevelSaves()
 {
 }
@@ -84,5 +85,6 @@ void LevelSaves::readLevels()
 
     _collections.push_back(collect2);
 
-
+    Alphabete::getInstance().setApphabete();
+    Alphabete::getInstance().setAlphabeteColor();
 }

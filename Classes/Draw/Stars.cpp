@@ -12,13 +12,35 @@ Stars::Stars(int stars_number)
 {
     float node_width = 0;
     float node_height = 0;
+    float star_namber_f = stars_number;
+    float stars_number_half = star_namber_f /2;
+    int stars_number_half_int = stars_number_half;
+    float half_int = stars_number_half-stars_number_half_int;
+
     for(int i=0; i<5; ++i)
     {
         CCSprite* color_star;
-        if (i<stars_number)
+        if (i<stars_number_half)
         {
-            //color_star
-            color_star = CCSprite::create("card/color.png");
+            if (i == stars_number_half_int)
+            {
+                if (half_int > 0)
+                {
+                    //half
+                    color_star = CCSprite::create("card/half.png");
+
+                }
+
+                else
+                {
+                    //color_star
+                    color_star = CCSprite::create("card/color.png");
+                }
+            }
+            else
+            {//color_star
+                color_star = CCSprite::create("card/color.png");
+            }
         }
         else
         {
