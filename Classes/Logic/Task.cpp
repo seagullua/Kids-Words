@@ -1,19 +1,19 @@
 #include "Task.h"
 
-Task::Task(CollectionID id, int difficult)
-
+Task::Task(LevelID id, int difficult):
+    _level_id(id),
+    _difficult(difficult)
 {
-    _collection_id = id;
-    _difficult = difficult;
+
 }
 
 
-void Task::setTask(CollectionID id, int difficult)
+void Task::setTask(LevelID id, int difficult)
 {
     // Руслана як правильно заповнити Task та отримувати його дані
 }
 
-std::vector<Letter> Task::getSolution()
+const std::vector<Letter> &Task::getSolution()
 {
     return _solution;
 

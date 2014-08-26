@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+
+
+	<file>
+		<name>monkey.jpg</name>
+	</file>
+	
+	<file>
+		<name>sheep.jpg</name>
+	</file>
+		
+	<file>
+		<name>elephant.jpg</name>
+	</file>
+	
+	<file>
+		<name>cat.jpg</name>
+	</file>
+	
+	<file>
+		<name>rhino.jpg</name>
+	</file>
+	
+	<file>
+		<name>turtle.jpg</name>
+	</file>
+	
+	<file>
+		<name>parrot.jpg</name>
+	</file>
+	
+	<file>
+		<name>zebra.jpg</name>
+	</file>
+	
+	<file>
+		<name>tiger.jpg</name>
+	</file>
+	
+	<file>
+		<name>horse.jpg</name>
+	</file>
+	
+	<file>
+		<name>cow.jpg</name>
+	</file>
+	
+	<file>
+		<name>chinchilla.jpg</name>
+	</file>
+	
+	<file>
+		<name>bear.jpg</name>
+	</file>
+
+	<file>
+		<name>fox.jpg</name>
+	</file>
+	
+	<file>
+		<name>dog.jpg</name>
+	</file>
+	
+	<file>
+		<name>rabbit.jpg</name>
+	</file>
+	
+	<file>
+		<name>lion.jpg</name>
+	</file>
+	
+	<file>
+		<name>frog.jpg</name>
+	</file>
+	
+	<file>
+		<name>penguin.jpg</name>
+	</file>
+
+	<file>
+		<name>owl.jpg</name>
+	</file>
+	
+	
+	
+</directory>

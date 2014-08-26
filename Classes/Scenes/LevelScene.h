@@ -13,6 +13,8 @@ private:
 
     bool init();
     void onBackClick();
+    void onSignalAudioClicked();
+    void onSignalUseHintClicked();
     CollectionID _collection_id;
     int _difficult;
 };

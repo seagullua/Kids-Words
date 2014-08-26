@@ -12,60 +12,12 @@ void Alphabete::setApphabete()
 {
     std::string current_alphabete;
     current_alphabete="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    std::string current_letter;
-    current_letter="A";
-    _alphabete.push_back(current_letter);
-    current_letter="B";
-    _alphabete.push_back(current_letter);
-    current_letter="C";
-    _alphabete.push_back(current_letter);
-    current_letter="D";
-    _alphabete.push_back(current_letter);
-    current_letter="E";
-    _alphabete.push_back(current_letter);
-    current_letter="F";
-    _alphabete.push_back(current_letter);
-    current_letter="G";
-    _alphabete.push_back(current_letter);
-    current_letter="H";
-    _alphabete.push_back(current_letter);
-    current_letter="I";
-    _alphabete.push_back(current_letter);
-    current_letter="J";
-    _alphabete.push_back(current_letter);
-    current_letter="K";
-    _alphabete.push_back(current_letter);
-    current_letter="L";
-    _alphabete.push_back(current_letter);
-    current_letter="M";
-    _alphabete.push_back(current_letter);
-    current_letter="N";
-    _alphabete.push_back(current_letter);
-    current_letter="O";
-    _alphabete.push_back(current_letter);
-    current_letter="P";
-    _alphabete.push_back(current_letter);
-    current_letter="Q";
-    _alphabete.push_back(current_letter);
-    current_letter="R";
-    _alphabete.push_back(current_letter);
-    current_letter="S";
-    _alphabete.push_back(current_letter);
-    current_letter="T";
-    _alphabete.push_back(current_letter);
-    current_letter="U";
-    _alphabete.push_back(current_letter);
-    current_letter="V";
-    _alphabete.push_back(current_letter);
-    current_letter="W";
-    _alphabete.push_back(current_letter);
-    current_letter="X";
-    _alphabete.push_back(current_letter);
-    current_letter="Y";
-    _alphabete.push_back(current_letter);
-    current_letter="Z";
-    _alphabete.push_back(current_letter);
+    for (int i = 0 ; i<current_alphabete.size(); ++i )
+    {
+        std::string ch = " ";
+        ch[0] = current_alphabete[i];
+        _alphabete.push_back(ch);
+    }
 
 
 }
@@ -78,8 +30,7 @@ void Alphabete::setAlphabeteColor()
     cocos2d::ccColor3B _current_color ;
 
     // green 1/1
-    _current_color=cocos2d::ccc3(0,254,6);
-    _alphabete_color.push_back(_current_color);
+    _alphabete_color.push_back(cocos2d::ccc3(0,254,6));
     // green 2/2
     _current_color=cocos2d::ccc3(53,174,0);
     _alphabete_color.push_back(_current_color);

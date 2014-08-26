@@ -5,7 +5,7 @@
 class Word
 {
 public:
-    Word();
+    Word(std::string word="");
     std::vector<std::string> _letters_of_word;
 
 };

@@ -4,11 +4,12 @@
 #include <string>
 #include "Letter.h"
 #include "Logic/Collection.h"
+#include "Logic/Level.h"
 class Task
 {
 public:
-        Task(CollectionID id, int difficult);
-       void setTask(CollectionID id, int difficult);
+        Task(LevelID id, int difficult);
+       void setTask(LevelID id, int difficult);
 private:
 
     std::vector<Letter> _solution;
@@ -17,9 +18,9 @@ private:
     std::string _audio_name;
     std::string _translated_word;
     std::string _image_file;
-    CollectionID _collection_id;
+    LevelID _level_id;
     int _difficult;
-    std::vector<Letter> getSolution();
+    const std::vector<Letter>& getSolution();
     std::vector<Letter> getInUseLetters();
     std::vector<Letter> getQqiuzWord();
     std::string getAudioName();

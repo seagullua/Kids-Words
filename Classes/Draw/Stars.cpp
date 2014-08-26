@@ -12,17 +12,16 @@ Stars::Stars(int stars_number)
 {
     float node_width = 0;
     float node_height = 0;
-    float star_namber_f = stars_number;
-    float stars_number_half = star_namber_f /2;
-    int stars_number_half_int = stars_number_half;
-    float half_int = stars_number_half-stars_number_half_int;
+//    float star_namber_f = stars_number;
+    int stars_number_half = stars_number /2;
+    int half_int = stars_number%2;
 
     for(int i=0; i<5; ++i)
     {
         CCSprite* color_star;
-        if (i<stars_number_half)
+        if (i<stars_number_half+half_int)
         {
-            if (i == stars_number_half_int)
+            if (i == stars_number_half)
             {
                 if (half_int > 0)
                 {

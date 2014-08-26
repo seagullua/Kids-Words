@@ -68,26 +68,29 @@ bool LevelScene::init()
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
-    TopPanell* top_panel = TopPanell::create(1,10,5);
+    TopPanell* top_panel = TopPanell::create(1,10,7);
 
     top_panel->setAnchorPoint(ccp(0,1));
- //   top_panel->setPositionX(0);
+    //   top_panel->setPositionX(0);
 
     //top_panel->setPositionY();
 
-    top_panel->setPositionX(padding*10);
+    top_panel->setPositionX(ORIGIN.x);
     top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
-//    top_panel->setPositionY(ORIGIN.y +
-//                                          + VISIBLE_SIZE.height-padding*0.25f -
-//                                          top_panel->getContentSize().height*0.5f);
+    CONNECT(top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
+    CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
+
+    //    top_panel->setPositionY(ORIGIN.y +
+    //                                          + VISIBLE_SIZE.height-padding*0.25f -
+    //                                          top_panel->getContentSize().height*0.5f);
 
 
-//    float node_scale = (VISIBLE_SIZE.width-(x_middle_of_sheet+padding*2)/top_panel->getContentSize().width);
-//    if(node_scale < 1)
-//    {
-//        top_panel->setScale(node_scale);
-//    }
-   this->addChild(top_panel);
+    //    float node_scale = (VISIBLE_SIZE.width-(x_middle_of_sheet+padding*2)/top_panel->getContentSize().width);
+    //    if(node_scale < 1)
+    //    {
+    //        top_panel->setScale(node_scale);
+    //    }
+    this->addChild(top_panel);
     showButtonBack();
 //    CCNode* node = CCNode::create();
 //    node->setContentSize(ccp(400, 500));
@@ -150,11 +153,21 @@ bool LevelScene::init()
 
 
 //    }
-//    node->setPositionX(padding*5);
+    node->setPositionX(padding*5);
 
-//    node->setPositionY(padding);
+    node->setPositionY(padding);
 
-//    //node->setScale(2);
-//    this->addChild(node);
+    //node->setScale(2);
+    this->addChild(node);
     return true;
+}
+void LevelScene::onSignalAudioClicked()
+
+{
+    CCLog("Level scene");
+}
+void LevelScene::onSignalUseHintClicked()
+
+{
+    CCLog("Level scene onSignalUseHintClicked");
 }
