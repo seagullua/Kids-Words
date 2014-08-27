@@ -5,11 +5,13 @@
 #include "Logic/Alphabete.h"
 #include "Logic/LevelSaves.h"
 #include "Draw/TopPanell.h"
+#include "Logic/OneSeason.h"
 #include <vector>
 #include <string>
-using namespace cocos2d;
-LevelScene::LevelScene(CollectionID id, int difficult)
 
+using namespace cocos2d;
+
+LevelScene::LevelScene(CollectionID id, int difficult)
 {
     _collection_id = id;
     _difficult = difficult;
@@ -78,7 +80,7 @@ bool LevelScene::init()
     top_panel->setPositionX(ORIGIN.x);
     top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
     CONNECT(top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
-    CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
+   CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
 
     //    top_panel->setPositionY(ORIGIN.y +
     //                                          + VISIBLE_SIZE.height-padding*0.25f -
@@ -92,6 +94,7 @@ bool LevelScene::init()
     //    }
     this->addChild(top_panel);
     showButtonBack();
+    OneSeason current_one_season(_collection_id,_difficult);
 //    CCNode* node = CCNode::create();
 //    node->setContentSize(ccp(400, 500));
 //    node->setAnchorPoint(ccp(0,0));
@@ -153,21 +156,19 @@ bool LevelScene::init()
 
 
 //    }
-    node->setPositionX(padding*5);
+//    node->setPositionX(padding*5);
 
-    node->setPositionY(padding);
+//    node->setPositionY(padding);
 
-    //node->setScale(2);
-    this->addChild(node);
+//    //node->setScale(2);
+//    this->addChild(node);
     return true;
 }
 void LevelScene::onSignalAudioClicked()
-
 {
     CCLog("Level scene");
 }
 void LevelScene::onSignalUseHintClicked()
-
 {
     CCLog("Level scene onSignalUseHintClicked");
 }

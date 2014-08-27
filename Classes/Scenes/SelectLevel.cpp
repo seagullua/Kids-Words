@@ -147,7 +147,7 @@ bool SelectLevel::init()
         collection_width += one_card_width;
         card_height = button_card->getContentSize().height;
         card_width = button_card->getContentSize().width;
-        button_card->setPositionY(button_card->getContentSize().height*0.5f);
+        button_card->setPositionY(ORIGIN.y+button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*j + button_card->getContentSize().width*0.5f);
         CollectionID id = current_collection->getID();
         button_card->setClickAction([id,current_dificult](){

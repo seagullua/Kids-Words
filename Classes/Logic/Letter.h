@@ -8,9 +8,14 @@
 class Letter
 {
 public:
-    Letter();
-    std::string _string_letter;
+    Letter(std::string string_letter);
+    void setLetterStatus(LetterStatus status);
     LetterStatus _status;
+    const LetterStatus getLetterStatus();
+
+private:
+    std::string _string_letter;
+
 };
 
 #endif // LETTER_H

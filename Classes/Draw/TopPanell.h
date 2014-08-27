@@ -14,4 +14,5 @@ public:
     Signal<> signalUseHint;
     void signalAudioOnClicked();
     void signalUseHintOnClicked();
+};
 #endif // TOPPANELL_H

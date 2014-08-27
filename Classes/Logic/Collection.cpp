@@ -73,3 +73,7 @@ const CollectionPart Collection::getCollectionPartDifficult() const
     return _difficult;
 
 }
+const std::vector<Level> Collection::getCollectionLevels() const
+{
+    return _levels;
+}

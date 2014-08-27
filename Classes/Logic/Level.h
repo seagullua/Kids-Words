@@ -23,7 +23,7 @@ public:
     void setTranslation(std::string translation);
     const Word getWord() const;
     const std::string getTranslation() const;
-
+    const std::string getLevelImage() const;
 };
 
 

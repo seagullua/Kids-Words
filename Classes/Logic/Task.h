@@ -8,8 +8,9 @@
 class Task
 {
 public:
-        Task(LevelID id, int difficult);
-       void setTask(LevelID id, int difficult);
+    Task(Level level, int difficult);
+    void setTask(Level level, int difficult);
+    int getNumberOfLetter(int difficult,int word_size);
 private:
 
     std::vector<Letter> _solution;
@@ -18,7 +19,7 @@ private:
     std::string _audio_name;
     std::string _translated_word;
     std::string _image_file;
-    LevelID _level_id;
+    Level _level;
     int _difficult;
     const std::vector<Letter>& getSolution();
     std::vector<Letter> getInUseLetters();

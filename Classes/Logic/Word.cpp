@@ -1,4 +1,5 @@
 #include "Word.h"
+#include <vector>
 
 Word::Word(std::string word)
 
@@ -11,4 +12,8 @@ Word::Word(std::string word)
         ch[0] = current_word[i];
         _letters_of_word.push_back(ch);
     }
+}
+const std::vector<std::string>  Word::getLettersOfWord() const
+{
+    return _letters_of_word;
 }

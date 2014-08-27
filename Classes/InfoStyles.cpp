@@ -10,6 +10,10 @@ const int InfoStyles::SIZE_SETTINGS_BUTTON_TURN = 60;
 const int InfoStyles::SIZE_DEVELOPERS_TITLE = 50;
 const int InfoStyles::SIZE_LINE_TITLE = 30;
 const int InfoStyles::SIZE_MENU_TITLE = 70;
+//% letter by difficult
+const int InfoStyles::EASY =20;
+const int InfoStyles::MIDDLE= 50;
+const int InfoStyles::DIFFICULT =70;
 
 //colors
 const cocos2d::ccColor3B InfoStyles::COLOR_WHITE = cocos2d::ccc3(255, 255, 255);

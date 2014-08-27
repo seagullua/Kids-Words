@@ -37,3 +37,8 @@ const std::string Level::getTranslation() const
 {
     return _translation;
 }
+
+const std::string Level::getLevelImage() const
+{
+    return _level_image;
+}

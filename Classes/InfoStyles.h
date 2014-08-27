@@ -13,6 +13,12 @@ public:
     static const int SIZE_LINE_TITLE;
     static const int SIZE_SETTINGS_BUTTON_TURN;
     static const int SIZE_MENU_TITLE;
+    //% letter by difficult
+    static const int EASY ;
+    static const int MIDDLE;
+    static const int DIFFICULT ;
+
+
     //colors
     static const cocos2d::ccColor3B COLOR_WHITE;
     static const cocos2d::ccColor3B COLOR_BLUE;

@@ -26,7 +26,7 @@ public:
     const CollectionPart getCollectionPartEasy() const;
     const CollectionPart getCollectionPartMiddle() const;
     const CollectionPart getCollectionPartDifficult() const;
-
+    const std::vector<Level> getCollectionLevels() const;
 private:
     CollectionID _id;
     cocos2d::ccColor3B _color;
