@@ -95,6 +95,10 @@ bool LevelScene::init()
     this->addChild(top_panel);
     showButtonBack();
     OneSeason current_one_season(_collection_id,_difficult);
+    const OneGame*  current_one_game = current_one_season.getNextLevel();
+
+    setOneGame(current_one_game);
+
 //    CCNode* node = CCNode::create();
 //    node->setContentSize(ccp(400, 500));
 //    node->setAnchorPoint(ccp(0,0));
@@ -171,4 +175,8 @@ void LevelScene::onSignalAudioClicked()
 void LevelScene::onSignalUseHintClicked()
 {
     CCLog("Level scene onSignalUseHintClicked");
+}
+void LevelScene::setOneGame(const OneGame*  one_game)
+{
+    _one_game = one_game;
 }

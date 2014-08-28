@@ -13,8 +13,8 @@ public:
 private:
     CollectionID _collection_id;
     int _difficult;
-    Task* _current_task;
-    int _current_number_task;
+    Task* _active_task;
+    int _set_task_number;
     std::vector<OneGame> _seasons_games;
 
 

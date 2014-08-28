@@ -1,4 +1,5 @@
 #include "Alphabete.h"
+#include <algorithm>
 
 Alphabete::Alphabete()
 {
@@ -12,7 +13,7 @@ void Alphabete::setApphabete()
 {
     std::string current_alphabete;
     current_alphabete="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (int i = 0 ; i<current_alphabete.size(); ++i )
+    for (int i = 0 ; i < current_alphabete.size(); ++i )
     {
         std::string ch = " ";
         ch[0] = current_alphabete[i];
@@ -25,6 +26,27 @@ const std::vector<std::string>& Alphabete::getAlphabete()
 {
     return _alphabete;
 }
+
+const std::vector<int> Alphabete::getNumberLetterFromAlphabete(int number_of_letter)
+{
+    std::vector<int>  number_letter;
+    std::vector<int>  number_letter_return;
+
+    for (int i = 0 ; i < _alphabete.size(); ++i )
+    {
+         number_letter.push_back(i);
+
+    }
+     std::random_shuffle(number_letter.begin(), number_letter.end());
+
+     for (int i = 0 ; i < number_of_letter ; ++i )
+    {
+        number_letter_return.push_back(number_letter[i]);
+
+    }
+     return number_letter_return;\
+}
+
 void Alphabete::setAlphabeteColor()
 {
     cocos2d::ccColor3B _current_color ;
@@ -137,6 +159,10 @@ void Alphabete::setAlphabeteColor()
 cocos2d::ccColor3B  Alphabete::getColorLetterById(int id)
 {
     return _alphabete_color[id];
+}
+std::string  Alphabete::getLetterById(int id)
+{
+    return _alphabete[id];
 }
 const std::vector<cocos2d::ccColor3B>& Alphabete::getAlphabeteColor()
 {

@@ -68,7 +68,8 @@ SOURCES += main.cpp \
     ../Classes/Logic/Task.cpp \
     ../Classes/Draw/TopPanell.cpp \
     ../Classes/Logic/OneSeason.cpp \
-    ../Classes/Logic/OneGame.cpp
+    ../Classes/Logic/OneGame.cpp \
+    ../Classes/Draw/GameNode.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -96,6 +97,7 @@ HEADERS += \
     ../Classes/Logic/Task.h \
     ../Classes/Draw/TopPanell.h \
     ../Classes/Logic/OneSeason.h \
-    ../Classes/Logic/OneGame.h
+    ../Classes/Logic/OneGame.h \
+    ../Classes/Draw/GameNode.h
 
 

@@ -5,6 +5,10 @@ class OneGame
 {
 public:
     OneGame(Task task);
+    const Task& getTask();
+private:
+    Task _task;
+
 };
 
 #endif // ONEGAME_H

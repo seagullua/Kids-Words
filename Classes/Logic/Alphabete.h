@@ -13,7 +13,8 @@ public:
     void setAlphabeteColor();
     cocos2d::ccColor3B  getColorLetterById(int id);
     const std::vector<cocos2d::ccColor3B >& getAlphabeteColor();
-
+    const std::vector<int> getNumberLetterFromAlphabete(int number_of_letter);
+    std::string getLetterById(int id);
 private:
 
     Alphabete();

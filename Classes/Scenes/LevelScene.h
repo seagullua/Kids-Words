@@ -2,6 +2,7 @@
 #define LEVELSCENE_H
 #include "SceneStyle.h"
 #include "Logic/Collection.h"
+#include "Logic/OneGame.h"
 
 class LevelScene: public SceneStyle
 {
@@ -15,8 +16,11 @@ private:
     void onBackClick();
     void onSignalAudioClicked();
     void onSignalUseHintClicked();
+    void setOneGame(const OneGame *one_game);
     CollectionID _collection_id;
     int _difficult;
+    const OneGame* _one_game;
+
 };
 
 #endif // LEVELSCENE_H

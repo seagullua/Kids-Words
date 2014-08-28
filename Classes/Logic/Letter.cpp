@@ -15,3 +15,7 @@ const LetterStatus Letter::getLetterStatus()
 {
     return _status;
 }
+const std::string Letter::getLetterString()
+{
+     return _string_letter;
+}

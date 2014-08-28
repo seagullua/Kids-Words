@@ -8,7 +8,7 @@
 OneSeason::OneSeason(CollectionID id, int difficult):
     _collection_id(id),
     _difficult(difficult),
-  _current_number_task(0)
+  _set_task_number(0)
   {
     const Collection* current_collection;
     current_collection =LevelSaves::getInstance().getCollectionById(
@@ -32,5 +32,5 @@ void OneSeason::setSeasonsGame(OneGame current_one_game)
 
 const OneGame* OneSeason::getNextLevel()
 {
-    return &_seasons_games[_current_number_task];
+    return &_seasons_games[_set_task_number];
 }

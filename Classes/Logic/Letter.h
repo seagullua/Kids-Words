@@ -12,6 +12,7 @@ public:
     void setLetterStatus(LetterStatus status);
     LetterStatus _status;
     const LetterStatus getLetterStatus();
+    const std::string getLetterString();
 
 private:
     std::string _string_letter;
