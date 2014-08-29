@@ -64,27 +64,48 @@ GameNode::GameNode(const OneGame *one_game):
 
 
     CCSprite* word_image = CCSprite::create(word_image_name.c_str());
-    word_image->setAnchorPoint(ccp(0,0));
+    word_image->setAnchorPoint(ccp(0,0.5f));
 
     word_image->setPositionX(ORIGIN.x+ VISIBLE_SIZE.width*0.5f );
     float word_image_y = ORIGIN.y + padding*2 + node_qiuz_word->getContentSize().height* node_scale;
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
-    word_image->setPositionY(word_image_y);
-
     float word_image_scale_y = (VISIBLE_SIZE.height- node_qiuz_word->getContentSize().height* node_scale-padding*9 )/word_image_height;
+float word_image_scale = 1;
+float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
+
     if(word_image_scale_y < 1)
     {
-        word_image->setScaleY(word_image_scale_y);
+        if (word_image_scale_x < word_image_scale_y)
+        {
+          word_image_scale =  word_image_scale_x;
+
+        }
+        else
+        {
+            word_image_scale =  word_image_scale_y;
+
+        }
 
     }
-    float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
     if(word_image_scale_x < 1)
     {
-        word_image->setScaleX(word_image_scale_x);
+        if (word_image_scale_x < word_image_scale_y)
+        {
+          word_image_scale =  word_image_scale_x;
+        }
+        else
+        {
+            word_image_scale =  word_image_scale_y;
+
+        }
 
     }
+    word_image->setScale(word_image_scale);
+
+  //  word_image->setPositionY(ORIGIN.y + padding*2 + node_qiuz_word->getContentSize().height* node_scale+word_image->getContentSize().height*0.5f*word_image_scale);
+    word_image->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.5f);
 
      this->addChild(word_image);
 
