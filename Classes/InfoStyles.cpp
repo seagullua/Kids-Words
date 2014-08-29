@@ -10,8 +10,9 @@ const int InfoStyles::SIZE_SETTINGS_BUTTON_TURN = 60;
 const int InfoStyles::SIZE_DEVELOPERS_TITLE = 50;
 const int InfoStyles::SIZE_LINE_TITLE = 30;
 const int InfoStyles::SIZE_MENU_TITLE = 70;
+const int InfoStyles::SIZE_LETTER = 100;
 //% letter by difficult
-const int InfoStyles::EASY =20;
+const int InfoStyles::EASY =30;
 const int InfoStyles::MIDDLE= 50;
 const int InfoStyles::DIFFICULT =70;
 

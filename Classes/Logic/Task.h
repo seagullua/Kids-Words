@@ -11,6 +11,13 @@ public:
     Task(Level level, int difficult);
     void setTask(Level level, int difficult);
     int getNumberOfLetter(int difficult,int word_size);
+    const std::vector<Letter>& getSolution() const;
+    const std::vector<Letter>& getInUseLetters() const ;
+    const std::vector<Letter>& getQiuzWord() const ;
+    const std::string getAudioName() const ;
+    const std::string getTranslatedWord() const ;
+    const std::string getImageFile() const ;
+
 private:
 
     std::vector<Letter> _solution;
@@ -21,12 +28,6 @@ private:
     std::string _image_file;
     Level _level;
     int _difficult;
-    const std::vector<Letter>& getSolution();
-    std::vector<Letter> getInUseLetters();
-    std::vector<Letter> getQqiuzWord();
-    std::string getAudioName();
-    std::string geTTranslatedWord();
-    std::string getImageFile();
-};
+  };
 
 #endif // TASK_H

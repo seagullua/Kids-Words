@@ -85,28 +85,28 @@ Task::Task(Level level, int difficult):
 
 
 
-const std::vector<Letter> &Task::getSolution()
+const std::vector<Letter> &Task::getSolution() const
 {
     return _solution;
 
 }
-std::vector<Letter> Task::getInUseLetters()
+const std::vector<Letter> &Task::getInUseLetters() const
 {
     return _in_use_letters;
 }
-std::vector<Letter> Task::getQqiuzWord()
+const std::vector<Letter> &Task::getQiuzWord() const
 {
     return _qiuz_word;
 }
-std::string Task::getAudioName()
+const std::string Task::getAudioName() const
 {
     return _audio_name;
 }
-std::string Task::geTTranslatedWord()
+const std::string Task::getTranslatedWord() const
 {
     return _translated_word;
 }
-std::string Task::getImageFile()
+const std::string Task::getImageFile() const
 {
     return _image_file;
 }

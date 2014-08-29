@@ -13,6 +13,7 @@ public:
     static const int SIZE_LINE_TITLE;
     static const int SIZE_SETTINGS_BUTTON_TURN;
     static const int SIZE_MENU_TITLE;
+    static const int SIZE_LETTER;
     //% letter by difficult
     static const int EASY ;
     static const int MIDDLE;

@@ -6,6 +6,7 @@
 #include "Logic/LevelSaves.h"
 #include "Draw/TopPanell.h"
 #include "Logic/OneSeason.h"
+#include "Draw/GameNode.h"
 #include <vector>
 #include <string>
 
@@ -98,6 +99,13 @@ bool LevelScene::init()
     const OneGame*  current_one_game = current_one_season.getNextLevel();
 
     setOneGame(current_one_game);
+    GameNode* game_node = GameNode:: create(current_one_game);
+    game_node->setAnchorPoint(ccp(0,0));
+    game_node->setPositionX(0);
+    game_node->setPositionY(0);
+
+    this->addChild(game_node);
+
 
 //    CCNode* node = CCNode::create();
 //    node->setContentSize(ccp(400, 500));
@@ -176,7 +184,7 @@ void LevelScene::onSignalUseHintClicked()
 {
     CCLog("Level scene onSignalUseHintClicked");
 }
-void LevelScene::setOneGame(const OneGame*  one_game)
+void LevelScene::setOneGame(const OneGame* one_game)
 {
     _one_game = one_game;
 }

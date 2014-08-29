@@ -5,7 +5,7 @@ OneGame::OneGame(Task task):
     _task(task)
 {
 }
-const Task &OneGame::getTask()
+const Task &OneGame::getTask() const
 {
     return _task;
 }

@@ -5,7 +5,7 @@ class OneGame
 {
 public:
     OneGame(Task task);
-    const Task& getTask();
+    const Task& getTask() const;
 private:
     Task _task;
 

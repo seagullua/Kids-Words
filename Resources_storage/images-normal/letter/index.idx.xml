@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+
+
+	<file>
+		<name>letter-fill.png</name>
+	</file>
+	
+	<file>
+		<name>letter-fill-border.png</name>
+	</file>
+		
+	<file>
+		<name>letter-fill-frozen.png</name>
+	</file>
+
+	
+</directory>
