@@ -8,10 +8,12 @@ class LetterNode : public cocos2d::CCNode
 public:
     static LetterNode* create(Letter letter );
     LetterNode(Letter letter);
+    const Letter getActiveLetter();
+    const Letter getSelectedLetter();
+    void setSelectedLetter(Letter selected_letter);
 private:
     Letter _active_letter;
-
-
+    Letter _selected_letter;
 
 };
 

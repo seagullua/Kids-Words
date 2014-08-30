@@ -27,6 +27,7 @@ GameNode::GameNode(const OneGame *one_game):
     in_use_letters = task.getInUseLetters();
     qiuz_word = task.getQiuzWord();
     std::string word_image_name = task.getImageFile();
+    std::vector<LetterNode> qiuz_letter;
 
     CCNode* node_qiuz_word = CCNode::create();
 
@@ -43,6 +44,7 @@ GameNode::GameNode(const OneGame *one_game):
         letter_width=letter_node->getContentSize().width;
         node_width = node_width+letter_width+padding;
         padding_node_y= letter_node->getContentSize().height;
+       // qiuz_letter.push_back(letter_node);
     }
     node_width = node_width;
     node_qiuz_word->setContentSize(ccp(node_width, padding_node_y));
