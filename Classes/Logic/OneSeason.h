@@ -10,6 +10,7 @@ public:
 
     void setSeasonsGame(OneGame current_one_game);
     const OneGame* getNextLevel();
+    int getNumberWord(int difficult);
 private:
     CollectionID _collection_id;
     int _difficult;

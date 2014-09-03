@@ -18,8 +18,14 @@ public:
     static const int EASY ;
     static const int MIDDLE;
     static const int DIFFICULT ;
-
-
+    //number words by difficult
+    static const int EASY_WORD;
+    static const int MIDDLE_WORD;
+    static const int DIFFICULT_WORD;
+    //min number letter by difficult
+    static const int EASY_NUMBER;
+    static const int MIDDLE_NUMBER;
+    static const int DIFFICULT_NUMBER;
     //colors
     static const cocos2d::ccColor3B COLOR_WHITE;
     static const cocos2d::ccColor3B COLOR_BLUE;

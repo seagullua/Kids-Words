@@ -44,7 +44,7 @@ LetterNode::LetterNode(Letter letter):
     float padding_node_y = letter_image->getContentSize().height;
     this->setContentSize(ccp(padding_node_x, padding_node_y));
     this->addChild(letter_image);
-    if (status == LetterStatus::Frozen)
+    if (status != LetterStatus::Empty)
     {
         std::vector<std::string> current_alphabete;
         current_alphabete =Alphabete::getInstance().getAlphabete();

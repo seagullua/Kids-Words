@@ -4,12 +4,13 @@
 #include <vector>
 #include <algorithm>
 #include "OneGame.h"
+#include "InfoStyles.h"
 
 OneSeason::OneSeason(CollectionID id, int difficult):
     _collection_id(id),
     _difficult(difficult),
-  _set_task_number(0)
-  {
+    _set_task_number(0)
+{
     const Collection* current_collection;
     current_collection =LevelSaves::getInstance().getCollectionById(
                 _collection_id);
@@ -17,8 +18,9 @@ OneSeason::OneSeason(CollectionID id, int difficult):
 
     current_levels =current_collection->getCollectionLevels();
     std::random_shuffle(current_levels.begin(), current_levels.end());
-
-    for (int i = 0 ; i<10; ++i )
+    int number_of_word = 1 ;
+    number_of_word = getNumberWord(difficult);
+    for (int i = 0 ; i < number_of_word; ++i )
     {
         Task current_task(current_levels[i],difficult);
         _seasons_games.push_back(OneGame(current_task));
@@ -33,4 +35,23 @@ void OneSeason::setSeasonsGame(OneGame current_one_game)
 const OneGame* OneSeason::getNextLevel()
 {
     return &_seasons_games[_set_task_number];
+}
+int OneSeason::getNumberWord(int difficult)
+{
+    int number_of_word = 1 ;
+
+    if (difficult == 0)
+    {
+        number_of_word = InfoStyles::EASY_WORD;
+    }
+    else if (difficult == 1)
+    {
+        number_of_word = InfoStyles::MIDDLE_WORD;
+    }
+    else if (difficult == 2)
+    {
+        number_of_word = InfoStyles::DIFFICULT_WORD;
+    }
+
+    return number_of_word;
 }

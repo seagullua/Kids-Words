@@ -27,7 +27,7 @@ GameNode::GameNode(const OneGame *one_game):
     in_use_letters = task.getInUseLetters();
     qiuz_word = task.getQiuzWord();
     std::string word_image_name = task.getImageFile();
-    std::vector<LetterNode> qiuz_letter;
+    std::vector<LetterNode*> qiuz_letter;
 
     CCNode* node_qiuz_word = CCNode::create();
 
@@ -44,7 +44,7 @@ GameNode::GameNode(const OneGame *one_game):
         letter_width=letter_node->getContentSize().width;
         node_width = node_width+letter_width+padding;
         padding_node_y= letter_node->getContentSize().height;
-       // qiuz_letter.push_back(letter_node);
+        qiuz_letter.push_back(letter_node);
     }
     node_width = node_width;
     node_qiuz_word->setContentSize(ccp(node_width, padding_node_y));
@@ -74,14 +74,14 @@ GameNode::GameNode(const OneGame *one_game):
     float word_image_width = word_image->getContentSize().width;
 
     float word_image_scale_y = (VISIBLE_SIZE.height- node_qiuz_word->getContentSize().height* node_scale-padding*9 )/word_image_height;
-float word_image_scale = 1;
-float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
+    float word_image_scale = 1;
+    float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
 
     if(word_image_scale_y < 1)
     {
         if (word_image_scale_x < word_image_scale_y)
         {
-          word_image_scale =  word_image_scale_x;
+            word_image_scale =  word_image_scale_x;
 
         }
         else
@@ -95,7 +95,7 @@ float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
     {
         if (word_image_scale_x < word_image_scale_y)
         {
-          word_image_scale =  word_image_scale_x;
+            word_image_scale =  word_image_scale_x;
         }
         else
         {
@@ -106,12 +106,52 @@ float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
     }
     word_image->setScale(word_image_scale);
 
-  //  word_image->setPositionY(ORIGIN.y + padding*2 + node_qiuz_word->getContentSize().height* node_scale+word_image->getContentSize().height*0.5f*word_image_scale);
+    //  word_image->setPositionY(ORIGIN.y + padding*2 + node_qiuz_word->getContentSize().height* node_scale+word_image->getContentSize().height*0.5f*word_image_scale);
     word_image->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.5f);
 
-     this->addChild(word_image);
+    this->addChild(word_image);
+
+    float w_node = VISIBLE_SIZE.width*0.5f;
+    float h_node = VISIBLE_SIZE.height -2*node_qiuz_word->getContentSize().height* node_scale;
+    float hn = node_qiuz_word->getContentSize().height* node_scale;
+    CCNode* node_in_use_letters = CCNode::create();
+    node_in_use_letters->setContentSize(ccp(w_node, h_node));
+    node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
+    node_in_use_letters->setPositionX(ORIGIN.x);
+    node_in_use_letters->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.5f+padding);
+int size_use =  in_use_letters.size();
+    for (int i = 0 ; i < in_use_letters.size(); ++i )
+    {
+        LetterNode* letter_node = LetterNode:: create(in_use_letters[i]);
+        letter_node->setAnchorPoint(ccp(0,0));
+        letter_node->setPositionX(letter_node->getContentSize().width*i*1.2f+padding);
+        letter_node->setPositionY(0);
+        node_in_use_letters->addChild(letter_node);
+    }
+    this->addChild(node_in_use_letters);
+}
+bool GameNode::isSetEnd()
+{
+    return true;
+}
+void GameNode::playAudio()
+{
+
+}
 
 
+void GameNode::addLeter(int position, Letter letter)
+{
+    emit signalAddLetter(position, letter);
+}
+
+void GameNode::signalGameEndOn()
+{
+    emit signalGameEnd();
+}
 
 
+void GameNode::signallStarsChangedOn(int number_of_stars)
+{
+    emit signallStarsChanged(number_of_stars);
 }

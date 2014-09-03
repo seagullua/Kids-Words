@@ -12,9 +12,18 @@ const int InfoStyles::SIZE_LINE_TITLE = 30;
 const int InfoStyles::SIZE_MENU_TITLE = 70;
 const int InfoStyles::SIZE_LETTER = 100;
 //% letter by difficult
-const int InfoStyles::EASY =30;
-const int InfoStyles::MIDDLE= 50;
-const int InfoStyles::DIFFICULT =70;
+const int InfoStyles::EASY = 30;
+const int InfoStyles::MIDDLE = 50;
+const int InfoStyles::DIFFICULT = 70;
+//number words by difficult
+const int InfoStyles::EASY_WORD = 5;
+const int InfoStyles::MIDDLE_WORD = 7;
+const int InfoStyles::DIFFICULT_WORD = 10;
+//min number letter by difficult
+const int InfoStyles::EASY_NUMBER = 3;
+const int InfoStyles::MIDDLE_NUMBER = 4;
+const int InfoStyles::DIFFICULT_NUMBER = 5;
+
 
 //colors
 const cocos2d::ccColor3B InfoStyles::COLOR_WHITE = cocos2d::ccc3(255, 255, 255);

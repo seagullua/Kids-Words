@@ -11,7 +11,7 @@ public:
     static cocos2d::CCScene* scene(CollectionID id, int difficult);
     static LevelScene* create(CollectionID id, int difficult);
 private:
-
+    void onOneGameEnd();
     bool init();
     void onBackClick();
     void onSignalAudioClicked();

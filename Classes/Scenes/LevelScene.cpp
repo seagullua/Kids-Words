@@ -55,6 +55,11 @@ void LevelScene::onBackClick()
 {
     CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
 }
+void LevelScene::onOneGameEnd()
+{
+    //_game_node->removeFromParent();
+}
+
 bool LevelScene::init()
 {
     if(!SceneStyle::init())
@@ -71,7 +76,9 @@ bool LevelScene::init()
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
-    TopPanell* top_panel = TopPanell::create(1,10,7);
+    OneSeason current_one_season(_collection_id,_difficult);
+    int number_of_word = current_one_season.getNumberWord(_difficult);
+    TopPanell* top_panel = TopPanell::create(1,number_of_word,7);
 
     top_panel->setAnchorPoint(ccp(0,1));
     //   top_panel->setPositionX(0);
@@ -95,14 +102,14 @@ bool LevelScene::init()
     //    }
     this->addChild(top_panel);
     showButtonBack();
-    OneSeason current_one_season(_collection_id,_difficult);
     const OneGame*  current_one_game = current_one_season.getNextLevel();
 
     setOneGame(current_one_game);
-    GameNode* game_node = GameNode:: create(current_one_game);
+    GameNode* game_node = GameNode::create(current_one_game);
     game_node->setAnchorPoint(ccp(0,0));
     game_node->setPositionX(0);
     game_node->setPositionY(0);
+    CONNECT(game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
 
     this->addChild(game_node);
 

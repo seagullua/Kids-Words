@@ -27,6 +27,14 @@ Task::Task(Level level, int difficult):
 
     //in_use_letters
     int number_of_letter = getNumberOfLetter(difficult,number_letter.size());
+    int min_number_of_letter = getMinNumberOfLetter(difficult);
+    int use_number_of_letter = number_of_letter;
+    int total = number_of_letter + use_number_of_letter;
+    if (total < min_number_of_letter )
+    {
+        total = min_number_of_letter ;
+    }
+    use_number_of_letter = total - number_of_letter;
     for (int i = 0 ; i < number_of_letter; ++i )
     {
         Letter x = _solution[number_letter[i]];
@@ -35,8 +43,8 @@ Task::Task(Level level, int difficult):
     }
     std::vector<std::string> alphabet =Alphabete::getInstance().getAlphabete();
     std::vector<int>  number_letter_from_alphabete;
-    number_letter_from_alphabete = Alphabete::getInstance().getNumberLetterFromAlphabete(number_of_letter + 1);
-    for (int i = 0 ; i < number_of_letter; ++i )
+    number_letter_from_alphabete = Alphabete::getInstance().getNumberLetterFromAlphabete(use_number_of_letter + 1);
+    for (int i = 0 ; i < use_number_of_letter; ++i )
     {
         _in_use_letters.push_back(Alphabete::getInstance().getLetterById(number_letter_from_alphabete[i]));
 
@@ -62,23 +70,23 @@ Task::Task(Level level, int difficult):
     _translated_word = _level.getTranslation();
     _image_file = _level.getImage();
 
-//    CCLog("task: %s", _translated_word.c_str());
-//     for (int i = 0 ; i < _solution.size(); ++i )
-//    {
+    //    CCLog("task: %s", _translated_word.c_str());
+    //     for (int i = 0 ; i < _solution.size(); ++i )
+    //    {
 
-//        CCLog("solution: %s", _solution[i].getLetterString().c_str() );
-//    }
+    //        CCLog("solution: %s", _solution[i].getLetterString().c_str() );
+    //    }
 
-//      for (int i = 0 ; i < _in_use_letters.size(); ++i )
-//     {
+    //      for (int i = 0 ; i < _in_use_letters.size(); ++i )
+    //     {
 
-//         CCLog("_in_use_letters: %s", _in_use_letters[i].getLetterString().c_str() );
-//     }
-//      for (int i = 0 ; i < _qiuz_word.size(); ++i )
-//     {
+    //         CCLog("_in_use_letters: %s", _in_use_letters[i].getLetterString().c_str() );
+    //     }
+    //      for (int i = 0 ; i < _qiuz_word.size(); ++i )
+    //     {
 
-//         CCLog("_qiuz_word: %s", _qiuz_word[i].getLetterString().c_str() );
-//     }
+    //         CCLog("_qiuz_word: %s", _qiuz_word[i].getLetterString().c_str() );
+    //     }
 
 }
 
@@ -113,6 +121,7 @@ const std::string Task::getImageFile() const
 int Task::getNumberOfLetter(int difficult,int word_size)
 {
     int number_of_letter = 1 ;
+
     int percentage = 0;
     if (difficult == 0)
     {
@@ -132,4 +141,22 @@ int Task::getNumberOfLetter(int difficult,int word_size)
         number_of_letter = 1 ;
     }
     return number_of_letter;
+}
+int Task::getMinNumberOfLetter(int difficult)
+{
+    int min_number_of_letter = 1 ;
+    if (difficult == 0)
+    {
+        min_number_of_letter =InfoStyles::EASY_NUMBER;
+    }
+    else if (difficult == 1)
+    {
+        min_number_of_letter =InfoStyles::MIDDLE_NUMBER;
+    }
+    else if (difficult == 2)
+    {
+        min_number_of_letter =InfoStyles::DIFFICULT_NUMBER;
+    }
+    return  min_number_of_letter;
+
 }

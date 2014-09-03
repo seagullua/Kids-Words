@@ -11,6 +11,7 @@ public:
     Task(Level level, int difficult);
     void setTask(Level level, int difficult);
     int getNumberOfLetter(int difficult,int word_size);
+    int getMinNumberOfLetter(int difficult);
     const std::vector<Letter>& getSolution() const;
     const std::vector<Letter>& getInUseLetters() const ;
     const std::vector<Letter>& getQiuzWord() const ;
