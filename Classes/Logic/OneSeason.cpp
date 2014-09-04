@@ -9,7 +9,7 @@
 OneSeason::OneSeason(CollectionID id, int difficult):
     _collection_id(id),
     _difficult(difficult),
-    _set_task_number(0)
+    _set_task_number(-1)
 {
     const Collection* current_collection;
     current_collection =LevelSaves::getInstance().getCollectionById(
@@ -34,6 +34,7 @@ void OneSeason::setSeasonsGame(OneGame current_one_game)
 
 const OneGame* OneSeason::getNextLevel()
 {
+    _set_task_number= _set_task_number + 1;
     return &_seasons_games[_set_task_number];
 }
 int OneSeason::getNumberWord(int difficult)
@@ -55,3 +56,8 @@ int OneSeason::getNumberWord(int difficult)
 
     return number_of_word;
 }
+    void OneSeason::setTaskNumber()
+    {
+
+        _set_task_number = _set_task_number + 1;
+    }

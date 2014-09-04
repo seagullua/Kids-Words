@@ -13,6 +13,8 @@
 using namespace cocos2d;
 
 LevelScene::LevelScene(CollectionID id, int difficult)
+    :
+      _current_one_season(id,difficult)
 {
     _collection_id = id;
     _difficult = difficult;
@@ -57,7 +59,9 @@ void LevelScene::onBackClick()
 }
 void LevelScene::onOneGameEnd()
 {
-    //_game_node->removeFromParent();
+    _game_node->removeFromParent();
+    selectOneGame();
+
 }
 
 bool LevelScene::init()
@@ -76,8 +80,8 @@ bool LevelScene::init()
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
-    OneSeason current_one_season(_collection_id,_difficult);
-    int number_of_word = current_one_season.getNumberWord(_difficult);
+  //  OneSeason _current_one_season(_collection_id,_difficult);
+    int number_of_word = _current_one_season.getNumberWord(_difficult);
     TopPanell* top_panel = TopPanell::create(1,number_of_word,7);
 
     top_panel->setAnchorPoint(ccp(0,1));
@@ -88,99 +92,13 @@ bool LevelScene::init()
     top_panel->setPositionX(ORIGIN.x);
     top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
     CONNECT(top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
-   CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
-
-    //    top_panel->setPositionY(ORIGIN.y +
-    //                                          + VISIBLE_SIZE.height-padding*0.25f -
-    //                                          top_panel->getContentSize().height*0.5f);
-
-
-    //    float node_scale = (VISIBLE_SIZE.width-(x_middle_of_sheet+padding*2)/top_panel->getContentSize().width);
-    //    if(node_scale < 1)
-    //    {
-    //        top_panel->setScale(node_scale);
-    //    }
+    CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
     this->addChild(top_panel);
     showButtonBack();
-    const OneGame*  current_one_game = current_one_season.getNextLevel();
 
-    setOneGame(current_one_game);
-    GameNode* game_node = GameNode::create(current_one_game);
-    game_node->setAnchorPoint(ccp(0,0));
-    game_node->setPositionX(0);
-    game_node->setPositionY(0);
-    CONNECT(game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
+    selectOneGame();
+    CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
 
-    this->addChild(game_node);
-
-
-//    CCNode* node = CCNode::create();
-//    node->setContentSize(ccp(400, 500));
-//    node->setAnchorPoint(ccp(0,0));
-//    std::vector<std::string> current_alphabete;
-//    current_alphabete =Alphabete::getInstance().getAlphabete();
-
-//    std::vector<cocos2d::ccColor3B > current_alphabete_color;
-//    current_alphabete_color =Alphabete::getInstance().getAlphabeteColor();
-//    unsigned int j = 1;
-//    unsigned int k = 1;
-//    for(unsigned int i = 0; i < current_alphabete.size(); ++i)
-//    {
-//        k = ++k;
-//        if (i <= 9)
-//        {
-//            j = 1;
-//            k = 1;
-//        }
-//        if (i > 9 && i <=  19)
-//        {
-//            j = 2;
-//            k = 1;
-//        }
-//        if (i > 19 && i <=  29)
-//        {
-//            j = 3;
-//            k = 1;
-//        }
-//        if (i > 29 && i <=  33)
-//        {
-//            j = 4;
-//            k = 1;
-//        }
-//        cocos2d::CCLabelTTF* current_letter;
-//        std::string  let;
-//        let = current_alphabete[i].c_str();
-//        cocos2d::ccColor3B col;
-//        col = current_alphabete_color[i];
-
-//        current_letter = CCLabelTTF::create(current_alphabete[i].c_str(),
-//                                            ADLanguage::getFontName(),
-//                                            InfoStyles::SIZE_DEVELOPERS_TITLE);
-
-//        current_letter->setColor(col);
-
-//        current_letter->setAnchorPoint(ccp(0,0));
-//        //        if (k == 1)
-//        //        {
-//        //                 current_letter->setPositionX(padding*5+current_letter->getContentSize().width*i;
-//        //        }
-//        //else
-//        //        {
-//        //                 current_letter->setPositionX(padding*5*i);
-//        //        }
-//        //        current_letter->setPositionY(padding*5*j);
-//        current_letter->setPositionX(padding*5+current_letter->getContentSize().width*i);
-//        current_letter->setPositionY(padding*5*j);
-//        node->addChild(current_letter);
-
-
-//    }
-//    node->setPositionX(padding*5);
-
-//    node->setPositionY(padding);
-
-//    //node->setScale(2);
-//    this->addChild(node);
     return true;
 }
 void LevelScene::onSignalAudioClicked()
@@ -194,4 +112,16 @@ void LevelScene::onSignalUseHintClicked()
 void LevelScene::setOneGame(const OneGame* one_game)
 {
     _one_game = one_game;
+}
+void LevelScene::selectOneGame()
+{
+
+    _one_game = _current_one_season.getNextLevel();
+
+    setOneGame(_one_game);
+    _game_node= GameNode::create(_one_game);
+    _game_node->setAnchorPoint(ccp(0,0));
+    _game_node->setPositionX(0);
+    _game_node->setPositionY(0);
+    this->addChild(_game_node);
 }
