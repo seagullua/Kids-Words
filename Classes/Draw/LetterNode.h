@@ -10,6 +10,7 @@ public:
     LetterNode(Letter letter);
     const Letter getActiveLetter();
     const Letter getSelectedLetter();
+    bool canInsertLetter(Letter letter);
     void setSelectedLetter(Letter selected_letter);
 private:
     Letter _active_letter;

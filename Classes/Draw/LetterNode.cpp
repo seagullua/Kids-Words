@@ -14,6 +14,10 @@ LetterNode* LetterNode::create(Letter letter)
     obj->init();
     return obj;
 }
+bool LetterNode::canInsertLetter(Letter letter)
+{
+    return true;
+}
 
 LetterNode::LetterNode(Letter letter):
     _active_letter(letter),
@@ -73,6 +77,7 @@ LetterNode::LetterNode(Letter letter):
                                             InfoStyles::SIZE_LETTER);
 
         current_letter->setColor(col);
+        //current_letter->setString(letter_string.c_str());
         current_letter->setAnchorPoint(ccp(0.5f,0.5f));
         current_letter->setPositionX(letter_image->getContentSize().width*0.5f);
         current_letter->setPositionY(letter_image->getContentSize().height*0.5f);
@@ -93,4 +98,5 @@ const Letter LetterNode::getSelectedLetter()
 void LetterNode::setSelectedLetter(Letter selected_letter)
 {
    _selected_letter = selected_letter;
+
 }
