@@ -93,8 +93,19 @@ bool LevelScene::init()
     top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
     CONNECT(top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
     CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
+//    float use_node_sise_panel = VISIBLE_SIZE.height*0.2f;
+//    float panel_scale = use_node_sise_panel/top_panel->getContentSize().height;
+//    if (panel_scale < 1)
+//    {
+//        top_panel->setScaleY(panel_scale);
+
+//    }
+    _use_h=VISIBLE_SIZE.height - top_panel->getContentSize().height;
     this->addChild(top_panel);
     showButtonBack();
+
+//    button_back->setAnchorPoint(ccp(0,1));
+//    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
 
     selectOneGame();
     CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
@@ -119,7 +130,7 @@ void LevelScene::selectOneGame()
     _one_game = _current_one_season.getNextLevel();
 
     setOneGame(_one_game);
-    _game_node= GameNode::create(_one_game);
+    _game_node= GameNode::create(_one_game,_use_h);
     _game_node->setAnchorPoint(ccp(0,0));
     _game_node->setPositionX(0);
     _game_node->setPositionY(0);

@@ -23,10 +23,50 @@ LetterNode::LetterNode(Letter letter):
     _active_letter(letter),
     _selected_letter(letter)
 {
-    //letter
+    ShowLetter();
+}
+
+const Letter LetterNode::getActiveLetter()
+{
+    return  _active_letter;
+}
+
+const Letter LetterNode::getSelectedLetter()
+{
+    return _selected_letter;
+}
+void LetterNode::setSelectedLetter(Letter selected_letter)
+{
+   _selected_letter = selected_letter;
+   ShowLetter();
+
+
+}
+void LetterNode::ShowLetter()
+{
+    std:: string letter_string_a = _active_letter.getLetterString();
+    std:: string letter_string_s = _selected_letter.getLetterString();
     LetterStatus status = _active_letter.getLetterStatus();
     std:: string letter_string = _active_letter.getLetterString();
     std:: string image_name;
+
+    //letter
+    if (letter_string_a == letter_string_s )
+    {
+        LetterStatus status = _active_letter.getLetterStatus();
+        std:: string letter_string = _active_letter.getLetterString();
+        std:: string image_name;
+
+    }
+    else
+    {
+        LetterStatus status = _selected_letter.getLetterStatus();
+        std:: string letter_string = _selected_letter.getLetterString();
+        std:: string image_name;
+
+
+     }  \
+
 
     if (status == LetterStatus::Empty)
     {
@@ -84,19 +124,4 @@ LetterNode::LetterNode(Letter letter):
 
         this->addChild(current_letter);
     }
-}
-
-const Letter LetterNode::getActiveLetter()
-{
-    return  _active_letter;
-}
-
-const Letter LetterNode::getSelectedLetter()
-{
-    return _selected_letter;
-}
-void LetterNode::setSelectedLetter(Letter selected_letter)
-{
-   _selected_letter = selected_letter;
-
 }

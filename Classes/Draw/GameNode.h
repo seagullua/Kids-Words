@@ -7,8 +7,8 @@
 class GameNode: public cocos2d::CCNode, public HasSlots, public cocos2d::CCTouchDelegate
 {
 public:
-    static GameNode* create(const OneGame *one_game );
-    GameNode(const OneGame *one_game );
+    static GameNode* create(const OneGame *one_game, int use_h );
+    GameNode(const OneGame *one_game, int  use_h );
     Signal<int, Letter> signalAddLetter;
     Signal<> signalGameEnd;
     //Signal<> signalOneGameEnd;
@@ -33,6 +33,7 @@ private:
     void startTrackingTouch();
     void stopTrackingTouch();
     int _letters_in_row;
+    int _use_h;
     float _letter_size;
     cocos2d::CCSize _letter_zone_size;
     void moveLetterNodeBack(LetterNode* node);

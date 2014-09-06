@@ -89,24 +89,28 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     hint_lamp_image->setAnchorPoint(ccp(0,0.5f));
 //    float hint_lamp_image_x=number_words->getContentSize().width+
 //            padding*3+button_audio->getContentSize().width+padding;
-     float hint_lamp_image_y=hint_lamp_image->getContentSize().height;
 
-    float node_scale_h = (panel_image->getContentSize().height/hint_lamp_image_y);
-    if(node_scale_h < 1)
-    {
-        hint_lamp_image->setScale(node_scale_h*0.6f);
-    }
 
     ADMenuItem* hint_lamp = ADMenuItem::create(hint_lamp_image);
      hint_lamp->setAnchorPoint(ccp(0,0.5f));
 
-     hint_lamp->setPositionX(button_audio->getPositionX()+padding*2);
+     hint_lamp->setPositionX(button_audio->getPositionX()+button_audio->getContentSize().width+padding);
 
      hint_lamp->setPositionY(padding_node_y*0.5f);
 
     CONNECT(hint_lamp->signalOnClick, this, &TopPanell::signalUseHintOnClicked);
     //     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudio);
 
+    float hint_lamp_y=hint_lamp->getContentSize().height;
+    float node_scale_h = (panel_image->getContentSize().height/hint_lamp_y);
+    if(node_scale_h < 1)
+    {
+        hint_lamp->setScale(node_scale_h*0.6f);
+    }
+    else
+    {
+        node_scale_h=1;
+    }
     menu->addChild(hint_lamp);
 
 
@@ -116,7 +120,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
     Stars* stars_node = Stars::create(star_number);
     stars_node->setAnchorPoint(ccp(0,0.5f));
-    stars_node->setPositionX(hint_lamp->getPositionX()+hint_lamp->getContentSize().width*0.5f+padding*2);
+    stars_node->setPositionX(hint_lamp->getPositionX()+hint_lamp->getContentSize().width*0.1f+padding*2);
     stars_node->setPositionY(padding_node_y*0.5f);
     //   float stars_node_height = stars_node->getContentSize().height;
 

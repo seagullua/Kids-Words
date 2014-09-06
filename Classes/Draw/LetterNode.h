@@ -12,6 +12,7 @@ public:
     const Letter getSelectedLetter();
     bool canInsertLetter(Letter letter);
     void setSelectedLetter(Letter selected_letter);
+    void LetterNode::ShowLetter();
 private:
     Letter _active_letter;
     Letter _selected_letter;

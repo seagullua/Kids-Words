@@ -25,7 +25,8 @@ private:
     const OneGame* _one_game;
     GameNode* _game_node;
     OneSeason _current_one_season;
-
+    float _use_h;
+    float _use_w;
 };
 
 #endif // LEVELSCENE_H

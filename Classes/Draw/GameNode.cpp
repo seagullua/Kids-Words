@@ -2,19 +2,20 @@
 #include "Logic/OneGame.h"
 #include "Logic/Task.h"
 using namespace cocos2d;
-GameNode* GameNode::create(const OneGame *one_game)
+GameNode* GameNode::create(const OneGame *one_game, int use_h)
 {
-    GameNode* obj = new GameNode( one_game);
+    GameNode* obj = new GameNode( one_game,use_h);
     obj->autorelease();
     obj->init();
     return obj;
 }
 
 
-GameNode::GameNode(const OneGame *one_game):
+GameNode::GameNode(const OneGame *one_game, int use_h):
     _one_game(one_game),
     _is_tracking_touch(false),
-    _selected_letter(nullptr)
+    _selected_letter(nullptr),
+    _use_h(use_h)
 {
     const float SCALE = ADScreen::getScaleFactor();
     float padding = 25/SCALE;
@@ -86,19 +87,20 @@ GameNode::GameNode(const OneGame *one_game):
 
     word_image->setScale(word_image_scale);
 
-    //  word_image->setPositionY(ORIGIN.y + padding*2 + node_qiuz_word->getContentSize().height* node_scale+word_image->getContentSize().height*0.5f*word_image_scale);
-    word_image->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.5f);
+
+    float hn = node_qiuz_word->getContentSize().height* node_scale;
+    float word_image_h = (_use_h -hn-padding)*0.5f;
+    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding);
 
     this->addChild(word_image);
 
     float w_node = VISIBLE_SIZE.width*0.5f;
-    float h_node = VISIBLE_SIZE.height -2*node_qiuz_word->getContentSize().height* node_scale;
-    float hn = node_qiuz_word->getContentSize().height* node_scale;
-    CCNode* node_in_use_letters = CCNode::create();
+    float h_node = _use_h -hn;
+     CCNode* node_in_use_letters = CCNode::create();
     node_in_use_letters->setContentSize(ccp(w_node, h_node));
     node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
     node_in_use_letters->setPositionX(ORIGIN.x);
-    node_in_use_letters->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.5f+padding);
+    node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding);
 
     int f_x = 0;
     int f_y = 0;
