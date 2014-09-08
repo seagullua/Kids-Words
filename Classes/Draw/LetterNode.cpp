@@ -16,12 +16,22 @@ LetterNode* LetterNode::create(Letter letter)
 }
 bool LetterNode::canInsertLetter(Letter letter)
 {
+    LetterStatus status = _active_letter.getLetterStatus();
+    if (status == LetterStatus::Frozen)
+    {
+       return false;
+    }
+
     return true;
 }
 
 LetterNode::LetterNode(Letter letter):
     _active_letter(letter),
-    _selected_letter(letter)
+    _selected_letter(letter),
+    _letter_is_selected (false),
+    _index_selected_letter(10000),
+    _letter_image(nullptr),
+    _current_letter(nullptr)
 {
     ShowLetter();
 }
@@ -37,35 +47,43 @@ const Letter LetterNode::getSelectedLetter()
 }
 void LetterNode::setSelectedLetter(Letter selected_letter)
 {
-   _selected_letter = selected_letter;
-   ShowLetter();
+    _selected_letter = selected_letter;
+
+    ShowLetter();
 
 
 }
+inline int makeLighter(int b, float coef)
+{
+    if(b == 0) {
+        b+=1;
+    }
+    return b + (255 - b)*coef;
+}
+
 void LetterNode::ShowLetter()
 {
-    std:: string letter_string_a = _active_letter.getLetterString();
-    std:: string letter_string_s = _selected_letter.getLetterString();
+
+    //std:: string letter_string_a = _active_letter.getLetterString();
+    //std:: string letter_string_s = _selected_letter.getLetterString();
     LetterStatus status = _active_letter.getLetterStatus();
     std:: string letter_string = _active_letter.getLetterString();
-    std:: string image_name;
+    std:: string image_name = "";
 
-    //letter
-    if (letter_string_a == letter_string_s )
+    if (_letter_is_selected )
     {
-        LetterStatus status = _active_letter.getLetterStatus();
-        std:: string letter_string = _active_letter.getLetterString();
-        std:: string image_name;
+        status = LetterStatus::Normal;
+        //     LetterStatus status = _selected_letter.getLetterStatus();
+        letter_string = _selected_letter.getLetterString();
 
     }
     else
     {
-        LetterStatus status = _selected_letter.getLetterStatus();
-        std:: string letter_string = _selected_letter.getLetterString();
-        std:: string image_name;
 
+        status = _active_letter.getLetterStatus();
+        letter_string = _active_letter.getLetterString();
 
-     }  \
+    }  \
 
 
     if (status == LetterStatus::Empty)
@@ -80,14 +98,30 @@ void LetterNode::ShowLetter()
     {
         image_name =  "letter/letter-fill.png";
     }
-    CCSprite* letter_image = CCSprite::create(image_name.c_str());
+
+    if(!_letter_image)
+    {
+       _letter_image = CCSprite::create(image_name.c_str());
+       this->addChild(_letter_image);
+    }
+    CCSprite* letter_image = _letter_image;
     letter_image->setAnchorPoint(ccp(0,0));
     letter_image->setPositionX(0);
     letter_image->setPositionY(0);
     float padding_node_x = letter_image->getContentSize().width;
     float padding_node_y = letter_image->getContentSize().height;
     this->setContentSize(ccp(padding_node_x, padding_node_y));
-    this->addChild(letter_image);
+
+
+    if(!_current_letter)
+    {
+        _current_letter = CCLabelTTF::create(letter_string.c_str(),
+                                            ADLanguage::getFontName(),
+                                            InfoStyles::SIZE_LETTER);
+        this->addChild(_current_letter);
+    }
+
+    cocos2d::CCLabelTTF* current_letter = _current_letter;
     if (status != LetterStatus::Empty)
     {
         std::vector<std::string> current_alphabete;
@@ -111,17 +145,52 @@ void LetterNode::ShowLetter()
         cocos2d::ccColor3B col;
         col = current_alphabete_color[it];
 
-        cocos2d::CCLabelTTF* current_letter;
-        current_letter = CCLabelTTF::create(letter_string.c_str(),
-                                            ADLanguage::getFontName(),
-                                            InfoStyles::SIZE_LETTER);
 
+        current_letter->setString(letter_string.c_str());
         current_letter->setColor(col);
+
+
+        if(status == LetterStatus::Frozen)
+        {
+            float coef = 0.8f;
+            cocos2d::ccColor3B lighter=ccc3(makeLighter(col.r, coef),
+                                            makeLighter(col.g, coef),
+                                            makeLighter(col.b, coef));
+            _letter_image->setColor(lighter);
+        }
+
         //current_letter->setString(letter_string.c_str());
         current_letter->setAnchorPoint(ccp(0.5f,0.5f));
         current_letter->setPositionX(letter_image->getContentSize().width*0.5f);
         current_letter->setPositionY(letter_image->getContentSize().height*0.5f);
 
-        this->addChild(current_letter);
+
+    }
+    else
+    {
+        current_letter->setString("");
     }
 }
+void LetterNode::setLetterIsSelected(bool is_selected)
+{
+    _letter_is_selected = is_selected;
+    if(!is_selected)
+    {
+        setSelectedLetter(_active_letter);
+        ShowLetter();
+    }
+
+}
+ bool LetterNode::isSelectedLetter()
+ {
+     return _letter_is_selected;
+ }
+ void LetterNode::setIndexSelectedLetter(int index)
+ {
+     _index_selected_letter = index;
+ }
+
+ int LetterNode::getIndexSelectedLetter()
+ {
+     return _index_selected_letter;
+ }

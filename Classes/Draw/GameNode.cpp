@@ -26,12 +26,15 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     std::vector<Letter> solution;
     std::vector<Letter> in_use_letters;
     std::vector<Letter> qiuz_word;
+
     solution = task.getSolution();
     in_use_letters = task.getInUseLetters();
     qiuz_word = task.getQiuzWord();
     std::string word_image_name = task.getImageFile();
     std::vector<LetterNode*> qiuz_letter;
 
+
+    // _letters_qiuz
     CCNode* node_qiuz_word = CCNode::create();
 
     float padding_node_y = 0;
@@ -70,7 +73,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
     this->addChild(node_qiuz_word);
 
-
+    // word_image
     CCSprite* word_image = CCSprite::create(word_image_name.c_str());
     word_image->setAnchorPoint(ccp(0,0.5f));
 
@@ -88,15 +91,18 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     word_image->setScale(word_image_scale);
 
 
-    float hn = node_qiuz_word->getContentSize().height* node_scale;
+    float hn = node_qiuz_word->getContentSize().height* node_scale+padding*0.5f;
     float word_image_h = (_use_h -hn-padding)*0.5f;
     word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding);
 
     this->addChild(word_image);
 
+
+    // node_in_use_letters
+
     float w_node = VISIBLE_SIZE.width*0.5f;
     float h_node = _use_h -hn;
-     CCNode* node_in_use_letters = CCNode::create();
+    CCNode* node_in_use_letters = CCNode::create();
     node_in_use_letters->setContentSize(ccp(w_node, h_node));
     node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
     node_in_use_letters->setPositionX(ORIGIN.x);
@@ -132,8 +138,6 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
     std::swap(f_x, f_y);
 
-
-
     size_letter = max_size;
 
     int size_use =  in_use_letters.size();
@@ -142,6 +146,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _letter_size = size_letter;
     _letter_zone_size = CCSize(w_node, h_node);
     _letters_to_insert.resize(in_use_letters.size());
+    _index_in_use_letter.resize(qiuz_word.size());
     for (int x = 0 ; x < f_x; ++x )
     {
         for(int y = 0; y < f_y; ++y)
@@ -167,6 +172,8 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _node_in_use_letters = node_in_use_letters;
 
     this->addChild(node_in_use_letters);
+
+
     startTrackingTouch();
 }
 CCPoint GameNode::getLetterCordinates(int index)
@@ -252,19 +259,48 @@ bool GameNode::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
     if(_is_tracking_touch && _selected_letter == nullptr)
     {
+        _is_quiz_letter_selected = false;
         cocos2d::CCPoint local = touchToInsertCords(pTouch);
         LetterNode* current_node = nullptr;
         for(size_t i = 0; i < _letters_to_insert.size(); ++i)
         {
             LetterNode* node = _letters_to_insert[i];
-            if(node->boundingBox().containsPoint(local))
+            if(node->isVisible() && node->boundingBox().containsPoint(local))
             {
                 current_node = node;
+                current_node->setIndexSelectedLetter(i);
                 break;
             }
         }
 
 
+        if (current_node == nullptr)
+        {
+            CCPoint quiz_local =  _node_qiuz_word->convertToNodeSpace(pTouch->getLocation());
+            for(size_t i = 0; i < _letters_qiuz.size(); ++i)
+            {
+                LetterNode* node = _letters_qiuz[i];
+                if(node->boundingBox().containsPoint(quiz_local))
+                {
+                    int index = node->getIndexSelectedLetter();
+                    if(index < _letters_to_insert.size())
+                    {
+                        //Letter is here
+                        _is_quiz_letter_selected = true;
+                        _quiz_selection_index = i;
+                        current_node = _letters_to_insert[index];
+                        current_node->setVisible(true);
+                        node->setLetterIsSelected(false);
+                        node->setIndexSelectedLetter(_letters_to_insert.size());
+                        current_node->setPosition(local);
+                    }
+
+                    break;
+                }
+            }
+
+
+        }
         _selected_letter = current_node;
         if(_selected_letter && _selected_letter->isVisible())
         {
@@ -280,9 +316,13 @@ void GameNode::moveLetterNodeBack(LetterNode* node)
     int index = -1;
     for(size_t i=0; i<_letters_to_insert.size(); ++i)
     {
-        if(node == _letters_to_insert[i])
+        //        std::string active_letter_node = node->getActiveLetter().getLetterString().c_str();
+        //        std::string active_letter_to_insert = _letters_to_insert[i]->getActiveLetter().getLetterString().c_str();
+        //        if(active_letter_node == active_letter_to_insert)
+        if(node == _letters_to_insert[i]  )
         {
             index = i;
+            //
             break;
         }
     }
@@ -298,7 +338,19 @@ void GameNode::moveLetterNodeBack(LetterNode* node)
         //node->setPosition(getLetterCordinates(index));
     }
 }
-
+void GameNode::moveLetterNodeBackByIndex(LetterNode* node,int index)
+{
+    if(index >= 0)
+    {
+        //LetterNode* node = _letters_to_insert[index];
+        CCPoint target_position = getLetterCordinates(index);
+        node->stopAllActions();
+        node->runAction(
+                    CCMoveTo::create(0.2f, target_position)
+                    );
+        //node->setPosition(getLetterCordinates(index));
+    }
+}
 void GameNode::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
     if(_is_tracking_touch && _selected_letter)
@@ -317,19 +369,58 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 
         cocos2d::CCPoint quiz = touchToQuizCords(pTouch);
         LetterNode* current_node = nullptr;
+        int new_letter_insertion = 0;
         for(size_t i = 0; i < _letters_qiuz.size(); ++i)
         {
             LetterNode* node = _letters_qiuz[i];
             if(node->boundingBox().containsPoint(quiz))
             {
+                new_letter_insertion = i;
                 current_node = node;
+                _index_in_use_letter[i] = current_node->getIndexSelectedLetter();
                 break;
             }
         }
 
         if(current_node && current_node->canInsertLetter(_selected_letter->getActiveLetter()))
         {
+            bool cn_is_selected_selected = current_node->isSelectedLetter();
+            if (cn_is_selected_selected)
+
+            {
+                int old_node = current_node->getIndexSelectedLetter();
+                LetterNode* node = _letters_to_insert[old_node];
+                if(_is_quiz_letter_selected && new_letter_insertion != _quiz_selection_index)
+                {
+                    LetterNode* previous_node = _letters_qiuz[_quiz_selection_index];
+                    previous_node->setLetterIsSelected(true);
+                    previous_node->setSelectedLetter(current_node->getSelectedLetter());
+
+
+                    previous_node->setIndexSelectedLetter(current_node->getIndexSelectedLetter());
+
+                }
+                else
+                {
+
+                    //Letter  cn_selected_Letter = current_node->getSelectedLetter();
+                    //int index_selected_letter = current_node->getIndexSelectedLetter();
+                    //LetterNode* cn_letter_node = LetterNode:: create(cn_selected_Letter);
+                    node->setVisible(true);
+                    node->setPosition(local);
+                    moveLetterNodeBackByIndex(node,old_node);
+                }
+
+
+            }
+            current_node->setLetterIsSelected(true);
             current_node->setSelectedLetter(_selected_letter->getActiveLetter());
+
+
+            current_node->setIndexSelectedLetter(_selected_letter->getIndexSelectedLetter());
+
+
+
             _selected_letter->setVisible(false);
             //TODO: додати _selected_letter в масив щоб знати в які клітинці вона стоїть
         }
@@ -341,6 +432,7 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 
         _selected_letter->setZOrder(0);
         _selected_letter = nullptr;
+
 
     }
 }

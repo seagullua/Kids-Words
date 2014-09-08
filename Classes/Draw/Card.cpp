@@ -29,6 +29,8 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
         _border_image->setScaleY(1.05f);
         this->addChild(_border_image);
     }
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+
     //paper
     CCSprite* paper_image = CCSprite::create("card/paper.png");
     paper_image->setAnchorPoint(ccp(0,0));
@@ -74,7 +76,7 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
     this->addChild(image);
     Stars* stars_node = Stars::create(3*2);
     stars_node->setAnchorPoint(ccp(0.5f,0.5f));
-    stars_node->setPositionX(padding_node_x*0.45f);
+    stars_node->setPositionX(padding_node_x*0.47f);
     stars_node->setPositionY(padding_node_y*0.25f*0.6f);
     float stars_node_width = stars_node->getContentSize().width;
 

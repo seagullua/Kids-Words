@@ -5,12 +5,15 @@
 #include <algorithm>
 #include "OneGame.h"
 #include "InfoStyles.h"
+#include <stdlib.h>
 
 OneSeason::OneSeason(CollectionID id, int difficult):
     _collection_id(id),
     _difficult(difficult),
     _set_task_number(-1)
 {
+    srand(time(0)*(10+id)*(10+difficult));
+
     const Collection* current_collection;
     current_collection =LevelSaves::getInstance().getCollectionById(
                 _collection_id);

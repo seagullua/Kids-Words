@@ -102,15 +102,15 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     //     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudio);
 
     float hint_lamp_y=hint_lamp->getContentSize().height;
-    float node_scale_h = (panel_image->getContentSize().height/hint_lamp_y);
-    if(node_scale_h < 1)
-    {
-        hint_lamp->setScale(node_scale_h*0.6f);
-    }
-    else
-    {
-        node_scale_h=1;
-    }
+//    float node_scale_h = (panel_image->getContentSize().height/hint_lamp_y);
+//    if(node_scale_h < 1)
+//    {
+//        hint_lamp->setScale(node_scale_h*0.6f);
+//    }
+//    else
+//    {
+//        node_scale_h=1;
+//    }
     menu->addChild(hint_lamp);
 
 
@@ -120,7 +120,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
     Stars* stars_node = Stars::create(star_number);
     stars_node->setAnchorPoint(ccp(0,0.5f));
-    stars_node->setPositionX(hint_lamp->getPositionX()+hint_lamp->getContentSize().width*0.1f+padding*2);
+    stars_node->setPositionX(hint_lamp->getPositionX()+hint_lamp->getContentSize().width+padding*2);
     stars_node->setPositionY(padding_node_y*0.5f);
     //   float stars_node_height = stars_node->getContentSize().height;
 

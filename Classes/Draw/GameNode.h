@@ -37,6 +37,7 @@ private:
     float _letter_size;
     cocos2d::CCSize _letter_zone_size;
     void moveLetterNodeBack(LetterNode* node);
+    void moveLetterNodeBackByIndex(LetterNode* node,int index);
     cocos2d::CCPoint getLetterCordinates(int index);
 
     const OneGame* _one_game;
@@ -44,9 +45,13 @@ private:
     std::vector<LetterNode*> _letters_to_insert;
     std::vector<LetterNode*> _letters_qiuz;
     cocos2d::CCNode* _node_qiuz_word;
+    bool _is_quiz_letter_selected;
+    int _quiz_selection_index;
     LetterNode* _selected_letter;
+    LetterNode* _selected_node_letter;
     bool _is_tracking_touch;
     int _stars;
+    std::vector<int> _index_in_use_letter;
 
 };
 
