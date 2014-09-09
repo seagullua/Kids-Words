@@ -19,8 +19,6 @@ public:
     void playAudio();
     void addLeter(int position, Letter letter);
     void signalAddLetterOn();
-    void signalGameEndOn();
-    void signalOneGameOn();
     void signallStarsChangedOn(int number_of_stars);
     void onExit();
 private:

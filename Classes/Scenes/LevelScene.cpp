@@ -4,7 +4,6 @@
 #include "InfoStyles.h"
 #include "Logic/Alphabete.h"
 #include "Logic/LevelSaves.h"
-#include "Draw/TopPanell.h"
 #include "Logic/OneSeason.h"
 #include "Draw/GameNode.h"
 #include <vector>
@@ -14,7 +13,8 @@ using namespace cocos2d;
 
 LevelScene::LevelScene(CollectionID id, int difficult)
     :
-      _current_one_season(id,difficult)
+      _current_one_season(id,difficult),
+      _top_panel(nullptr)
 {
     _collection_id = id;
     _difficult = difficult;
@@ -80,35 +80,31 @@ bool LevelScene::init()
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
-  //  OneSeason _current_one_season(_collection_id,_difficult);
-    int number_of_word = _current_one_season.getNumberWord(_difficult);
-    TopPanell* top_panel = TopPanell::create(1,number_of_word,7);
+    //  OneSeason _current_one_season(_collection_id,_difficult);
+    _number_of_word = _current_one_season.getNumberWord(_difficult);
+    _current_number_of_word = 1;
+    if (!_top_panel)
+    {
 
-    top_panel->setAnchorPoint(ccp(0,1));
-    //   top_panel->setPositionX(0);
+        _top_panel= TopPanell::create(_current_number_of_word,_number_of_word,7);
 
-    //top_panel->setPositionY();
+        _top_panel->setAnchorPoint(ccp(0,1));
 
-    top_panel->setPositionX(ORIGIN.x);
-    top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
-    CONNECT(top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
-    CONNECT(top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
-//    float use_node_sise_panel = VISIBLE_SIZE.height*0.2f;
-//    float panel_scale = use_node_sise_panel/top_panel->getContentSize().height;
-//    if (panel_scale < 1)
-//    {
-//        top_panel->setScaleY(panel_scale);
 
-//    }
-    _use_h=VISIBLE_SIZE.height - top_panel->getContentSize().height;
-    this->addChild(top_panel);
+        _top_panel->setPositionX(ORIGIN.x);
+        _top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
+        CONNECT(_top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
+        CONNECT(_top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
+
+        _use_h=VISIBLE_SIZE.height - _top_panel->getContentSize().height;
+        this->addChild(_top_panel);
+    }
     showButtonBack();
 
-//    button_back->setAnchorPoint(ccp(0,1));
-//    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
+    //    button_back->setAnchorPoint(ccp(0,1));
+    //    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
 
     selectOneGame();
-    CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
 
     return true;
 }
@@ -127,12 +123,23 @@ void LevelScene::setOneGame(const OneGame* one_game)
 void LevelScene::selectOneGame()
 {
 
-    _one_game = _current_one_season.getNextLevel();
+    if (_current_number_of_word < _number_of_word)
+    {
 
+    _one_game = _current_one_season.getNextLevel();
+    _current_number_of_word = _current_one_season.getSetTaskNumber();
     setOneGame(_one_game);
     _game_node= GameNode::create(_one_game,_use_h);
     _game_node->setAnchorPoint(ccp(0,0));
     _game_node->setPositionX(0);
     _game_node->setPositionY(0);
     this->addChild(_game_node);
+    CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
+    }
+    else
+    {
+        // TODO::  вызвать окно следующей игры
+        CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
+
+    }
 }

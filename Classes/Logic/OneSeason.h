@@ -11,6 +11,7 @@ public:
     void setSeasonsGame(OneGame current_one_game);
     const OneGame* getNextLevel();
     int getNumberWord(int difficult);
+    int getSetTaskNumber();
     void setTaskNumber();
 private:
     CollectionID _collection_id;

@@ -1,6 +1,8 @@
 #include "GameNode.h"
 #include "Logic/OneGame.h"
 #include "Logic/Task.h"
+#include "Logic/Letter.h"
+
 using namespace cocos2d;
 GameNode* GameNode::create(const OneGame *one_game, int use_h)
 {
@@ -188,7 +190,35 @@ CCPoint GameNode::getLetterCordinates(int index)
 
 bool GameNode::isSetEnd()
 {
-    return true;
+    bool word_true = true;
+    for(size_t i = 0; i < _letters_qiuz.size(); ++i)
+    {
+
+        LetterNode* node = _letters_qiuz[i];
+
+        Letter active_letter = node->getActiveLetter();
+        LetterStatus status = active_letter.getLetterStatus();
+        Letter  selected_letter = node->getSelectedLetter();
+        std::string active_letter_str = active_letter.getLetterString().c_str();
+        std::string selected_letter_str = selected_letter.getLetterString().c_str();
+
+        if (status != LetterStatus::Frozen)
+        {
+            if (node->isSelectedLetter())
+            {
+
+                if (active_letter_str  != selected_letter_str)
+                {
+                    word_true = false;
+                }
+            }
+            else
+            {
+                word_true = false;
+            }
+        }
+    }
+    return word_true;
 }
 void GameNode::playAudio()
 {
@@ -201,10 +231,6 @@ void GameNode::addLeter(int position, Letter letter)
     emit signalAddLetter(position, letter);
 }
 
-void GameNode::signalGameEndOn()
-{
-    emit signalGameEnd();
-}
 
 
 void GameNode::signallStarsChangedOn(int number_of_stars)
@@ -362,6 +388,7 @@ void GameNode::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 
 void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
+    bool game_end = false;
     if(_is_tracking_touch && _selected_letter)
     {
         cocos2d::CCPoint local = touchToInsertCords(pTouch);
@@ -395,8 +422,6 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                     LetterNode* previous_node = _letters_qiuz[_quiz_selection_index];
                     previous_node->setLetterIsSelected(true);
                     previous_node->setSelectedLetter(current_node->getSelectedLetter());
-
-
                     previous_node->setIndexSelectedLetter(current_node->getIndexSelectedLetter());
 
                 }
@@ -415,13 +440,17 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
             }
             current_node->setLetterIsSelected(true);
             current_node->setSelectedLetter(_selected_letter->getActiveLetter());
-
-
             current_node->setIndexSelectedLetter(_selected_letter->getIndexSelectedLetter());
-
-
-
             _selected_letter->setVisible(false);
+
+            if (isSetEnd())
+            {
+                game_end = true;
+                //
+            }
+
+
+
             //TODO: додати _selected_letter в масив щоб знати в які клітинці вона стоїть
         }
         else
@@ -434,6 +463,10 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         _selected_letter = nullptr;
 
 
+    }
+    if(game_end)
+    {
+        emit signalGameEnd();
     }
 }
 

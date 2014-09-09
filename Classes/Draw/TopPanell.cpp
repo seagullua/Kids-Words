@@ -65,17 +65,13 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
 
     ADMenuItem* button_audio = ADMenuItem::create(button_audio_image);
-    // button_audio->setAnchorPoint(ccp(0,0));
-     button_audio->setAnchorPoint(ccp(0,0.5f));
-     button_audio->setPositionX(padding*7+number_words->getContentSize().width+
-                                     padding*17);
+    button_audio->setAnchorPoint(ccp(0,0.5f));
+    button_audio->setPositionX(padding*7+number_words->getContentSize().width+
+                               padding*17);
 
     button_audio->setPositionY(padding_node_y*0.5f);
 
-
-    //emit SignalAudioClicked();
     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudioOnClicked);
-    //     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudio);
 
     menu->addChild(button_audio);
 
@@ -87,47 +83,25 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
 
     hint_lamp_image->setAnchorPoint(ccp(0,0.5f));
-//    float hint_lamp_image_x=number_words->getContentSize().width+
-//            padding*3+button_audio->getContentSize().width+padding;
-
 
     ADMenuItem* hint_lamp = ADMenuItem::create(hint_lamp_image);
-     hint_lamp->setAnchorPoint(ccp(0,0.5f));
+    hint_lamp->setAnchorPoint(ccp(0,0.5f));
 
-     hint_lamp->setPositionX(button_audio->getPositionX()+button_audio->getContentSize().width+padding);
+    hint_lamp->setPositionX(button_audio->getPositionX()+button_audio->getContentSize().width+padding);
 
-     hint_lamp->setPositionY(padding_node_y*0.5f);
+    hint_lamp->setPositionY(padding_node_y*0.5f);
 
     CONNECT(hint_lamp->signalOnClick, this, &TopPanell::signalUseHintOnClicked);
-    //     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudio);
 
     float hint_lamp_y=hint_lamp->getContentSize().height;
-//    float node_scale_h = (panel_image->getContentSize().height/hint_lamp_y);
-//    if(node_scale_h < 1)
-//    {
-//        hint_lamp->setScale(node_scale_h*0.6f);
-//    }
-//    else
-//    {
-//        node_scale_h=1;
-//    }
+
     menu->addChild(hint_lamp);
 
-
-
-
-//    panel_image->addChild(hint_lamp_image);
 
     Stars* stars_node = Stars::create(star_number);
     stars_node->setAnchorPoint(ccp(0,0.5f));
     stars_node->setPositionX(hint_lamp->getPositionX()+hint_lamp->getContentSize().width+padding*2);
     stars_node->setPositionY(padding_node_y*0.5f);
-    //   float stars_node_height = stars_node->getContentSize().height;
-
-    //    if (stars_node_width>line_image_width-padding_shadow*0.5f)
-    //    {
-    //        stars_node->setScale((line_image_width-padding_shadow*0.5f)/ stars_node_width);
-    //    }
 
     panel_image->addChild(stars_node);
 

@@ -59,8 +59,12 @@ int OneSeason::getNumberWord(int difficult)
 
     return number_of_word;
 }
-    void OneSeason::setTaskNumber()
-    {
+void OneSeason::setTaskNumber()
+{
 
-        _set_task_number = _set_task_number + 1;
-    }
+    _set_task_number = _set_task_number + 1;
+}
+int OneSeason::getSetTaskNumber()
+{
+    return _set_task_number + 1;
+}
