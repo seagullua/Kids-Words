@@ -128,6 +128,7 @@ void LevelScene::selectOneGame()
 
     _one_game = _current_one_season.getNextLevel();
     _current_number_of_word = _current_one_season.getSetTaskNumber();
+   _top_panel->setTitleNumberWord(_current_number_of_word);
     setOneGame(_one_game);
     _game_node= GameNode::create(_one_game,_use_h);
     _game_node->setAnchorPoint(ccp(0,0));
