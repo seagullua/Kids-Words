@@ -482,3 +482,7 @@ void GameNode::ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         _selected_letter = nullptr;
     }
 }
+void GameNode::showHint(OneHint current_hint)
+{
+
+}

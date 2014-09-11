@@ -70,7 +70,8 @@ SOURCES += main.cpp \
     ../Classes/Logic/OneSeason.cpp \
     ../Classes/Logic/OneGame.cpp \
     ../Classes/Draw/GameNode.cpp \
-    ../Classes/Draw/LetterNode.cpp
+    ../Classes/Draw/LetterNode.cpp \
+    ../Classes/Logic/Hint.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -100,6 +101,7 @@ HEADERS += \
     ../Classes/Logic/OneSeason.h \
     ../Classes/Logic/OneGame.h \
     ../Classes/Draw/GameNode.h \
-    ../Classes/Draw/LetterNode.h
+    ../Classes/Draw/LetterNode.h \
+    ../Classes/Logic/Hint.h
 
 

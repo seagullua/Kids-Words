@@ -2,7 +2,6 @@
 #include <ADLib.h>
 #include "InfoStyles.h"
 
-
 using namespace cocos2d;
 
 TopPanell* TopPanell::create(int word_number, int all_words, int star_number)
@@ -15,8 +14,11 @@ TopPanell* TopPanell::create(int word_number, int all_words, int star_number)
 
 TopPanell::TopPanell(int word_number, int all_words, int star_number):
     _number_words(nullptr),
+    _panel_image(nullptr),
     _all_words(all_words),
     _star_number(star_number),
+    _padding_node_star_y(0),
+    _padding_node_star_x(0),
     _title_number_word("")
 {
 
@@ -29,16 +31,24 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 {
     const float SCALE = ADScreen::getScaleFactor();
     float padding = 25/SCALE;
+    float padding_node_x = 0;
+    float padding_node_y = 0;
+
     //panel
-    CCSprite* panel_image = CCSprite::create("level-scene/top-panel.png");
-    panel_image->setAnchorPoint(ccp(0,0));
-    panel_image->setPositionX(0);
-    panel_image->setPositionY(0);
-    float padding_node_x = panel_image->getContentSize().width;
-    float padding_node_y = panel_image->getContentSize().height;
-    this->setContentSize(ccp(padding_node_x, padding_node_y));
-    this->setContentSize(ccp(padding_node_x, padding_node_y));
-    this->addChild(panel_image);
+    if (!_panel_image)
+    {
+        _panel_image = CCSprite::create("level-scene/top-panel.png");
+        _panel_image->setAnchorPoint(ccp(0,0));
+        _panel_image->setPositionX(0);
+        _panel_image->setPositionY(0);
+        padding_node_x = _panel_image->getContentSize().width;
+        padding_node_y = _panel_image->getContentSize().height;
+        this->setContentSize(ccp(padding_node_x, padding_node_y));
+        this->setContentSize(ccp(padding_node_x, padding_node_y));
+        this->addChild(_panel_image);
+    }
+
+
     //number word
     //cocos2d::CCLabelTTF* number_words;
     //std::string title_number_word= "5/10";
@@ -61,13 +71,13 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
         _number_words->setPositionY(padding_node_y*0.5f);
 
-        panel_image->addChild(_number_words);
+        _panel_image->addChild(_number_words);
     }
     //menu
     CCMenu* menu =CCMenu::create();
     menu->setPosition(ccp(0,0));
 
-    panel_image->addChild(menu);
+    _panel_image->addChild(menu);
 
     //audio
 
@@ -106,18 +116,28 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
     menu->addChild(hint_lamp);
 
-
-    _stars_node = Stars::create(_star_number);
-    _stars_node->setAnchorPoint(ccp(0,0.5f));
-    _stars_node->setPositionX(hint_lamp->getPositionX()+hint_lamp->getContentSize().width+padding*2);
-    _stars_node->setPositionY(padding_node_y*0.5f);
-
-    panel_image->addChild(_stars_node);
+    _padding_node_star_y = padding_node_y;
+    _padding_node_star_x = hint_lamp->getPositionX()+hint_lamp->getContentSize().width+padding*2;
+    drawStarsNode(_star_number);
 
 
 }
+void TopPanell::drawStarsNode(int star_number)
+{
+    _stars_node = Stars::create(star_number);
+    _stars_node->setAnchorPoint(ccp(0,0.5f));
+    _stars_node->setPositionX(_padding_node_star_x);
+    _stars_node->setPositionY(_padding_node_star_y*0.5f);
+
+    _panel_image->addChild(_stars_node);
+
+}
+
 void TopPanell::starsDrawChanged(int star_number)
 {
+    _stars_node->removeFromParent();
+    drawStarsNode(star_number);
+
 
 }
 void TopPanell::signalAudioOnClicked()

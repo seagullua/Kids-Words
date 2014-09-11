@@ -2,6 +2,7 @@
 #define GAMENODE_H
 #include "Logic/Task.h"
 #include "Logic/OneGame.h"
+#include "Logic/Hint.h"
 #include "LetterNode.h"
 
 class GameNode: public cocos2d::CCNode, public HasSlots, public cocos2d::CCTouchDelegate
@@ -50,6 +51,7 @@ private:
     bool _is_tracking_touch;
     int _stars;
     std::vector<int> _index_in_use_letter;
+    void showHint(OneHint current_hint);
 
 };
 

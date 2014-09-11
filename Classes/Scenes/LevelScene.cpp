@@ -4,6 +4,7 @@
 #include "InfoStyles.h"
 #include "Logic/Alphabete.h"
 #include "Logic/LevelSaves.h"
+#include "Logic/Hint.h"
 #include "Logic/OneSeason.h"
 #include "Draw/GameNode.h"
 #include <vector>
@@ -86,7 +87,7 @@ bool LevelScene::init()
     if (!_top_panel)
     {
 
-        _top_panel= TopPanell::create(_current_number_of_word,_number_of_word,7);
+        _top_panel= TopPanell::create(_current_number_of_word,_number_of_word,10);
 
         _top_panel->setAnchorPoint(ccp(0,1));
 
@@ -114,7 +115,9 @@ void LevelScene::onSignalAudioClicked()
 }
 void LevelScene::onSignalUseHintClicked()
 {
-    CCLog("Level scene onSignalUseHintClicked");
+
+ //   OneHint current_hint = _one_game->getHint();
+ //   _game_node->showHint(current_hint);
 }
 void LevelScene::setOneGame(const OneGame* one_game)
 {
@@ -129,7 +132,9 @@ void LevelScene::selectOneGame()
     _one_game = _current_one_season.getNextLevel();
     _current_number_of_word = _current_one_season.getSetTaskNumber();
    _top_panel->setTitleNumberWord(_current_number_of_word);
-    setOneGame(_one_game);
+   _top_panel->starsDrawChanged(10-_current_number_of_word);
+
+   setOneGame(_one_game);
     _game_node= GameNode::create(_one_game,_use_h);
     _game_node->setAnchorPoint(ccp(0,0));
     _game_node->setPositionX(0);
