@@ -13,6 +13,8 @@ public:
     static const int SIZE_LINE_TITLE;
     static const int SIZE_SETTINGS_BUTTON_TURN;
     static const int SIZE_MENU_TITLE;
+    static const int SIZE_MENU_TITLE_POP_UP;
+    static const int SIZE__BUTTON_POP_UP;
     static const int SIZE_LETTER;
     //% letter by difficult
     static const int EASY ;
@@ -34,7 +36,7 @@ public:
     static const cocos2d::ccColor3B COLOR_YELLOW;
     static const cocos2d::ccColor3B COLOR_ORANGE;
     static const cocos2d::ccColor3B COLOR_MAGENTA;
-
+    static const cocos2d::ccColor3B COLOR_LIGHT_BLUE;
 };
 
 #endif // INFOSTYLES_H

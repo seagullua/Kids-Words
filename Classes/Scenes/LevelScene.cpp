@@ -9,6 +9,7 @@
 #include "Draw/GameNode.h"
 #include <vector>
 #include <string>
+#include "PopUp/LevelEnd.h"
 
 using namespace cocos2d;
 
@@ -57,6 +58,7 @@ LevelScene* LevelScene::create(CollectionID id, int difficult)
 void LevelScene::onBackClick()
 {
     CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
+
 }
 void LevelScene::onOneGameEnd()
 {
@@ -106,7 +108,7 @@ bool LevelScene::init()
     //    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
 
     selectOneGame();
-
+//    CONNECT(this->signalNextLesson, this, &LevelScene::onSignalNextLesson);
     return true;
 }
 void LevelScene::onSignalAudioClicked()
@@ -115,9 +117,19 @@ void LevelScene::onSignalAudioClicked()
 }
 void LevelScene::onSignalUseHintClicked()
 {
+    //    if(_one_game->isCanUseHint())
+    //    {
+    //        _one_game->setNumberOfHint();
+    //        int number_of_use_hint = _one_game->getNumberOfHint();
+    //        _top_panel->starsDrawChanged(10-number_of_use_hint);
+    //        OneHint current_hint = _one_game->getHint().getOneHint();
+    //          _game_node->showHint(current_hint);
 
- //   OneHint current_hint = _one_game->getHint();
- //   _game_node->showHint(current_hint);
+    //    }
+    //    else
+    //    {
+    //        //TODO сказать что нет подсказок
+    //    }
 }
 void LevelScene::setOneGame(const OneGame* one_game)
 {
@@ -129,23 +141,43 @@ void LevelScene::selectOneGame()
     if (_current_number_of_word < _number_of_word)
     {
 
-    _one_game = _current_one_season.getNextLevel();
-    _current_number_of_word = _current_one_season.getSetTaskNumber();
-   _top_panel->setTitleNumberWord(_current_number_of_word);
-   _top_panel->starsDrawChanged(10-_current_number_of_word);
+        _one_game = _current_one_season.getNextLevel();
+        _current_number_of_word = _current_one_season.getSetTaskNumber();
+        _top_panel->setTitleNumberWord(_current_number_of_word);
 
-   setOneGame(_one_game);
-    _game_node= GameNode::create(_one_game,_use_h);
-    _game_node->setAnchorPoint(ccp(0,0));
-    _game_node->setPositionX(0);
-    _game_node->setPositionY(0);
-    this->addChild(_game_node);
-    CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
+        setOneGame(_one_game);
+        _game_node= GameNode::create(_one_game,_use_h);
+        _game_node->setAnchorPoint(ccp(0,0));
+        _game_node->setPositionX(0);
+        _game_node->setPositionY(0);
+        this->addChild(_game_node);
+        CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
     }
     else
     {
-        // TODO::  вызвать окно следующей игры
-        CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
-
+        EndLevel();
     }
+}
+void LevelScene::selectNextSeason()
+{
+    _current_number_of_word = 1;
+    OneSeason new_one_season (_collection_id,_difficult);
+    _current_one_season = new_one_season;
+    selectOneGame();
+
+}
+
+void LevelScene::EndLevel()
+{
+    int star_number = getStarNumber();
+    _pop_up_manager.openWindow(new LevelEnd(this,_collection_id,star_number,_difficult));
+
+}
+int LevelScene::getStarNumber()
+{
+    return 7;
+}
+void LevelScene::onSignalNextLesson()
+{
+    selectNextSeason();
 }

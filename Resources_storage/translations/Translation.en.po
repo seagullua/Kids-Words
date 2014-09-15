@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-08-18 01:16+0200\n"
+"POT-Creation-Date: 2014-09-15 23:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,24 +30,27 @@ msgstr "Successfully restored purchases"
 msgid "iap.restore_purchases.failed"
 msgstr "Restore Purchase failed"
 
+#: ../../Classes/PopUp/LevelEnd.cpp:76
+msgid "pop_up_end_level.collection.title"
+msgstr "Collections"
+
+#: ../../Classes/PopUp/LevelEnd.cpp:99
+msgid "pop_up_end_level.lesson.title"
+msgstr "Next Lesson"
+
 #: ../../Classes/Scenes/SelectCollection.cpp:74
 msgid "select_collection.title"
 msgstr "Collections"
 
-#: ../../Classes/Scenes/SelectLevel.cpp:74
-#, fuzzy
-msgid "select_level.title"
-msgstr "Collections"
-
-#: ../../Classes/Scenes/SelectLevel.cpp:119
+#: ../../Classes/Scenes/SelectLevel.cpp:124
 msgid "select_level.easy"
 msgstr "Easy"
 
-#: ../../Classes/Scenes/SelectLevel.cpp:126
+#: ../../Classes/Scenes/SelectLevel.cpp:131
 msgid "select_level.middle"
 msgstr "Middle"
 
-#: ../../Classes/Scenes/SelectLevel.cpp:133
+#: ../../Classes/Scenes/SelectLevel.cpp:138
 msgid "select_level.difficult"
 msgstr "Difficult"
 
@@ -74,6 +77,10 @@ msgstr "Andrii Chaika"
 #: ../../Classes/Scenes/developers.cpp:136
 msgid "developers_scene_diana.title"
 msgstr "Diana Sirenko"
+
+#, fuzzy
+#~ msgid "select_level.title"
+#~ msgstr "Collections"
 
 #~ msgid "Highscore:"
 #~ msgstr "Highscore:"

@@ -13,13 +13,16 @@ public:
     LevelScene(CollectionID id, int difficult);
     static cocos2d::CCScene* scene(CollectionID id, int difficult);
     static LevelScene* create(CollectionID id, int difficult);
-void selectOneGame();
+    void selectOneGame();
+    void selectNextSeason();
 private:
     void onOneGameEnd();
     bool init();
     void onBackClick();
+    void EndLevel();
     void onSignalAudioClicked();
     void onSignalUseHintClicked();
+    void onSignalNextLesson();
     void setOneGame(const OneGame *one_game);
     CollectionID _collection_id;
     int _difficult;
@@ -31,6 +34,7 @@ private:
     float _use_h;
     float _use_w;
     TopPanell* _top_panel;
+    int getStarNumber();
 
 };
 

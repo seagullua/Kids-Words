@@ -124,6 +124,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 }
 void TopPanell::drawStarsNode(int star_number)
 {
+
     _stars_node = Stars::create(star_number);
     _stars_node->setAnchorPoint(ccp(0,0.5f));
     _stars_node->setPositionX(_padding_node_star_x);

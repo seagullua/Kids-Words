@@ -7,13 +7,15 @@ class OneGame
 public:
     OneGame(Task task);
     const Task& getTask() const;
+    void setNumberOfHint() const;
+    int getNumberOfHint() const;
+    bool isCanUseHint() const;
+    Hint getHint() const;
 private:
     Task _task;
-    int _number_of_hint;
-    void setNumberOfHint();
-    int getNumberOfHint();
-    bool isCanUseHint();
-    Hint getHint();
+    mutable int _number_of_hint;
+
+
 
 
 };

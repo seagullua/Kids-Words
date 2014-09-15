@@ -10,7 +10,7 @@ const Task &OneGame::getTask() const
 {
     return _task;
 }
-void OneGame::setNumberOfHint()
+void OneGame::setNumberOfHint() const
 {
     if (_number_of_hint > 0)
     {
@@ -18,11 +18,11 @@ void OneGame::setNumberOfHint()
     }
 
 }
-int OneGame::getNumberOfHint()
+int OneGame::getNumberOfHint() const
 {
     return _number_of_hint;
 }
-bool OneGame::isCanUseHint()
+bool OneGame::isCanUseHint() const
 {
     if (_number_of_hint > 0)
     {
@@ -33,7 +33,7 @@ bool OneGame::isCanUseHint()
         return false;
     }
 }
-Hint OneGame::getHint()
+Hint OneGame::getHint() const
 {
     Hint current_hint(_task);
     return current_hint;

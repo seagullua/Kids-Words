@@ -71,7 +71,8 @@ SOURCES += main.cpp \
     ../Classes/Logic/OneGame.cpp \
     ../Classes/Draw/GameNode.cpp \
     ../Classes/Draw/LetterNode.cpp \
-    ../Classes/Logic/Hint.cpp
+    ../Classes/Logic/Hint.cpp \
+    ../Classes/PopUp/LevelEnd.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -102,6 +103,7 @@ HEADERS += \
     ../Classes/Logic/OneGame.h \
     ../Classes/Draw/GameNode.h \
     ../Classes/Draw/LetterNode.h \
-    ../Classes/Logic/Hint.h
+    ../Classes/Logic/Hint.h \
+    ../Classes/PopUp/LevelEnd.h
 
 
