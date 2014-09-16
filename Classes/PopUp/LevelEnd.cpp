@@ -78,7 +78,7 @@ void LevelEnd::onCreate(cocos2d::CCNode *parent)
     button_collection->setColor(InfoStyles::COLOR_LIGHT_BLUE);
     CCLabelTTF* button_collection_title = CCLabelTTF::create(_("pop_up_end_level.collection.title"),
                                                              ADLanguage::getFontName(),
-                                                             InfoStyles::SIZE__BUTTON_POP_UP);
+                                                             InfoStyles::SIZE_BUTTON_POP_UP);
 
     button_collection_title->setColor(InfoStyles::COLOR_WHITE);
     button_collection_title->setAnchorPoint(ccp(0.5f,0.5f));
@@ -101,7 +101,7 @@ void LevelEnd::onCreate(cocos2d::CCNode *parent)
     button_lesson->setColor(InfoStyles::COLOR_ORANGE);
     CCLabelTTF* button_lesson_title = CCLabelTTF::create(_("pop_up_end_level.lesson.title"),
                                                          ADLanguage::getFontName(),
-                                                         InfoStyles::SIZE__BUTTON_POP_UP);
+                                                         InfoStyles::SIZE_BUTTON_POP_UP);
 
     button_lesson_title->setColor(InfoStyles::COLOR_WHITE);
     button_lesson_title->setAnchorPoint(ccp(0.5f,0.5f));

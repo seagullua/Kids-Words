@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-09-15 23:58+0200\n"
+"POT-Creation-Date: 2014-09-16 22:08+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,11 +30,23 @@ msgstr "Successfully restored purchases"
 msgid "iap.restore_purchases.failed"
 msgstr "Restore Purchase failed"
 
-#: ../../Classes/PopUp/LevelEnd.cpp:76
+#: ../../Classes/PopUp/ExitGamePopUp.cpp:35
+msgid "ExitGame.Sure"
+msgstr "Leave the game?"
+
+#: ../../Classes/PopUp/ExitGamePopUp.cpp:65
+msgid "ExitGame.Yes"
+msgstr "Yes"
+
+#: ../../Classes/PopUp/ExitGamePopUp.cpp:88
+msgid "ExitGame.No"
+msgstr "No"
+
+#: ../../Classes/PopUp/LevelEnd.cpp:79
 msgid "pop_up_end_level.collection.title"
 msgstr "Collections"
 
-#: ../../Classes/PopUp/LevelEnd.cpp:99
+#: ../../Classes/PopUp/LevelEnd.cpp:102
 msgid "pop_up_end_level.lesson.title"
 msgstr "Next Lesson"
 

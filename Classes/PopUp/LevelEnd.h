@@ -2,7 +2,7 @@
 #define LEVELEND_H
 #include <ADLib/PopUp/IADStandardWindow.h>
 #include "Logic/Collection.h"
-#include <ADLib/ADSignals.h>
+
 
 class LevelEnd: public IADStandardWindow
 {
