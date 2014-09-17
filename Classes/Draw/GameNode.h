@@ -23,7 +23,9 @@ public:
     void signallStarsChangedOn(int number_of_stars);
     void onExit();
 
-    void showHint(OneHint current_hint);
+    void showHint();
+    int getIndexInUseLetterNode(LetterNode* node);
+    int getIndexQuizWrongNode(LetterNode* node);
 private:
     bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
@@ -53,7 +55,9 @@ private:
     bool _is_tracking_touch;
     int _stars;
     std::vector<int> _index_in_use_letter;
-
+    void moveBack(LetterNode *quiz_node);
+    void removeLetter(LetterNode* node);
+    void removeLetterAndMoveBack(LetterNode* node);
 };
 
 #endif // GAMENODE_H

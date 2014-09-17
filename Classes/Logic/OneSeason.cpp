@@ -10,7 +10,8 @@
 OneSeason::OneSeason(CollectionID id, int difficult):
     _collection_id(id),
     _difficult(difficult),
-    _set_task_number(-1)
+    _set_task_number(-1),
+    _number_of_hint(10)
 {
     srand(time(0)*(10+id)*(10+difficult));
 
@@ -26,7 +27,7 @@ OneSeason::OneSeason(CollectionID id, int difficult):
     for (int i = 0 ; i < number_of_word; ++i )
     {
         Task current_task(current_levels[i],difficult);
-        _seasons_games.push_back(OneGame(current_task));
+        _seasons_games.push_back(OneGame(current_task, this));
     }
 
 }
@@ -67,4 +68,27 @@ void OneSeason::setTaskNumber()
 int OneSeason::getSetTaskNumber()
 {
     return _set_task_number + 1;
+}
+void OneSeason::setNumberOfHint() const
+{
+    if (_number_of_hint > 0)
+    {
+        _number_of_hint = _number_of_hint - 1;
+    }
+
+}
+int OneSeason::getNumberOfHint() const
+{
+    return _number_of_hint;
+}
+bool OneSeason::isCanUseHint() const
+{
+    if (_number_of_hint > 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

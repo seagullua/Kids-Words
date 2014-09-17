@@ -117,6 +117,8 @@ void LevelScene::onSignalAudioClicked()
 }
 void LevelScene::onSignalUseHintClicked()
 {
+
+  _game_node->showHint();
     //    if(_one_game->isCanUseHint())
     //    {
     //        _one_game->setNumberOfHint();

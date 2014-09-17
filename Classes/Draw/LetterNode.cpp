@@ -19,7 +19,7 @@ bool LetterNode::canInsertLetter(Letter letter)
     LetterStatus status = _active_letter.getLetterStatus();
     if (status == LetterStatus::Frozen)
     {
-       return false;
+        return false;
     }
 
     return true;
@@ -101,8 +101,8 @@ void LetterNode::ShowLetter()
 
     if(!_letter_image)
     {
-       _letter_image = CCSprite::create(image_name.c_str());
-       this->addChild(_letter_image);
+        _letter_image = CCSprite::create(image_name.c_str());
+        this->addChild(_letter_image);
     }
     CCSprite* letter_image = _letter_image;
     letter_image->setAnchorPoint(ccp(0,0));
@@ -116,8 +116,8 @@ void LetterNode::ShowLetter()
     if(!_current_letter)
     {
         _current_letter = CCLabelTTF::create(letter_string.c_str(),
-                                            ADLanguage::getFontName(),
-                                            InfoStyles::SIZE_LETTER);
+                                             ADLanguage::getFontName(),
+                                             InfoStyles::SIZE_LETTER);
         this->addChild(_current_letter);
     }
 
@@ -181,16 +181,45 @@ void LetterNode::setLetterIsSelected(bool is_selected)
     }
 
 }
- bool LetterNode::isSelectedLetter()
- {
-     return _letter_is_selected;
- }
- void LetterNode::setIndexSelectedLetter(int index)
- {
-     _index_selected_letter = index;
- }
+bool LetterNode::isSelectedLetter()
+{
+    return _letter_is_selected;
+}
+void LetterNode::setIndexSelectedLetter(int index)
+{
+    _index_selected_letter = index;
+}
 
- int LetterNode::getIndexSelectedLetter()
- {
-     return _index_selected_letter;
- }
+int LetterNode::getIndexSelectedLetter()
+{
+    return _index_selected_letter;
+}
+bool LetterNode::isLetterTrueforHint()
+{
+    bool letter_true = false;
+    std::string active_letter_str = _active_letter.getLetterString().c_str();
+    std::string selected_letter_str = _selected_letter.getLetterString().c_str();
+
+    if  (_letter_is_selected)
+    {
+        if (active_letter_str != selected_letter_str)
+        {
+            letter_true = true;
+        }
+    }
+    else
+    {
+        LetterStatus status = _active_letter.getLetterStatus();
+
+        if (status != LetterStatus::Frozen)
+        {
+            letter_true = true;
+        }
+    }
+    return letter_true;
+}
+void LetterNode::setNodeColor(cocos2d::ccColor3B  color)
+{
+    _letter_image->setColor(color);
+
+}

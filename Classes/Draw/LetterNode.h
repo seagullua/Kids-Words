@@ -17,6 +17,8 @@ public:
     bool isSelectedLetter();
     void setIndexSelectedLetter(int index);
     int getIndexSelectedLetter();
+    bool isLetterTrueforHint();
+    void setNodeColor(cocos2d::ccColor3B  color);
 private:
     cocos2d::CCSprite* _letter_image;
     cocos2d::CCLabelTTF* _current_letter;

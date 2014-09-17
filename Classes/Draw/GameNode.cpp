@@ -2,6 +2,8 @@
 #include "Logic/OneGame.h"
 #include "Logic/Task.h"
 #include "Logic/Letter.h"
+#include  "InfoStyles.h"
+#include <algorithm>
 
 using namespace cocos2d;
 GameNode* GameNode::create(const OneGame *one_game, int use_h)
@@ -316,8 +318,7 @@ bool GameNode::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                         _quiz_selection_index = i;
                         current_node = _letters_to_insert[index];
                         current_node->setVisible(true);
-                        node->setLetterIsSelected(false);
-                        node->setIndexSelectedLetter(_letters_to_insert.size());
+                        removeLetter(node);
                         current_node->setPosition(local);
                     }
 
@@ -385,6 +386,25 @@ void GameNode::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         _selected_letter->setPosition(local);
     }
 }
+void GameNode::moveBack(LetterNode* quiz_node)
+{
+    int old_node = quiz_node->getIndexSelectedLetter();
+    LetterNode* node = _letters_to_insert[old_node];
+    node->setVisible(true);
+    CCPoint p = quiz_node->getParent()->convertToWorldSpace(quiz_node->getPosition());
+    node->setPosition(node->getParent()->convertToNodeSpace(p));
+    moveLetterNodeBackByIndex(node,old_node);
+}
+void GameNode::removeLetter(LetterNode* node)
+{
+    node->setLetterIsSelected(false);
+    node->setIndexSelectedLetter(_letters_to_insert.size());
+}
+void GameNode::removeLetterAndMoveBack(LetterNode* node)
+{
+    moveBack(node);
+    removeLetter(node);
+}
 
 void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
@@ -415,8 +435,8 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
             if (cn_is_selected_selected)
 
             {
-                int old_node = current_node->getIndexSelectedLetter();
-                LetterNode* node = _letters_to_insert[old_node];
+                //int old_node = current_node->getIndexSelectedLetter();
+                //LetterNode* node = _letters_to_insert[old_node];
                 if(_is_quiz_letter_selected && new_letter_insertion != _quiz_selection_index)
                 {
                     LetterNode* previous_node = _letters_qiuz[_quiz_selection_index];
@@ -431,9 +451,10 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                     //Letter  cn_selected_Letter = current_node->getSelectedLetter();
                     //int index_selected_letter = current_node->getIndexSelectedLetter();
                     //LetterNode* cn_letter_node = LetterNode:: create(cn_selected_Letter);
-                    node->setVisible(true);
-                    node->setPosition(local);
-                    moveLetterNodeBackByIndex(node,old_node);
+                    //node->setVisible(true);
+                    //node->setPosition(local);
+                    //moveLetterNodeBackByIndex(node,old_node);
+                    moveBack(current_node);
                 }
 
 
@@ -442,7 +463,6 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
             current_node->setSelectedLetter(_selected_letter->getActiveLetter());
             current_node->setIndexSelectedLetter(_selected_letter->getIndexSelectedLetter());
             _selected_letter->setVisible(false);
-
             if (isSetEnd())
             {
                 game_end = true;
@@ -482,7 +502,120 @@ void GameNode::ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         _selected_letter = nullptr;
     }
 }
-void GameNode::showHint(OneHint current_hint)
+void GameNode::showHint()
+{
+    if (_one_game->isCanUseHint())
+    {
+
+        LetterNode* current_node = nullptr;
+        LetterNode* current_node_in_use = nullptr;
+        std::vector<int> index_letter_for_hint;
+        int new_letter_insertion = 0;
+        for(size_t i = 0; i < _letters_qiuz.size(); ++i)
+        {
+            current_node = _letters_qiuz[i];
+            if(current_node->isLetterTrueforHint())
+            {
+                index_letter_for_hint.push_back(i);
+                break;
+            }
+        }
+        if (index_letter_for_hint.size() > 0)
+        {
+            std::random_shuffle(index_letter_for_hint.begin(), index_letter_for_hint.end());
+
+            LetterNode* node = _letters_qiuz[index_letter_for_hint[0]];
+
+            if (node->isSelectedLetter())
+            {
+                removeLetterAndMoveBack(node);
+            }
+            int index_in_use_node = getIndexInUseLetterNode(node);
+            if (index_in_use_node == -1)
+            {
+                int index_in_quiz_node = getIndexQuizWrongNode(node);
+                if (index_in_quiz_node >=0)
+                {
+
+                                                LetterNode* old_node = _letters_qiuz[index_in_quiz_node];
+
+                    //                            int old_node_index = old_node->getIndexSelectedLetter();
+                    //                            moveLetterNodeBackByIndex(node,old_node_index);
+                    removeLetterAndMoveBack(old_node);
+
+                    index_in_use_node = getIndexInUseLetterNode(node);
+                }
+
+            }
+
+
+            if (index_in_use_node >= 0 && index_in_use_node <= _letters_to_insert.size() )
+            {
+                current_node_in_use = _letters_to_insert[index_in_use_node];
+            }
+
+
+
+            if(current_node && current_node_in_use)
+            {
+                current_node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
+                current_node_in_use->setNodeColor(InfoStyles::COLOR_MAGENTA);
+            }
+        }
+
+    }
+
+}
+int GameNode::getIndexInUseLetterNode(LetterNode* node)
+{
+    int number_found_letter = -1;
+    Letter active_letter = node->getActiveLetter();
+
+    std::string active_letter_str = active_letter.getLetterString().c_str();
+    for(size_t i = 0; i < _letters_to_insert.size(); ++i)
+    {
+
+        LetterNode* in_use_node = _letters_to_insert[i];
+        if (in_use_node->isVisible())
+        {
+
+            Letter in_use_active_letter = in_use_node->getActiveLetter();
+
+            std::string in_use_letter_str = in_use_active_letter.getLetterString().c_str();
+
+            if (active_letter_str == in_use_letter_str)
+            {
+                number_found_letter = i;
+            }
+        }
+    }
+
+    return number_found_letter;
+}
+int GameNode::getIndexQuizWrongNode(LetterNode* node)
 {
 
+    Letter letter = node->getActiveLetter();
+
+    std::string letter_str = letter.getLetterString().c_str();
+    int number_found_letter = -1;
+    std::string active_letter_str = "";
+    for(size_t i = 0; i < _letters_qiuz.size(); ++i)
+    {
+
+        LetterNode* quiz_node = _letters_qiuz[i];
+        Letter quiz_selected = quiz_node->getSelectedLetter();
+        Letter quiz_active = quiz_node->getActiveLetter();
+
+        std::string quiz_selected_str = quiz_selected.getLetterString().c_str();
+        std::string quiz_active_str = quiz_active.getLetterString().c_str();
+
+        if ( (letter_str  == quiz_selected_str) && (quiz_selected_str != quiz_active_str) )
+        {
+            number_found_letter = i;
+        }
+
+    }
+
+    return number_found_letter;
 }

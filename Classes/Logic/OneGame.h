@@ -1,20 +1,18 @@
 #ifndef ONEGAME_H
 #define ONEGAME_H
 #include "Task.h"
-#include "Hint.h"
+class OneSeason;
 class OneGame
 {
 public:
-    OneGame(Task task);
+    OneGame(Task task, OneSeason * season);
     const Task& getTask() const;
-    void setNumberOfHint() const;
     int getNumberOfHint() const;
     bool isCanUseHint() const;
-    Hint getHint() const;
+
 private:
     Task _task;
-    mutable int _number_of_hint;
-
+    OneSeason* _season;
 
 
 

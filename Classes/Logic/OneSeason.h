@@ -13,11 +13,16 @@ public:
     int getNumberWord(int difficult);
     int getSetTaskNumber();
     void setTaskNumber();
+    void setNumberOfHint() const;
+    int getNumberOfHint() const;
+
+    bool isCanUseHint() const;
 private:
     CollectionID _collection_id;
     int _difficult;
     Task* _active_task;
     int _set_task_number;
+    mutable int _number_of_hint;
     std::vector<OneGame> _seasons_games;
 
 

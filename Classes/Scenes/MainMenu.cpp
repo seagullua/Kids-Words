@@ -97,8 +97,7 @@ bool MainMenu::init()
     CONNECT(button_settings->signalOnClick, this, &MainMenu::onSettingsClick);
 
     menu->addChild(button_settings);
-    _pop_up_manager.openWindow(new ExitGamePopUp(this));
-    return true;
+     return true;
 }
 
 

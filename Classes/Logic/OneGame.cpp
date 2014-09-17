@@ -1,30 +1,26 @@
 #include "OneGame.h"
+#include "OneSeason.h"
 
-
-OneGame::OneGame(Task task):
+OneGame::OneGame(Task task, OneSeason* season):
     _task(task),
-    _number_of_hint(10)
+    _season(season)
 {
 }
 const Task &OneGame::getTask() const
 {
     return _task;
 }
-void OneGame::setNumberOfHint() const
-{
-    if (_number_of_hint > 0)
-    {
-        _number_of_hint = _number_of_hint - 1;
-    }
 
-}
 int OneGame::getNumberOfHint() const
 {
-    return _number_of_hint;
+    return _season->getNumberOfHint();
 }
+
+
 bool OneGame::isCanUseHint() const
 {
-    if (_number_of_hint > 0)
+    int number_of_hint =_season->getNumberOfHint();
+    if (number_of_hint > 0)
     {
         return true;
     }
@@ -32,9 +28,4 @@ bool OneGame::isCanUseHint() const
     {
         return false;
     }
-}
-Hint OneGame::getHint() const
-{
-    Hint current_hint(_task);
-    return current_hint;
 }
