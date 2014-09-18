@@ -58,6 +58,9 @@ private:
     void moveBack(LetterNode *quiz_node);
     void removeLetter(LetterNode* node);
     void removeLetterAndMoveBack(LetterNode* node);
+    LetterNode* _current_node_in_use ;
+    LetterNode* _node  ;
+
 };
 
 #endif // GAMENODE_H

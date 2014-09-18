@@ -19,6 +19,8 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _one_game(one_game),
     _is_tracking_touch(false),
     _selected_letter(nullptr),
+    _current_node_in_use(nullptr),
+    _node(nullptr),
     _use_h(use_h)
 {
     const float SCALE = ADScreen::getScaleFactor();
@@ -481,6 +483,15 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 
         _selected_letter->setZOrder(0);
         _selected_letter = nullptr;
+        if (_node && _current_node_in_use)
+        {
+            _node->setNodeColor(InfoStyles::COLOR_WHITE);
+            _current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
+
+            _node = nullptr;
+            _current_node_in_use = nullptr;
+
+        }
 
 
     }
@@ -500,15 +511,28 @@ void GameNode::ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         moveLetterNodeBack(_selected_letter);
         _selected_letter->setZOrder(0);
         _selected_letter = nullptr;
-    }
+     }
 }
 void GameNode::showHint()
 {
+    if (_node && _current_node_in_use)
+    {
+        _node->setNodeColor(InfoStyles::COLOR_WHITE);
+        _current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
+//        _node->ShowLetter();
+//        _current_node_in_use->ShowLetter();
+
+        _node = nullptr;
+        _current_node_in_use = nullptr;
+
+    }
     if (_one_game->isCanUseHint())
     {
 
         LetterNode* current_node = nullptr;
         LetterNode* current_node_in_use = nullptr;
+        LetterNode* node = nullptr;
+
         std::vector<int> index_letter_for_hint;
         int new_letter_insertion = 0;
         for(size_t i = 0; i < _letters_qiuz.size(); ++i)
@@ -517,14 +541,29 @@ void GameNode::showHint()
             if(current_node->isLetterTrueforHint())
             {
                 index_letter_for_hint.push_back(i);
-                break;
+
             }
         }
+//        for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
+//        {
+
+//            CCLog("Purchase %d failed", index_letter_for_hint[i]);
+
+//        }
+//         CCLog("_");
+
         if (index_letter_for_hint.size() > 0)
         {
             std::random_shuffle(index_letter_for_hint.begin(), index_letter_for_hint.end());
 
-            LetterNode* node = _letters_qiuz[index_letter_for_hint[0]];
+//            for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
+//            {
+
+//                CCLog("Purchase %d failed", index_letter_for_hint[i]);
+
+//            }
+
+           node = _letters_qiuz[index_letter_for_hint[0]];
 
             if (node->isSelectedLetter())
             {
@@ -556,10 +595,12 @@ void GameNode::showHint()
 
 
 
-            if(current_node && current_node_in_use)
+            if(node && current_node_in_use)
             {
-                current_node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
+                node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
                 current_node_in_use->setNodeColor(InfoStyles::COLOR_MAGENTA);
+            _node = node;
+            _current_node_in_use = current_node_in_use;
             }
         }
 
@@ -586,6 +627,7 @@ int GameNode::getIndexInUseLetterNode(LetterNode* node)
             if (active_letter_str == in_use_letter_str)
             {
                 number_found_letter = i;
+                break;
             }
         }
     }
