@@ -3,7 +3,9 @@
 #include "InfoStyles.h"
 #include "developers.h"
 #include "MainMenu.h"
-using namespace cocos2d;
+#include "Managers/SettingsManager.h"
+#include "PopUp/TurnOffPopUp.h"
+//using namespace cocos2d;
 
 Settings::Settings()
 {
@@ -82,15 +84,18 @@ bool Settings::init()
                 - button_x4enjoy->getContentSize().width*0.45f);
 
     button_x4enjoy->setPositionY(ORIGIN.y + padding4enjoy +
-                                  button_x4enjoy->getContentSize().height*0.45f);
+                                 button_x4enjoy->getContentSize().height*0.45f);
     CONNECT(button_x4enjoy->signalOnClick, this, &Settings::onX4EnjoyClick);
 
     menu->addChild(button_x4enjoy);
 
     //music_on
-    CCSprite* button_music_on_image = CCSprite::create("settings/music-on.png");
+    _button_music_on_image = CCSprite::create("settings/music-on.png");
 
-    ADMenuItem* button_music_on = ADMenuItem::create(button_music_on_image);
+    ADMenuItem* button_music_on = ADMenuItem::create(_button_music_on_image);
+    //music_off
+    _button_music_off_image = CCSprite::create("settings/sounds-off.png");
+    _button_music_off_image->setAnchorPoint(ccp(0,0));
     float padding_x2 = VISIBLE_SIZE.width/2;
     float padding_music_x = 160/SCALE;
     float padding_music_y = 30/SCALE;
@@ -102,31 +107,41 @@ bool Settings::init()
     CONNECT(button_music_on->signalOnClick, this, &Settings::onMusicOnClick);
 
     menu->addChild(button_music_on);
-
+    button_music_on->addChild(_button_music_off_image);
+    //  _button_music_on_image->setVisible(true);
+    // _button_music_off_image->setVisible(false);
 
     //sounds_on
-    CCSprite* button_sounds_on_image = CCSprite::create("settings/sounds-on.png");
+    _button_sounds_on_image = CCSprite::create("settings/sounds-on.png");
 
-    ADMenuItem* button_sounds_on = ADMenuItem::create(button_sounds_on_image);
+    //sounds_off
+    _button_sounds_off_image = CCSprite::create("settings/sounds-off.png");
+    _button_sounds_off_image->setAnchorPoint(ccp(0,0));
+
+    ADMenuItem* button_sounds_on = ADMenuItem::create(_button_sounds_on_image);
 
     button_sounds_on->setPositionX(
                 ORIGIN.x +  padding_x2+padding_music_x);
 
     button_sounds_on->setPositionY(ORIGIN.y + VISIBLE_SIZE.height- padding_music_y -
-                                  button_music_on->getContentSize().height*0.5f);
+                                   button_music_on->getContentSize().height*0.5f);
     CONNECT(button_sounds_on->signalOnClick, this, &Settings::onSoundsOnClick);
 
+    button_sounds_on->addChild(_button_sounds_off_image);
     menu->addChild(button_sounds_on);
+    //  _button_sounds_on_image->setVisible(true);
+    //   _button_sounds_off_image->setVisible(false);
 
-
+    correctMusicEffects(EffectsType::Sound);
+    correctMusicEffects(EffectsType::Music);
     float empty_space = VISIBLE_SIZE.height - button_music_on->getContentSize().height
             - padding_music_y - button_x4enjoy_image->getContentSize().height;
     //developers
 
     cocos2d::CCLabelTTF* settings_scene_developers_title;
     settings_scene_developers_title = CCLabelTTF::create(_("settings_scene_developers.title"),
-                                           ADLanguage::getFontName(),
-                                          InfoStyles::SIZE_SETTINGS_BUTTON);
+                                                         ADLanguage::getFontName(),
+                                                         InfoStyles::SIZE_SETTINGS_BUTTON);
 
     settings_scene_developers_title->setColor(InfoStyles::COLOR_WHITE);
     ADMenuItem* button_developers = ADMenuItem::create(settings_scene_developers_title);
@@ -152,8 +167,8 @@ bool Settings::init()
 
     cocos2d::CCLabelTTF* settings_scene_restore_purchase_title;
     settings_scene_restore_purchase_title = CCLabelTTF::create(_("settings_scene_restore_purchase.title"),
-                                          ADLanguage::getFontName(),
-                                          InfoStyles::SIZE_SETTINGS_BUTTON);
+                                                               ADLanguage::getFontName(),
+                                                               InfoStyles::SIZE_SETTINGS_BUTTON);
 
     settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_WHITE);
     ADMenuItem* button_restore_purchase = ADMenuItem::create(settings_scene_restore_purchase_title);
@@ -192,11 +207,11 @@ bool Settings::init()
 
     cocos2d::CCLabelTTF* turn_off_ads_title;
     turn_off_ads_title = CCLabelTTF::create(_("settings_scene_turn_off_ads_title.title"),
-                                           ADLanguage::getFontName(),
-                                          InfoStyles::SIZE_SETTINGS_BUTTON_TURN);
+                                            ADLanguage::getFontName(),
+                                            InfoStyles::SIZE_SETTINGS_BUTTON_TURN);
     turn_off_ads_title->setAnchorPoint(ccp(0, 0.5f));
     turn_off_ads_title->setPosition(ccp(button_half_height*2,
-                                                       button_half_height));
+                                        button_half_height));
     turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
 
     float label_max_width = button_size.width - button_half_height*2.5f;
@@ -216,18 +231,20 @@ bool Settings::init()
 }
 void Settings::onMusicOnClick()
 {
-    CCLog("MusicOn Clicked");
+    SettingsManager::getInstance()->setMusic(!SettingsManager::getInstance()->isMusicOn());
+    Settings::correctMusicEffects(EffectsType::Music);
 }
+
 void Settings::onSoundsOnClick()
 {
-    CCLog("Sounds Clicked");
+    SettingsManager::getInstance()->setSound(!SettingsManager::getInstance()->isSoundOn());
+    Settings::correctMusicEffects(EffectsType::Sound);
 }
 
 void Settings::onDevelopersClick()
 {
     CCDirector::sharedDirector()->replaceScene(Developers::scene());
 }
-
 
 void Settings::onRestorePurchaseClick()
 {
@@ -236,9 +253,42 @@ void Settings::onRestorePurchaseClick()
 
 void Settings::onTurnOffAdsClick()
 {
-    CCLog("TurnOffAds Clicked");
+
+    _pop_up_manager.openWindow(new TurnOffPopUp(this));
+
 }
 void Settings::onX4EnjoyClick()
 {
-    CCLog("X4Enjoy Clicked");
+    //CCLog("X4Enjoy Clicked");
+    ADBrowser::openWebURL("http://4enjoy.com");
+
+}
+void Settings::correctMusicEffects(EffectsType type)
+{
+    if(type==EffectsType::Music)
+    {
+        if(SettingsManager::getInstance()->isMusicOn())
+        {
+            _button_music_off_image->setVisible(false);
+            _button_music_on_image->setVisible(true);
+        }
+        else
+        {
+            _button_music_on_image->setVisible(false);
+            _button_music_off_image->setVisible(true);
+        }
+    }
+    else
+    {
+        if(SettingsManager::getInstance()->isSoundOn())
+        {
+            _button_sounds_off_image->setVisible(false);
+            _button_sounds_on_image->setVisible(true);
+        }
+        else
+        {
+            _button_sounds_on_image->setVisible(false);
+            _button_sounds_off_image->setVisible(true);
+        }
+    }
 }

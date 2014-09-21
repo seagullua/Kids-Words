@@ -73,7 +73,9 @@ SOURCES += main.cpp \
     ../Classes/Draw/LetterNode.cpp \
     ../Classes/Logic/Hint.cpp \
     ../Classes/PopUp/LevelEnd.cpp \
-    ../Classes/PopUp/ExitGamePopUp.cpp
+    ../Classes/PopUp/ExitGamePopUp.cpp \
+    ../Classes/Managers/SettingsManager.cpp \
+    ../Classes/PopUp/TurnOffPopUp.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -106,6 +108,8 @@ HEADERS += \
     ../Classes/Draw/LetterNode.h \
     ../Classes/Logic/Hint.h \
     ../Classes/PopUp/LevelEnd.h \
-    ../Classes/PopUp/ExitGamePopUp.h
+    ../Classes/PopUp/ExitGamePopUp.h \
+    ../Classes/Managers/SettingsManager.h \
+    ../Classes/PopUp/TurnOffPopUp.h
 
 

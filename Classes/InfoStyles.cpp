@@ -39,3 +39,6 @@ const cocos2d::ccColor3B InfoStyles::COLOR_ORANGE= cocos2d::ccc3(255,78,9);
 const cocos2d::ccColor3B InfoStyles::COLOR_MAGENTA= cocos2d::ccc3(200,9,255);
 const cocos2d::ccColor3B InfoStyles::COLOR_RED_LIGHT = cocos2d::ccc3(255,20,12);
 const cocos2d::ccColor3B InfoStyles::COLOR_GREEN_LIGHT = cocos2d::ccc3(26,219,0);
+const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_DARK = cocos2d::ccc3(85,85,85);
+const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_YELLOW = cocos2d::ccc3(255,255,0);
+

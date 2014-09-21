@@ -40,6 +40,8 @@ public:
     static const cocos2d::ccColor3B COLOR_LIGHT_BLUE;
     static const cocos2d::ccColor3B COLOR_RED_LIGHT;
     static const cocos2d::ccColor3B COLOR_GREEN_LIGHT;
+    static const cocos2d::ccColor3B COLOR_LIGHT_DARK;
+    static const cocos2d::ccColor3B COLOR_LIGHT_YELLOW;
 };
 
 #endif // INFOSTYLES_H
