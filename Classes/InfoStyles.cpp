@@ -7,7 +7,7 @@ InfoStyles::InfoStyles()
 //sizes
 const int InfoStyles::SIZE_SETTINGS_BUTTON = 80;
 const int InfoStyles::SIZE_SETTINGS_BUTTON_TURN = 60;
-const int InfoStyles::SIZE_BUTTON_POP_UP = 50;
+const int InfoStyles::SIZE_BUTTON_POP_UP = 45;
 const int InfoStyles::SIZE_DEVELOPERS_TITLE = 50;
 const int InfoStyles::SIZE_LINE_TITLE = 30;
 const int InfoStyles::SIZE_MENU_TITLE = 70;

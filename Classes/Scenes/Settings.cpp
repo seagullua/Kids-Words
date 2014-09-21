@@ -94,7 +94,7 @@ bool Settings::init()
 
     ADMenuItem* button_music_on = ADMenuItem::create(_button_music_on_image);
     //music_off
-    _button_music_off_image = CCSprite::create("settings/sounds-off.png");
+    _button_music_off_image = CCSprite::create("settings/music-off.png");
     _button_music_off_image->setAnchorPoint(ccp(0,0));
     float padding_x2 = VISIBLE_SIZE.width/2;
     float padding_music_x = 160/SCALE;

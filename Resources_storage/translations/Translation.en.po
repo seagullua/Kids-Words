@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-09-16 22:08+0200\n"
+"POT-Creation-Date: 2014-09-21 20:39+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -50,6 +50,26 @@ msgstr "Collections"
 msgid "pop_up_end_level.lesson.title"
 msgstr "Next Lesson"
 
+#: ../../Classes/PopUp/TurnOffPopUp.cpp:33
+msgid "pop_up_turn_off.title"
+msgstr "Turn Off Ads"
+
+#: ../../Classes/PopUp/TurnOffPopUp.cpp:62
+msgid "pop_up_turn_off.no"
+msgstr "No Later"
+
+#: ../../Classes/PopUp/TurnOffPopUp.cpp:85
+msgid "pop_up_turn_off.add"
+msgstr ""
+"Turn Off Ads \n"
+"$0.99"
+
+#: ../../Classes/PopUp/TurnOffPopUp.cpp:107
+msgid "pop_up_turn_off.text"
+msgstr ""
+"Feed the pinguine. \n"
+"Your kids will like it."
+
 #: ../../Classes/Scenes/SelectCollection.cpp:74
 msgid "select_collection.title"
 msgstr "Collections"
@@ -66,15 +86,15 @@ msgstr "Middle"
 msgid "select_level.difficult"
 msgstr "Difficult"
 
-#: ../../Classes/Scenes/Settings.cpp:127
+#: ../../Classes/Scenes/Settings.cpp:142
 msgid "settings_scene_developers.title"
 msgstr "Developers"
 
-#: ../../Classes/Scenes/Settings.cpp:154
+#: ../../Classes/Scenes/Settings.cpp:169
 msgid "settings_scene_restore_purchase.title"
 msgstr "Restore Purchase"
 
-#: ../../Classes/Scenes/Settings.cpp:194
+#: ../../Classes/Scenes/Settings.cpp:209
 msgid "settings_scene_turn_off_ads_title.title"
 msgstr "Turn Off Ads"
 
