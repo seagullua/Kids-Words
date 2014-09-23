@@ -9,6 +9,7 @@
 #include "Logic/Collection.h"
 #include <vector>
 #include <ADLib/Rendering/ADScrollView.h>
+#include "Managers/SaveStarsManager.h"
 using namespace cocos2d;
 
 SelectLevel::SelectLevel(CollectionID id)
@@ -120,23 +121,32 @@ bool SelectLevel::init()
         Card* card;
         if (j == 0)
         {
+            int star_number = SaveStarsManager::getInstance()->getStars(
+                        _collection_id, j);
+
             card = Card::create(CCSprite::create(current_collection->getCollectionPartEasy().getImage().c_str()),
                                 _("select_level.easy"),
-                                2,CardType::WithBorder);
+                                star_number,CardType::WithBorder);
 
         }
         else if (j == 1)
         {
+            int star_number = SaveStarsManager::getInstance()->getStars(
+                        _collection_id, j);
+
             card = Card::create(CCSprite::create(current_collection->getCollectionPartMiddle().getImage().c_str()),
                                 _("select_level.middle"),
-                                2,CardType::WithBorder);
+                                star_number,CardType::WithBorder);
 
         }
         else if (j == 2)
         {
+            int star_number = SaveStarsManager::getInstance()->getStars(
+                        _collection_id, j);
+
             card = Card::create(CCSprite::create(current_collection->getCollectionPartDifficult().getImage().c_str()),
                                 _("select_level.difficult"),
-                                2,CardType::WithBorder);
+                                star_number,CardType::WithBorder);
 
         }
 
@@ -152,7 +162,7 @@ bool SelectLevel::init()
         CollectionID id = current_collection->getID();
         button_card->setClickAction([id,current_dificult](){
             // CCLog("Level click: %d", id);
-             CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,current_dificult));
+            CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,current_dificult));
 
         });
         menu->addChild(button_card);

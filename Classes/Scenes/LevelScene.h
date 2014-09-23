@@ -6,6 +6,7 @@
 #include "Logic/OneSeason.h"
 #include "Draw/GameNode.h"
 #include "Draw/TopPanell.h"
+#include "Managers/TutorialManager.h"
 
 class LevelScene: public SceneStyle
 {
@@ -35,6 +36,7 @@ private:
     float _use_w;
     TopPanell* _top_panel;
     int getStarNumber();
+    bool _tutorial;
 
 };
 

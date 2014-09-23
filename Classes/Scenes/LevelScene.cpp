@@ -10,6 +10,7 @@
 #include <vector>
 #include <string>
 #include "PopUp/LevelEnd.h"
+#include "Managers/SaveStarsManager.h"
 
 using namespace cocos2d;
 
@@ -83,13 +84,16 @@ bool LevelScene::init()
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
+    int star_number = SaveStarsManager::getInstance()->getStars(
+                _collection_id, _difficult);
+
     //  OneSeason _current_one_season(_collection_id,_difficult);
     _number_of_word = _current_one_season.getNumberWord(_difficult);
     _current_number_of_word = 1;
     if (!_top_panel)
     {
 
-        _top_panel= TopPanell::create(_current_number_of_word,_number_of_word,10);
+        _top_panel= TopPanell::create(_current_number_of_word,_number_of_word,star_number);
 
         _top_panel->setAnchorPoint(ccp(0,1));
 
@@ -107,8 +111,15 @@ bool LevelScene::init()
     //    button_back->setAnchorPoint(ccp(0,1));
     //    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
 
+    _tutorial = false;
+
+    if(TutorialManager::getInstance()->isFirstGame())
+    {
+        _tutorial = true;
+    }
+
     selectOneGame();
-//    CONNECT(this->signalNextLesson, this, &LevelScene::onSignalNextLesson);
+    //    CONNECT(this->signalNextLesson, this, &LevelScene::onSignalNextLesson);
     return true;
 }
 void LevelScene::onSignalAudioClicked()
@@ -118,20 +129,21 @@ void LevelScene::onSignalAudioClicked()
 void LevelScene::onSignalUseHintClicked()
 {
 
-  _game_node->showHint();
-    //    if(_one_game->isCanUseHint())
-    //    {
-    //        _one_game->setNumberOfHint();
-    //        int number_of_use_hint = _one_game->getNumberOfHint();
-    //        _top_panel->starsDrawChanged(10-number_of_use_hint);
-    //        OneHint current_hint = _one_game->getHint().getOneHint();
-    //          _game_node->showHint(current_hint);
 
-    //    }
-    //    else
-    //    {
-    //        //TODO сказать что нет подсказок
-    //    }
+    if(_current_one_season.isCanUseHint())
+    {
+
+        _current_one_season.setNumberOfHint();
+        int number_of_use_hint = _current_one_season.getNumberOfHint() ;
+        _top_panel->starsDrawChanged(number_of_use_hint);
+        _game_node->showHint();
+
+
+    }
+    else
+    {
+        //TODO сказать что нет подсказок
+    }
 }
 void LevelScene::setOneGame(const OneGame* one_game)
 {
@@ -152,6 +164,12 @@ void LevelScene::selectOneGame()
         _game_node->setAnchorPoint(ccp(0,0));
         _game_node->setPositionX(0);
         _game_node->setPositionY(0);
+        if (_tutorial)
+        {
+            _game_node->showHint();
+            TutorialManager::getInstance()->setIsNotFirstGame();
+            _tutorial = false;
+        }
         this->addChild(_game_node);
         CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
     }
@@ -172,12 +190,15 @@ void LevelScene::selectNextSeason()
 void LevelScene::EndLevel()
 {
     int star_number = getStarNumber();
+    SaveStarsManager::getInstance()->setStars(
+                _collection_id, _difficult, star_number);
     _pop_up_manager.openWindow(new LevelEnd(this,_collection_id,star_number,_difficult));
 
 }
 int LevelScene::getStarNumber()
 {
-    return 7;
+    return  _current_one_season.getNumberOfHint();
+    ;
 }
 void LevelScene::onSignalNextLesson()
 {

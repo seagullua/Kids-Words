@@ -2,6 +2,7 @@
 #include <ADLib/PopUp/ADPopUpWindow.h>
 #include "InfoStyles.h"
 #include "ADLib.h"
+#include "Scenes/Settings.h"
 
 
 using namespace cocos2d;
@@ -120,6 +121,7 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
 
 void TurnOffPopUp::onNo()
 {
+    CCDirector::sharedDirector()->replaceScene(Settings::scene());
 
 }
 

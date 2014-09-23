@@ -75,7 +75,10 @@ SOURCES += main.cpp \
     ../Classes/PopUp/LevelEnd.cpp \
     ../Classes/PopUp/ExitGamePopUp.cpp \
     ../Classes/Managers/SettingsManager.cpp \
-    ../Classes/PopUp/TurnOffPopUp.cpp
+    ../Classes/PopUp/TurnOffPopUp.cpp \
+    ../Classes/Managers/TutorialManager.cpp \
+    ../Classes/Managers/SaveStarsManager.cpp \
+    ../Classes/Managers/StarsCollectionManager.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -110,6 +113,9 @@ HEADERS += \
     ../Classes/PopUp/LevelEnd.h \
     ../Classes/PopUp/ExitGamePopUp.h \
     ../Classes/Managers/SettingsManager.h \
-    ../Classes/PopUp/TurnOffPopUp.h
+    ../Classes/PopUp/TurnOffPopUp.h \
+    ../Classes/Managers/TutorialManager.h \
+    ../Classes/Managers/SaveStarsManager.h \
+    ../Classes/Managers/StarsCollectionManager.h
 
 

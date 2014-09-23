@@ -7,6 +7,7 @@
 #include <vector>
 #include <ADLib/Rendering/ADScrollView.h>
 #include "SelectLevel.h"
+#include "Managers/StarsCollectionManager.h"
 using namespace cocos2d;
 
 SelectCollection::SelectCollection()
@@ -106,9 +107,13 @@ bool SelectCollection::init()
     {
 
 
+        CollectionID id = collect[i].getID();
+        int star_number = StarsCollectionManager::getInstance()->getStars(
+                    id);
+
         Card* card = Card::create(CCSprite::create(collect[i].getImage().c_str()),
                                   collect[i].getName(),
-                                  2,CardType::WithoutBorder);
+                                  star_number,CardType::WithoutBorder);
 
         ADMenuItem* button_card = ADMenuItem::create(card);
         //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
@@ -118,8 +123,7 @@ bool SelectCollection::init()
         collection_width += one_card_width;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*i + button_card->getContentSize().width*0.5f);
-        CollectionID id = collect[i].getID();
-        button_card->setClickAction([id](){
+         button_card->setClickAction([id](){
             //CCLog("Collection click: %d", id);
             CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
         });

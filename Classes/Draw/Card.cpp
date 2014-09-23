@@ -74,7 +74,7 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
 
     image->setScale( (padding_node_y-padding_shadow*1.2f/SCALE-(padding_node_y*0.25f+line_image_height))/image->getContentSize().height );
     this->addChild(image);
-    Stars* stars_node = Stars::create(3*2);
+    Stars* stars_node = Stars::create(stars_number);
     stars_node->setAnchorPoint(ccp(0.5f,0.5f));
     stars_node->setPositionX(padding_node_x*0.47f);
     stars_node->setPositionY(padding_node_y*0.25f*0.6f);
