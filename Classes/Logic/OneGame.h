@@ -9,7 +9,6 @@ public:
     const Task& getTask() const;
     int getNumberOfHint() const;
     bool isCanUseHint() const;
-
 private:
     Task _task;
     OneSeason* _season;

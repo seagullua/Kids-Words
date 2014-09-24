@@ -84,8 +84,7 @@ bool LevelScene::init()
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
-    int star_number = SaveStarsManager::getInstance()->getStars(
-                _collection_id, _difficult);
+    int star_number = 10;
 
     //  OneSeason _current_one_season(_collection_id,_difficult);
     _number_of_word = _current_one_season.getNumberWord(_difficult);
@@ -189,7 +188,11 @@ void LevelScene::selectNextSeason()
 
 void LevelScene::EndLevel()
 {
-    int star_number = getStarNumber();
+    int star_number_old = SaveStarsManager::getInstance()->getStars(
+                _collection_id, _difficult);
+
+    int star_number_current = getStarNumber();\
+    int star_number = MAX(star_number_old,star_number_current);
     SaveStarsManager::getInstance()->setStars(
                 _collection_id, _difficult, star_number);
     _pop_up_manager.openWindow(new LevelEnd(this,_collection_id,star_number,_difficult));

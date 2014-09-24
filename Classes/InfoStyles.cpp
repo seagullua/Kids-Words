@@ -14,6 +14,7 @@ const int InfoStyles::SIZE_MENU_TITLE = 70;
 const int InfoStyles::SIZE_MENU_TITLE_POP_UP = 100;
 const int InfoStyles::SIZE_LETTER = 100;
 const int InfoStyles::SIZE_EXIT_TITLE = 60;
+const int InfoStyles::SIZE_TRANSLATED_WORD = 40;
 //% letter by difficult
 const int InfoStyles::EASY = 30;
 const int InfoStyles::MIDDLE = 50;
@@ -41,4 +42,5 @@ const cocos2d::ccColor3B InfoStyles::COLOR_RED_LIGHT = cocos2d::ccc3(255,20,12);
 const cocos2d::ccColor3B InfoStyles::COLOR_GREEN_LIGHT = cocos2d::ccc3(26,219,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_DARK = cocos2d::ccc3(85,85,85);
 const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_YELLOW = cocos2d::ccc3(255,255,0);
+const cocos2d::ccColor3B InfoStyles::COLOR_DARK = cocos2d::ccc3(0,0,0);
 

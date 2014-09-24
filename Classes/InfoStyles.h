@@ -16,6 +16,7 @@ public:
     static const int SIZE_MENU_TITLE_POP_UP;
     static const int SIZE_BUTTON_POP_UP;
     static const int SIZE_LETTER;
+    static const int SIZE_TRANSLATED_WORD;
     static const int SIZE_EXIT_TITLE;
     //% letter by difficult
     static const int EASY ;
@@ -42,6 +43,7 @@ public:
     static const cocos2d::ccColor3B COLOR_GREEN_LIGHT;
     static const cocos2d::ccColor3B COLOR_LIGHT_DARK;
     static const cocos2d::ccColor3B COLOR_LIGHT_YELLOW;
+    static const cocos2d::ccColor3B COLOR_DARK;
 };
 
 #endif // INFOSTYLES_H

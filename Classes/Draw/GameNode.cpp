@@ -39,7 +39,6 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     std::string word_image_name = task.getImageFile();
     std::vector<LetterNode*> qiuz_letter;
 
-
     // _letters_qiuz
     CCNode* node_qiuz_word = CCNode::create();
 
@@ -88,7 +87,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
-    float word_image_scale_y = (VISIBLE_SIZE.height- node_qiuz_word->getContentSize().height* node_scale-padding*9 )/word_image_height;
+    float word_image_scale_y = (VISIBLE_SIZE.height- node_qiuz_word->getContentSize().height* node_scale-padding*11 )/word_image_height;
     float word_image_scale = 1;
     float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
 
@@ -99,10 +98,30 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
     float hn = node_qiuz_word->getContentSize().height* node_scale+padding*0.5f;
     float word_image_h = (_use_h -hn-padding)*0.5f;
-    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding);
+    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*2);
 
     this->addChild(word_image);
 
+    std::string translated_word = task.getTranslatedWord();
+    if (translated_word.size() != 0)
+    {
+
+
+
+        // translated_word
+        cocos2d::CCLabelTTF* translated_word_title;
+        translated_word_title = CCLabelTTF::create(translated_word.c_str(),
+                ADLanguage::getFontName(),
+                InfoStyles::SIZE_TRANSLATED_WORD);
+
+        translated_word_title->setColor(InfoStyles::COLOR_DARK);
+
+                translated_word_title->setAnchorPoint(ccp(0.5f,0));
+        translated_word_title->setPositionX(ORIGIN.x+ VISIBLE_SIZE.width*0.5f+word_image->getContentSize().width*word_image_scale*0.5f);
+        translated_word_title->setPositionY(ORIGIN.y + hn+padding*0.7f);
+
+        this->addChild(translated_word_title);
+    }
 
     // node_in_use_letters
 

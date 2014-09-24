@@ -70,70 +70,72 @@ else if (i == 1)
     current_level.setImage("collections/animals/bear.jpg");
     Word word("BEAR");
     current_level.setWord(word);
-    current_level.setTranslation("ведмідь");
+  //  current_level.setTranslation("ведмідь");
+    current_level.setTranslation("BEAR");
+
 }
 else if (i == 2)
 {
     current_level.setImage("collections/animals/cat.jpg");
     Word word("CAT");
     current_level.setWord(word);
-    current_level.setTranslation("кіт");
+    current_level.setTranslation("CAT");
 }
 else if (i == 3)
 {
     current_level.setImage("collections/animals/chinchilla.jpg");
     Word word("CHINCHILLA");
     current_level.setWord(word);
-    current_level.setTranslation("шиншила");
+    current_level.setTranslation("CHINCHILLA");
 }
 else if (i == 4)
 {
     current_level.setImage("collections/animals/cow.jpg");
     Word word("COW");
     current_level.setWord(word);
-    current_level.setTranslation("корова");
+    current_level.setTranslation("COW");
 }
 else if (i == 5)
 {
     current_level.setImage("collections/animals/dog.jpg");
     Word word("DOG");
     current_level.setWord(word);
-    current_level.setTranslation("собака");
+    current_level.setTranslation("DOG");
 }
 else if (i == 6)
 {
     current_level.setImage("collections/animals/elephant.jpg");
     Word word("ELEPHANT");
     current_level.setWord(word);
-    current_level.setTranslation("слон");
+    current_level.setTranslation("ELEPHANT");
 }
 else if (i == 7)
 {
     current_level.setImage("collections/animals/fox.jpg");
     Word word("FOX");
     current_level.setWord(word);
-    current_level.setTranslation("лисиця");
+    current_level.setTranslation("FOX");
 }
 else if (i == 8)
 {
     current_level.setImage("collections/animals/frog.jpg");
     Word word("FROG");
     current_level.setWord(word);
-    current_level.setTranslation("жаба");
+    current_level.setTranslation("FROG");
 }
 else if (i == 9)
 {
     current_level.setImage("collections/animals/lion.jpg");
     Word word("LION");
     current_level.setWord(word);
-    current_level.setTranslation("лев");
+    current_level.setTranslation("LION");
 }
 else if (i == 10)
 {
     current_level.setImage("collections/animals/monkey.jpg");
     Word word("MONKEY");
     current_level.setWord(word);
-    current_level.setTranslation("мавпа");
+    current_level.setTranslation("MONKEY");
 }
 
 else if (i == 11)
@@ -141,63 +143,63 @@ else if (i == 11)
     current_level.setImage("collections/animals/owl.jpg");
     Word word("OWL");
     current_level.setWord(word);
-    current_level.setTranslation("корова");
+    current_level.setTranslation("OWL");
 }
 else if (i == 12)
 {
     current_level.setImage("collections/animals/parrot.jpg");
     Word word("PARROT");
     current_level.setWord(word);
-    current_level.setTranslation("попугай");
+    current_level.setTranslation("PARROT");
 }
 else if (i == 13)
 {
     current_level.setImage("collections/animals/penguin.jpg");
     Word word("PENGUIN");
     current_level.setWord(word);
-    current_level.setTranslation("пінгвін");
+    current_level.setTranslation("PENGUIN");
 }
 else if (i == 14)
 {
     current_level.setImage("collections/animals/rabbit.jpg");
     Word word("RABBIT");
     current_level.setWord(word);
-    current_level.setTranslation("попугай");
+    current_level.setTranslation("RABBIT");
 }
 else if (i == 15)
 {
     current_level.setImage("collections/animals/rhino.jpg");
     Word word("RHINO");
     current_level.setWord(word);
-    current_level.setTranslation("носорог");
+    current_level.setTranslation("RHINO");
 }
 else if (i == 16)
 {
     current_level.setImage("collections/animals/rabbit.jpg");
     Word word("RABBIT");
     current_level.setWord(word);
-    current_level.setTranslation("попугай");
+    current_level.setTranslation("RABBIT");
 }
 else if (i == 17)
 {
     current_level.setImage("collections/animals/sheep.jpg");
     Word word("SHEEP");
     current_level.setWord(word);
-    current_level.setTranslation("вівця");
+    current_level.setTranslation("SHEEP");
 }
 else if (i == 18)
 {
     current_level.setImage("collections/animals/turtle.jpg");
     Word word("TURTLE");
     current_level.setWord(word);
-    current_level.setTranslation("черепаха");
+    current_level.setTranslation("TURTLE");
 }
 else if (i == 19)
 {
     current_level.setImage("collections/animals/zebra.jpg");
     Word word("ZEBRA");
     current_level.setWord(word);
-    current_level.setTranslation("зебра");
+    current_level.setTranslation("ZEBRA");
 }
 
 

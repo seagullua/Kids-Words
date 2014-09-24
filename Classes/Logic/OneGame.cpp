@@ -29,3 +29,4 @@ bool OneGame::isCanUseHint() const
         return false;
     }
 }
+
