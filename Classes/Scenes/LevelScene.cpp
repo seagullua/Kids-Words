@@ -63,7 +63,20 @@ void LevelScene::onBackClick()
 }
 void LevelScene::onOneGameEnd()
 {
-    _game_node->removeFromParent();
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+    CCNode* node = _game_node;
+    auto remove_from_parent = [node](){
+        node->removeFromParent();
+    };
+    _game_node->runAction(
+                CCSequence::create(
+                    CCMoveTo::create(0.5f,ccp(0-VISIBLE_SIZE.width,ORIGIN.y) ),
+                    ADCallFunc::create(remove_from_parent),
+                    NULL
+                    )
+                );
+
     selectOneGame();
 
 }
@@ -150,7 +163,8 @@ void LevelScene::setOneGame(const OneGame* one_game)
 }
 void LevelScene::selectOneGame()
 {
-
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     if (_current_number_of_word < _number_of_word)
     {
 
@@ -161,8 +175,9 @@ void LevelScene::selectOneGame()
         setOneGame(_one_game);
         _game_node= GameNode::create(_one_game,_use_h);
         _game_node->setAnchorPoint(ccp(0,0));
-        _game_node->setPositionX(0);
+        _game_node->setPositionX(VISIBLE_SIZE.width);
         _game_node->setPositionY(0);
+        _game_node->runAction(CCMoveTo::create(0.5f,ccp(0,0) ));
         if (_tutorial)
         {
             _game_node->showHint();

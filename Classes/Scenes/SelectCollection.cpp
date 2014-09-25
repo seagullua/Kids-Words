@@ -7,7 +7,7 @@
 #include <vector>
 #include <ADLib/Rendering/ADScrollView.h>
 #include "SelectLevel.h"
-#include "Managers/StarsCollectionManager.h"
+#include "Managers/SaveStarsManager.h"
 using namespace cocos2d;
 
 SelectCollection::SelectCollection()
@@ -108,7 +108,7 @@ bool SelectCollection::init()
 
 
         CollectionID id = collect[i].getID();
-        int star_number = StarsCollectionManager::getInstance()->getStars(
+        int star_number = SaveStarsManager::getInstance()->getStarsCollection(
                     id);
 
         Card* card = Card::create(CCSprite::create(collect[i].getImage().c_str()),

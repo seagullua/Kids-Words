@@ -77,8 +77,7 @@ SOURCES += main.cpp \
     ../Classes/Managers/SettingsManager.cpp \
     ../Classes/PopUp/TurnOffPopUp.cpp \
     ../Classes/Managers/TutorialManager.cpp \
-    ../Classes/Managers/SaveStarsManager.cpp \
-    ../Classes/Managers/StarsCollectionManager.cpp
+    ../Classes/Managers/SaveStarsManager.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -115,7 +114,6 @@ HEADERS += \
     ../Classes/Managers/SettingsManager.h \
     ../Classes/PopUp/TurnOffPopUp.h \
     ../Classes/Managers/TutorialManager.h \
-    ../Classes/Managers/SaveStarsManager.h \
-    ../Classes/Managers/StarsCollectionManager.h
+    ../Classes/Managers/SaveStarsManager.h
 
 

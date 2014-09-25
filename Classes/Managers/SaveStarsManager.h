@@ -10,6 +10,7 @@ public:
     static SaveStarsManager* getInstance();
     void setStars(CollectionID collection_id, int level_difficulty, int stars);
     int getStars(CollectionID collection_id, int level_difficulty);
+    int getStarsCollection(CollectionID collection_id);
 private:
     static SaveStarsManager instance;
 

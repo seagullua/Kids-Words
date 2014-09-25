@@ -48,9 +48,10 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     for (int i = 0 ; i < qiuz_word.size(); ++i )
     {
         LetterNode* letter_node = LetterNode:: create(qiuz_word[i]);
-        letter_node->setAnchorPoint(ccp(0,0));
-        letter_node->setPositionX(letter_node->getContentSize().width*i*1.2f+padding);
-        letter_node->setPositionY(0);
+        letter_node->setAnchorPoint(ccp(0.5f,0.5f));
+        letter_node->setPositionX(letter_node->getContentSize().width*0.5f+
+                    letter_node->getContentSize().width*i*1.15f+padding);
+        letter_node->setPositionY(letter_node->getContentSize().height*0.4f);
         node_qiuz_word->addChild(letter_node);
         letter_width=letter_node->getContentSize().width;
         node_width = node_width+letter_width+padding;
@@ -74,7 +75,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     }
     node_qiuz_word->setAnchorPoint(ccp(0.5f,0));
     node_qiuz_word->setPositionX(ORIGIN.x+ VISIBLE_SIZE.width*0.5f );
-    node_qiuz_word->setPositionY(ORIGIN.y +padding);
+    node_qiuz_word->setPositionY(ORIGIN.y+padding );
 
     this->addChild(node_qiuz_word);
 
@@ -87,7 +88,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
-    float word_image_scale_y = (VISIBLE_SIZE.height- node_qiuz_word->getContentSize().height* node_scale-padding*11 )/word_image_height;
+    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale-padding*3 )/word_image_height;
     float word_image_scale = 1;
     float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
 
@@ -96,8 +97,8 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     word_image->setScale(word_image_scale);
 
 
-    float hn = node_qiuz_word->getContentSize().height* node_scale+padding*0.5f;
-    float word_image_h = (_use_h -hn-padding)*0.5f;
+    float hn = node_qiuz_word->getContentSize().height* node_scale;
+    float word_image_h = (_use_h -hn-padding*2)*0.5f;
     word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*2);
 
     this->addChild(word_image);
@@ -111,14 +112,14 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
         // translated_word
         cocos2d::CCLabelTTF* translated_word_title;
         translated_word_title = CCLabelTTF::create(translated_word.c_str(),
-                ADLanguage::getFontName(),
-                InfoStyles::SIZE_TRANSLATED_WORD);
+                                                   ADLanguage::getFontName(),
+                                                   InfoStyles::SIZE_TRANSLATED_WORD);
 
         translated_word_title->setColor(InfoStyles::COLOR_DARK);
 
-                translated_word_title->setAnchorPoint(ccp(0.5f,0));
+        translated_word_title->setAnchorPoint(ccp(0.5f,0));
         translated_word_title->setPositionX(ORIGIN.x+ VISIBLE_SIZE.width*0.5f+word_image->getContentSize().width*word_image_scale*0.5f);
-        translated_word_title->setPositionY(ORIGIN.y + hn+padding*0.7f);
+        translated_word_title->setPositionY(ORIGIN.y + hn+padding*0.3f);
 
         this->addChild(translated_word_title);
     }
@@ -126,18 +127,19 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     // node_in_use_letters
 
     float w_node = VISIBLE_SIZE.width*0.5f;
-    float h_node = _use_h -hn;
+    float h_node = _use_h -hn-padding;
     CCNode* node_in_use_letters = CCNode::create();
     node_in_use_letters->setContentSize(ccp(w_node, h_node));
     node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
     node_in_use_letters->setPositionX(ORIGIN.x);
-    node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding);
+    node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding*2);
 
     int f_x = 0;
     int f_y = 0;
     int n_letter = in_use_letters.size();
     float max_size = 0;
     float size_letter = 0;
+    float MAX_LETTER_SIZE = 250/SCALE;
     for (int x = 1; x <=10; ++x)
     {
         for (int y = 1; y <=10; ++y)
@@ -149,7 +151,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
                     //float area = h_node * h_node / (x * y);
                     size_letter = h_node / x;
-                    if (size_letter >= max_size )
+                    if (size_letter >= max_size && size_letter < MAX_LETTER_SIZE)
                     {
                         max_size = size_letter;
                         f_x = x;
@@ -504,9 +506,12 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         _selected_letter = nullptr;
         if (_node && _current_node_in_use)
         {
-            _node->setNodeColor(InfoStyles::COLOR_WHITE);
-            _current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
-
+            //_node->setNodeColor(InfoStyles::COLOR_WHITE);
+            //_current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
+            _current_node_in_use->stopAllActions();
+            _node->stopAllActions();
+            _current_node_in_use->setScale(_base_scale);
+            _node->setScale(_base_scale_n);
             _node = nullptr;
             _current_node_in_use = nullptr;
 
@@ -530,16 +535,21 @@ void GameNode::ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         moveLetterNodeBack(_selected_letter);
         _selected_letter->setZOrder(0);
         _selected_letter = nullptr;
-     }
+    }
 }
 void GameNode::showHint()
 {
     if (_node && _current_node_in_use)
     {
-        _node->setNodeColor(InfoStyles::COLOR_WHITE);
-        _current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
-//        _node->ShowLetter();
-//        _current_node_in_use->ShowLetter();
+        //        _node->setNodeColor(InfoStyles::COLOR_WHITE);
+        //        _current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
+        _current_node_in_use->stopAllActions();
+        _node->stopAllActions();
+        _current_node_in_use->setScale(_base_scale);
+        _node->setScale(_base_scale_n);
+
+        //        _node->ShowLetter();
+        //        _current_node_in_use->ShowLetter();
 
         _node = nullptr;
         _current_node_in_use = nullptr;
@@ -563,26 +573,26 @@ void GameNode::showHint()
 
             }
         }
-//        for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
-//        {
+        //        for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
+        //        {
 
-//            CCLog("Purchase %d failed", index_letter_for_hint[i]);
+        //            CCLog("Purchase %d failed", index_letter_for_hint[i]);
 
-//        }
-//         CCLog("_");
+        //        }
+        //         CCLog("_");
 
         if (index_letter_for_hint.size() > 0)
         {
             std::random_shuffle(index_letter_for_hint.begin(), index_letter_for_hint.end());
 
-//            for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
-//            {
+            //            for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
+            //            {
 
-//                CCLog("Purchase %d failed", index_letter_for_hint[i]);
+            //                CCLog("Purchase %d failed", index_letter_for_hint[i]);
 
-//            }
+            //            }
 
-           node = _letters_qiuz[index_letter_for_hint[0]];
+            node = _letters_qiuz[index_letter_for_hint[0]];
 
             if (node->isSelectedLetter())
             {
@@ -595,7 +605,7 @@ void GameNode::showHint()
                 if (index_in_quiz_node >=0)
                 {
 
-                                                LetterNode* old_node = _letters_qiuz[index_in_quiz_node];
+                    LetterNode* old_node = _letters_qiuz[index_in_quiz_node];
 
                     //                            int old_node_index = old_node->getIndexSelectedLetter();
                     //                            moveLetterNodeBackByIndex(node,old_node_index);
@@ -616,10 +626,34 @@ void GameNode::showHint()
 
             if(node && current_node_in_use)
             {
-                node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
-                current_node_in_use->setNodeColor(InfoStyles::COLOR_MAGENTA);
-            _node = node;
-            _current_node_in_use = current_node_in_use;
+                //            node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
+                _base_scale = current_node_in_use->getScale();
+                _base_scale_n = node->getScale();
+                float duration = 0.2f;
+                //current_node_in_use->runAction(CCTintTo::create(5.5f, 255, 0, 0));
+                //current_node_in_use->stopAllActions();
+                //current_node_in_use->setNodeColor(InfoStyles::COLOR_MAGENTA);
+                _node = node;
+                _current_node_in_use = current_node_in_use;
+                _current_node_in_use->runAction(
+                            CCRepeatForever::create(
+                                CCSequence::create(
+                                    CCScaleTo::create(duration, _base_scale*1.4f),
+                                    CCScaleTo::create(duration, _base_scale),
+                                    NULL
+                                    )
+                                )
+                            );
+                _node->runAction(
+                            CCRepeatForever::create(
+                                CCSequence::create(
+                                    CCScaleTo::create(duration, _base_scale_n*1.4f),
+                                    CCScaleTo::create(duration, _base_scale_n),
+                                    NULL
+                                    )
+                                )
+                            );
+
             }
         }
 

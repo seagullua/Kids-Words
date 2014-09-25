@@ -60,6 +60,8 @@ private:
     void removeLetterAndMoveBack(LetterNode* node);
     LetterNode* _current_node_in_use ;
     LetterNode* _node  ;
+    float _base_scale;
+    float _base_scale_n;
 
 };
 
