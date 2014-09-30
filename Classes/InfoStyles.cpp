@@ -32,15 +32,16 @@ const int InfoStyles::DIFFICULT_NUMBER = 5;
 //colors
 const cocos2d::ccColor3B InfoStyles::COLOR_WHITE = cocos2d::ccc3(255, 255, 255);
 const cocos2d::ccColor3B InfoStyles::COLOR_BLUE = cocos2d::ccc3(9,154,255);
-const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_BLUE = cocos2d::ccc3(9,206,255);
+const cocos2d::ccColor3B InfoStyles::COLOR_BLUE_LIGHT = cocos2d::ccc3(9,206,255);
 const cocos2d::ccColor3B InfoStyles::COLOR_RED = cocos2d::ccc3(250,70,10);
 const cocos2d::ccColor3B InfoStyles::COLOR_GREEN = cocos2d::ccc3(20,167,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_YELLOW = cocos2d::ccc3(255,221,30);
 const cocos2d::ccColor3B InfoStyles::COLOR_ORANGE= cocos2d::ccc3(255,78,9);
+const cocos2d::ccColor3B InfoStyles::COLOR_ORANGE_LIGHT= cocos2d::ccc3(250,180,65);
 const cocos2d::ccColor3B InfoStyles::COLOR_MAGENTA= cocos2d::ccc3(200,9,255);
 const cocos2d::ccColor3B InfoStyles::COLOR_RED_LIGHT = cocos2d::ccc3(255,20,12);
 const cocos2d::ccColor3B InfoStyles::COLOR_GREEN_LIGHT = cocos2d::ccc3(26,219,0);
-const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_DARK = cocos2d::ccc3(85,85,85);
-const cocos2d::ccColor3B InfoStyles::COLOR_LIGHT_YELLOW = cocos2d::ccc3(255,255,0);
+const cocos2d::ccColor3B InfoStyles::COLOR_DARK_LIGHT = cocos2d::ccc3(85,85,85);
+const cocos2d::ccColor3B InfoStyles::COLOR_YELLOW_LIGHT = cocos2d::ccc3(255,255,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_DARK = cocos2d::ccc3(0,0,0);
-
+const cocos2d::ccColor3B InfoStyles::COLOR_PINK = cocos2d::ccc3(245,180,230);

@@ -38,12 +38,14 @@ public:
     static const cocos2d::ccColor3B COLOR_YELLOW;
     static const cocos2d::ccColor3B COLOR_ORANGE;
     static const cocos2d::ccColor3B COLOR_MAGENTA;
-    static const cocos2d::ccColor3B COLOR_LIGHT_BLUE;
+    static const cocos2d::ccColor3B COLOR_BLUE_LIGHT;
     static const cocos2d::ccColor3B COLOR_RED_LIGHT;
     static const cocos2d::ccColor3B COLOR_GREEN_LIGHT;
-    static const cocos2d::ccColor3B COLOR_LIGHT_DARK;
-    static const cocos2d::ccColor3B COLOR_LIGHT_YELLOW;
+    static const cocos2d::ccColor3B COLOR_DARK_LIGHT;
+    static const cocos2d::ccColor3B COLOR_YELLOW_LIGHT;
     static const cocos2d::ccColor3B COLOR_DARK;
+    static const cocos2d::ccColor3B COLOR_PINK;
+    static const cocos2d::ccColor3B COLOR_ORANGE_LIGHT;
 };
 
 #endif // INFOSTYLES_H

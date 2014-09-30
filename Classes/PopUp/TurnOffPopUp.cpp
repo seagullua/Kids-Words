@@ -59,7 +59,7 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     CONNECT(button_no->signalOnClick,
             this,
             &TurnOffPopUp::onNo);
-    button_no->setColor(InfoStyles::COLOR_LIGHT_DARK);
+    button_no->setColor(InfoStyles::COLOR_DARK_LIGHT);
     CCLabelTTF* button_no_title = CCLabelTTF::create(_("pop_up_turn_off.no"),
                                                      ADLanguage::getFontName(),
                                                      InfoStyles::SIZE_BUTTON_POP_UP);
@@ -82,7 +82,7 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     CONNECT(button_add->signalOnClick,
             this,
             &TurnOffPopUp::onAdd);
-    button_add->setColor(InfoStyles::COLOR_LIGHT_YELLOW);
+    button_add->setColor(InfoStyles::COLOR_YELLOW_LIGHT);
     CCLabelTTF* button_add_title = CCLabelTTF::create(_("pop_up_turn_off.add"),
                                                       ADLanguage::getFontName(),
                                                       InfoStyles::SIZE_BUTTON_POP_UP);

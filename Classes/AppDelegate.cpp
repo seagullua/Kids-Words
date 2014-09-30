@@ -7,7 +7,7 @@
 #include <sstream>
 #include <string>
 #include "Scenes/Loading.h"
-
+#include <ADLib/UTF8/ADUTF8.h>
 #include <ADLib.h>
 USING_NS_CC;
 
@@ -184,7 +184,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     ADMenuItem::setAllClicksAction([](){
         ADSoundManager::playSoundEffect("music/choose.wav");
     });
-
 
     ADStorage::loadInitialData();
     return true;

@@ -81,14 +81,13 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
     // word_image
     CCSprite* word_image = CCSprite::create(word_image_name.c_str());
-    word_image->setAnchorPoint(ccp(0,0.5f));
+    word_image->setAnchorPoint(ccp(0.5f,0.5f));
 
-    word_image->setPositionX(ORIGIN.x+ VISIBLE_SIZE.width*0.5f );
-    float word_image_y = ORIGIN.y + padding*2 + node_qiuz_word->getContentSize().height* node_scale;
+       float word_image_y = ORIGIN.y + padding + node_qiuz_word->getContentSize().height* node_scale;
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
-    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale-padding*3 )/word_image_height;
+    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale-padding )/word_image_height;
     float word_image_scale = 1;
     float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
 
@@ -98,31 +97,14 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
 
     float hn = node_qiuz_word->getContentSize().height* node_scale;
-    float word_image_h = (_use_h -hn-padding*2)*0.5f;
-    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*2);
+    float word_image_h = (_use_h -hn)*0.5f;
+    float word_image_w = (VISIBLE_SIZE.width*0.5f-padding)*0.5f;
+    word_image->setPositionX(ORIGIN.x+word_image_w+ VISIBLE_SIZE.width*0.5f );
+    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
 
     this->addChild(word_image);
 
-    std::string translated_word = task.getTranslatedWord();
-    if (translated_word.size() != 0)
-    {
 
-
-
-        // translated_word
-        cocos2d::CCLabelTTF* translated_word_title;
-        translated_word_title = CCLabelTTF::create(translated_word.c_str(),
-                                                   ADLanguage::getFontName(),
-                                                   InfoStyles::SIZE_TRANSLATED_WORD);
-
-        translated_word_title->setColor(InfoStyles::COLOR_DARK);
-
-        translated_word_title->setAnchorPoint(ccp(0.5f,0));
-        translated_word_title->setPositionX(ORIGIN.x+ VISIBLE_SIZE.width*0.5f+word_image->getContentSize().width*word_image_scale*0.5f);
-        translated_word_title->setPositionY(ORIGIN.y + hn+padding*0.3f);
-
-        this->addChild(translated_word_title);
-    }
 
     // node_in_use_letters
 

@@ -7,7 +7,7 @@
 	</file>
 	
 	<file>
-		<name>sheep.jpg</name>
+		<name>panda.jpg</name>
 	</file>
 		
 	<file>
@@ -15,7 +15,7 @@
 	</file>
 	
 	<file>
-		<name>cat.jpg</name>
+		<name>hippo.jpg</name>
 	</file>
 	
 	<file>
@@ -27,7 +27,7 @@
 	</file>
 	
 	<file>
-		<name>parrot.jpg</name>
+		<name>squirrel.jpg</name>
 	</file>
 	
 	<file>
@@ -39,15 +39,15 @@
 	</file>
 	
 	<file>
-		<name>horse.jpg</name>
+		<name>beaver.jpg</name>
 	</file>
 	
 	<file>
-		<name>cow.jpg</name>
+		<name>wolf.jpg</name>
 	</file>
 	
 	<file>
-		<name>chinchilla.jpg</name>
+		<name>hamster.jpg</name>
 	</file>
 	
 	<file>
@@ -59,11 +59,11 @@
 	</file>
 	
 	<file>
-		<name>dog.jpg</name>
+		<name>giraffe.jpg</name>
 	</file>
 	
 	<file>
-		<name>rabbit.jpg</name>
+		<name>hare.jpg</name>
 	</file>
 	
 	<file>
@@ -75,13 +75,23 @@
 	</file>
 	
 	<file>
-		<name>penguin.jpg</name>
+		<name>snake.jpg</name>
 	</file>
 
 	<file>
-		<name>owl.jpg</name>
+		<name>crocodile.jpg</name>
 	</file>
-	
-	
+	<file>
+		<name>title_c.jpg</name>
+	</file>
+	<file>
+		<name>title_l1.jpg</name>
+	</file>
+	<file>
+		<name>title_l2.jpg</name>
+	</file>
+	<file>
+		<name>title_l3.jpg</name>
+	</file>
 	
 </directory>

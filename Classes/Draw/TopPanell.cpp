@@ -73,6 +73,19 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
         _panel_image->addChild(_number_words);
     }
+    _translation_word_label = CCLabelTTF::create(" ",
+                                                 ADLanguage::getFontName(),
+                                                 InfoStyles::SIZE_DEVELOPERS_TITLE);
+
+
+    _translation_word_label->setColor(InfoStyles::COLOR_DARK);
+
+    _translation_word_label->setAnchorPoint(ccp(0,0.5f));
+    _translation_word_label->setPositionX(padding*14);
+
+    _translation_word_label->setPositionY(padding_node_y*0.5f);
+
+    _panel_image->addChild(_translation_word_label);
     //menu
     CCMenu* menu =CCMenu::create();
     menu->setPosition(ccp(0,0));
@@ -92,7 +105,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     button_audio->setPositionY(padding_node_y*0.5f);
 
     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudioOnClicked);
-
+    button_audio->setVisible(false);
     menu->addChild(button_audio);
 
 
@@ -158,4 +171,9 @@ void TopPanell::setTitleNumberWord(int word_number)
 
     _number_words->setString(_title_number_word.c_str());
 }
+void TopPanell::setTranslationWord(std::string translation_word)
+{
+    _translation_word = translation_word;
+    _translation_word_label->setString(_translation_word.c_str());
 
+}

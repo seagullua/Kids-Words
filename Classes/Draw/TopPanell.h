@@ -11,7 +11,9 @@ public:
     static TopPanell* create(int word_number, int all_words, int star_number);
 
     std::string _title_number_word;
+    std::string _translation_word;
     cocos2d::CCLabelTTF* _number_words;
+   cocos2d::CCLabelTTF* _translation_word_label;
     int _all_words;
     int _star_number;
     float _padding_node_star_y;
@@ -26,6 +28,7 @@ public:
     void signalAudioOnClicked();
     void signalUseHintOnClicked();
     void setTitleNumberWord(int word_number);
+    void setTranslationWord(std::string translation_word);
     void drawStarsNode(int star_number);
 
 };

@@ -51,7 +51,7 @@ void LevelEnd::onCreate(cocos2d::CCNode *parent)
                                                              ADLanguage::getFontName(),
                                                              InfoStyles::SIZE_MENU_TITLE_POP_UP);
 
-    label->setColor(InfoStyles::COLOR_LIGHT_BLUE);
+    label->setColor(InfoStyles::COLOR_BLUE_LIGHT);
     label->setPosition(ccp(x_middle, size.height*0.8f));
     background->addChild(label);
 
@@ -75,7 +75,7 @@ void LevelEnd::onCreate(cocos2d::CCNode *parent)
     CONNECT(button_collection->signalOnClick,
             this,
             &LevelEnd::onCollection);
-    button_collection->setColor(InfoStyles::COLOR_LIGHT_BLUE);
+    button_collection->setColor(InfoStyles::COLOR_BLUE_LIGHT);
     CCLabelTTF* button_collection_title = CCLabelTTF::create(_("pop_up_end_level.collection.title"),
                                                              ADLanguage::getFontName(),
                                                              InfoStyles::SIZE_BUTTON_POP_UP);

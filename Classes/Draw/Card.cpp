@@ -36,14 +36,15 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
     paper_image->setAnchorPoint(ccp(0,0));
     paper_image->setPositionX(0);
     paper_image->setPositionY(0);
-    float padding_shadow =45;
+    const float SCALE = ADScreen::getScaleFactor();
+    float padding_shadow =45/SCALE;
+    float padding =15/SCALE;
     float padding_node_x = paper_image->getContentSize().width;
     float padding_node_y = paper_image->getContentSize().height;
     this->setContentSize(ccp(padding_node_x, padding_node_y));
     this->addChild(paper_image);
     //line
-    const float SCALE = ADScreen::getScaleFactor();
-    _line_image = CCSprite::create("card/line.png");
+     _line_image = CCSprite::create("card/line.png");
     _line_image->setAnchorPoint(ccp(0,0));
     _line_image->setPositionX(0);
     _line_image->setPositionY(padding_node_y*0.25f);
@@ -69,10 +70,10 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
     //image
     image->setAnchorPoint(ccp(0.5f,0));
     image->setPositionX(padding_node_x*0.5f);
-    image->setPositionY(padding_node_y*0.25f
+    image->setPositionY(padding_node_y*0.25f +padding
                         +line_image_height);
 
-    image->setScale( (padding_node_y-padding_shadow*1.2f/SCALE-(padding_node_y*0.25f+line_image_height))/image->getContentSize().height );
+    image->setScale( (padding_node_y-padding_shadow*1.2f-(padding_node_y*0.25f+line_image_height))/image->getContentSize().height );
     this->addChild(image);
     Stars* stars_node = Stars::create(stars_number);
     stars_node->setAnchorPoint(ccp(0.5f,0.5f));

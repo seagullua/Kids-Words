@@ -1,5 +1,6 @@
 #include "Alphabete.h"
 #include <algorithm>
+#include <ADLib/UTF8/ADUTF8.h>
 
 Alphabete::Alphabete()
 {
@@ -9,19 +10,22 @@ Alphabete& Alphabete::getInstance()
     static Alphabete obj;
     return obj;
 }
-void Alphabete::setApphabete()
+void Alphabete::setApphabete(std::string current_alphabete)
 {
-    std::string current_alphabete;
-    current_alphabete="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (int i = 0 ; i < current_alphabete.size(); ++i )
-    {
-        std::string ch = " ";
-        ch[0] = current_alphabete[i];
-        _alphabete.push_back(ch);
-    }
+//    std::string current_alphabete;
+//    current_alphabete="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ //   for (int i = 0 ; i < _current_alphabete.size(); ++i )
+//    {
+//        std::string ch = " ";
+//        ch[0] = _current_alphabete[i];
+//        _alphabete.push_back(ch);
+//    }
 
+        _alphabete = ADUTF8::splitToChars(current_alphabete);
 
 }
+
+
 const std::vector<std::string>& Alphabete::getAlphabete()
 {
     return _alphabete;
@@ -154,7 +158,9 @@ void Alphabete::setAlphabeteColor()
     // yellow 4/33
     _current_color=cocos2d::ccc3(222,255,65);
     _alphabete_color.push_back(_current_color);
-
+    // yellow 4/34
+    _current_color=cocos2d::ccc3(222,255,65);
+    _alphabete_color.push_back(_current_color);
 }
 cocos2d::ccColor3B  Alphabete::getColorLetterById(int id)
 {
