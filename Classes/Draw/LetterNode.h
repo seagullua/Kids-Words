@@ -3,7 +3,7 @@
 #include "Logic/Letter.h"
 #include "Logic/StatusLetter.h"
 
-class LetterNode : public cocos2d::CCNode
+class LetterNode : public cocos2d::CCNodeRGBA
 {
 public:
     static LetterNode* create(Letter letter );

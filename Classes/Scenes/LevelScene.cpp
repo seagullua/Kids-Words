@@ -63,6 +63,20 @@ void LevelScene::onBackClick()
 }
 void LevelScene::onOneGameEnd()
 {
+    auto open_next_level = [this](){
+        openNextLevel();
+    };
+    _game_node->onGameEnd();
+    this->runAction(CCSequence::create(
+                        CCDelayTime::create(2),
+                        ADCallFunc::create(open_next_level),
+                        NULL
+                        ));
+
+}
+
+void LevelScene::openNextLevel()
+{
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     CCNode* node = _game_node;
@@ -78,7 +92,6 @@ void LevelScene::onOneGameEnd()
                 );
 
     selectOneGame();
-
 }
 
 bool LevelScene::init()

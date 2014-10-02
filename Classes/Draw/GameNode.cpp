@@ -101,7 +101,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     float word_image_w = (VISIBLE_SIZE.width*0.5f-padding)*0.5f;
     word_image->setPositionX(ORIGIN.x+word_image_w+ VISIBLE_SIZE.width*0.5f );
     word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
-
+    _word_image = word_image;
     this->addChild(word_image);
 
 
@@ -110,11 +110,12 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
     float w_node = VISIBLE_SIZE.width*0.5f;
     float h_node = _use_h -hn-padding;
-    CCNode* node_in_use_letters = CCNode::create();
-    node_in_use_letters->setContentSize(ccp(w_node, h_node));
+    CCNodeRGBA* node_in_use_letters = CCNodeRGBA::create();
+    node_in_use_letters->setCascadeOpacityEnabled(true);
+//    node_in_use_letters->setContentSize(ccp(w_node, h_node));
     node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
     node_in_use_letters->setPositionX(ORIGIN.x);
-    node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding*2);
+    node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
 
     int f_x = 0;
     int f_y = 0;
@@ -185,6 +186,21 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 
     startTrackingTouch();
 }
+void GameNode::onGameEnd()
+{
+    CCSize visible_size = ADScreen::getVisibleSize();
+    CCPoint ORIGIN = ADScreen::getOrigin();
+    //_node_in_use_letters->setOpacity(255);
+    _node_in_use_letters->runAction(CCScaleTo::create(0.2, 0));
+    CCPoint target = ccp(ORIGIN.x+ visible_size.width*0.5f,
+                         _word_image->getPositionY());
+    _word_image->runAction(
+                               CCMoveTo::create(0.2,
+                                            target
+                                            ));
+    stopTrackingTouch();
+}
+
 CCPoint GameNode::getLetterCordinates(int index)
 {
     int y = index / _letters_in_row;

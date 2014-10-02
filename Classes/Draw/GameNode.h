@@ -26,6 +26,7 @@ public:
     void showHint();
     int getIndexInUseLetterNode(LetterNode* node);
     int getIndexQuizWrongNode(LetterNode* node);
+    void onGameEnd();
 private:
     bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
@@ -44,7 +45,7 @@ private:
     cocos2d::CCPoint getLetterCordinates(int index);
 
     const OneGame* _one_game;
-    cocos2d::CCNode* _node_in_use_letters;
+    cocos2d::CCNodeRGBA* _node_in_use_letters;
     std::vector<LetterNode*> _letters_to_insert;
     std::vector<LetterNode*> _letters_qiuz;
     cocos2d::CCNode* _node_qiuz_word;
@@ -60,6 +61,7 @@ private:
     void removeLetterAndMoveBack(LetterNode* node);
     LetterNode* _current_node_in_use ;
     LetterNode* _node  ;
+    cocos2d::CCSprite* _word_image;
     float _base_scale;
     float _base_scale_n;
 

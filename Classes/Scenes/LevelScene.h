@@ -35,6 +35,7 @@ private:
     float _use_h;
     float _use_w;
     TopPanell* _top_panel;
+    void openNextLevel();
     int getStarNumber();
     bool _tutorial;
 

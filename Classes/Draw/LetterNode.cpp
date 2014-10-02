@@ -63,7 +63,8 @@ inline int makeLighter(int b, float coef)
 
 void LetterNode::ShowLetter()
 {
-
+    this->setCascadeOpacityEnabled(true);
+    this->setOpacity(255);
     //std:: string letter_string_a = _active_letter.getLetterString();
     //std:: string letter_string_s = _selected_letter.getLetterString();
     LetterStatus status = _active_letter.getLetterStatus();
@@ -110,6 +111,7 @@ void LetterNode::ShowLetter()
     letter_image->setPositionY(0);
     float padding_node_x = letter_image->getContentSize().width;
     float padding_node_y = letter_image->getContentSize().height;
+
     this->setContentSize(ccp(padding_node_x, padding_node_y));
 
 
@@ -118,6 +120,8 @@ void LetterNode::ShowLetter()
         _current_letter = CCLabelTTF::create(letter_string.c_str(),
                                              ADLanguage::getFontName(),
                                              InfoStyles::SIZE_LETTER);
+        _current_letter->setScale(0.85f);
+
         this->addChild(_current_letter);
     }
 
