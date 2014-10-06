@@ -188,6 +188,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 }
 void GameNode::onGameEnd()
 {
+
     CCSize visible_size = ADScreen::getVisibleSize();
     CCPoint ORIGIN = ADScreen::getOrigin();
     //_node_in_use_letters->setOpacity(255);
@@ -627,7 +628,7 @@ void GameNode::showHint()
                 //            node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
                 _base_scale = current_node_in_use->getScale();
                 _base_scale_n = node->getScale();
-                float duration = 0.2f;
+                float duration = 0.4f;
                 //current_node_in_use->runAction(CCTintTo::create(5.5f, 255, 0, 0));
                 //current_node_in_use->stopAllActions();
                 //current_node_in_use->setNodeColor(InfoStyles::COLOR_MAGENTA);

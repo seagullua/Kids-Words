@@ -67,6 +67,40 @@ class VirtualCurrencyDelegate : public ADVirtualCurrency::Delegate
 
 void initInAppPurchases()
 {
+    typedef ADInApp::Product Product;
+    Product disable_ads("disable_ads", "$0.99");
+
+    ADStore store = ADInfo::getStore();
+    if(store == ADStore::GooglePlay)
+    {
+        //it is a new key - do not delete
+        ADInApp::setStoreKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJf6WM+vkPCXquFJMRYC7Ld0lc1Q3nv99I1qpMkHTzNi1X9AioIZURRp73v8VoSdRjDytW8+TUEG5xtuDxojA+hWBap70xpkCbVFXV+bHlPmZ+uWbxtZax73rpByiYpSehmgrfzXCb1INFrPGj1vZdTLLALvg0wBt3QxGL742NRC5TPtm9O1m2xaPrUw6KmAH4oMWGcPrIE5KGrOkv5tAQw4+D1Ztx0P5hIrrUmNwH8jKM6ZwpgHAE1R9aHhQaEGemqvhw/3VpyU0CC3F4mLrQnHdhQEePgZtfrVs7zHs7D7fGCbRzsL0VjweHy8y95hjMQR2UtuxpCe1thBmWxtVQIDAQAB");
+
+        disable_ads.setParameter("type","noconsumable");
+     }
+    else if(store == ADStore::SamsungStore)
+    {
+        ADInApp::setStoreKey("100000103339");
+//TODO set parametr
+        disable_ads.setParameter("samsung-id","000001017534");
+
+    }
+    else if(store == ADStore::AmazonStore)
+    {
+      //TODO set parametr
+        disable_ads.setParameter("asku","disable_ads");
+      }
+    else if(store == ADStore::iTunes)
+    {
+      //TODO set parametr
+        disable_ads.setParameter("asku","disable_ads");
+      }
+
+    ADInApp::addProduct(disable_ads);
+
+    ADInApp::setDelegate(std::make_shared<InAppDelegate>());
+
+
 
 }
 

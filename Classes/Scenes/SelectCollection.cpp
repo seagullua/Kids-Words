@@ -120,7 +120,7 @@ bool SelectCollection::init()
         button_card->setAnchorPoint(ccp(0.5f,0.5f));
         float one_card_width = 340/SCALE;
         card_height=button_card->getContentSize().height;
-        collection_width += one_card_width;
+        collection_width += one_card_width*1.05f;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*i + button_card->getContentSize().width*0.5f);
          button_card->setClickAction([id](){

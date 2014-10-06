@@ -160,7 +160,7 @@ public:
         }
         else if (id == 5)
         {
-            return  InfoStyles::COLOR_YELLOW_LIGHT;
+            return  InfoStyles::COLOR_ORANGE_LIGHT;
 
         }
         else if (id == 6)

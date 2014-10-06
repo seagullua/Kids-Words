@@ -248,7 +248,7 @@ void Settings::onDevelopersClick()
 
 void Settings::onRestorePurchaseClick()
 {
-    CCLog("RestorePurchase Clicked");
+    ADInApp::restorePurchases();
 }
 
 void Settings::onTurnOffAdsClick()

@@ -60,9 +60,7 @@ msgstr "No Later"
 
 #: ../../Classes/PopUp/TurnOffPopUp.cpp:85
 msgid "pop_up_turn_off.add"
-msgstr ""
-"Turn Off Ads \n"
-"$0.99"
+msgstr "Turn Off Ads"
 
 #: ../../Classes/PopUp/TurnOffPopUp.cpp:107
 msgid "pop_up_turn_off.text"

@@ -149,8 +149,8 @@ void Alphabete::setAlphabeteColor()
     _current_color=cocos2d::ccc3(67,54,239);
     _alphabete_color.push_back(_current_color);
 
-    // dark blue 6/31
-    _current_color=cocos2d::ccc3(12,4,11);
+    // dark PINK 6/31
+    _current_color=cocos2d::ccc3(240,60,110);
     _alphabete_color.push_back(_current_color);
     // orange 3/32
     _current_color=cocos2d::ccc3(182,52,0);

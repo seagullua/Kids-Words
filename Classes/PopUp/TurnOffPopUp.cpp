@@ -3,6 +3,7 @@
 #include "InfoStyles.h"
 #include "ADLib.h"
 #include "Scenes/Settings.h"
+#include "Managers/AdsManager.h"
 
 
 using namespace cocos2d;
@@ -69,6 +70,7 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     button_no_title->setPosition(ccp(button_no->getContentSize().width*0.5f,
                                      button_no->getContentSize().height*0.5f));
     button_no->addChild(button_no_title);
+
     menu->addChild(button_no);
 
 
@@ -88,12 +90,25 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
                                                       InfoStyles::SIZE_BUTTON_POP_UP);
 
     button_add_title->setColor(InfoStyles::COLOR_BLUE);
-    button_add_title->setAnchorPoint(ccp(0.5f,0.5f));
+    button_add_title->setAnchorPoint(ccp(0.5f,1));
     button_add_title->setPosition(ccp(button_add->getContentSize().width*0.5f,
-                                      button_add->getContentSize().height*0.5f));
+                                      button_add->getContentSize().height*0.85f));
     button_add->addChild(button_add_title);
 
     menu->addChild(button_add);
+    _price = "$0.99";
+    _price_label= CCLabelTTF::create(_price.c_str(),
+                                     ADLanguage::getFontName(),
+                                     InfoStyles::SIZE_BUTTON_POP_UP*0.7f);
+
+    _price_label->setColor(InfoStyles::COLOR_BLUE);
+    _price_label->setAnchorPoint(ccp(0.5f,0));
+    _price_label->setPosition(ccp(button_no->getContentSize().width*0.5f,button_add->getContentSize().height*0.15f));
+    button_add->addChild(_price_label);
+    if (AdsManager::getInstance()->isAdsIncluded())
+    {
+        button_add->setVisible(false);
+    }
     // pinguine and text add
 
 
@@ -127,5 +142,12 @@ void TurnOffPopUp::onNo()
 
 void TurnOffPopUp::onAdd()
 {
+    AdsManager::getInstance()->setAdsIncluded();
+    ADInApp::buyProduct("disable_ads");
+}
+void TurnOffPopUp::setPrice(std::string price)
+{
+    _price = price;
+    _price_label->setString(_price.c_str());
 
 }
