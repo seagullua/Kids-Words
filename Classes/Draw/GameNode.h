@@ -12,6 +12,7 @@ public:
     GameNode(const OneGame *one_game, int  use_h );
     Signal<int, Letter> signalAddLetter;
     Signal<> signalGameEnd;
+    Signal<> signalTouchGameEnd;
     //Signal<> signalOneGameEnd;
     Signal<int> signallStarsChanged;
 
@@ -54,6 +55,8 @@ private:
     LetterNode* _selected_letter;
     LetterNode* _selected_node_letter;
     bool _is_tracking_touch;
+    bool _game_end;
+    bool _game_end_touch;
     int _stars;
     std::vector<int> _index_in_use_letter;
     void moveBack(LetterNode *quiz_node);

@@ -18,6 +18,7 @@ public:
     void selectNextSeason();
 private:
     void onOneGameEnd();
+    void onOneGameEndTouch();
     bool init();
     void onBackClick();
     void EndLevel();
@@ -38,14 +39,7 @@ private:
     void openNextLevel();
     int getStarNumber();
     bool _tutorial;
-    bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-    void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-    void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-    void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-     void startTrackingTouch();
-    void stopTrackingTouch();
-    bool _end_game;
-    bool _is_tracking_touch;
+    bool _end_game_touch;
 
 
 };

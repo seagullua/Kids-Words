@@ -21,6 +21,8 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _selected_letter(nullptr),
     _current_node_in_use(nullptr),
     _node(nullptr),
+    _game_end(false),
+    _game_end_touch(false),
     _use_h(use_h)
 {
     const float SCALE = ADScreen::getScaleFactor();
@@ -50,7 +52,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
         LetterNode* letter_node = LetterNode:: create(qiuz_word[i]);
         letter_node->setAnchorPoint(ccp(0.5f,0.5f));
         letter_node->setPositionX(letter_node->getContentSize().width*0.5f+
-                    letter_node->getContentSize().width*i*1.15f+padding);
+                                  letter_node->getContentSize().width*i*1.15f+padding);
         letter_node->setPositionY(letter_node->getContentSize().height*0.4f);
         node_qiuz_word->addChild(letter_node);
         letter_width=letter_node->getContentSize().width;
@@ -83,7 +85,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     CCSprite* word_image = CCSprite::create(word_image_name.c_str());
     word_image->setAnchorPoint(ccp(0.5f,0.5f));
 
-       float word_image_y = ORIGIN.y + padding + node_qiuz_word->getContentSize().height* node_scale;
+    float word_image_y = ORIGIN.y + padding + node_qiuz_word->getContentSize().height* node_scale;
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
@@ -112,7 +114,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     float h_node = _use_h -hn-padding;
     CCNodeRGBA* node_in_use_letters = CCNodeRGBA::create();
     node_in_use_letters->setCascadeOpacityEnabled(true);
-//    node_in_use_letters->setContentSize(ccp(w_node, h_node));
+    //    node_in_use_letters->setContentSize(ccp(w_node, h_node));
     node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
     node_in_use_letters->setPositionX(ORIGIN.x);
     node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
@@ -189,6 +191,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 void GameNode::onGameEnd()
 {
 
+    _game_end = true;
     CCSize visible_size = ADScreen::getVisibleSize();
     CCPoint ORIGIN = ADScreen::getOrigin();
     //_node_in_use_letters->setOpacity(255);
@@ -196,9 +199,9 @@ void GameNode::onGameEnd()
     CCPoint target = ccp(ORIGIN.x+ visible_size.width*0.5f,
                          _word_image->getPositionY());
     _word_image->runAction(
-                               CCMoveTo::create(0.2,
-                                            target
-                                            ));
+                CCMoveTo::create(0.2,
+                                 target
+                                 ));
     stopTrackingTouch();
 }
 
@@ -276,6 +279,7 @@ void GameNode::startTrackingTouch()
 void GameNode::onExit()
 {
     CCNode::onExit();
+    _game_end = false;
     stopTrackingTouch();
 }
 
@@ -284,8 +288,13 @@ void GameNode::stopTrackingTouch()
     if(_is_tracking_touch)
     {
         _selected_letter = nullptr;
-        _is_tracking_touch = false;
-        CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
+        if (!_game_end)
+        {
+            _is_tracking_touch = false;
+            CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
+
+        }
+
     }
 }
 
@@ -307,7 +316,7 @@ cocos2d::CCPoint GameNode::touchToQuizCords(cocos2d::CCTouch* touch)
 
 bool GameNode::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
-    if(_is_tracking_touch && _selected_letter == nullptr)
+    if(_is_tracking_touch && _selected_letter == nullptr && !_game_end)
     {
         _is_quiz_letter_selected = false;
         cocos2d::CCPoint local = touchToInsertCords(pTouch);
@@ -358,6 +367,12 @@ bool GameNode::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
             return true;
         }
     }
+    if (_game_end_touch)
+    {
+
+        return true;
+
+    }
     return false;
 }
 void GameNode::moveLetterNodeBack(LetterNode* node)
@@ -402,7 +417,7 @@ void GameNode::moveLetterNodeBackByIndex(LetterNode* node,int index)
 }
 void GameNode::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
-    if(_is_tracking_touch && _selected_letter)
+    if(_is_tracking_touch && _selected_letter && !_game_end)
     {
         cocos2d::CCPoint local = touchToInsertCords(pTouch);
         _selected_letter->setPosition(local);
@@ -431,7 +446,8 @@ void GameNode::removeLetterAndMoveBack(LetterNode* node)
 void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 {
     bool game_end = false;
-    if(_is_tracking_touch && _selected_letter)
+
+    if(_is_tracking_touch && _selected_letter && !_game_end)
     {
         cocos2d::CCPoint local = touchToInsertCords(pTouch);
         _selected_letter->setPosition(local);
@@ -518,10 +534,18 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
 
 
     }
-    if(game_end)
+    if (_game_end_touch)
     {
+        _game_end_touch = false;
+        emit signalTouchGameEnd();
+        stopTrackingTouch();
+    }
+    else if(game_end)
+    {
+        _game_end_touch = true;
         emit signalGameEnd();
     }
+
 }
 
 void GameNode::ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)

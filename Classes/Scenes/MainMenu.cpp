@@ -4,6 +4,7 @@
 #include <ADLib/ADString.h>
 #include "PopUp/ExitGamePopUp.h"
 
+
 using namespace cocos2d;
 
 MainMenu::MainMenu()
@@ -97,6 +98,7 @@ bool MainMenu::init()
     CONNECT(button_settings->signalOnClick, this, &MainMenu::onSettingsClick);
 
     menu->addChild(button_settings);
+
      return true;
 }
 

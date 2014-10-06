@@ -5,6 +5,7 @@
 #include "MainMenu.h"
 #include "Managers/SettingsManager.h"
 #include "PopUp/TurnOffPopUp.h"
+#include "Managers/AdsManager.h"
 //using namespace cocos2d;
 
 Settings::Settings()
@@ -182,49 +183,53 @@ bool Settings::init()
     CONNECT(button_restore_purchase->signalOnClick, this, &Settings::onRestorePurchaseClick);
 
     menu->addChild(button_restore_purchase);
-
-    //turn_off_ads
-    CCSprite* button_turn_off_ads_image = CCSprite::create("settings/no_ads_tile.png");
-
-    ADMenuItem* button_turn_off_ads = ADMenuItem::create(button_turn_off_ads_image);
-
-    button_turn_off_ads->setPositionX(
-                ORIGIN.x +  padding_x2);
-
-    float button_restore_purchase_position = button_restore_purchase->getPositionY()-button_turn_off_ads->getContentSize().height;
-
-    button_turn_off_ads->setPositionY(button_restore_purchase_position);
-    CONNECT(button_turn_off_ads->signalOnClick, this, &Settings::onTurnOffAdsClick);
-
-
-    CCSprite* button_pinguine_image = CCSprite::create("settings/pinguine.png");
-
-    CCSize button_size(button_turn_off_ads_image->getContentSize());
-    button_pinguine_image->setScale(0.8f * button_size.height / button_pinguine_image->getContentSize().height);
-    float button_half_height = button_size.height * 0.5f;
-    button_pinguine_image->setPosition(ccp(button_half_height, button_half_height));
-    button_turn_off_ads->addChild(button_pinguine_image);
-
-    cocos2d::CCLabelTTF* turn_off_ads_title;
-    turn_off_ads_title = CCLabelTTF::create(_("settings_scene_turn_off_ads_title.title"),
-                                            ADLanguage::getFontName(),
-                                            InfoStyles::SIZE_SETTINGS_BUTTON_TURN);
-    turn_off_ads_title->setAnchorPoint(ccp(0, 0.5f));
-    turn_off_ads_title->setPosition(ccp(button_half_height*2,
-                                        button_half_height));
-    turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
-
-    float label_max_width = button_size.width - button_half_height*2.5f;
-    float label_width = turn_off_ads_title->getContentSize().width;
-    if(label_width > label_max_width)
+    if (!AdsManager::getInstance()->isAdsIncluded())
     {
-        turn_off_ads_title->setScale(label_max_width/turn_off_ads_title->getContentSize().width);
+
+
+
+        //turn_off_ads
+        CCSprite* button_turn_off_ads_image = CCSprite::create("settings/no_ads_tile.png");
+
+        ADMenuItem* button_turn_off_ads = ADMenuItem::create(button_turn_off_ads_image);
+
+        button_turn_off_ads->setPositionX(
+                    ORIGIN.x +  padding_x2);
+
+        float button_restore_purchase_position = button_restore_purchase->getPositionY()-button_turn_off_ads->getContentSize().height;
+
+        button_turn_off_ads->setPositionY(button_restore_purchase_position);
+        CONNECT(button_turn_off_ads->signalOnClick, this, &Settings::onTurnOffAdsClick);
+
+
+        CCSprite* button_pinguine_image = CCSprite::create("settings/pinguine.png");
+
+        CCSize button_size(button_turn_off_ads_image->getContentSize());
+        button_pinguine_image->setScale(0.8f * button_size.height / button_pinguine_image->getContentSize().height);
+        float button_half_height = button_size.height * 0.5f;
+        button_pinguine_image->setPosition(ccp(button_half_height, button_half_height));
+        button_turn_off_ads->addChild(button_pinguine_image);
+
+        cocos2d::CCLabelTTF* turn_off_ads_title;
+        turn_off_ads_title = CCLabelTTF::create(_("settings_scene_turn_off_ads_title.title"),
+                                                ADLanguage::getFontName(),
+                                                InfoStyles::SIZE_SETTINGS_BUTTON_TURN);
+        turn_off_ads_title->setAnchorPoint(ccp(0, 0.5f));
+        turn_off_ads_title->setPosition(ccp(button_half_height*2,
+                                            button_half_height));
+        turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
+
+        float label_max_width = button_size.width - button_half_height*2.5f;
+        float label_width = turn_off_ads_title->getContentSize().width;
+        if(label_width > label_max_width)
+        {
+            turn_off_ads_title->setScale(label_max_width/turn_off_ads_title->getContentSize().width);
+        }
+
+        button_turn_off_ads->addChild(turn_off_ads_title);
+        //settings_scene_turn_off_ads_title->setPositionX();
+        menu->addChild(button_turn_off_ads);
     }
-
-    button_turn_off_ads->addChild(turn_off_ads_title);
-    //settings_scene_turn_off_ads_title->setPositionX();
-    menu->addChild(button_turn_off_ads);
-
 
 
     return true;

@@ -105,11 +105,7 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     _price_label->setAnchorPoint(ccp(0.5f,0));
     _price_label->setPosition(ccp(button_no->getContentSize().width*0.5f,button_add->getContentSize().height*0.15f));
     button_add->addChild(_price_label);
-    if (AdsManager::getInstance()->isAdsIncluded())
-    {
-        button_add->setVisible(false);
-    }
-    // pinguine and text add
+     // pinguine and text add
 
 
     CCSprite* button_pinguine_image = CCSprite::create("settings/pinguine.png");
@@ -142,8 +138,10 @@ void TurnOffPopUp::onNo()
 
 void TurnOffPopUp::onAdd()
 {
-    AdsManager::getInstance()->setAdsIncluded();
+    AdsManager::getInstance()->setAdsIncluded(true);
     ADInApp::buyProduct("disable_ads");
+    CCDirector::sharedDirector()->replaceScene(Settings::scene());
+
 }
 void TurnOffPopUp::setPrice(std::string price)
 {

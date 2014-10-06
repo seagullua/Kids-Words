@@ -18,8 +18,7 @@ LevelScene::LevelScene(CollectionID id, int difficult)
     :
       _current_one_season(id,difficult),
       _top_panel(nullptr),
-      _is_tracking_touch(false),
-      _end_game(false)
+      _end_game_touch(false)
 {
     _collection_id = id;
     _difficult = difficult;
@@ -66,39 +65,39 @@ void LevelScene::onBackClick()
 void LevelScene::onOneGameEnd()
 {
 
-//    _end_game= true;
-//     startTrackingTouch();
-     auto open_next_level = [this](){
+    auto open_next_level = [this](){
         openNextLevel();
     };
     _game_node->onGameEnd();
-//    if (_is_tracking_touch)
-//    {
-//        this->runAction(CCSequence::create(
-//                            ADCallFunc::create(open_next_level),
-//                            NULL
-//                            ));
+    if (_end_game_touch)
+    {
 
-//    }
-//    else
-//    {
+        _end_game_touch = false;
+
+        openNextLevel();
+
+    }
+    else
+    {
+
+
         this->runAction(CCSequence::create(
                             CCDelayTime::create(2),
                             ADCallFunc::create(open_next_level),
                             NULL
                             ));
-//    }
 
-//    _is_tracking_touch = false;
-//    if (_is_tracking_touch)
-//    {
-//        stopTrackingTouch();
-//    }
-
-
+    }
+    //_end_game_touch = false;
 
 }
+void LevelScene::onOneGameEndTouch()
+{
+    this->stopAllActions();
+    openNextLevel();
+    //_end_game_touch = true;
 
+}
 
 void LevelScene::openNextLevel()
 {
@@ -231,6 +230,7 @@ void LevelScene::selectOneGame()
         }
         this->addChild(_game_node);
         CONNECT(_game_node->signalGameEnd, this, &LevelScene::onOneGameEnd);
+        CONNECT(_game_node->signalTouchGameEnd, this, &LevelScene::onOneGameEndTouch);
     }
     else
     {
@@ -267,62 +267,6 @@ void LevelScene::onSignalNextLesson()
 {
     selectNextSeason();
 }
-void LevelScene::startTrackingTouch()
-{
-    if (_end_game)
-    {
-
-
-        if(!_is_tracking_touch)
-        {
-            _is_tracking_touch = true;
-            CCDirector* pDirector = CCDirector::sharedDirector();
-            pDirector->getTouchDispatcher()->addTargetedDelegate(this, kCCMenuHandlerPriority, false);
-
-        }
-    }
-}
-
-void LevelScene::stopTrackingTouch()
-{
-    if (_end_game)
-    {if(_is_tracking_touch)
-        {
-            _is_tracking_touch = false;
-            CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
-        }
-    }
-}
 
 
 
-
-bool LevelScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
-{
-    if(_is_tracking_touch && _end_game)
-    {
-        return true;
-    }
-    return false;
-}
-void LevelScene::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
-{
-    if(_is_tracking_touch && _end_game)
-    {
-
-    }
-}
-void LevelScene::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
-{
-    if(_is_tracking_touch && _end_game)
-    {
-        onOneGameEnd();
-
-
-    }
-
-}
-void LevelScene::ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
-{
-
-}

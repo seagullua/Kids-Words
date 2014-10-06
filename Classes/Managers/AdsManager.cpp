@@ -27,7 +27,7 @@ void AdsManager::initStorageBlocks()
 
 void AdsManager::initDefaultValues()
 {
-    _ads_included = !ADStorage::hasValue(BLOCK_ADS);
+    _ads_included = ADStorage::hasValue(BLOCK_ADS);
 }
 
 
@@ -36,13 +36,23 @@ bool AdsManager::isAdsIncluded()
     return _ads_included;
 }
 
-void AdsManager::setAdsIncluded()
+void AdsManager::setAdsIncluded(bool current_ads)
 {
-    _ads_included = true;
+    _ads_included = current_ads;
     updateValues();
 }
 
 void AdsManager::updateValues()
 {
-    ADStorage::setValue<int32_t>(BLOCK_ADS, 1);
+    if (_ads_included)
+    {
+          ADStorage::setValue<int32_t>(BLOCK_ADS, 1);
+
+    }
+    else
+    {
+        ADStorage::setValue<int32_t>(BLOCK_ADS, 0);
+
+    }
+
 }
