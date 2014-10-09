@@ -106,15 +106,12 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _word_image = word_image;
     this->addChild(word_image);
 
-
-
     // node_in_use_letters
 
     float w_node = VISIBLE_SIZE.width*0.5f;
     float h_node = _use_h -hn-padding;
     CCNodeRGBA* node_in_use_letters = CCNodeRGBA::create();
     node_in_use_letters->setCascadeOpacityEnabled(true);
-    //    node_in_use_letters->setContentSize(ccp(w_node, h_node));
     node_in_use_letters->setAnchorPoint(ccp(0,0.5f));
     node_in_use_letters->setPositionX(ORIGIN.x);
     node_in_use_letters->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
@@ -133,8 +130,6 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
             {
                 if ((h_node/ x) * y <= w_node )
                 {
-
-                    //float area = h_node * h_node / (x * y);
                     size_letter = h_node / x;
                     if (size_letter >= max_size && size_letter < MAX_LETTER_SIZE)
                     {
@@ -166,13 +161,9 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
             int i = y*f_x + x;
             if(i < in_use_letters.size())
             {
-                //for
                 LetterNode* letter_node = LetterNode:: create(in_use_letters[i]);
                 letter_node->setAnchorPoint(ccp(0.5f,0.5f));
                 letter_node->setPosition(getLetterCordinates(i));
-                //letter_node->setPositionX(size_letter*x);
-                //letter_node->setPositionY(h_node - size_letter*y);
-                //letter_node->setContentSize(ccp(size_letter, size_letter));
                 letter_node->setScale(size_letter/letter_node->getContentSize().height);
                 node_in_use_letters->addChild(letter_node);
                 _letters_to_insert[i] = letter_node;
@@ -184,17 +175,13 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _node_in_use_letters = node_in_use_letters;
 
     this->addChild(node_in_use_letters);
-
-
     startTrackingTouch();
 }
 void GameNode::onGameEnd()
 {
-
     _game_end = true;
     CCSize visible_size = ADScreen::getVisibleSize();
     CCPoint ORIGIN = ADScreen::getOrigin();
-    //_node_in_use_letters->setOpacity(255);
     _node_in_use_letters->runAction(CCScaleTo::create(0.2, 0));
     CCPoint target = ccp(ORIGIN.x+ visible_size.width*0.5f,
                          _word_image->getPositionY());
@@ -380,39 +367,32 @@ void GameNode::moveLetterNodeBack(LetterNode* node)
     int index = -1;
     for(size_t i=0; i<_letters_to_insert.size(); ++i)
     {
-        //        std::string active_letter_node = node->getActiveLetter().getLetterString().c_str();
-        //        std::string active_letter_to_insert = _letters_to_insert[i]->getActiveLetter().getLetterString().c_str();
-        //        if(active_letter_node == active_letter_to_insert)
         if(node == _letters_to_insert[i]  )
         {
             index = i;
-            //
+
             break;
         }
     }
 
     if(index >= 0)
     {
-        //LetterNode* node = _letters_to_insert[index];
         CCPoint target_position = getLetterCordinates(index);
         node->stopAllActions();
         node->runAction(
                     CCMoveTo::create(0.2f, target_position)
                     );
-        //node->setPosition(getLetterCordinates(index));
     }
 }
 void GameNode::moveLetterNodeBackByIndex(LetterNode* node,int index)
 {
     if(index >= 0)
     {
-        //LetterNode* node = _letters_to_insert[index];
         CCPoint target_position = getLetterCordinates(index);
         node->stopAllActions();
         node->runAction(
                     CCMoveTo::create(0.2f, target_position)
                     );
-        //node->setPosition(getLetterCordinates(index));
     }
 }
 void GameNode::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
@@ -473,8 +453,6 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
             if (cn_is_selected_selected)
 
             {
-                //int old_node = current_node->getIndexSelectedLetter();
-                //LetterNode* node = _letters_to_insert[old_node];
                 if(_is_quiz_letter_selected && new_letter_insertion != _quiz_selection_index)
                 {
                     LetterNode* previous_node = _letters_qiuz[_quiz_selection_index];
@@ -486,15 +464,8 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                 else
                 {
 
-                    //Letter  cn_selected_Letter = current_node->getSelectedLetter();
-                    //int index_selected_letter = current_node->getIndexSelectedLetter();
-                    //LetterNode* cn_letter_node = LetterNode:: create(cn_selected_Letter);
-                    //node->setVisible(true);
-                    //node->setPosition(local);
-                    //moveLetterNodeBackByIndex(node,old_node);
                     moveBack(current_node);
                 }
-
 
             }
             current_node->setLetterIsSelected(true);
@@ -507,9 +478,6 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                 //
             }
 
-
-
-            //TODO: додати _selected_letter в масив щоб знати в які клітинці вона стоїть
         }
         else
         {
@@ -521,8 +489,6 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
         _selected_letter = nullptr;
         if (_node && _current_node_in_use)
         {
-            //_node->setNodeColor(InfoStyles::COLOR_WHITE);
-            //_current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
             _current_node_in_use->stopAllActions();
             _node->stopAllActions();
             _current_node_in_use->setScale(_base_scale);
@@ -564,16 +530,10 @@ void GameNode::showHint()
 {
     if (_node && _current_node_in_use)
     {
-        //        _node->setNodeColor(InfoStyles::COLOR_WHITE);
-        //        _current_node_in_use->setNodeColor(InfoStyles::COLOR_WHITE);
         _current_node_in_use->stopAllActions();
         _node->stopAllActions();
         _current_node_in_use->setScale(_base_scale);
         _node->setScale(_base_scale_n);
-
-        //        _node->ShowLetter();
-        //        _current_node_in_use->ShowLetter();
-
         _node = nullptr;
         _current_node_in_use = nullptr;
 
@@ -596,24 +556,10 @@ void GameNode::showHint()
 
             }
         }
-        //        for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
-        //        {
-
-        //            CCLog("Purchase %d failed", index_letter_for_hint[i]);
-
-        //        }
-        //         CCLog("_");
 
         if (index_letter_for_hint.size() > 0)
         {
             std::random_shuffle(index_letter_for_hint.begin(), index_letter_for_hint.end());
-
-            //            for(size_t i = 0; i < index_letter_for_hint.size(); ++i)
-            //            {
-
-            //                CCLog("Purchase %d failed", index_letter_for_hint[i]);
-
-            //            }
 
             node = _letters_qiuz[index_letter_for_hint[0]];
 
@@ -630,8 +576,6 @@ void GameNode::showHint()
 
                     LetterNode* old_node = _letters_qiuz[index_in_quiz_node];
 
-                    //                            int old_node_index = old_node->getIndexSelectedLetter();
-                    //                            moveLetterNodeBackByIndex(node,old_node_index);
                     removeLetterAndMoveBack(old_node);
 
                     index_in_use_node = getIndexInUseLetterNode(node);
@@ -649,13 +593,9 @@ void GameNode::showHint()
 
             if(node && current_node_in_use)
             {
-                //            node->setNodeColor(InfoStyles::COLOR_RED_LIGHT);
                 _base_scale = current_node_in_use->getScale();
                 _base_scale_n = node->getScale();
                 float duration = 0.4f;
-                //current_node_in_use->runAction(CCTintTo::create(5.5f, 255, 0, 0));
-                //current_node_in_use->stopAllActions();
-                //current_node_in_use->setNodeColor(InfoStyles::COLOR_MAGENTA);
                 _node = node;
                 _current_node_in_use = current_node_in_use;
                 _current_node_in_use->runAction(

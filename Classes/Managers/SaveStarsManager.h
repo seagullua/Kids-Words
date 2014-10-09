@@ -13,11 +13,8 @@ public:
     int getStarsCollection(CollectionID collection_id);
 private:
     static SaveStarsManager instance;
-
     SaveStarsManager();
     SaveStarsManager(SaveStarsManager const&);
-
-
     void initStorageBlocks();
     void initDefaultValues();
 };

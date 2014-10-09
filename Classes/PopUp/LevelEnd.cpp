@@ -29,7 +29,7 @@ void LevelEnd::onCollection()
 void LevelEnd::onNextLesson()
 {
     CCDirector::sharedDirector()->replaceScene(LevelScene::scene(_collection_id,_difficult));
- }
+}
 
 void LevelEnd::onCreate(cocos2d::CCNode *parent)
 {

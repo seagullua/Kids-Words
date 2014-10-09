@@ -24,10 +24,7 @@ public:
                         CardType _card_type);
     void setCardColor(cocos2d::ccColor3B color);
     void setTitleColor(cocos2d::ccColor3B color);
-    void setStarsNumber(int stars_number);
     void setBorderType(BorderType type);
-
-
 private:
     Card(cocos2d::CCSprite* image,
          std::string title,

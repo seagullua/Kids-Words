@@ -75,7 +75,6 @@ bool SelectCollection::init()
     title_select_collection = CCLabelTTF::create(_("select_collection.title"),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
-    //title_select_collection->setAnchorPoint(ccp(0.5, 1));
     title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
 
     title_select_collection->setPositionY(ORIGIN.y +
@@ -84,14 +83,6 @@ bool SelectCollection::init()
 
     title_select_collection->setColor(InfoStyles::COLOR_WHITE);
     this->addChild(title_select_collection);
-
-    //Card* card = Card::create(CCSprite::create("card/color.png"),
-    //                          "dddd ",
-    //                          2,CardType::WithoutBorder);
-
-
-
-    //LevelSaves::readLevels();
     const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
     //menu
     CCMenu* menu =CCMenu::create();
@@ -99,8 +90,6 @@ bool SelectCollection::init()
             title_select_collection->getContentSize().height*0.5f;
 
     float position_menu_y = VISIBLE_SIZE.height -padding_title;
-
-    //this->addChild(menu);
     float collection_width = 0;
     float card_height = 0;
     for(unsigned int i = 0; i < collect.size(); ++i)
@@ -116,15 +105,13 @@ bool SelectCollection::init()
                                   star_number,CardType::WithoutBorder);
 
         ADMenuItem* button_card = ADMenuItem::create(card);
-        //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
         button_card->setAnchorPoint(ccp(0.5f,0.5f));
         float one_card_width = 340/SCALE;
         card_height=button_card->getContentSize().height;
         collection_width += one_card_width*1.05f;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*i + button_card->getContentSize().width*0.5f);
-         button_card->setClickAction([id](){
-            //CCLog("Collection click: %d", id);
+        button_card->setClickAction([id](){
             CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
         });
 
@@ -133,7 +120,6 @@ bool SelectCollection::init()
 
         card->setCardColor(collect[i].getColor());
         card->setTitleColor(InfoStyles::COLOR_WHITE);
-        //card->setBorderType(BorderType::None);
     }
 
     menu->setAnchorPoint(ccp(0,0));
@@ -156,12 +142,7 @@ bool SelectCollection::init()
     collections_scroll_view->setDirection(ADScrollView::Direction::Horizontal);
     collections_scroll_view->setContentOffset(collections_scroll_view->maxContainerOffset(), false);
     collections_scroll_view->addHighPriorityTouchListener(menu);
-
-    //menu->setPosition();
     return true;
-
-
-
 
 }
 void SelectCollection::onCardClick()

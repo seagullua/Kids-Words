@@ -99,7 +99,7 @@ bool MainMenu::init()
 
     menu->addChild(button_settings);
 
-     return true;
+    return true;
 }
 
 
@@ -110,6 +110,6 @@ void MainMenu::onPlayClick()
 }
 void MainMenu::onSettingsClick()
 {
-    //CCLog("Settings Clicked");
+
     CCDirector::sharedDirector()->replaceScene(Settings::scene());
 }

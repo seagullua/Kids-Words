@@ -12,7 +12,6 @@ private:
     unsigned int _sprites_to_load;
     unsigned int _loaded_sprites;
     int _started_in;
-    //CCMutex _mutex;
     cocos2d::CCSprite* _logo;
     void loadSprite(const char*);
     void loadingCallBack(cocos2d::CCObject *obj);

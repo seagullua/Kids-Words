@@ -6,18 +6,18 @@ SettingsManager SettingsManager::instance;
 
 SettingsManager* SettingsManager::getInstance( )
 {
-      return &instance;
+    return &instance;
 }
 SettingsManager::SettingsManager()
 {
 
     //Add blocks to storage
     CONNECT(ADStorage::signalCreateBlocks, this,
-                   &SettingsManager::initStorageBlocks);
+            &SettingsManager::initStorageBlocks);
 
     //Check if first launch and add bonuses
     CONNECT(ADStorage::signalInitialDataLoaded, this,
-                   &SettingsManager::initDefaultValues);
+            &SettingsManager::initDefaultValues);
 
 }
 
@@ -33,7 +33,7 @@ void SettingsManager::initDefaultValues()
     if(!ADStorage::hasValue(BLOCK_SETTINGS))
     {
         //if there is no info in storage
-       ADStorage::setValue(BLOCK_SETTINGS, default_info);
+        ADStorage::setValue(BLOCK_SETTINGS, default_info);
     }
     else
     {

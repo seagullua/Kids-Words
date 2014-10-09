@@ -15,7 +15,6 @@ public:
     void setTaskNumber();
     void setNumberOfHint() const;
     int getNumberOfHint() const;
-
     bool isCanUseHint() const;
 private:
     CollectionID _collection_id;

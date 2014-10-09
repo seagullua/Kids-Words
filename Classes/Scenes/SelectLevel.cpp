@@ -76,8 +76,6 @@ bool SelectLevel::init()
     showBackground(BackgroundType::Dark);
 
     showButtonBack();
-    //const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
-    //int i = 0;
     //window title
     cocos2d::CCLabelTTF* title_select_collection;
 
@@ -85,7 +83,6 @@ bool SelectLevel::init()
     title_select_collection = CCLabelTTF::create(current_collection->getName().c_str(),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
-    //title_select_collection->setAnchorPoint(ccp(0.5, 1));
     title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
 
     title_select_collection->setPositionY(ORIGIN.y +
@@ -95,17 +92,8 @@ bool SelectLevel::init()
     title_select_collection->setColor(InfoStyles::COLOR_WHITE);
     this->addChild(title_select_collection);
 
-    //Card* card = Card::create(CCSprite::create("card/color.png"),
-    //                          "dddd ",
-    //                          2,CardType::WithoutBorder);
-
-
-
-
-
     //menu
     CCMenu* menu =CCMenu::create();
-    //    menu->setPosition(ccp(0,0));
     float position_menu_y = VISIBLE_SIZE.height -padding*0.25f -
             title_select_collection->getContentSize().height*0.5f;
 
@@ -151,7 +139,6 @@ bool SelectLevel::init()
         }
 
         ADMenuItem* button_card = ADMenuItem::create(card);
-        //CONNECT(button_card->signalOnClick, this, &SelectCollection::onCardClick);
         button_card->setAnchorPoint(ccp(0.5f,0.5f));
         float one_card_width = 340/SCALE;
         collection_width += one_card_width;
@@ -161,7 +148,6 @@ bool SelectLevel::init()
         button_card->setPositionX(one_card_width*j + button_card->getContentSize().width*0.5f);
         CollectionID id = current_collection->getID();
         button_card->setClickAction([id,current_dificult](){
-            // CCLog("Level click: %d", id);
             CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,current_dificult));
 
         });
@@ -188,11 +174,7 @@ bool SelectLevel::init()
     menu->setPositionX(ORIGIN.x +position_menu_x*0.5f);
     menu->setPositionY((position_menu_y-card_height)*0.5f);
     this->addChild(menu);
-    //menu->setPosition();
     return true;
-
-
-
 
 }
 void SelectLevel::onCardClick()

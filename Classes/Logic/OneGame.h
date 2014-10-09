@@ -12,9 +12,6 @@ public:
 private:
     Task _task;
     OneSeason* _season;
-
-
-
 };
 
 #endif // ONEGAME_H

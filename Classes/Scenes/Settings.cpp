@@ -109,8 +109,6 @@ bool Settings::init()
 
     menu->addChild(button_music_on);
     button_music_on->addChild(_button_music_off_image);
-    //  _button_music_on_image->setVisible(true);
-    // _button_music_off_image->setVisible(false);
 
     //sounds_on
     _button_sounds_on_image = CCSprite::create("settings/sounds-on.png");
@@ -130,9 +128,6 @@ bool Settings::init()
 
     button_sounds_on->addChild(_button_sounds_off_image);
     menu->addChild(button_sounds_on);
-    //  _button_sounds_on_image->setVisible(true);
-    //   _button_sounds_off_image->setVisible(false);
-
     correctMusicEffects(EffectsType::Sound);
     correctMusicEffects(EffectsType::Music);
     float empty_space = VISIBLE_SIZE.height - button_music_on->getContentSize().height
@@ -264,7 +259,6 @@ void Settings::onTurnOffAdsClick()
 }
 void Settings::onX4EnjoyClick()
 {
-    //CCLog("X4Enjoy Clicked");
     ADBrowser::openWebURL("http://4enjoy.com");
 
 }

@@ -63,30 +63,8 @@ Task::Task(Level level, int difficult):
     }
 
 
-    //_in_use_letters = letters_of_words;
-    // _qiuz_word = letters_of_words;
-    //audio_name = _level.;
-
     _translated_word = _level.getTranslation();
     _image_file = _level.getImage();
-
-    //    CCLog("task: %s", _translated_word.c_str());
-    //     for (int i = 0 ; i < _solution.size(); ++i )
-    //    {
-
-    //        CCLog("solution: %s", _solution[i].getLetterString().c_str() );
-    //    }
-
-    //      for (int i = 0 ; i < _in_use_letters.size(); ++i )
-    //     {
-
-    //         CCLog("_in_use_letters: %s", _in_use_letters[i].getLetterString().c_str() );
-    //     }
-    //      for (int i = 0 ; i < _qiuz_word.size(); ++i )
-    //     {
-
-    //         CCLog("_qiuz_word: %s", _qiuz_word[i].getLetterString().c_str() );
-    //     }
 
 }
 

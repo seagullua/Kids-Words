@@ -24,10 +24,10 @@ int SaveStarsManager::getStars(CollectionID collection_id, int level_difficulty)
 {
     if(ADStorage::hasMapValue(BLOCK_SAVE_STARS,getID(collection_id, level_difficulty)))
     {
-    return ADStorage::getMapValue<int>(
-                BLOCK_SAVE_STARS,
-                getID(collection_id, level_difficulty),
-                0);
+        return ADStorage::getMapValue<int>(
+                    BLOCK_SAVE_STARS,
+                    getID(collection_id, level_difficulty),
+                    0);
     }
     else
     {
@@ -76,7 +76,7 @@ int SaveStarsManager::getStarsCollection(CollectionID collection_id)
                 collection_id, 2);
     int star_number_0_1 = MIN(star_number_0,star_number_1);
     int star_number = MIN(star_number_0_1,star_number_2);
-     return  star_number;
+    return  star_number;
     //    }
 }
 

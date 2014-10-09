@@ -4,18 +4,18 @@ TutorialManager TutorialManager::instance;
 
 TutorialManager* TutorialManager::getInstance( )
 {
-      return &instance;
+    return &instance;
 }
 TutorialManager::TutorialManager()
 {
 
     //Add blocks to storage
     CONNECT(ADStorage::signalCreateBlocks, this,
-                   &TutorialManager::initStorageBlocks);
+            &TutorialManager::initStorageBlocks);
 
     //Check if first launch and add bonuses
     CONNECT(ADStorage::signalInitialDataLoaded, this,
-                   &TutorialManager::initDefaultValues);
+            &TutorialManager::initDefaultValues);
 
 }
 

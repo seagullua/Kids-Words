@@ -6,9 +6,9 @@ class Word
 {
 public:
     Word(std::string word="");
-     const std::vector<std::string> getLettersOfWord() const;
+    const std::vector<std::string> getLettersOfWord() const;
 private:
-     std::vector<std::string> _letters_of_word;
+    std::vector<std::string> _letters_of_word;
 
 };
 

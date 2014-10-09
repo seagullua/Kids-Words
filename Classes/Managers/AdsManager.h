@@ -4,7 +4,7 @@
 
 class AdsManager: public HasSlots
 {
-        static const int BLOCK_ADS = 60001;
+    static const int BLOCK_ADS = 60001;
 public:
 
     static AdsManager* getInstance();
@@ -17,11 +17,8 @@ private:
     AdsManager();
     AdsManager(AdsManager const&);
     void operator=(AdsManager const&);
-
     bool _ads_included;
-
     void updateValues();
-
     void initStorageBlocks();
     void initDefaultValues();
 

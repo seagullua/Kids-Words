@@ -71,7 +71,6 @@ SOURCES += main.cpp \
     ../Classes/Logic/OneGame.cpp \
     ../Classes/Draw/GameNode.cpp \
     ../Classes/Draw/LetterNode.cpp \
-    ../Classes/Logic/Hint.cpp \
     ../Classes/PopUp/LevelEnd.cpp \
     ../Classes/PopUp/ExitGamePopUp.cpp \
     ../Classes/Managers/SettingsManager.cpp \
@@ -109,7 +108,6 @@ HEADERS += \
     ../Classes/Logic/OneGame.h \
     ../Classes/Draw/GameNode.h \
     ../Classes/Draw/LetterNode.h \
-    ../Classes/Logic/Hint.h \
     ../Classes/PopUp/LevelEnd.h \
     ../Classes/PopUp/ExitGamePopUp.h \
     ../Classes/Managers/SettingsManager.h \

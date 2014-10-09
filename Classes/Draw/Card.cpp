@@ -44,7 +44,7 @@ Card::Card(cocos2d::CCSprite *image, std::string title, int stars_number, CardTy
     this->setContentSize(ccp(padding_node_x, padding_node_y));
     this->addChild(paper_image);
     //line
-     _line_image = CCSprite::create("card/line.png");
+    _line_image = CCSprite::create("card/line.png");
     _line_image->setAnchorPoint(ccp(0,0));
     _line_image->setPositionX(0);
     _line_image->setPositionY(padding_node_y*0.25f);
@@ -99,11 +99,6 @@ void Card::setTitleColor(ccColor3B color)
     _line_image_title->setColor(color);
 }
 
-void Card::setStarsNumber(int stars_number)
-{
-
-
-}
 void Card::setBorderType(BorderType type)
 {
     if (type == BorderType::Easy)

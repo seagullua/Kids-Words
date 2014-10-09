@@ -4,7 +4,6 @@
 #include "InfoStyles.h"
 #include "Logic/Alphabete.h"
 #include "Logic/LevelSaves.h"
-#include "Logic/Hint.h"
 #include "Logic/OneSeason.h"
 #include "Draw/GameNode.h"
 #include <vector>
@@ -95,8 +94,6 @@ void LevelScene::onOneGameEndTouch()
 {
     this->stopAllActions();
     openNextLevel();
-    //_end_game_touch = true;
-
 }
 
 void LevelScene::openNextLevel()
@@ -123,30 +120,21 @@ bool LevelScene::init()
     if(!SceneStyle::init())
         return false;
 
-    //CCLog("Level click: %d", _collection_id);
-    //    CCLog("_difficult: %d", _difficult);
-
     //Get the screen start of cordinates
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     const float SCALE = ADScreen::getScaleFactor();
-    float x_middle_of_sheet = (VISIBLE_SIZE.width-200/SCALE)/2 + ORIGIN.x;
     float padding = 25/SCALE;
 
     showBackground(BackgroundType::None);
     int star_number = 10;
 
-    //  OneSeason _current_one_season(_collection_id,_difficult);
     _number_of_word = _current_one_season.getNumberWord(_difficult);
     _current_number_of_word = 1;
     if (!_top_panel)
     {
-
         _top_panel= TopPanell::create(_current_number_of_word,_number_of_word,star_number);
-
         _top_panel->setAnchorPoint(ccp(0,1));
-
-
         _top_panel->setPositionX(ORIGIN.x);
         _top_panel->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
         CONNECT(_top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
@@ -156,10 +144,6 @@ bool LevelScene::init()
         this->addChild(_top_panel);
     }
     showButtonBack();
-
-    //    button_back->setAnchorPoint(ccp(0,1));
-    //    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height +padding*0.5f);
-
     _tutorial = false;
 
     if(TutorialManager::getInstance()->isFirstGame())
@@ -168,7 +152,6 @@ bool LevelScene::init()
     }
 
     selectOneGame();
-    //    CONNECT(this->signalNextLesson, this, &LevelScene::onSignalNextLesson);
     return true;
 }
 void LevelScene::onSignalAudioClicked()
@@ -191,7 +174,7 @@ void LevelScene::onSignalUseHintClicked()
     }
     else
     {
-        //TODO сказать что нет подсказок
+
     }
 }
 void LevelScene::setOneGame(const OneGame* one_game)
@@ -267,6 +250,3 @@ void LevelScene::onSignalNextLesson()
 {
     selectNextSeason();
 }
-
-
-

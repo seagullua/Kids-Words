@@ -9,7 +9,7 @@ Letter::Letter(std::string string_letter="")
 }
 void Letter::setLetterStatus(LetterStatus status)
 {
-   _status= status;
+    _status= status;
 }
 const LetterStatus Letter::getLetterStatus()
 {
@@ -17,5 +17,5 @@ const LetterStatus Letter::getLetterStatus()
 }
 const std::string Letter::getLetterString()
 {
-     return _string_letter;
+    return _string_letter;
 }

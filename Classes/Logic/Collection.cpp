@@ -50,7 +50,7 @@ const std::string Collection::getImage() const
 }
 const cocos2d::ccColor3B Collection::getColor() const
 {
-      return _color;
+    return _color;
 }
 const std::string Collection::getName() const
 {
@@ -59,7 +59,7 @@ const std::string Collection::getName() const
 
 const CollectionPart Collection::getCollectionPartEasy() const
 {
-return _easy;
+    return _easy;
 
 }
 const CollectionPart Collection::getCollectionPartMiddle() const

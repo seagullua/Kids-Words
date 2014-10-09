@@ -5,18 +5,18 @@ AdsManager AdsManager::instance;
 
 AdsManager* AdsManager::getInstance( )
 {
-      return &instance;
+    return &instance;
 }
 AdsManager::AdsManager()
 {
 
     //Add blocks to storage
     CONNECT(ADStorage::signalCreateBlocks, this,
-                   &AdsManager::initStorageBlocks);
+            &AdsManager::initStorageBlocks);
 
     //Check if first launch and add bonuses
     CONNECT(ADStorage::signalInitialDataLoaded, this,
-                   &AdsManager::initDefaultValues);
+            &AdsManager::initDefaultValues);
 
 }
 
@@ -46,7 +46,7 @@ void AdsManager::updateValues()
 {
     if (_ads_included)
     {
-          ADStorage::setValue<int32_t>(BLOCK_ADS, 1);
+        ADStorage::setValue<int32_t>(BLOCK_ADS, 1);
 
     }
     else

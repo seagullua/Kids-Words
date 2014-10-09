@@ -105,7 +105,7 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     _price_label->setAnchorPoint(ccp(0.5f,0));
     _price_label->setPosition(ccp(button_no->getContentSize().width*0.5f,button_add->getContentSize().height*0.15f));
     button_add->addChild(_price_label);
-     // pinguine and text add
+    // pinguine and text add
 
 
     CCSprite* button_pinguine_image = CCSprite::create("settings/pinguine.png");
@@ -125,8 +125,6 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
 
     background->addChild(turn_off_ads_title);
-
-
 
 }
 

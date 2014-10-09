@@ -16,7 +16,6 @@ private:
     bool init();
     void onBackClick();
     void onCardClick();
-
 };
 
 #endif // SELECTLEVEL_H

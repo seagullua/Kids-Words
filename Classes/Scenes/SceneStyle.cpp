@@ -22,7 +22,7 @@ void SceneStyle::showButtonBack()
 
     ADMenuItem* button_back = ADMenuItem::create(button_back_image);
 
-  //  button_back->setAnchorPoint(ccp(0,1));
+    //  button_back->setAnchorPoint(ccp(0,1));
     button_back->setPositionX(
                 ORIGIN.x
                 + padding
@@ -30,11 +30,11 @@ void SceneStyle::showButtonBack()
 
     button_back->setPositionY(ORIGIN.y +
                               + VISIBLE_SIZE.height-padding -
-                                  button_back->getContentSize().height*0.5f);
+                              button_back->getContentSize().height*0.5f);
 
 
 
-                CONNECT(button_back->signalOnClick, (SceneStyle*)this, &SceneStyle::simulateBackClick);
+    CONNECT(button_back->signalOnClick, (SceneStyle*)this, &SceneStyle::simulateBackClick);
 
     menu->addChild(button_back);
 }

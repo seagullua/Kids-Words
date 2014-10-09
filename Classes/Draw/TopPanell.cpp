@@ -50,11 +50,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
 
     //number word
-    //cocos2d::CCLabelTTF* number_words;
-    //std::string title_number_word= "5/10";
-
     _title_number_word= AD_to_string(word_number)+"/"+AD_to_string(_all_words);
-    //
     if (!_number_words)
     {
 
@@ -157,12 +153,12 @@ void TopPanell::starsDrawChanged(int star_number)
 void TopPanell::signalAudioOnClicked()
 {
     emit signalAudioClicked();
-    CCLog("gggg");
+
 }
 void TopPanell::signalUseHintOnClicked()
 {
     emit signalUseHint();
-    CCLog("ffff");
+
 }
 void TopPanell::setTitleNumberWord(int word_number)
 {

@@ -10,12 +10,9 @@ public:
     static cocos2d::CCScene* scene();
     static SelectCollection* create();
 private:
-
-
     bool init();
     void onBackClick();
     void onCardClick();
-
 };
 
 #endif // SELECTCOLLECTION_H

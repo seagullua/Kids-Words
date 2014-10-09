@@ -3,8 +3,6 @@
 #include <algorithm>
 #include "InfoStyles.h"
 #include "Logic/Alphabete.h"
-
-
 using namespace cocos2d;
 
 LetterNode* LetterNode::create(Letter letter)
@@ -65,8 +63,6 @@ void LetterNode::ShowLetter()
 {
     this->setCascadeOpacityEnabled(true);
     this->setOpacity(255);
-    //std:: string letter_string_a = _active_letter.getLetterString();
-    //std:: string letter_string_s = _selected_letter.getLetterString();
     LetterStatus status = _active_letter.getLetterStatus();
     std:: string letter_string = _active_letter.getLetterString();
     std:: string image_name = "";
@@ -74,18 +70,13 @@ void LetterNode::ShowLetter()
     if (_letter_is_selected )
     {
         status = LetterStatus::Normal;
-        //     LetterStatus status = _selected_letter.getLetterStatus();
         letter_string = _selected_letter.getLetterString();
-
     }
     else
     {
-
         status = _active_letter.getLetterStatus();
         letter_string = _active_letter.getLetterString();
-
     }  \
-
 
     if (status == LetterStatus::Empty)
     {
@@ -163,7 +154,6 @@ void LetterNode::ShowLetter()
             _letter_image->setColor(lighter);
         }
 
-        //current_letter->setString(letter_string.c_str());
         current_letter->setAnchorPoint(ccp(0.5f,0.5f));
         current_letter->setPositionX(letter_image->getContentSize().width*0.5f);
         current_letter->setPositionY(letter_image->getContentSize().height*0.5f);

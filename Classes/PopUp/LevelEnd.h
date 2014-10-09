@@ -8,7 +8,6 @@ class LevelEnd: public IADStandardWindow
 {
 public:
     LevelEnd(cocos2d::CCNode* parent,CollectionID collection_id,int stars_number, int difficult);
- //   Signal<> signalNextLesson;
 private:
 
     cocos2d::CCNode* _parent;

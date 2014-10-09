@@ -45,4 +45,4 @@ const cocos2d::ccColor3B InfoStyles::COLOR_GREEN_LIGHT = cocos2d::ccc3(26,219,0)
 const cocos2d::ccColor3B InfoStyles::COLOR_DARK_LIGHT = cocos2d::ccc3(90,90,90);
 const cocos2d::ccColor3B InfoStyles::COLOR_YELLOW_LIGHT = cocos2d::ccc3(255,255,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_DARK = cocos2d::ccc3(0,0,0);
-const cocos2d::ccColor3B InfoStyles::COLOR_PINK = cocos2d::ccc3(245,180,230);
+const cocos2d::ccColor3B InfoStyles::COLOR_PINK = cocos2d::ccc3(250,95,235);

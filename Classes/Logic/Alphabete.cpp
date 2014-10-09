@@ -12,16 +12,8 @@ Alphabete& Alphabete::getInstance()
 }
 void Alphabete::setApphabete(std::string current_alphabete)
 {
-//    std::string current_alphabete;
-//    current_alphabete="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
- //   for (int i = 0 ; i < _current_alphabete.size(); ++i )
-//    {
-//        std::string ch = " ";
-//        ch[0] = _current_alphabete[i];
-//        _alphabete.push_back(ch);
-//    }
 
-        _alphabete = ADUTF8::splitToChars(current_alphabete);
+    _alphabete = ADUTF8::splitToChars(current_alphabete);
 
 }
 
@@ -38,17 +30,17 @@ const std::vector<int> Alphabete::getNumberLetterFromAlphabete(int number_of_let
 
     for (int i = 0 ; i < _alphabete.size(); ++i )
     {
-         number_letter.push_back(i);
+        number_letter.push_back(i);
 
     }
-     std::random_shuffle(number_letter.begin(), number_letter.end());
+    std::random_shuffle(number_letter.begin(), number_letter.end());
 
-     for (int i = 0 ; i < number_of_letter ; ++i )
+    for (int i = 0 ; i < number_of_letter ; ++i )
     {
         number_letter_return.push_back(number_letter[i]);
 
     }
-     return number_letter_return;\
+    return number_letter_return;\
 }
 
 void Alphabete::setAlphabeteColor()

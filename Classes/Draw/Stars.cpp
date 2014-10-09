@@ -12,7 +12,7 @@ Stars::Stars(int stars_number)
 {
     float node_width = 0;
     float node_height = 0;
-//    float star_namber_f = stars_number;
+    //    float star_namber_f = stars_number;
     int stars_number_half = stars_number /2;
     int half_int = stars_number%2;
 

@@ -181,5 +181,5 @@ bool Developers::init()
 
 void Developers::onX4EnjoyClick()
 {
-    CCLog("X4Enjoy Clicked");
+    ADBrowser::openWebURL("http://4enjoy.com");
 }

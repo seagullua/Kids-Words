@@ -2,7 +2,6 @@
 #define GAMENODE_H
 #include "Logic/Task.h"
 #include "Logic/OneGame.h"
-#include "Logic/Hint.h"
 #include "LetterNode.h"
 
 class GameNode: public cocos2d::CCNode, public HasSlots, public cocos2d::CCTouchDelegate
@@ -15,15 +14,12 @@ public:
     Signal<> signalTouchGameEnd;
     //Signal<> signalOneGameEnd;
     Signal<int> signallStarsChanged;
-
-
     bool isSetEnd();
     void playAudio();
     void addLeter(int position, Letter letter);
     void signalAddLetterOn();
     void signallStarsChangedOn(int number_of_stars);
     void onExit();
-
     void showHint();
     int getIndexInUseLetterNode(LetterNode* node);
     int getIndexQuizWrongNode(LetterNode* node);
@@ -44,7 +40,6 @@ private:
     void moveLetterNodeBack(LetterNode* node);
     void moveLetterNodeBackByIndex(LetterNode* node,int index);
     cocos2d::CCPoint getLetterCordinates(int index);
-
     const OneGame* _one_game;
     cocos2d::CCNodeRGBA* _node_in_use_letters;
     std::vector<LetterNode*> _letters_to_insert;
@@ -67,7 +62,6 @@ private:
     cocos2d::CCSprite* _word_image;
     float _base_scale;
     float _base_scale_n;
-
 };
 
 #endif // GAMENODE_H
