@@ -235,6 +235,7 @@ void LevelScene::EndLevel()
                 _collection_id, _difficult);
 
     int star_number_current = getStarNumber();\
+ //   int star_number = star_number_current;
     int star_number = MAX(star_number_old,star_number_current);
     SaveStarsManager::getInstance()->setStars(
                 _collection_id, _difficult, star_number);

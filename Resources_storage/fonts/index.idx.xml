@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
 	<file>
-		<name>Comfortaa.ttf</name>
+		<name>Comfortaa Bold.ttf</name>
+	</file>
+	<file>
+		<name>Roboto Slab Bold.ttf</name>
 	</file>
 	<file>
 		<name>arial.ttf</name>

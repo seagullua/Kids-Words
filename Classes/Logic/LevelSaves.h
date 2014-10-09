@@ -12,7 +12,7 @@ public:
     const Collection* getCollectionById(CollectionID coll_id);
     void readLevels();
     void addCollection(Collection collect);
-
+    const cocos2d::ccColor3B getColor(int id);
 private:
     LevelSaves();
     std::vector<Collection> _collections;

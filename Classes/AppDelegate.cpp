@@ -128,8 +128,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     ADInfo::getStore();
 
     //Language init
-    std::string latin_font = "fonts/Comfortaa.ttf";
-    std::string latin_bmfont = "fonts/Comfortaa.fnt";
+    std::string latin_font = "fonts/Comfortaa Bold.ttf";
+    std::string latin_bmfont = "fonts/Comfortaa Bold.fnt";
 
     //std::string cyrilic_font = "fonts/Comfortaa.ttf";
     //std::string cyrilic_bmfont = "fonts/Comfortaa.fnt";

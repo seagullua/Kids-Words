@@ -71,7 +71,7 @@ public:
         if(sName == "collection")
         {
             _collection.setID(_collection_id);
-            _collection.setColor(getColor(_collection_id));
+            _collection.setColor(LevelSaves::getInstance().getColor(_collection_id));
             _collection.setLevels(_levels);
             LevelSaves::getInstance().addCollection(_collection);
             _in_collection = false;
@@ -137,60 +137,7 @@ public:
         std::string text((char*)ch,0,len);
         _text = text;
     }
-    const cocos2d::ccColor3B getColor(int id)
-    {
-        if (id == 1)
-        {
-            return  InfoStyles::COLOR_ORANGE;
-        }
-        else if (id == 2)
-        {
-            return  InfoStyles::COLOR_BLUE;
-
-        }
-        else if (id == 3)
-        {
-            return  InfoStyles::COLOR_GREEN;
-
-        }
-        else if (id == 4)
-        {
-            return  InfoStyles::COLOR_MAGENTA;
-
-        }
-        else if (id == 5)
-        {
-            return  InfoStyles::COLOR_ORANGE_LIGHT;
-
-        }
-        else if (id == 6)
-        {
-            return  InfoStyles::COLOR_RED_LIGHT;
-
-        }
-        else if (id == 7)
-        {
-            return  InfoStyles::COLOR_BLUE_LIGHT;
-
-        }
-        else if (id == 8)
-        {
-            return  InfoStyles::COLOR_GREEN_LIGHT;
-
-        }
-        else if (id == 9)
-        {
-            return  InfoStyles::COLOR_PINK;
-
-        }
-        else if (id == 10)
-        {
-            return  InfoStyles::COLOR_ORANGE_LIGHT;
-
-        }
-    }
-
-    Collection _collection;
+     Collection _collection;
     std::vector<Collection> _collections_readed;
     std::vector<Level> _levels;
     Level _level;
@@ -246,3 +193,56 @@ void LevelSaves::addCollection(Collection collect)
 {
     _collections.push_back(collect);
 }
+const cocos2d::ccColor3B LevelSaves::getColor(int id)
+{
+    if (id == 1)
+    {
+        return  InfoStyles::COLOR_ORANGE;
+    }
+    else if (id == 2)
+    {
+        return  InfoStyles::COLOR_BLUE;
+
+    }
+    else if (id == 3)
+    {
+        return  InfoStyles::COLOR_GREEN;
+
+    }
+    else if (id == 4)
+    {
+        return  InfoStyles::COLOR_MAGENTA;
+
+    }
+    else if (id == 5)
+    {
+        return  InfoStyles::COLOR_ORANGE_LIGHT;
+
+    }
+    else if (id == 6)
+    {
+        return  InfoStyles::COLOR_RED_LIGHT;
+
+    }
+    else if (id == 7)
+    {
+        return  InfoStyles::COLOR_BLUE_LIGHT;
+
+    }
+    else if (id == 8)
+    {
+        return  InfoStyles::COLOR_GREEN_LIGHT;
+
+    }
+    else if (id == 9)
+    {
+        return  InfoStyles::COLOR_PINK;
+
+    }
+    else if (id == 10)
+    {
+        return  InfoStyles::COLOR_ORANGE_LIGHT;
+
+    }
+}
+

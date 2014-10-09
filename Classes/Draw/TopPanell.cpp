@@ -69,8 +69,11 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
         _panel_image->addChild(_number_words);
     }
+
+    static std::string LETTER_FONT = "fonts/Roboto Slab Bold.ttf";
+
     _translation_word_label = CCLabelTTF::create(" ",
-                                                 ADLanguage::getFontName(),
+                                                 LETTER_FONT.c_str(),
                                                  InfoStyles::SIZE_DEVELOPERS_TITLE);
 
 

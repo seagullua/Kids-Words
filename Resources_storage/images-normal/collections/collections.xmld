@@ -70,7 +70,7 @@
 				<image>collections/animals/beaver.jpg</image>
 				<word>
 					<en>BEAVER</en>
-					<ru>БОБЕР</ru>
+					<ru>БОБЁР</ru>
 					<uk>БОБЕР</uk>
 				</word>
 			</level>
@@ -392,7 +392,7 @@
 				<word>
 					<en>BEE</en>
 					<ru>ПЧЕЛА</ru>
-					<uk>ПЧОЛА</uk>
+					<uk>БДЖОЛА</uk>
 				</word>
 			</level>
 		</levels>
@@ -1297,7 +1297,7 @@
 				<word>
 					<en>PARROT</en>
 					<ru>ПОПУГАЙ</ru>
-					<uk>ПОПУГАЙ</uk>
+					<uk>ПАПУГА</uk>
 				</word>
 			</level>
 		</levels>
@@ -1407,7 +1407,7 @@
 				<word>
 					<en>PEACOCK</en>
 					<ru>ПАВЛИН</ru>
-					<uk>ПАВЛИН</uk>
+					<uk>ПАВИЧ</uk>
 				</word>
 			</level>
 		</levels>
@@ -1577,8 +1577,8 @@
 				<image>collections/room/washbasin.jpg</image>
 				<word>
 					<en>WASHBASIN</en>
-					<ru>УМЫВАЛЬНИК</ru>
-					<uk>УМИВАЛЬНИК</uk>
+					<ru>РАКОВИНА</ru>
+					<uk>РАКОВИНА</uk>
 				</word>
 			</level>
 		</levels>
@@ -1789,7 +1789,7 @@
 				<word>
 					<en>MIXER</en>
 					<ru>МИКСЕР</ru>
-					<uk>МИКСЕР</uk>
+					<uk>МІКСЕР</uk>
 				</word>
 			</level>
 		</levels>
@@ -1817,7 +1817,7 @@
 			<level>
 				<image>collections/kitchen/frypan.jpg</image>
 				<word>
-					<en>FRYPAN</en>
+					<en>PAN</en>
 					<ru>СКОВОРОДА</ru>
 					<uk>СКОВОРОДА</uk>
 				</word>
@@ -2089,7 +2089,7 @@
 				<image>collections/sport/hockey.jpg</image>
 				<word>
 					<en>HOCKEY</en>
-					<ru>ХОКЕЙ</ru>
+					<ru>ХОККЕЙ</ru>
 					<uk>ХОКЕЙ</uk>
 				</word>
 			</level>

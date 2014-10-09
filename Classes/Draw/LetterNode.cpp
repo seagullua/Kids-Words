@@ -105,13 +105,26 @@ void LetterNode::ShowLetter()
 
     this->setContentSize(ccp(padding_node_x, padding_node_y));
 
-
+    static std::string LETTER_FONT = "fonts/Roboto Slab Bold.ttf";
     if(!_current_letter)
     {
         _current_letter = CCLabelTTF::create(letter_string.c_str(),
-                                             ADLanguage::getFontName(),
+                                             LETTER_FONT.c_str(),
                                              InfoStyles::SIZE_LETTER);
-        _current_letter->setScale(0.85f);
+
+//        float padding_node_xl = _current_letter->getContentSize().width;
+//        float padding_node_yl = _current_letter->getContentSize().height;
+//        float node_scale_x = padding_node_xl/padding_node_x;
+//        float node_scale_y = padding_node_yl/padding_node_y;
+//        float node_scale = MIN(node_scale_x,node_scale_y);
+
+//        if(node_scale_x < 1)
+//        {
+//            _current_letter->setScale(node_scale_x);
+
+//        }
+
+        _current_letter->setScale(0.87f);
 
         this->addChild(_current_letter);
     }

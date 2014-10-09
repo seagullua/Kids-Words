@@ -153,7 +153,7 @@ bool SelectLevel::init()
         });
         menu->addChild(button_card);
 
-        card->setCardColor(InfoStyles::COLOR_ORANGE);
+        card->setCardColor(LevelSaves::getInstance().getColor(_collection_id));
         card->setTitleColor(InfoStyles::COLOR_WHITE);
         if (j == 0)
         {
