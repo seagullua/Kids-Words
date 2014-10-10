@@ -24,8 +24,6 @@
 					<uk>ВЕДМІДЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/tiger.jpg</image>
 				<word>
@@ -34,8 +32,6 @@
 					<uk>ТИГР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/hippo.jpg</image>
 				<word>
@@ -44,8 +40,6 @@
 					<uk>БЕГЕМОТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/panda.jpg</image>
 				<word>
@@ -54,8 +48,6 @@
 					<uk>ПАНДА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/squirrel.jpg</image>
 				<word>
@@ -64,8 +56,6 @@
 					<uk>БІЛКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/beaver.jpg</image>
 				<word>
@@ -74,8 +64,6 @@
 					<uk>БОБЕР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/elephant.jpg</image>
 				<word>
@@ -84,8 +72,6 @@
 					<uk>СЛОН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/fox.jpg</image>
 				<word>
@@ -94,8 +80,6 @@
 					<uk>ЛИСИЦЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/frog.jpg</image>
 				<word>
@@ -104,8 +88,6 @@
 					<uk>ЖАБА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/wolf.jpg</image>
 				<word>
@@ -114,8 +96,6 @@
 					<uk>ВОВК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/giraffe.jpg</image>
 				<word>
@@ -124,8 +104,6 @@
 					<uk>ЖИРАФ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/lion.jpg</image>
 				<word>
@@ -134,8 +112,6 @@
 					<uk>ЛЕВ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/monkey.jpg</image>
 				<word>
@@ -144,8 +120,6 @@
 					<uk>МАВПА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/rhino.jpg</image>
 				<word>
@@ -154,8 +128,6 @@
 					<uk>НОСОРІГ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/hare.jpg</image>
 				<word>
@@ -164,8 +136,6 @@
 					<uk>ЗАЄЦЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/snake.jpg</image>
 				<word>
@@ -174,8 +144,6 @@
 					<uk>ЗМІЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/crocodile.jpg</image>
 				<word>
@@ -184,8 +152,6 @@
 					<uk>КРОКОДИЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/turtle.jpg</image>
 				<word>
@@ -194,8 +160,6 @@
 					<uk>ЧЕРЕПАХА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/zebra.jpg</image>
 				<word>
@@ -204,8 +168,6 @@
 					<uk>ЗЕБРА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/animals/hamster.jpg</image>
 				<word>
@@ -235,8 +197,6 @@
 					<uk>БУЙВОЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/camel.jpg</image>
 				<word>
@@ -245,8 +205,6 @@
 					<uk>ВЕРБЛЮД</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/goose.jpg</image>
 				<word>
@@ -255,8 +213,6 @@
 					<uk>ГУСАК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/turkey.jpg</image>
 				<word>
@@ -265,8 +221,6 @@
 					<uk>ІНДИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/goat.jpg</image>
 				<word>
@@ -275,8 +229,6 @@
 					<uk>КОЗА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/cow.jpg</image>
 				<word>
@@ -285,8 +237,6 @@
 					<uk>КОРОВА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/rabbit.jpg</image>
 				<word>
@@ -295,8 +245,6 @@
 					<uk>КРОЛИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/chicken.jpg</image>
 				<word>
@@ -305,8 +253,6 @@
 					<uk>КУРКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/lama.jpg</image>
 				<word>
@@ -315,8 +261,6 @@
 					<uk>ЛАМА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/horse.jpg</image>
 				<word>
@@ -325,8 +269,6 @@
 					<uk>КІНЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/mouse.jpg</image>
 				<word>
@@ -335,8 +277,6 @@
 					<uk>МИША</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/sheep.jpg</image>
 				<word>
@@ -345,8 +285,6 @@
 					<uk>ОВЕЧКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/deer.jpg</image>
 				<word>
@@ -355,8 +293,6 @@
 					<uk>ОЛЕНЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/donkey.jpg</image>
 				<word>
@@ -365,8 +301,6 @@
 					<uk>ОСЕЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/cock.jpg</image>
 				<word>
@@ -375,8 +309,6 @@
 					<uk>ПІВЕНЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/pig.jpg</image>
 				<word>
@@ -385,8 +317,6 @@
 					<uk>СВИНЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/bee.jpg</image>
 				<word>
@@ -395,8 +325,6 @@
 					<uk>БДЖОЛА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/dog.jpg</image>
 				<word>
@@ -405,8 +333,6 @@
 					<uk>СОБАКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/duck.jpg</image>
 				<word>
@@ -415,8 +341,6 @@
 					<uk>КАЧКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/pets/cat.jpg</image>
 				<word>
@@ -446,8 +370,6 @@
 					<uk>АНАНАС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/strawberry.jpg</image>
 				<word>
@@ -456,8 +378,6 @@
 					<uk>ПОЛУНИЦЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/apricot.jpg</image>
 				<word>
@@ -466,8 +386,6 @@
 					<uk>АБРИКОС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/orange.jpg</image>
 				<word>
@@ -476,8 +394,6 @@
 					<uk>АПЕЛЬСИН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/watermelon.jpg</image>
 				<word>
@@ -486,8 +402,6 @@
 					<uk>КАВУН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/banana.jpg</image>
 				<word>
@@ -496,8 +410,6 @@
 					<uk>БАНАН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/grapes.jpg</image>
 				<word>
@@ -506,8 +418,6 @@
 					<uk>ВИНОГРАД</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/cherry.jpg</image>
 				<word>
@@ -516,8 +426,6 @@
 					<uk>ВИШНЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/garnet.jpg</image>
 				<word>
@@ -526,8 +434,6 @@
 					<uk>ГРАНАТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/pear.jpg</image>
 				<word>
@@ -536,8 +442,6 @@
 					<uk>ГРУША</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/melon.jpg</image>
 				<word>
@@ -546,8 +450,6 @@
 					<uk>ДИНЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/kiwi.jpg</image>
 				<word>
@@ -556,8 +458,6 @@
 					<uk>КІВІ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/coconut.jpg</image>
 				<word>
@@ -566,8 +466,6 @@
 					<uk>КОКОС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/lemon.jpg</image>
 				<word>
@@ -576,8 +474,6 @@
 					<uk>ЛИМОН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/raspberries.jpg</image>
 				<word>
@@ -586,8 +482,6 @@
 					<uk>МАЛИНА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/walnut.jpg</image>
 				<word>
@@ -596,8 +490,6 @@
 					<uk>ГОРІХ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/peach.jpg</image>
 				<word>
@@ -606,8 +498,6 @@
 					<uk>ПЕРСИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/drain.jpg</image>
 				<word>
@@ -616,8 +506,6 @@
 					<uk>СЛИВА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/currants.jpg</image>
 				<word>
@@ -626,8 +514,6 @@
 					<uk>СМОРОДИНА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/fruits/apple.jpg</image>
 				<word>
@@ -657,8 +543,6 @@
 					<uk>ВОДОСПАД</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/mountains.jpg</image>
 				<word>
@@ -667,8 +551,6 @@
 					<uk>ГОРИ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/tree.jpg</image>
 				<word>
@@ -677,8 +559,6 @@
 					<uk>ДЕРЕВО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/rain.jpg</image>
 				<word>
@@ -687,8 +567,6 @@
 					<uk>ДОЩ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/bridge.jpg</image>
 				<word>
@@ -697,8 +575,6 @@
 					<uk>МІСТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/star.jpg</image>
 				<word>
@@ -707,8 +583,6 @@
 					<uk>ЗІРКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/sea.jpg</image>
 				<word>
@@ -717,8 +591,6 @@
 					<uk>МОРЕ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/moon.jpg</image>
 				<word>
@@ -727,8 +599,6 @@
 					<uk>МІСЯЦЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/sky.jpg</image>
 				<word>
@@ -737,8 +607,6 @@
 					<uk>НЕБО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/cloud.jpg</image>
 				<word>
@@ -747,8 +615,6 @@
 					<uk>ХМАРА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/lake.jpg</image>
 				<word>
@@ -757,8 +623,6 @@
 					<uk>ОЗЕРО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/beach.jpg</image>
 				<word>
@@ -767,8 +631,6 @@
 					<uk>ПЛЯЖ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/island.jpg</image>
 				<word>
@@ -777,8 +639,6 @@
 					<uk>ОСТРІВ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/field.jpg</image>
 				<word>
@@ -787,8 +647,6 @@
 					<uk>ПОЛЕ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/rainbow.jpg</image>
 				<word>
@@ -797,8 +655,6 @@
 					<uk>ВЕСЕЛКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/river.jpg</image>
 				<word>
@@ -807,8 +663,6 @@
 					<uk>РІЧКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/snow.jpg</image>
 				<word>
@@ -817,8 +671,6 @@
 					<uk>СНІГ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/flowers.jpg</image>
 				<word>
@@ -827,8 +679,6 @@
 					<uk>КВІТИ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/bump.jpg</image>
 				<word>
@@ -837,8 +687,6 @@
 					<uk>ШИШКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/nature/mushroom.jpg</image>
 				<word>
@@ -868,8 +716,6 @@
 					<uk>БАКЛАЖАН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/beet.jpg</image>
 				<word>
@@ -878,8 +724,6 @@
 					<uk>БУРЯК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/pumpkin.jpg</image>
 				<word>
@@ -888,8 +732,6 @@
 					<uk>ГАРБУЗ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/peas.jpg</image>
 				<word>
@@ -898,8 +740,6 @@
 					<uk>ГОРОХ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/zucchini.jpg</image>
 				<word>
@@ -908,8 +748,6 @@
 					<uk>КАБАЧОК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/cabbage.jpg</image>
 				<word>
@@ -918,8 +756,6 @@
 					<uk>КАПУСТА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/potato.jpg</image>
 				<word>
@@ -928,8 +764,6 @@
 					<uk>КАРТОПЛЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/corn.jpg</image>
 				<word>
@@ -938,8 +772,6 @@
 					<uk>КУКУРУДЗА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/onion.jpg</image>
 				<word>
@@ -948,8 +780,6 @@
 					<uk>ЦИБУЛЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/carrot.jpg</image>
 				<word>
@@ -958,8 +788,6 @@
 					<uk>МОРКВА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/cucumber.jpg</image>
 				<word>
@@ -968,8 +796,6 @@
 					<uk>ОГІРОК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/pepper.jpg</image>
 				<word>
@@ -978,8 +804,6 @@
 					<uk>ПЕРЕЦЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/parsley.jpg</image>
 				<word>
@@ -988,8 +812,6 @@
 					<uk>ПЕТРУШКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/sunflower.jpg</image>
 				<word>
@@ -998,8 +820,6 @@
 					<uk>СОНЯШНИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/tomato.jpg</image>
 				<word>
@@ -1008,8 +828,6 @@
 					<uk>ПОМІДОР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/radish.jpg</image>
 				<word>
@@ -1018,8 +836,6 @@
 					<uk>РЕДИСКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/lettuce.jpg</image>
 				<word>
@@ -1028,8 +844,6 @@
 					<uk>САЛАТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/dill.jpg</image>
 				<word>
@@ -1038,8 +852,6 @@
 					<uk>КРІП</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/beans.jpg</image>
 				<word>
@@ -1048,8 +860,6 @@
 					<uk>КВАСОЛЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/vegetables/garlic.jpg</image>
 				<word>
@@ -1079,8 +889,6 @@
 					<uk>МОТОЦИКЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/tram.jpg</image>
 				<word>
@@ -1089,8 +897,6 @@
 					<uk>ТРАМВАЙ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/car.jpg</image>
 				<word>
@@ -1099,8 +905,6 @@
 					<uk>АВТОМОБІЛЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/train.jpg</image>
 				<word>
@@ -1109,8 +913,6 @@
 					<uk>ПОЇЗД</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/ship.jpg</image>
 				<word>
@@ -1119,8 +921,6 @@
 					<uk>КОРАБЕЛЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/tractor.jpg</image>
 				<word>
@@ -1129,8 +929,6 @@
 					<uk>ТРАКТОР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/bike.jpg</image>
 				<word>
@@ -1139,8 +937,6 @@
 					<uk>ВЕЛОСИПЕД</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/boat.jpg</image>
 				<word>
@@ -1149,8 +945,6 @@
 					<uk>ЧОВЕН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/skate.jpg</image>
 				<word>
@@ -1159,8 +953,6 @@
 					<uk>СКЕЙТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/helicopter.jpg</image>
 				<word>
@@ -1169,8 +961,6 @@
 					<uk>ВЕРТОЛІТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/plane.jpg</image>
 				<word>
@@ -1179,8 +969,6 @@
 					<uk>ЛІТАК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/trolleybus.jpg</image>
 				<word>
@@ -1189,8 +977,6 @@
 					<uk>ТРОЛЕЙБУС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/bus.jpg</image>
 				<word>
@@ -1199,8 +985,6 @@
 					<uk>АВТОБУС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/coach.jpg</image>
 				<word>
@@ -1209,8 +993,6 @@
 					<uk>КАРЕТА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/subway.jpg</image>
 				<word>
@@ -1219,8 +1001,6 @@
 					<uk>МЕТРО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/rocket.jpg</image>
 				<word>
@@ -1229,8 +1009,6 @@
 					<uk>РАКЕТА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/scooter.jpg</image>
 				<word>
@@ -1239,8 +1017,6 @@
 					<uk>САМОКАТ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/sled.jpg</image>
 				<word>
@@ -1249,8 +1025,6 @@
 					<uk>САНКИ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/cart.jpg</image>
 				<word>
@@ -1259,8 +1033,6 @@
 					<uk>ПІДВОДА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/transport/yacht.jpg</image>
 				<word>
@@ -1300,8 +1072,6 @@
 					<uk>ПАПУГА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/penguin.jpg</image>
 				<word>
@@ -1310,8 +1080,6 @@
 					<uk>ПІНГВІН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/sparrow.jpg</image>
 				<word>
@@ -1320,8 +1088,6 @@
 					<uk>ГОРОБЕЦЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/crow.jpg</image>
 				<word>
@@ -1330,8 +1096,6 @@
 					<uk>ВОРОНА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/pigeon.jpg</image>
 				<word>
@@ -1340,8 +1104,6 @@
 					<uk>ГОЛУБ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/woodpecker.jpg</image>
 				<word>
@@ -1350,8 +1112,6 @@
 					<uk>ДЯТЕЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/hummingbird.jpg</image>
 				<word>
@@ -1360,8 +1120,6 @@
 					<uk>КОЛІБРІ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/swallow.jpg</image>
 				<word>
@@ -1370,8 +1128,6 @@
 					<uk>ЛАСТІВКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/swan.jpg</image>
 				<word>
@@ -1380,8 +1136,6 @@
 					<uk>ЛЕБІДЬ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/stork.jpg</image>
 				<word>
@@ -1390,8 +1144,6 @@
 					<uk>ЛЕЛЕКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/eagle.jpg</image>
 				<word>
@@ -1400,8 +1152,6 @@
 					<uk>ОРЕЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/peacock.jpg</image>
 				<word>
@@ -1410,8 +1160,6 @@
 					<uk>ПАВИЧ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/bullfinch.jpg</image>
 				<word>
@@ -1420,8 +1168,6 @@
 					<uk>СНІГУР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/magpie.jpg</image>
 				<word>
@@ -1430,8 +1176,6 @@
 					<uk>СОРОКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/ostrich.jpg</image>
 				<word>
@@ -1440,8 +1184,6 @@
 					<uk>СТРАУС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/pheasant.jpg</image>
 				<word>
@@ -1450,8 +1192,6 @@
 					<uk>ФАЗАН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/partridge.jpg</image>
 				<word>
@@ -1460,8 +1200,6 @@
 					<uk>КУРІПКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/flamingo.jpg</image>
 				<word>
@@ -1470,8 +1208,6 @@
 					<uk>ФЛАМІНГО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/birds/seagull.jpg</image>
 				<word>
@@ -1511,8 +1247,6 @@
 					<uk>КИЛИМ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/bath.jpg</image>
 				<word>
@@ -1521,8 +1255,6 @@
 					<uk>ВАННА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/chandelier.jpg</image>
 				<word>
@@ -1531,8 +1263,6 @@
 					<uk>ЛЮСТРА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/bed.jpg</image>
 				<word>
@@ -1541,8 +1271,6 @@
 					<uk>ЛІЖКО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/pillow.jpg</image>
 				<word>
@@ -1551,8 +1279,6 @@
 					<uk>ПОДУШКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/window.jpg</image>
 				<word>
@@ -1561,8 +1287,6 @@
 					<uk>ВІКНО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/wall.jpg</image>
 				<word>
@@ -1571,8 +1295,6 @@
 					<uk>СТІНА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/washbasin.jpg</image>
 				<word>
@@ -1581,8 +1303,6 @@
 					<uk>РАКОВИНА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/toilet.jpg</image>
 				<word>
@@ -1591,8 +1311,6 @@
 					<uk>УНІТАЗ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/clock.jpg</image>
 				<word>
@@ -1601,8 +1319,6 @@
 					<uk>ГОДИННИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/cabinet.jpg</image>
 				<word>
@@ -1611,8 +1327,6 @@
 					<uk>ШАФА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/armchair.jpg</image>
 				<word>
@@ -1621,8 +1335,6 @@
 					<uk>КРІСЛО</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/divan.jpg</image>
 				<word>
@@ -1631,8 +1343,6 @@
 					<uk>ДИВАН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/curtain.jpg</image>
 				<word>
@@ -1641,8 +1351,6 @@
 					<uk>ШТОРИ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/stool.jpg</image>
 				<word>
@@ -1651,8 +1359,6 @@
 					<uk>ТАБУРЕТКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/door.jpg</image>
 				<word>
@@ -1661,8 +1367,6 @@
 					<uk>ДВЕРІ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/table.jpg</image>
 				<word>
@@ -1671,8 +1375,6 @@
 					<uk>СТІЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/vase.jpg</image>
 				<word>
@@ -1681,8 +1383,6 @@
 					<uk>ВАЗА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/room/shelf.jpg</image>
 				<word>
@@ -1722,8 +1422,6 @@
 					<uk>БЛЕНДЕР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/wineglass.jpg</image>
 				<word>
@@ -1732,8 +1430,6 @@
 					<uk>БОКАЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/fork.jpg</image>
 				<word>
@@ -1742,8 +1438,6 @@
 					<uk>ВИЛКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/spoon.jpg</image>
 				<word>
@@ -1752,8 +1446,6 @@
 					<uk>ЛОЖКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/colander.jpg</image>
 				<word>
@@ -1762,8 +1454,6 @@
 					<uk>ДРУШЛЯК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/pan.jpg</image>
 				<word>
@@ -1772,8 +1462,6 @@
 					<uk>КАСТРЮЛЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/tap.jpg</image>
 				<word>
@@ -1782,8 +1470,6 @@
 					<uk>КРАН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/mixer.jpg</image>
 				<word>
@@ -1792,8 +1478,6 @@
 					<uk>МІКСЕР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/knife.jpg</image>
 				<word>
@@ -1802,8 +1486,6 @@
 					<uk>НІЖ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/cooker.jpg</image>
 				<word>
@@ -1812,8 +1494,6 @@
 					<uk>ПЛИТА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/frypan.jpg</image>
 				<word>
@@ -1822,8 +1502,6 @@
 					<uk>СКОВОРОДА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/squeezer.jpg</image>
 				<word>
@@ -1832,8 +1510,6 @@
 					<uk>СОКОВИЖИМАЛКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/glass.jpg</image>
 				<word>
@@ -1842,8 +1518,6 @@
 					<uk>СТАКАН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/plate.jpg</image>
 				<word>
@@ -1852,8 +1526,6 @@
 					<uk>ТАРІЛКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/toaster.jpg</image>
 				<word>
@@ -1862,8 +1534,6 @@
 					<uk>ТОСТЕР</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/refrigerator.jpg</image>
 				<word>
@@ -1872,18 +1542,14 @@
 					<uk>ХОЛОДИЛЬНИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
-				<image>collections/kitchen/toaster.jpg</image>
+				<image>collections/kitchen/grater.jpg</image>
 				<word>
-					<en>TOASTER</en>
-					<ru>ТОСТЕР</ru>
-					<uk>ТОСТЕР</uk>
+					<en>GRATER</en>
+					<ru>ТЕРКА</ru>
+					<uk>ТЕРТУШКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/teapot.jpg</image>
 				<word>
@@ -1892,8 +1558,6 @@
 					<uk>ЧАЙНИК</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/kitchen/cup.jpg</image>
 				<word>
@@ -1923,8 +1587,6 @@
 					<uk>ТЕНІС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/stadium.jpg</image>
 				<word>
@@ -1933,8 +1595,6 @@
 					<uk>СТАДІОН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/bowling.jpg</image>
 				<word>
@@ -1943,8 +1603,6 @@
 					<uk>БОУЛІНГ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/basketball.jpg</image>
 				<word>
@@ -1953,8 +1611,6 @@
 					<uk>БАСКЕТБОЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/pool.jpg</image>
 				<word>
@@ -1963,8 +1619,6 @@
 					<uk>БАСЕЙН</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/run.jpg</image>
 				<word>
@@ -1973,8 +1627,6 @@
 					<uk>БІГ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/boxing.jpg</image>
 				<word>
@@ -1983,8 +1635,6 @@
 					<uk>БОКС</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/volleyball.jpg</image>
 				<word>
@@ -1993,8 +1643,6 @@
 					<uk>ВОЛЕЙБОЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/gymnastics.jpg</image>
 				<word>
@@ -2003,8 +1651,6 @@
 					<uk>ГІМНАСТИКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/rowing.jpg</image>
 				<word>
@@ -2013,8 +1659,6 @@
 					<uk>ГРЕБЛЯ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/skates.jpg</image>
 				<word>
@@ -2023,8 +1667,6 @@
 					<uk>КОВЗАНИ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/skiing.jpg</image>
 				<word>
@@ -2033,8 +1675,6 @@
 					<uk>ЛИЖІ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/ball.jpg</image>
 				<word>
@@ -2043,8 +1683,6 @@
 					<uk>М'ЯЧ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/rollers.jpg</image>
 				<word>
@@ -2053,8 +1691,6 @@
 					<uk>РОЛИКИ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/hoop.jpg</image>
 				<word>
@@ -2063,8 +1699,6 @@
 					<uk>ОБРУЧ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/racket.jpg</image>
 				<word>
@@ -2073,8 +1707,6 @@
 					<uk>РАКЕТКА</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/football.jpg</image>
 				<word>
@@ -2083,14 +1715,342 @@
 					<uk>ФУТБОЛ</uk>
 				</word>
 			</level>
-		</levels>
-		<levels>
 			<level>
 				<image>collections/sport/hockey.jpg</image>
 				<word>
 					<en>HOCKEY</en>
 					<ru>ХОККЕЙ</ru>
 					<uk>ХОКЕЙ</uk>
+				</word>
+			</level>
+		</levels>
+	</collection>
+	<collection>
+		<collection_name>
+			<en>School</en>
+			<ru>Школа</ru>
+			<uk>Школа</uk>
+		</collection_name>
+		<collection_image>collections/school/title_c.jpg</collection_image>
+		<middle>collections/school/title_l1.jpg</middle>
+		<difficult>collections/school/title_l2.jpg</difficult>
+		<easy>collections/school/title_l3.jpg</easy>
+		<levels>
+			<level>
+				<image>collections/school/backpack.jpg</image>
+				<word>
+					<en>BACKPACK</en>
+					<ru>РЮКЗАК</ru>
+					<uk>РЮКЗАК</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/pen.jpg</image>
+				<word>
+					<en>PEN</en>
+					<ru>РУЧКА</ru>
+					<uk>РУЧКА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/gum.jpg</image>
+				<word>
+					<en>GUM</en>
+					<ru>ЛАСТИК</ru>
+					<uk>ГУМКА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/pencil.jpg</image>
+				<word>
+					<en>PENCIL</en>
+					<ru>КАРАНДАШ</ru>
+					<uk>ОЛІВЕЦЬ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/notebook.jpg</image>
+				<word>
+					<en>NOTEBOOK</en>
+					<ru>БЛОКНОТ</ru>
+					<uk>БЛОКНОТ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/paper.jpg</image>
+				<word>
+					<en>PAPER</en>
+					<ru>БУМАГА</ru>
+					<uk>БУМАГА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/calculator.jpg</image>
+				<word>
+					<en>CALCULATOR</en>
+					<ru>КАЛЬКУЛЯТОР</ru>
+					<uk>КАЛЬКУЛЯТОР</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/globe.jpg</image>
+				<word>
+					<en>GLOBE</en>
+					<ru>ГЛОБУС</ru>
+					<uk>ГЛОБУС</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/map.jpg</image>
+				<word>
+					<en>MAP</en>
+					<ru>КАРТА</ru>
+					<uk>КАРТА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/brush.jpg</image>
+				<word>
+					<en>BRUSH</en>
+					<ru>КИСТОЧКА</ru>
+					<uk>ПЕНЗЛИК</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/book.jpg</image>
+				<word>
+					<en>BOOK</en>
+					<ru>КНИГА</ru>
+					<uk>КНИГА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/computer.jpg</image>
+				<word>
+					<en>COMPUTER</en>
+					<ru>КОМПЬЮТЕР</ru>
+					<uk>КОМП'ЮТЕР</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/meccano.jpg</image>
+				<word>
+					<en>MECCANO</en>
+					<ru>КОНСТРУКТОР</ru>
+					<uk>КОНСТРУКТОР</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/paint.jpg</image>
+				<word>
+					<en>PAINT</en>
+					<ru>КРАСКИ</ru>
+					<uk>ФАРБИ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/ruler.jpg</image>
+				<word>
+					<en>RULER</en>
+					<ru>ЛИНЕЙКА</ru>
+					<uk>ЛІНІЙКА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/chalk.jpg</image>
+				<word>
+					<en>CHALK</en>
+					<ru>МЕЛОК</ru>
+					<uk>КРЕЙДА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/notebook_k.jpg</image>
+				<word>
+					<en>NOTEBOOK</en>
+					<ru>НОУТБУК</ru>
+					<uk>НОУТБУК</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/school/desk.jpg</image>
+				<word>
+					<en>DESK</en>
+					<ru>ПАРТА</ru>
+					<uk>ПАРТА</uk>
+				</word>
+			</level>
+		</levels>
+	</collection>
+	<collection>
+		<collection_name>
+			<en>Food</en>
+			<ru>Еда</ru>
+			<uk>Їжа</uk>
+		</collection_name>
+		<collection_image>collections/food/title_c.jpg</collection_image>
+		<middle>collections/food/title_l1.jpg</middle>
+		<difficult>collections/food/title_l2.jpg</difficult>
+		<easy>collections/food/title_l3.jpg</easy>
+		<levels>
+			<level>
+				<image>collections/food/jam.jpg</image>
+				<word>
+					<en>JAM</en>
+					<ru>ДЖЕМ</ru>
+					<uk>ДЖЕМ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/porridge.jpg</image>
+				<word>
+					<en>PORRIDGE</en>
+					<ru>КАША</ru>
+					<uk>КАША</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/wurst.jpg</image>
+				<word>
+					<en>WURST</en>
+					<ru>КОЛБАСА</ru>
+					<uk>КОВБАСА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/croissant.jpg</image>
+				<word>
+					<en>CROISSANT</en>
+					<ru>КРУАСАН</ru>
+					<uk>КРУАСАН</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/milk.jpg</image>
+				<word>
+					<en>MILK</en>
+					<ru>МОЛОКО</ru>
+					<uk>МОЛОКО</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/meat.jpg</image>
+				<word>
+					<en>MEAT</en>
+					<ru>МЯСО</ru>
+					<uk>М'ЯСО</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/pie.jpg</image>
+				<word>
+					<en>PIE</en>
+					<ru>ПИРОГ</ru>
+					<uk>ПИРІГ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/pizza.jpg</image>
+				<word>
+					<en>PIZZA</en>
+					<ru>ПИЦЦА</ru>
+					<uk>піца</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/fish.jpg</image>
+				<word>
+					<en>FISH</en>
+					<ru>РЫБА</ru>
+					<uk>РИБА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/salad.jpg</image>
+				<word>
+					<en>SALAD</en>
+					<ru>САЛАТ</ru>
+					<uk>САЛАТ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/cheese.jpg</image>
+				<word>
+					<en>CHEESE</en>
+					<ru>СЫР</ru>
+					<uk>СИР</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/juice.jpg</image>
+				<word>
+					<en>JUICE</en>
+					<ru>СОК</ru>
+					<uk>СІК</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/sausage.jpg</image>
+				<word>
+					<en>SAUSAGE</en>
+					<ru>СОСИСКА</ru>
+					<uk>СОСИСКА</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/soup.jpg</image>
+				<word>
+					<en>SOUP</en>
+					<ru>СУП</ru>
+					<uk>СУП</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/curd.jpg</image>
+				<word>
+					<en>CURD</en>
+					<ru>ТВОРОГ</ru>
+					<uk>СИР</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/cake.jpg</image>
+				<word>
+					<en>CAKE</en>
+					<ru>ТОРТ</ru>
+					<uk>ТОРТ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/bread.jpg</image>
+				<word>
+					<en>BREAD</en>
+					<ru>ХЛЕБ</ru>
+					<uk>ХЛІБ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/candy.jpg</image>
+				<word>
+					<en>CANDY</en>
+					<ru>КОНФЕТЫ</ru>
+					<uk>ЦУКЕРКИ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/tea.jpg</image>
+				<word>
+					<en>TEA</en>
+					<ru>ЧАЙ</ru>
+					<uk>ЧАЙ</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/food/eggs.jpg</image>
+				<word>
+					<en>EGGS</en>
+					<ru>ЯИЧНИЦА</ru>
+					<uk>ЯЄЧНЯ</uk>
 				</word>
 			</level>
 		</levels>

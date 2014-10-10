@@ -16,8 +16,10 @@ class XMLParser : public CCSAXDelegator
 public:
     XMLParser(const std::string& file)
     {
-        GAME_VERSION = "uk";
-        APPLICATION_LANG = ADLanguage::getLanguage();
+        GAME_VERSION = "en";
+        APPLICATION_LANG = "uk";
+//        GAME_VERSION = "uk";
+//        APPLICATION_LANG = ADLanguage::getLanguage();
 
         std::string file_name = CCFileUtils::sharedFileUtils()->fullPathForFilename(file.c_str());
         unsigned long size = 0;
@@ -240,6 +242,55 @@ const cocos2d::ccColor3B LevelSaves::getColor(int id)
 
     }
     else if (id == 10)
+    {
+        return  InfoStyles::COLOR_ORANGE_LIGHT;
+
+    }
+    if (id == 11)
+    {
+        return  InfoStyles::COLOR_MAGENTA;
+    }
+    else if (id == 12)
+    {
+        return  InfoStyles::COLOR_BLUE;
+
+    }
+    else if (id == 13)
+    {
+        return  InfoStyles::COLOR_GREEN;
+
+    }
+    else if (id == 14)
+    {
+        return  InfoStyles::COLOR_PINK;
+
+    }
+    else if (id == 15)
+    {
+        return  InfoStyles::COLOR_ORANGE_LIGHT;
+
+    }
+    else if (id == 16)
+    {
+        return  InfoStyles::COLOR_RED_LIGHT;
+
+    }
+    else if (id == 17)
+    {
+        return  InfoStyles::COLOR_BLUE_LIGHT;
+
+    }
+    else if (id == 18)
+    {
+        return  InfoStyles::COLOR_GREEN_LIGHT;
+
+    }
+    else if (id == 19)
+    {
+        return  InfoStyles::COLOR_PINK;
+
+    }
+    else if (id == 20)
     {
         return  InfoStyles::COLOR_ORANGE_LIGHT;
 

@@ -80,7 +80,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     _translation_word_label->setColor(InfoStyles::COLOR_DARK);
 
     _translation_word_label->setAnchorPoint(ccp(0,0.5f));
-    _translation_word_label->setPositionX(padding*14);
+    _translation_word_label->setPositionX(padding*12);
 
     _translation_word_label->setPositionY(padding_node_y*0.5f);
 
@@ -119,17 +119,23 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     ADMenuItem* hint_lamp = ADMenuItem::create(hint_lamp_image);
     hint_lamp->setAnchorPoint(ccp(0.5f,0.5f));
 
-    hint_lamp->setPositionX(button_audio->getPositionX()+button_audio->getContentSize().width+padding);
+    hint_lamp->setPositionX(button_audio->getPositionX()+button_audio->getContentSize().width+padding*6);
 
     hint_lamp->setPositionY(padding_node_y*0.5f);
 
     CONNECT(hint_lamp->signalOnClick, this, &TopPanell::signalUseHintOnClicked);
+//    float translation_label_size_free = hint_lamp->getPositionX()-_number_words->getPositionX();
+//    float translation_label_size =_translation_word_label->getContentSize().width;
 
+//    if (translation_label_size>translation_label_size_free)
+//    {
+//        _translation_word_label->setScale(translation_label_size/ translation_label_size_free);
+//    }
 
     menu->addChild(hint_lamp);
 
     _padding_node_star_y = padding_node_y;
-    _padding_node_star_x = hint_lamp->getPositionX()+hint_lamp->getContentSize().width+padding*2;
+    _padding_node_star_x = hint_lamp->getPositionX()+hint_lamp->getContentSize().width*0.5f;
     drawStarsNode(_star_number);
 
 
