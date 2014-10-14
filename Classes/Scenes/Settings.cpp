@@ -178,6 +178,7 @@ bool Settings::init()
     CONNECT(button_restore_purchase->signalOnClick, this, &Settings::onRestorePurchaseClick);
 
     menu->addChild(button_restore_purchase);
+ //   AdsManager::getInstance()->setAdsIncluded(false);
     if (!AdsManager::getInstance()->isAdsIncluded())
     {
 

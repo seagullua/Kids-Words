@@ -16,10 +16,19 @@ class XMLParser : public CCSAXDelegator
 public:
     XMLParser(const std::string& file)
     {
-        GAME_VERSION = "en";
-        APPLICATION_LANG = "uk";
-//        GAME_VERSION = "uk";
-//        APPLICATION_LANG = ADLanguage::getLanguage();
+        if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+        {
+            GAME_VERSION = "en";
+        }
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+        {
+            GAME_VERSION = "uk";
+        }
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+        {
+            GAME_VERSION = "ru";
+        }
+        APPLICATION_LANG = ADLanguage::getLanguage();
 
         std::string file_name = CCFileUtils::sharedFileUtils()->fullPathForFilename(file.c_str());
         unsigned long size = 0;
@@ -139,7 +148,7 @@ public:
         std::string text((char*)ch,0,len);
         _text = text;
     }
-     Collection _collection;
+    Collection _collection;
     std::vector<Collection> _collections_readed;
     std::vector<Level> _levels;
     Level _level;

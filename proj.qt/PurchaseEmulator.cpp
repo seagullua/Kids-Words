@@ -33,4 +33,10 @@ std::string ADLanguage::platformGetDeviceLanguage()
 //#define FACEBOOK_INIT facebook_init
 #include <ADLib/PlatformImpl/ADFacebook_Emulator.hpp>
 
+#include "InfoStyles.h"
+const Version InfoStyles::VERSION = Version::AdsPurchase;
+const WordsLanguage InfoStyles::WORDS_LANGUAGE = WordsLanguage::Ukrainian;
+
+
+
 

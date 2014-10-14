@@ -135,9 +135,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //std::string cyrilic_bmfont = "fonts/Comfortaa.fnt";
 
     ADLanguage::addSupportedLanguage("en", latin_font, latin_bmfont);
-    //ADLanguage::addSupportedLanguage("uk", cyrilic_font, cyrilic_bmfont);
+    ADLanguage::addSupportedLanguage("uk", latin_font, latin_bmfont);
     //ADLanguage::addSupportedLanguage("pt", latin_font, latin_bmfont);
-    //ADLanguage::addSupportedLanguage("ru", cyrilic_font, cyrilic_bmfont);
+    ADLanguage::addSupportedLanguage("ru", latin_font, latin_bmfont);
     //ADLanguage::addSupportedLanguage("hu", latin_font, latin_bmfont);
     //ADLanguage::addSupportedLanguage("de", latin_font, latin_bmfont);
 

@@ -210,7 +210,7 @@
 				<word>
 					<en>GOOSE</en>
 					<ru>ГУСЬ</ru>
-					<uk>ГУСАК</uk>
+					<uk>ГУСКА</uk>
 				</word>
 			</level>
 			<level>
@@ -2413,7 +2413,7 @@
 		<easy>collections/numbers/title_l3.jpg</easy>
 		<levels>
 			<level>
-				<image>collections/numbers/zero.jpg</image>
+				<image>collections/numbers/zero.png</image>
 				<word>
 					<en>ZERO</en>
 					<ru>НОЛЬ</ru>
@@ -2421,7 +2421,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/one.jpg</image>
+				<image>collections/numbers/one.png</image>
 				<word>
 					<en>ONE</en>
 					<ru>ОДИН</ru>
@@ -2429,7 +2429,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/two.jpg</image>
+				<image>collections/numbers/two.png</image>
 				<word>
 					<en>TWO</en>
 					<ru>ДВА</ru>
@@ -2437,7 +2437,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/three.jpg</image>
+				<image>collections/numbers/three.png</image>
 				<word>
 					<en>THREE</en>
 					<ru>ТРИ</ru>
@@ -2445,7 +2445,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/four.jpg</image>
+				<image>collections/numbers/four.png</image>
 				<word>
 					<en>FOUR</en>
 					<ru>ЧЕТЫРЕ</ru>
@@ -2453,7 +2453,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/five.jpg</image>
+				<image>collections/numbers/five.png</image>
 				<word>
 					<en>FIVE</en>
 					<ru>ПЯТЬ</ru>
@@ -2461,7 +2461,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/six.jpg</image>
+				<image>collections/numbers/six.png</image>
 				<word>
 					<en>SIX</en>
 					<ru>ШЕСТЬ</ru>
@@ -2469,7 +2469,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/seven.jpg</image>
+				<image>collections/numbers/seven.png</image>
 				<word>
 					<en>SEVEN</en>
 					<ru>СЕМЬ</ru>
@@ -2477,7 +2477,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/eight.jpg</image>
+				<image>collections/numbers/eight.png</image>
 				<word>
 					<en>EIGHT</en>
 					<ru>ВОСЕМЬ</ru>
@@ -2485,7 +2485,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/nine.jpg</image>
+				<image>collections/numbers/nine.png</image>
 				<word>
 					<en>NINE</en>
 					<ru>ДЕВЯТЬ</ru>
@@ -2493,7 +2493,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/ten.jpg</image>
+				<image>collections/numbers/ten.png</image>
 				<word>
 					<en>TEN</en>
 					<ru>ДЕСЯТЬ</ru>
@@ -2501,7 +2501,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/eleven.jpg</image>
+				<image>collections/numbers/eleven.png</image>
 				<word>
 					<en>ELEVEN</en>
 					<ru>ОДИННАДЦАТЬ</ru>
@@ -2509,7 +2509,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/twelve.jpg</image>
+				<image>collections/numbers/twelve.png</image>
 				<word>
 					<en>TWELVE</en>
 					<ru>двенадцать</ru>
@@ -2517,7 +2517,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/thirteen.jpg</image>
+				<image>collections/numbers/thirteen.png</image>
 				<word>
 					<en>THIRTEEN</en>
 					<ru>ТРИНАДЦАТЬ</ru>
@@ -2525,7 +2525,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/fourteen.jpg</image>
+				<image>collections/numbers/fourteen.png</image>
 				<word>
 					<en>FOURTEEN</en>
 					<ru>ЧЕТЫРНАДЦАТЬ</ru>
@@ -2533,7 +2533,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/fifteen.jpg</image>
+				<image>collections/numbers/fifteen.png</image>
 				<word>
 					<en>FIFTEEN</en>
 					<ru>ПЯТНАДЦАТЬ</ru>
@@ -2541,7 +2541,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/fifty.jpg</image>
+				<image>collections/numbers/fifty.png</image>
 				<word>
 					<en>FIFTY</en>
 					<ru>ПЯТЬДЕСЯТ</ru>
@@ -2549,7 +2549,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/numbers/hundred.jpg</image>
+				<image>collections/numbers/hundred.png</image>
 				<word>
 					<en>HUNDRED</en>
 					<ru>СТО</ru>

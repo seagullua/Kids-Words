@@ -3,9 +3,27 @@
 #include "cocos2d.h"
 #include <vector>
 #include <string>
+
+enum class WordsLanguage
+{
+    English,
+    Ukrainian,
+    Russian
+};
+
+enum class Version
+{
+    AdsPurchase,
+    AdsNoPurchase,
+    NoAds
+};
+
+
 class InfoStyles
 {
 public:
+    static const Version VERSION;
+    static const WordsLanguage WORDS_LANGUAGE;
     InfoStyles();
     //sizes
     static const int SIZE_SETTINGS_BUTTON;

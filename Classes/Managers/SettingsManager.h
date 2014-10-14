@@ -2,6 +2,7 @@
 #define SETTINGSMANAGER_H
 #include <ADLib/Storage.h>
 
+
 class SettingsInfo
 {
 public:
@@ -12,6 +13,7 @@ public:
     {
 
     }
+
 
     const bool isMusic() const
     {

@@ -3,6 +3,7 @@
 #include "SelectCollection.h"
 #include <ADLib/ADString.h>
 #include "PopUp/ExitGamePopUp.h"
+#include "InfoStyles.h"
 
 
 using namespace cocos2d;
@@ -63,9 +64,25 @@ bool MainMenu::init()
     const float SCALE = ADScreen::getScaleFactor();
 
     showBackground(BackgroundType::Light);
+    std::string GAME_VERSION = "uk";
+    std::string image_name;
 
     //logo
-    CCSprite* logo = CCSprite::create("main-menu/name_en.png");
+
+    if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+    {
+        image_name = "main-menu/name_en.png";
+    }
+    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+    {
+        image_name = "main-menu/name_uk.png";
+    }
+    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+    {
+        image_name = "main-menu/name_ru.png";
+    }
+
+    CCSprite* logo = CCSprite::create(image_name.c_str());
 
     logo->setPositionX(ORIGIN.x + VISIBLE_SIZE.width*0.5f);
     logo->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.75f);
