@@ -1,4 +1,5 @@
 #include "InfoStyles.h"
+#include "Managers/AdsManager.h"
 
 InfoStyles::InfoStyles()
 {
@@ -29,6 +30,11 @@ const int InfoStyles::MIDDLE_NUMBER = 4;
 const int InfoStyles::DIFFICULT_NUMBER = 5;
 
 
+const char* InfoStyles::CORRECT_LETTER_MUSIC = "music/CorrectLetter.wav";
+const char* InfoStyles::IN_CORRECT_LETTER_MUSIC = "music/InCorrectLetter.wav";
+const char* InfoStyles::CORRECT_WORD_MUSIC = "music/CorrectWord.wav";
+
+
 
 //colors
 const cocos2d::ccColor3B InfoStyles::COLOR_WHITE = cocos2d::ccc3(255, 255, 255);
@@ -46,3 +52,41 @@ const cocos2d::ccColor3B InfoStyles::COLOR_DARK_LIGHT = cocos2d::ccc3(90,90,90);
 const cocos2d::ccColor3B InfoStyles::COLOR_YELLOW_LIGHT = cocos2d::ccc3(255,255,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_DARK = cocos2d::ccc3(0,0,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_PINK = cocos2d::ccc3(250,0,120);
+
+bool InfoStyles::showAds()
+{
+    bool show_ads = false;
+    if (InfoStyles::VERSION == Version::AdsPurchase)
+    {
+        show_ads = !AdsManager::getInstance()->isAdsPurchase();
+    }
+    if (InfoStyles::VERSION == Version::NoAds)
+    {
+        show_ads = false;
+    }
+    if (InfoStyles::VERSION == Version::AdsNoPurchase)
+    {
+        show_ads = true;
+    }
+    return show_ads;
+
+
+}
+
+bool InfoStyles::showPurchase()
+{
+    bool show_purchase = false;
+    if (InfoStyles::VERSION == Version::AdsPurchase)
+    {
+        show_purchase = !AdsManager::getInstance()->isAdsPurchase();
+    }
+    if (InfoStyles::VERSION == Version::NoAds)
+    {
+        show_purchase = false;
+    }
+    if (InfoStyles::VERSION == Version::AdsNoPurchase)
+    {
+        show_purchase = false;
+    }
+    return show_purchase;
+}

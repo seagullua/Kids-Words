@@ -179,6 +179,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
 }
 void GameNode::onGameEnd()
 {
+
     _game_end = true;
     CCSize visible_size = ADScreen::getVisibleSize();
     CCPoint ORIGIN = ADScreen::getOrigin();
@@ -471,11 +472,33 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
             current_node->setLetterIsSelected(true);
             current_node->setSelectedLetter(_selected_letter->getActiveLetter());
             current_node->setIndexSelectedLetter(_selected_letter->getIndexSelectedLetter());
+
+            Letter active_letter = current_node->getActiveLetter();
+            Letter  selected_letter = current_node->getSelectedLetter();
+            std::string active_letter_str = active_letter.getLetterString().c_str();
+            std::string selected_letter_str = selected_letter.getLetterString().c_str();
+
             _selected_letter->setVisible(false);
             if (isSetEnd())
             {
+                ADSoundManager::playSoundEffect(InfoStyles::CORRECT_WORD_MUSIC);
+
                 game_end = true;
                 //
+            }
+            else
+            {
+                if (active_letter_str == selected_letter_str)
+                {
+                    ADSoundManager::playSoundEffect(InfoStyles::CORRECT_LETTER_MUSIC);
+
+                }
+                else
+                {
+                    ADSoundManager::playSoundEffect(InfoStyles::IN_CORRECT_LETTER_MUSIC);
+
+                }
+
             }
 
         }

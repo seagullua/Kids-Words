@@ -31,7 +31,7 @@ void AdsManager::initDefaultValues()
 }
 
 
-bool AdsManager::isAdsIncluded()
+bool AdsManager::isAdsPurchase()
 {
     return _ads_included;
 }

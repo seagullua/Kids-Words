@@ -132,6 +132,8 @@ bool Settings::init()
     correctMusicEffects(EffectsType::Music);
     float empty_space = VISIBLE_SIZE.height - button_music_on->getContentSize().height
             - padding_music_y - button_x4enjoy_image->getContentSize().height;
+    bool show_purchase = InfoStyles::showPurchase();
+
     //developers
 
     cocos2d::CCLabelTTF* settings_scene_developers_title;
@@ -150,7 +152,13 @@ bool Settings::init()
     {
         empty_space = 0;
     }
-    float button_sounds_on_position = button_sounds_on->getPositionY()-button_sounds_on->getContentSize().height*0.5f - empty_space;
+    float button_sounds_on_position =0;
+    button_sounds_on_position = button_sounds_on->getPositionY()-button_sounds_on->getContentSize().height*0.5f - empty_space;
+    if (!show_purchase)
+    {
+        button_sounds_on_position -= button_developers->getContentSize().height;
+
+    }
 
 
     button_developers->setPositionY(button_sounds_on_position);
@@ -158,31 +166,29 @@ bool Settings::init()
 
     menu->addChild(button_developers);
 
-
-    //restore_purchase
-
-    cocos2d::CCLabelTTF* settings_scene_restore_purchase_title;
-    settings_scene_restore_purchase_title = CCLabelTTF::create(_("settings_scene_restore_purchase.title"),
-                                                               ADLanguage::getFontName(),
-                                                               InfoStyles::SIZE_SETTINGS_BUTTON);
-
-    settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_WHITE);
-    ADMenuItem* button_restore_purchase = ADMenuItem::create(settings_scene_restore_purchase_title);
-
-    button_restore_purchase->setPositionX(
-                ORIGIN.x +  padding_x2);
-    float button_developers_position = button_developers->getPositionY()-button_developers->getContentSize().height;
-
-
-    button_restore_purchase->setPositionY(button_developers_position);
-    CONNECT(button_restore_purchase->signalOnClick, this, &Settings::onRestorePurchaseClick);
-
-    menu->addChild(button_restore_purchase);
- //   AdsManager::getInstance()->setAdsIncluded(false);
-    if (!AdsManager::getInstance()->isAdsIncluded())
+    if (show_purchase)
     {
 
+        //restore_purchase
 
+        cocos2d::CCLabelTTF* settings_scene_restore_purchase_title;
+        settings_scene_restore_purchase_title = CCLabelTTF::create(_("settings_scene_restore_purchase.title"),
+                                                                   ADLanguage::getFontName(),
+                                                                   InfoStyles::SIZE_SETTINGS_BUTTON);
+
+        settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_WHITE);
+        ADMenuItem* button_restore_purchase = ADMenuItem::create(settings_scene_restore_purchase_title);
+
+        button_restore_purchase->setPositionX(
+                    ORIGIN.x +  padding_x2);
+
+
+        float button_developers_position = button_developers->getPositionY()-button_developers->getContentSize().height;
+
+        button_restore_purchase->setPositionY(button_developers_position);
+        CONNECT(button_restore_purchase->signalOnClick, this, &Settings::onRestorePurchaseClick);
+
+        menu->addChild(button_restore_purchase);
 
         //turn_off_ads
         CCSprite* button_turn_off_ads_image = CCSprite::create("settings/no_ads_tile.png");

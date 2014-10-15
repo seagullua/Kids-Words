@@ -30,11 +30,18 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
 
     cocos2d::CCSize size = background->getContentSize();
     float x_middle = size.width / 2;
+    float label_max_width = size.width*0.8f;
+
 
     //label
     cocos2d::CCLabelTTF* label = cocos2d::CCLabelTTF::create(_("pop_up_turn_off.title"),
                                                              ADLanguage::getFontName(),
                                                              InfoStyles::SIZE_MENU_TITLE_POP_UP);
+    float label_width = label->getContentSize().width;
+    if(label_width > label_max_width)
+    {
+        label->setScale(label_max_width/label_width);
+    }
 
     label->setColor(InfoStyles::COLOR_BLUE);
     label->setPosition(ccp(x_middle, size.height*0.8f));
@@ -89,10 +96,18 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
                                                       ADLanguage::getFontName(),
                                                       InfoStyles::SIZE_BUTTON_POP_UP);
 
+
+    float label_add_max_width = button_add->getContentSize().width*0.8f;
+    float label_width_add_title = button_add_title->getContentSize().width;
+    if(label_width_add_title > label_add_max_width)
+    {
+        button_add_title->setScale(label_add_max_width/label_width_add_title);
+    }
+
     button_add_title->setColor(InfoStyles::COLOR_BLUE);
-    button_add_title->setAnchorPoint(ccp(0.5f,1));
+    button_add_title->setAnchorPoint(ccp(0.5f,0));
     button_add_title->setPosition(ccp(button_add->getContentSize().width*0.5f,
-                                      button_add->getContentSize().height*0.85f));
+                                      button_add->getContentSize().height*0.5f));
     button_add->addChild(button_add_title);
 
     menu->addChild(button_add);
@@ -123,6 +138,14 @@ void TurnOffPopUp::onCreate(cocos2d::CCNode *parent)
     turn_off_ads_title->setPositionX(padding*14);
     turn_off_ads_title->setPositionY(button_no->getPositionY()+padding+button_pinguine_image->getContentSize().height*0.25f);
     turn_off_ads_title->setColor(InfoStyles::COLOR_BLUE);
+
+
+    float label_turn_off_max_width = size.width*0.55f;
+    float label_width_turn_off = turn_off_ads_title->getContentSize().width;
+    if(label_width_turn_off > label_turn_off_max_width)
+    {
+        turn_off_ads_title->setScale(label_turn_off_max_width/label_width_turn_off);
+    }
 
     background->addChild(turn_off_ads_title);
 

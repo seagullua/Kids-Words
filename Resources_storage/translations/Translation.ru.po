@@ -65,7 +65,7 @@ msgstr "Отключить Рекламу"
 #: ../../Classes/PopUp/TurnOffPopUp.cpp:107
 msgid "pop_up_turn_off.text"
 msgstr ""
-"Feed the pinguine. \n"
+"Накормите пингвина. \n"
 "Вашим детям понравится."
 
 #: ../../Classes/Scenes/SelectCollection.cpp:74

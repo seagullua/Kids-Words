@@ -4,6 +4,15 @@
 		<name>choose.wav</name>
 	</file>
 
+	<file>
+		<name>CorrectLetter.wav</name>
+	</file>
+	<file>
+		<name>CorrectWord.wav</name>
+	</file>
+	<file>
+		<name>InCorrectLetter.wav</name>
+	</file>
 
 	
 </directory>

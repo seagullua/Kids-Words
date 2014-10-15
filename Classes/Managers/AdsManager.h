@@ -9,7 +9,7 @@ public:
 
     static AdsManager* getInstance();
 
-    bool isAdsIncluded();
+    bool isAdsPurchase();
     void setAdsIncluded(bool current_ads);
 private:
     static AdsManager instance;

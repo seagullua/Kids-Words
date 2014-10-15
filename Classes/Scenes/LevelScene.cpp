@@ -64,6 +64,7 @@ void LevelScene::onBackClick()
 void LevelScene::onOneGameEnd()
 {
 
+
     auto open_next_level = [this](){
         openNextLevel();
     };

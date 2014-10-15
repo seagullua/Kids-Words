@@ -122,3 +122,7 @@ void LevelEnd::onCreate(cocos2d::CCNode *parent)
 
 
 }
+void LevelEnd::onClose()
+{
+    onCollection();
+}

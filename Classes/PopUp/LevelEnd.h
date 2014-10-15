@@ -9,7 +9,7 @@ class LevelEnd: public IADStandardWindow
 public:
     LevelEnd(cocos2d::CCNode* parent,CollectionID collection_id,int stars_number, int difficult);
 private:
-
+    void onClose();
     cocos2d::CCNode* _parent;
     CollectionID _collection_id;
     int _stars_number;

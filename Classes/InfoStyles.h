@@ -3,6 +3,8 @@
 #include "cocos2d.h"
 #include <vector>
 #include <string>
+#include <ADLib/ADString.h>
+#include <ADLib/Device/ADSoundManager.h>
 
 enum class WordsLanguage
 {
@@ -64,6 +66,13 @@ public:
     static const cocos2d::ccColor3B COLOR_DARK;
     static const cocos2d::ccColor3B COLOR_PINK;
     static const cocos2d::ccColor3B COLOR_ORANGE_LIGHT;
+
+    static const char* CORRECT_LETTER_MUSIC;
+    static const char* CORRECT_WORD_MUSIC;
+    static const char* IN_CORRECT_LETTER_MUSIC;
+    static bool showAds();
+    static bool showPurchase();
+
 };
 
 #endif // INFOSTYLES_H
