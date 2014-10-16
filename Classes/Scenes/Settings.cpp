@@ -57,7 +57,7 @@ bool Settings::init()
     if(!SceneStyle::init())
         return false;
 
-    //ADSoundManager::playMusic(GameInfo::MENU_MUSIC);
+    ADSoundManager::playMusic(InfoStyles::MENU_MUSIC);
 
     //Get the screen start of cordinates
     const CCPoint ORIGIN = ADScreen::getOrigin();
@@ -168,7 +168,7 @@ bool Settings::init()
 
     if (show_purchase)
     {
-
+        CONNECT(AdsManager::getInstance()->signalAdsWasDisabled, this, &Settings::onAdsWasDisabled);
         //restore_purchase
 
         cocos2d::CCLabelTTF* settings_scene_restore_purchase_title;
@@ -297,4 +297,9 @@ void Settings::correctMusicEffects(EffectsType type)
             _button_sounds_off_image->setVisible(true);
         }
     }
+}
+
+void Settings::onAdsWasDisabled()
+{
+    CCDirector::sharedDirector()->replaceScene(Settings::scene());
 }

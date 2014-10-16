@@ -2649,6 +2649,30 @@
 					<uk>ГНОМ</uk>
 				</word>
 			</level>
+			<level>
+				<image>collections/tales/karlsson.jpg</image>
+				<word>
+					<en>KARLSSON</en>
+					<ru>КАРЛСОН</ru>
+					<uk>КАРЛСОН</uk>
+				</word>
+			</level>	
+			<level>
+				<image>collections/tales/cipollino.jpg</image>
+				<word>
+					<en>CIPOLLINO</en>
+					<ru>ЧИПОЛЛИНО</ru>
+					<uk>ЧІПОЛЛІНО</uk>
+				</word>
+			</level>
+			<level>
+				<image>collections/tales/teletubbies.jpg</image>
+				<word>
+					<en>TELETUBBIES</en>
+					<ru>ТЕЛЕПУЗИКИ</ru>
+					<uk>ТЕЛЕПУЗИКИ</uk>
+				</word>
+			</level>			
 		</levels>
 	</collection>
 </game>

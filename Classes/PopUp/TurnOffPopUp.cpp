@@ -159,9 +159,9 @@ void TurnOffPopUp::onNo()
 
 void TurnOffPopUp::onAdd()
 {
-    AdsManager::getInstance()->setAdsIncluded(true);
-    ADInApp::buyProduct("disable_ads");
-    CCDirector::sharedDirector()->replaceScene(Settings::scene());
+
+    ADInApp::buyProduct(InfoStyles::getPurchaseID());
+    //
 
 }
 void TurnOffPopUp::setPrice(std::string price)

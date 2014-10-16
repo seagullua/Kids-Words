@@ -121,6 +121,9 @@ bool LevelScene::init()
     if(!SceneStyle::init())
         return false;
 
+
+    ADSoundManager::pauseMusic();
+
     //Get the screen start of cordinates
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
@@ -236,7 +239,7 @@ void LevelScene::EndLevel()
                 _collection_id, _difficult);
 
     int star_number_current = getStarNumber();\
- //   int star_number = star_number_current;
+    //   int star_number = star_number_current;
     int star_number = MAX(star_number_old,star_number_current);
     SaveStarsManager::getInstance()->setStars(
                 _collection_id, _difficult, star_number);

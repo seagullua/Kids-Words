@@ -1,5 +1,5 @@
 #include "AdsManager.h"
-
+#include <ADLib.h>
 
 AdsManager AdsManager::instance;
 
@@ -31,15 +31,26 @@ void AdsManager::initDefaultValues()
 }
 
 
-bool AdsManager::isAdsPurchase()
+bool AdsManager::isAdsPurchased()
 {
     return _ads_included;
 }
 
 void AdsManager::setAdsIncluded(bool current_ads)
 {
+    bool should_notify = false;
+    if(!_ads_included)
+    {
+        should_notify = true;
+    }
     _ads_included = current_ads;
+    ADAds::disableAds();
     updateValues();
+
+    if(should_notify)
+    {
+        emit signalAdsWasDisabled();
+    }
 }
 
 void AdsManager::updateValues()

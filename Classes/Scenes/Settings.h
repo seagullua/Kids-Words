@@ -17,6 +17,7 @@ public:
     static Settings* create();
 
 private:
+    void onAdsWasDisabled();
     bool init();
     void onBackClick();
     void onMusicOnClick();

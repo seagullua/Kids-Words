@@ -70,8 +70,12 @@ public:
     static const char* CORRECT_LETTER_MUSIC;
     static const char* CORRECT_WORD_MUSIC;
     static const char* IN_CORRECT_LETTER_MUSIC;
+    static const char* MENU_MUSIC;
+
     static bool showAds();
     static bool showPurchase();
+    static std::string getPurchaseID();
+    static std::string getStoreID();
 
 };
 

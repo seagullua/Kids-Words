@@ -62,6 +62,9 @@ bool SelectLevel::init()
 {
     if(!SceneStyle::init())
         return false;
+
+    ADSoundManager::playMusic(InfoStyles::MENU_MUSIC);
+
     //Get curren collection
     const Collection* current_collection;
     current_collection =LevelSaves::getInstance().getCollectionById(

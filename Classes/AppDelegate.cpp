@@ -9,6 +9,8 @@
 #include "Scenes/Loading.h"
 #include <ADLib/UTF8/ADUTF8.h>
 #include <ADLib.h>
+#include "InfoStyles.h"
+#include "Managers/AdsManager.h"
 USING_NS_CC;
 
 
@@ -25,6 +27,10 @@ class InAppDelegate : public ADInApp::Delegate
 public:
     void purchaseSuccessful(const ADInApp::ProductID & id)
     {
+        if(id == InfoStyles::getPurchaseID())
+        {
+            AdsManager::getInstance()->setAdsIncluded(true);
+        }
         cocos2d::CCLog("Purchase %s finished successful", id.c_str());
 
     }
@@ -68,39 +74,16 @@ class VirtualCurrencyDelegate : public ADVirtualCurrency::Delegate
 void initInAppPurchases()
 {
     typedef ADInApp::Product Product;
-    Product disable_ads("disable_ads", "$0.99");
-
+    Product disable_ads(InfoStyles::getPurchaseID(), "$0.99");
+    ADInApp::setStoreKey(InfoStyles::getStoreID());
     ADStore store = ADInfo::getStore();
     if(store == ADStore::GooglePlay)
     {
-        //it is a new key - do not delete
-        ADInApp::setStoreKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJf6WM+vkPCXquFJMRYC7Ld0lc1Q3nv99I1qpMkHTzNi1X9AioIZURRp73v8VoSdRjDytW8+TUEG5xtuDxojA+hWBap70xpkCbVFXV+bHlPmZ+uWbxtZax73rpByiYpSehmgrfzXCb1INFrPGj1vZdTLLALvg0wBt3QxGL742NRC5TPtm9O1m2xaPrUw6KmAH4oMWGcPrIE5KGrOkv5tAQw4+D1Ztx0P5hIrrUmNwH8jKM6ZwpgHAE1R9aHhQaEGemqvhw/3VpyU0CC3F4mLrQnHdhQEePgZtfrVs7zHs7D7fGCbRzsL0VjweHy8y95hjMQR2UtuxpCe1thBmWxtVQIDAQAB");
-
-        disable_ads.setParameter("type","noconsumable");
-     }
-    else if(store == ADStore::SamsungStore)
-    {
-        ADInApp::setStoreKey("100000103339");
-//TODO set parametr
-        disable_ads.setParameter("samsung-id","000001017534");
-
+        disable_ads.setParameter("type","non-consumable");
     }
-    else if(store == ADStore::AmazonStore)
-    {
-      //TODO set parametr
-        disable_ads.setParameter("asku","disable_ads");
-      }
-    else if(store == ADStore::iTunes)
-    {
-      //TODO set parametr
-        disable_ads.setParameter("asku","disable_ads");
-      }
 
     ADInApp::addProduct(disable_ads);
-
     ADInApp::setDelegate(std::make_shared<InAppDelegate>());
-
-
 
 }
 
@@ -109,6 +92,26 @@ void initInAppPurchases()
  */
 void initAds()
 {
+    //ADStore store = ADInfo::getStore();
+    //ADPlatform platform = ADInfo::getPlatform();
+
+    std::stringstream pid_interstitial;
+
+
+    pid_interstitial << "ca-app-pub-" << 16126979 << 60946304 << "/";
+
+    //ca-app-pub-1612697960946304/5795034672
+    pid_interstitial << 5795034672;
+
+
+    if(!InfoStyles::showAds())
+    {
+        ADAds::disableAds();
+    }
+    else
+    {
+        ADAds::registerInterstitialType(pid_interstitial.str());
+    }
 
 }
 
@@ -165,7 +168,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     CCSize designResolutionSize = designResolutionSize_;
 
 
-        // Set the design resolution
+    // Set the design resolution
     pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionNoBorder);
     CCSize vsize = pEGLView->getVisibleSize();
 

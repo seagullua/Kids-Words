@@ -31,7 +31,7 @@ int SaveStarsManager::getStars(CollectionID collection_id, int level_difficulty)
     }
     else
     {
-        return 10;
+        return 0;
     }
 }
 

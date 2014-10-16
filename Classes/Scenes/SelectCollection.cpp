@@ -60,6 +60,9 @@ bool SelectCollection::init()
     if(!SceneStyle::init())
         return false;
 
+
+    ADSoundManager::playMusic(InfoStyles::MENU_MUSIC);
+
     //Get the screen start of cordinates
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();

@@ -8,8 +8,8 @@ class AdsManager: public HasSlots
 public:
 
     static AdsManager* getInstance();
-
-    bool isAdsPurchase();
+    Signal<> signalAdsWasDisabled;
+    bool isAdsPurchased();
     void setAdsIncluded(bool current_ads);
 private:
     static AdsManager instance;

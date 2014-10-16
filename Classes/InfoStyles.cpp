@@ -33,6 +33,7 @@ const int InfoStyles::DIFFICULT_NUMBER = 5;
 const char* InfoStyles::CORRECT_LETTER_MUSIC = "music/CorrectLetter.wav";
 const char* InfoStyles::IN_CORRECT_LETTER_MUSIC = "music/InCorrectLetter.wav";
 const char* InfoStyles::CORRECT_WORD_MUSIC = "music/CorrectWord.wav";
+const char* InfoStyles::MENU_MUSIC = "music/menu-music.wav";
 
 
 
@@ -58,7 +59,7 @@ bool InfoStyles::showAds()
     bool show_ads = false;
     if (InfoStyles::VERSION == Version::AdsPurchase)
     {
-        show_ads = !AdsManager::getInstance()->isAdsPurchase();
+        show_ads = !AdsManager::getInstance()->isAdsPurchased();
     }
     if (InfoStyles::VERSION == Version::NoAds)
     {
@@ -78,7 +79,7 @@ bool InfoStyles::showPurchase()
     bool show_purchase = false;
     if (InfoStyles::VERSION == Version::AdsPurchase)
     {
-        show_purchase = !AdsManager::getInstance()->isAdsPurchase();
+        show_purchase = !AdsManager::getInstance()->isAdsPurchased();
     }
     if (InfoStyles::VERSION == Version::NoAds)
     {
@@ -89,4 +90,13 @@ bool InfoStyles::showPurchase()
         show_purchase = false;
     }
     return show_purchase;
+}
+
+std::string InfoStyles::getPurchaseID()
+{
+    return "disable_ads";
+}
+std::string InfoStyles::getStoreID()
+{
+    return "store_id";
 }

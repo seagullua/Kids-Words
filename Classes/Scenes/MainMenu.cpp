@@ -56,7 +56,8 @@ bool MainMenu::init()
     if(!SceneStyle::init())
         return false;
 
-    //ADSoundManager::playMusic(GameInfo::MENU_MUSIC);
+
+    ADSoundManager::playMusic(InfoStyles::MENU_MUSIC);
 
     //Get the screen start of cordinates
     const CCPoint ORIGIN = ADScreen::getOrigin();
