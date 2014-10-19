@@ -23,7 +23,8 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     _node(nullptr),
     _game_end(false),
     _game_end_touch(false),
-    _use_h(use_h)
+    _use_h(use_h),
+    _game_end_signal_emitted(false)
 {
     const float SCALE = ADScreen::getScaleFactor();
     float padding = 25/SCALE;
@@ -532,7 +533,12 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
     else if(game_end)
     {
         _game_end_touch = true;
-        emit signalGameEnd();
+        if(!_game_end_signal_emitted)
+        {
+            _game_end_signal_emitted = true;
+            emit signalGameEnd();
+        }
+
     }
 
 }

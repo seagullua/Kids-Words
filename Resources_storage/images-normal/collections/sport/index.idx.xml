@@ -4,87 +4,109 @@
 
 	<file>
 		<name>tennis.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>stadium.jpg</name>
+		<project>kids-hard</project>
 	</file>
 		
 	<file>
 		<name>bowling.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>basketball.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>pool.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>run.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>boxing.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>volleyball.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>gymnastics.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>rowing.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>skates.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>skiing.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>hoop.jpg</name>
+		<project>kids-hard</project>
 	</file>
 
 	<file>
 		<name>racket.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>rollers.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>ball.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>football.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 	<file>
 		<name>hockey.jpg</name>
+		<project>kids-hard</project>
 	</file>
 
 	<file>
 		<name>title_c.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	<file>
 		<name>title_l1.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	<file>
 		<name>title_l2.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	<file>
 		<name>title_l3.jpg</name>
+		<project>kids-hard</project>
 	</file>
 	
 </directory>

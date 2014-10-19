@@ -79,16 +79,36 @@ bool Settings::init()
 
     ADMenuItem* button_x4enjoy = ADMenuItem::create(button_x4enjoy_image);
     float padding4enjoy = 5/SCALE;
+    float padding = 20/SCALE;
+    button_x4enjoy->setAnchorPoint(ccp(0,0));
     button_x4enjoy->setPositionX(
                 ORIGIN.x + VISIBLE_SIZE.width
                 - padding4enjoy
-                - button_x4enjoy->getContentSize().width*0.45f);
+                - button_x4enjoy->getContentSize().width);
 
-    button_x4enjoy->setPositionY(ORIGIN.y + padding4enjoy +
-                                 button_x4enjoy->getContentSize().height*0.45f);
+    button_x4enjoy->setPositionY(ORIGIN.y + padding4enjoy );
     CONNECT(button_x4enjoy->signalOnClick, this, &Settings::onX4EnjoyClick);
 
     menu->addChild(button_x4enjoy);
+
+
+    // author of music
+    cocos2d::CCLabelTTF* author_of_music_title;
+    author_of_music_title = CCLabelTTF::create("MarcoKuell Cute",
+                                               ADLanguage::getFontName(),
+                                               InfoStyles::SIZE_LINE_TITLE);
+
+    author_of_music_title->setColor(InfoStyles::COLOR_BLUE);
+    author_of_music_title->setAnchorPoint(ccp(0,0));
+    author_of_music_title->setPositionX(
+                ORIGIN.x + padding4enjoy*4);
+
+    author_of_music_title->setPositionY(ORIGIN.y
+                                        + padding4enjoy
+                                        + button_x4enjoy->getContentSize().height*0.5f );
+
+    this->addChild(author_of_music_title);
+
 
     //music_on
     _button_music_on_image = CCSprite::create("settings/music-on.png");
@@ -165,7 +185,7 @@ bool Settings::init()
     CONNECT(button_developers->signalOnClick, this, &Settings::onDevelopersClick);
 
     menu->addChild(button_developers);
-
+    float button_developers_height = button_developers->getContentSize().height;
     if (show_purchase)
     {
         CONNECT(AdsManager::getInstance()->signalAdsWasDisabled, this, &Settings::onAdsWasDisabled);
@@ -183,7 +203,7 @@ bool Settings::init()
                     ORIGIN.x +  padding_x2);
 
 
-        float button_developers_position = button_developers->getPositionY()-button_developers->getContentSize().height;
+        float button_developers_position = button_developers->getPositionY()-button_developers_height;
 
         button_restore_purchase->setPositionY(button_developers_position);
         CONNECT(button_restore_purchase->signalOnClick, this, &Settings::onRestorePurchaseClick);
@@ -198,7 +218,7 @@ bool Settings::init()
         button_turn_off_ads->setPositionX(
                     ORIGIN.x +  padding_x2);
 
-        float button_restore_purchase_position = button_restore_purchase->getPositionY()-button_turn_off_ads->getContentSize().height;
+        float button_restore_purchase_position = button_restore_purchase->getPositionY()-button_developers_height-padding;
 
         button_turn_off_ads->setPositionY(button_restore_purchase_position);
         CONNECT(button_turn_off_ads->signalOnClick, this, &Settings::onTurnOffAdsClick);

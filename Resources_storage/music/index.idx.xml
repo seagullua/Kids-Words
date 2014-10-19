@@ -4,17 +4,63 @@
 		<name>choose.wav</name>
 	</file>
 
+	
+	
+	<file>
+		<name>CorrectLetter.mp3</name>
+		<platform>ios</platform>
+	</file>
 	<file>
 		<name>CorrectLetter.wav</name>
+		<platform>android_win</platform>
+		<platform>windows</platform>
+	</file>
+	<file>
+		<name>CorrectLetter.ogg</name>
+		<platform>android</platform>
+	</file>
+	
+	
+	<file>
+		<name>CorrectWord.mp3</name>
+		<platform>ios</platform>
 	</file>
 	<file>
 		<name>CorrectWord.wav</name>
+		<platform>android_win</platform>
+		<platform>windows</platform>
+	</file>
+	<file>
+		<name>CorrectWord.ogg</name>
+		<platform>android</platform>
+	</file>
+	
+	<file>
+		<name>InCorrectLetter.mp3</name>
+		<platform>ios</platform>
 	</file>
 	<file>
 		<name>InCorrectLetter.wav</name>
+		<platform>android_win</platform>
+		<platform>windows</platform>
+	</file>
+	<file>
+		<name>InCorrectLetter.ogg</name>
+		<platform>android</platform>
+	</file>
+	
+	<file>
+		<name>menu-music.mp3</name>
+		<platform>ios</platform>
 	</file>
 	<file>
 		<name>menu-music.wav</name>
+		<platform>android_win</platform>
+		<platform>windows</platform>
+	</file>
+	<file>
+		<name>menu-music.ogg</name>
+		<platform>android</platform>
 	</file>
 	
 </directory>

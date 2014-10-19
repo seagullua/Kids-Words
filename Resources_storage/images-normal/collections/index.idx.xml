@@ -3,8 +3,16 @@
 
 	
 	<file>
-		<name>collections.xmld</name>
+		<name>kids-easy/collections.xmld</name>
+		<project>kids-easy</project>
 	</file>
-	
+	<file>
+		<name>kids-medium/collections.xmld</name>
+		<project>kids-medium</project>
+	</file>
+	<file>
+		<name>kids-hard/collections.xmld</name>
+		<project>kids-hard</project>
+	</file>
 	
 </directory>

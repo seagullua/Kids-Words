@@ -4,94 +4,118 @@
 
 	<file>
 		<name>beard.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>hair.jpg</name>
+		<project>kids-medium</project>
 	</file>
 		
 	<file>
 		<name>eye.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>lips.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>stomach.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>teeth.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>hand.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>fist.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>forehead.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>foot.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>nose.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>finger.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>mouth.jpg</name>
+		<project>kids-medium</project>
 	</file>
 
 	<file>
 		<name>back.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>ear.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>neck.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>cheek.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>elbow.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>knee.jpg</name>
+		<project>kids-medium</project>
 	</file>
 
 	<file>
 		<name>face.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_c.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l1.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l2.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l3.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 </directory>

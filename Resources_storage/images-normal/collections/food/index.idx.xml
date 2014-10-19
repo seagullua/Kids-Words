@@ -4,94 +4,118 @@
 
 	<file>
 		<name>jam.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>porridge.jpg</name>
+		<project>kids-medium</project>
 	</file>
 		
 	<file>
 		<name>wurst.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>croissant.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>milk.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>meat.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>pie.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>pizza.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>fish.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>salad.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>cheese.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>juice.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>sausage.jpg</name>
+		<project>kids-medium</project>
 	</file>
 
 	<file>
 		<name>soup.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>curd.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>cake.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>bread.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>candy.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>tea.jpg</name>
+		<project>kids-medium</project>
 	</file>
 
 	<file>
 		<name>eggs.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_c.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l1.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l2.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l3.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 </directory>

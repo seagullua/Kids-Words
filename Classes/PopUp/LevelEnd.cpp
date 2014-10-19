@@ -2,6 +2,7 @@
 #include <ADLib/PopUp/ADPopUpWindow.h>
 #include "InfoStyles.h"
 #include "Scenes/SelectCollection.h"
+#include "Scenes/SelectLevel.h"
 #include "Logic/LevelSaves.h"
 #include "Draw/Stars.h"
 #include "Scenes/LevelScene.h"
@@ -22,7 +23,16 @@ LevelEnd::LevelEnd(cocos2d::CCNode* parent,CollectionID collection_id,int stars_
 
 void LevelEnd::onCollection()
 {
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+    if (_difficult == 2)
+    {
+        CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+
+    }
+    else
+    {
+        CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
+
+    }
 
 }
 
@@ -107,6 +117,15 @@ void LevelEnd::onCreate(cocos2d::CCNode *parent)
     button_lesson_title->setAnchorPoint(ccp(0.5f,0.5f));
     button_lesson_title->setPosition(ccp(button_lesson->getContentSize().width*0.5f,
                                          button_lesson->getContentSize().height*0.5f));
+
+    float label_max_width = button_lesson->getContentSize().width*0.8f;
+    float label_width = button_lesson_title->getContentSize().width;
+    if(label_width > label_max_width)
+    {
+        button_lesson_title->setScale(label_max_width/label_width);
+    }
+
+
     button_lesson->addChild(button_lesson_title);
 
     menu->addChild(button_lesson);

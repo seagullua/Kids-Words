@@ -30,10 +30,10 @@ const int InfoStyles::MIDDLE_NUMBER = 4;
 const int InfoStyles::DIFFICULT_NUMBER = 5;
 
 
-const char* InfoStyles::CORRECT_LETTER_MUSIC = "music/CorrectLetter.wav";
-const char* InfoStyles::IN_CORRECT_LETTER_MUSIC = "music/InCorrectLetter.wav";
-const char* InfoStyles::CORRECT_WORD_MUSIC = "music/CorrectWord.wav";
-const char* InfoStyles::MENU_MUSIC = "music/menu-music.wav";
+const char* InfoStyles::CORRECT_LETTER_MUSIC = "music/CorrectLetter" MUSIC_EXT;
+const char* InfoStyles::IN_CORRECT_LETTER_MUSIC = "music/InCorrectLetter" MUSIC_EXT;
+const char* InfoStyles::CORRECT_WORD_MUSIC = "music/CorrectWord" MUSIC_EXT;
+const char* InfoStyles::MENU_MUSIC = "music/menu-music" MUSIC_EXT;
 
 
 

@@ -25,6 +25,7 @@ public:
     int getIndexQuizWrongNode(LetterNode* node);
     void onGameEnd();
 private:
+    bool _game_end_signal_emitted;
     bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);

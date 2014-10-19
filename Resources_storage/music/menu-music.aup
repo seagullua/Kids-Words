@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="menu-music_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="34.0124943311" vpos="0" h="0.0000000000" zoom="17.6405762588" rate="44100.0" snapto="off" selectionformat="гг:хх:сс + мілісекунд">
+	<tags>
+		<tag name="GENRE" value="(255)"/>
+		<tag name="ARTIST" value="MarcoKuell"/>
+		<tag name="TITLE" value="Cute"/>
+		<tag name="YEAR" value="2014"/>
+		<tag name="Software" value="Lavf55.33.100"/>
+		<tag name="Copyright" value="2014-08-23T10:47:12+01:00 MarcoKuell. Licensed to the public under http://creativecommons.org/licenses/by/3.0/ verify at http://www.jamendo.com/album/137640/"/>
+		<tag name="ALBUM" value="Enjoy Every Day"/>
+	</tags>
+	<wavetrack name="menu-music" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1499951">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000dbf.au" len="262144" min="-0.87793" max="0.871201" rms="0.135133"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e00006a7.au" len="262144" min="-0.869583" max="0.874695" rms="0.132473"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0000a13.au" len="262144" min="-0.879761" max="0.875748" rms="0.127077"/>
+				</waveblock>
+				<waveblock start="786432">
+					<simpleblockfile filename="e0000b47.au" len="262144" min="-0.877197" max="0.882172" rms="0.136962"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e0000b8f.au" len="262144" min="-0.876282" max="0.876221" rms="0.134712"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<simpleblockfile filename="e0000425.au" len="189231" min="-0.876404" max="0.874023" rms="0.134507"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

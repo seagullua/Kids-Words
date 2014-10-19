@@ -35,6 +35,7 @@ std::string ADLanguage::platformGetDeviceLanguage()
 
 #include "InfoStyles.h"
 const Version InfoStyles::VERSION = Version::AdsPurchase;
+//const WordsLanguage InfoStyles::WORDS_LANGUAGE = WordsLanguage::English;
 const WordsLanguage InfoStyles::WORDS_LANGUAGE = WordsLanguage::Ukrainian;
 
 

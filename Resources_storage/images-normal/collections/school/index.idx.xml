@@ -4,88 +4,110 @@
 
 	<file>
 		<name>backpack.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>pen.jpg</name>
+		<project>kids-medium</project>
 	</file>
 		
 	<file>
 		<name>pencil.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>gum.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>notebook.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>paper.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>calculator.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>globe.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>map.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>brush.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>book.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>computer.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>meccano.jpg</name>
+		<project>kids-medium</project>
 	</file>
 
 	<file>
 		<name>desk.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>paint.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>ruler.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>chalk.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 	<file>
 		<name>notebook_k.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 
 	<file>
 		<name>title_c.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l1.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l2.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	<file>
 		<name>title_l3.jpg</name>
+		<project>kids-medium</project>
 	</file>
 	
 </directory>
