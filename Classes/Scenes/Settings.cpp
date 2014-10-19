@@ -94,18 +94,17 @@ bool Settings::init()
 
     // author of music
     cocos2d::CCLabelTTF* author_of_music_title;
-    author_of_music_title = CCLabelTTF::create("MarcoKuell Cute",
+    author_of_music_title = CCLabelTTF::create(" Music MarcoKuell Cute",
                                                ADLanguage::getFontName(),
                                                InfoStyles::SIZE_LINE_TITLE);
 
-    author_of_music_title->setColor(InfoStyles::COLOR_BLUE);
+    author_of_music_title->setColor(InfoStyles::COLOR_WHITE);
     author_of_music_title->setAnchorPoint(ccp(0,0));
     author_of_music_title->setPositionX(
                 ORIGIN.x + padding4enjoy*4);
 
     author_of_music_title->setPositionY(ORIGIN.y
-                                        + padding4enjoy
-                                        + button_x4enjoy->getContentSize().height*0.5f );
+                                        + padding4enjoy);
 
     this->addChild(author_of_music_title);
 
