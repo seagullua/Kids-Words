@@ -11,10 +11,10 @@
 			<ru>Животные</ru>
 			<uk>Тварини</uk>
 		</collection_name>
-		<collection_image>collections/animals/title_c.jpg</collection_image>
-		<middle>collections/animals/title_l1.jpg</middle>
-		<difficult>collections/animals/title_l2.jpg</difficult>
-		<easy>collections/animals/title_l3.jpg</easy>
+		<collection_image>collections/animals/title_c_animals.jpg</collection_image>
+		<middle>collections/animals/title_l1_animals.jpg</middle>
+		<difficult>collections/animals/title_l2_animals.jpg</difficult>
+		<easy>collections/animals/title_l3_animals.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/animals/bear.jpg</image>
@@ -184,10 +184,10 @@
 			<ru>Фрукты</ru>
 			<uk>Фрукти</uk>
 		</collection_name>
-		<collection_image>collections/fruits/title_c.jpg</collection_image>
-		<middle>collections/fruits/title_l1.jpg</middle>
-		<difficult>collections/fruits/title_l2.jpg</difficult>
-		<easy>collections/fruits/title_l3.jpg</easy>
+		<collection_image>collections/fruits/title_c_fruits.jpg</collection_image>
+		<middle>collections/fruits/title_l1_fruits.jpg</middle>
+		<difficult>collections/fruits/title_l2_fruits.jpg</difficult>
+		<easy>collections/fruits/title_l3_fruits.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/fruits/pineapple.jpg</image>
@@ -288,7 +288,7 @@
 			<level>
 				<image>collections/fruits/coconut.jpg</image>
 				<word>
-					<en>COCOUNNT</en>
+					<en>COCONUT</en>
 					<ru>КОКОС</ru>
 					<uk>КОКОС</uk>
 				</word>
@@ -357,10 +357,10 @@
 			<ru>Транспорт</ru>
 			<uk>Транспорт</uk>
 		</collection_name>
-		<collection_image>collections/transport/title_c.jpg</collection_image>
-		<middle>collections/transport/title_l1.jpg</middle>
-		<difficult>collections/transport/title_l2.jpg</difficult>
-		<easy>collections/transport/title_l3.jpg</easy>
+		<collection_image>collections/transport/title_c_transport.jpg</collection_image>
+		<middle>collections/transport/title_l1_transport.jpg</middle>
+		<difficult>collections/transport/title_l2_transport.jpg</difficult>
+		<easy>collections/transport/title_l3_transport.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/transport/motorbike.jpg</image>
@@ -530,10 +530,10 @@
 			<ru>Комната</ru>
 			<uk>Кімната</uk>
 		</collection_name>
-		<collection_image>collections/room/title_c.jpg</collection_image>
-		<middle>collections/room/title_l1.jpg</middle>
-		<difficult>collections/room/title_l2.jpg</difficult>
-		<easy>collections/room/title_l3.jpg</easy>
+		<collection_image>collections/room/title_c_room.jpg</collection_image>
+		<middle>collections/room/title_l1_room.jpg</middle>
+		<difficult>collections/room/title_l2_room.jpg</difficult>
+		<easy>collections/room/title_l3_room.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/room/blanket.jpg</image>
@@ -705,10 +705,10 @@
 			<ru>Одежда</ru>
 			<uk>Одяг</uk>
 		</collection_name>
-		<collection_image>collections/clothes/title_c.jpg</collection_image>
-		<middle>collections/clothes/title_l1.jpg</middle>
-		<difficult>collections/clothes/title_l2.jpg</difficult>
-		<easy>collections/clothes/title_l3.jpg</easy>
+		<collection_image>collections/clothes/title_c_clothes.jpg</collection_image>
+		<middle>collections/clothes/title_l1_clothes.jpg</middle>
+		<difficult>collections/clothes/title_l2_clothes.jpg</difficult>
+		<easy>collections/clothes/title_l3_clothes.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/clothes/blouse.jpg</image>
@@ -727,7 +727,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/clothes/WAISTCOAT.jpg</image>
+				<image>collections/clothes/waistcoat.jpg</image>
 				<word>
 					<en>WAISTCOAT</en>
 					<ru>ЖИЛЕТ</ru>
@@ -743,7 +743,7 @@
 				</word>
 			</level>
 			<level>
-				<image>collections/clothes/OVERALLS.jpg</image>
+				<image>collections/clothes/overalls.jpg</image>
 				<word>
 					<en>OVERALLS</en>
 					<ru>КОМБИНЕЗОН</ru>
@@ -878,10 +878,10 @@
 			<ru>Числа</ru>
 			<uk>Числа</uk>
 		</collection_name>
-		<collection_image>collections/numbers/title_c.jpg</collection_image>
-		<middle>collections/numbers/title_l1.jpg</middle>
-		<difficult>collections/numbers/title_l2.jpg</difficult>
-		<easy>collections/numbers/title_l3.jpg</easy>
+		<collection_image>collections/numbers/title_c_numbers.jpg</collection_image>
+		<middle>collections/numbers/title_l1_numbers.jpg</middle>
+		<difficult>collections/numbers/title_l2_numbers.jpg</difficult>
+		<easy>collections/numbers/title_l3_numbers.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/numbers/zero.png</image>

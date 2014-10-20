@@ -105,6 +105,7 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     word_image->setPositionX(ORIGIN.x+word_image_w+ VISIBLE_SIZE.width*0.5f );
     word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
     _word_image = word_image;
+    word_image->setZOrder(-5);
     this->addChild(word_image);
 
     // node_in_use_letters

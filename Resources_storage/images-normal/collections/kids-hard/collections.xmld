@@ -11,10 +11,10 @@
 			<ru>Овощи</ru>
 			<uk>Овочі</uk>
 		</collection_name>
-		<collection_image>collections/vegetables/title_c.jpg</collection_image>
-		<middle>collections/vegetables/title_l1.jpg</middle>
-		<difficult>collections/vegetables/title_l2.jpg</difficult>
-		<easy>collections/vegetables/title_l3.jpg</easy>
+		<collection_image>collections/vegetables/title_c_vegetables.jpg</collection_image>
+		<middle>collections/vegetables/title_l1_vegetables.jpg</middle>
+		<difficult>collections/vegetables/title_l2_vegetables.jpg</difficult>
+		<easy>collections/vegetables/title_l3_vegetables.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/vegetables/eggplant.jpg</image>
@@ -184,10 +184,10 @@
 			<ru>Птицы</ru>
 			<uk>Птахи</uk>
 		</collection_name>
-		<collection_image>collections/birds/title_c.jpg</collection_image>
-		<middle>collections/birds/title_l1.jpg</middle>
-		<difficult>collections/birds/title_l2.jpg</difficult>
-		<easy>collections/birds/title_l3.jpg</easy>
+		<collection_image>collections/birds/title_c_birds.jpg</collection_image>
+		<middle>collections/birds/title_l1_birds.jpg</middle>
+		<difficult>collections/birds/title_l2_birds.jpg</difficult>
+		<easy>collections/birds/title_l3_birds.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/birds/owl.jpg</image>
@@ -359,10 +359,10 @@
 			<ru>Кухня</ru>
 			<uk>Кухня</uk>
 		</collection_name>
-		<collection_image>collections/kitchen/title_c.jpg</collection_image>
-		<middle>collections/kitchen/title_l1.jpg</middle>
-		<difficult>collections/kitchen/title_l2.jpg</difficult>
-		<easy>collections/kitchen/title_l3.jpg</easy>
+		<collection_image>collections/kitchen/title_c_kitchen.jpg</collection_image>
+		<middle>collections/kitchen/title_l1_kitchen.jpg</middle>
+		<difficult>collections/kitchen/title_l2_kitchen.jpg</difficult>
+		<easy>collections/kitchen/title_l3_kitchen.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/kitchen/jar.jpg</image>
@@ -534,10 +534,10 @@
 			<ru>Спорт</ru>
 			<uk>Спорт</uk>
 		</collection_name>
-		<collection_image>collections/sport/title_c.jpg</collection_image>
-		<middle>collections/sport/title_l1.jpg</middle>
-		<difficult>collections/sport/title_l2.jpg</difficult>
-		<easy>collections/sport/title_l3.jpg</easy>
+		<collection_image>collections/sport/title_c_sport.jpg</collection_image>
+		<middle>collections/sport/title_l1_sport.jpg</middle>
+		<difficult>collections/sport/title_l2_sport.jpg</difficult>
+		<easy>collections/sport/title_l3_sport.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/sport/tennis.jpg</image>
@@ -691,10 +691,10 @@
 			<ru>Сказки</ru>
 			<uk>Казки</uk>
 		</collection_name>
-		<collection_image>collections/tales/title_c.jpg</collection_image>
-		<middle>collections/tales/title_l1.jpg</middle>
-		<difficult>collections/tales/title_l2.jpg</difficult>
-		<easy>collections/tales/title_l3.jpg</easy>
+		<collection_image>collections/tales/title_c_tales.jpg</collection_image>
+		<middle>collections/tales/title_l1_tales.jpg</middle>
+		<difficult>collections/tales/title_l2_tales.jpg</difficult>
+		<easy>collections/tales/title_l3_tales.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/tales/mermaid.jpg</image>

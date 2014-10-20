@@ -11,10 +11,10 @@
 			<ru>Любимцы</ru>
 			<uk>Улюбленці</uk>
 		</collection_name>
-		<collection_image>collections/pets/title_c.jpg</collection_image>
-		<middle>collections/pets/title_l1.jpg</middle>
-		<difficult>collections/pets/title_l2.jpg</difficult>
-		<easy>collections/pets/title_l3.jpg</easy>
+		<collection_image>collections/pets/title_c_pets.jpg</collection_image>
+		<middle>collections/pets/title_l1_pets.jpg</middle>
+		<difficult>collections/pets/title_l2_pets.jpg</difficult>
+		<easy>collections/pets/title_l3_pets.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/pets/buffalo.jpg</image>
@@ -184,10 +184,10 @@
 			<ru>Природа</ru>
 			<uk>Природа</uk>
 		</collection_name>
-		<collection_image>collections/nature/title_c.jpg</collection_image>
-		<middle>collections/nature/title_l1.jpg</middle>
-		<difficult>collections/nature/title_l2.jpg</difficult>
-		<easy>collections/nature/title_l3.jpg</easy>
+		<collection_image>collections/nature/title_c_nature.jpg</collection_image>
+		<middle>collections/nature/title_l1_nature.jpg</middle>
+		<difficult>collections/nature/title_l2_nature.jpg</difficult>
+		<easy>collections/nature/title_l3_nature.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/nature/waterfall.jpg</image>
@@ -357,10 +357,10 @@
 			<ru>Школа</ru>
 			<uk>Школа</uk>
 		</collection_name>
-		<collection_image>collections/school/title_c.jpg</collection_image>
-		<middle>collections/school/title_l1.jpg</middle>
-		<difficult>collections/school/title_l2.jpg</difficult>
-		<easy>collections/school/title_l3.jpg</easy>
+		<collection_image>collections/school/title_c_school.jpg</collection_image>
+		<middle>collections/school/title_l1_school.jpg</middle>
+		<difficult>collections/school/title_l2_school.jpg</difficult>
+		<easy>collections/school/title_l3_school.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/school/backpack.jpg</image>
@@ -514,10 +514,10 @@
 			<ru>Еда</ru>
 			<uk>Їжа</uk>
 		</collection_name>
-		<collection_image>collections/food/title_c.jpg</collection_image>
-		<middle>collections/food/title_l1.jpg</middle>
-		<difficult>collections/food/title_l2.jpg</difficult>
-		<easy>collections/food/title_l3.jpg</easy>
+		<collection_image>collections/food/title_c_food.jpg</collection_image>
+		<middle>collections/food/title_l1_food.jpg</middle>
+		<difficult>collections/food/title_l2_food.jpg</difficult>
+		<easy>collections/food/title_l3_food.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/food/jam.jpg</image>
@@ -687,10 +687,10 @@
 			<ru>Тело</ru>
 			<uk>Тіло</uk>
 		</collection_name>
-		<collection_image>collections/body/title_c.jpg</collection_image>
-		<middle>collections/body/title_l1.jpg</middle>
-		<difficult>collections/body/title_l2.jpg</difficult>
-		<easy>collections/body/title_l3.jpg</easy>
+		<collection_image>collections/body/title_c_body.jpg</collection_image>
+		<middle>collections/body/title_l1_body.jpg</middle>
+		<difficult>collections/body/title_l2_body.jpg</difficult>
+		<easy>collections/body/title_l3_body.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/body/beard.jpg</image>

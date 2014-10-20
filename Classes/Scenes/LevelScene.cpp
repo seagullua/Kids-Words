@@ -82,7 +82,7 @@ void LevelScene::onOneGameEnd()
 
 
         this->runAction(CCSequence::create(
-                            CCDelayTime::create(2),
+                            CCDelayTime::create(5),
                             ADCallFunc::create(open_next_level),
                             NULL
                             ));
