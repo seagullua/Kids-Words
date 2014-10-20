@@ -39,7 +39,7 @@ int StarsCollectionManager::getStars(CollectionID collection_id)
                 collection_id, 1);
     int star_number_2 = SaveStarsManager::getInstance()->getStars(
                 collection_id, 2);
-    int star_number = MIN(star_number_0,star_number_1,star_number_2);
+    int star_number = MIN(star_number_0,MIN(star_number_1,star_number_2));
     setStars(collection_id,star_number);
     return  star_number;
     //    }

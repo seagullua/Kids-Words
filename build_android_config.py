@@ -29,7 +29,7 @@ project.version_name = "1.00"
 project.version_code = "1"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
-    'kidswords',
+    'kids-easy',
     'android',
     ['en']
 )
@@ -49,3 +49,5 @@ project.main_activity_definition = project.getMainActivityDeclaration(screenOrie
 
 project.addCppDir('libraries/ADLib/src')
 project.addCppDir('Classes')
+project.addCppDir('Versions/Language/English')
+project.addCppDir('Versions/Edition/NoAds')
