@@ -14,6 +14,7 @@ public:
     void setSelectedLetter(Letter selected_letter);
     void setLetterIsSelected(bool is_selected);
     void ShowLetter();
+    void setJustSelected(LetterStatus status);
     bool isSelectedLetter();
     void setIndexSelectedLetter(int index);
     int getIndexSelectedLetter();
@@ -25,6 +26,7 @@ private:
     Letter _active_letter;
     Letter _selected_letter;
     bool _letter_is_selected;
+    bool _just_selected;
     int _index_selected_letter;
 
 };

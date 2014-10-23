@@ -29,7 +29,8 @@ LetterNode::LetterNode(Letter letter):
     _letter_is_selected (false),
     _index_selected_letter(10000),
     _letter_image(nullptr),
-    _current_letter(nullptr)
+    _current_letter(nullptr),
+    _just_selected(false)
 {
     ShowLetter();
 }
@@ -66,11 +67,25 @@ void LetterNode::ShowLetter()
     LetterStatus status = _active_letter.getLetterStatus();
     std:: string letter_string = _active_letter.getLetterString();
     std:: string image_name = "";
+    if  (_just_selected)
+    {
+        _just_selected = false;
+        _letter_image = nullptr;
+        _current_letter = nullptr;
+
+    }
 
     if (_letter_is_selected )
     {
-        status = LetterStatus::Normal;
+        if(letter_string != _selected_letter.getLetterString())
+
+        {
+            status = LetterStatus::Normal;
+
+        }
+
         letter_string = _selected_letter.getLetterString();
+
     }
     else
     {
@@ -112,17 +127,17 @@ void LetterNode::ShowLetter()
                                              LETTER_FONT.c_str(),
                                              InfoStyles::SIZE_LETTER);
 
-//        float padding_node_xl = _current_letter->getContentSize().width;
-//        float padding_node_yl = _current_letter->getContentSize().height;
-//        float node_scale_x = padding_node_xl/padding_node_x;
-//        float node_scale_y = padding_node_yl/padding_node_y;
-//        float node_scale = MIN(node_scale_x,node_scale_y);
+        //        float padding_node_xl = _current_letter->getContentSize().width;
+        //        float padding_node_yl = _current_letter->getContentSize().height;
+        //        float node_scale_x = padding_node_xl/padding_node_x;
+        //        float node_scale_y = padding_node_yl/padding_node_y;
+        //        float node_scale = MIN(node_scale_x,node_scale_y);
 
-//        if(node_scale_x < 1)
-//        {
-//            _current_letter->setScale(node_scale_x);
+        //        if(node_scale_x < 1)
+        //        {
+        //            _current_letter->setScale(node_scale_x);
 
-//        }
+        //        }
 
         _current_letter->setScale(0.87f);
 
@@ -229,4 +244,10 @@ void LetterNode::setNodeColor(cocos2d::ccColor3B  color)
 {
     _letter_image->setColor(color);
 
+}
+void LetterNode::setJustSelected(LetterStatus status)
+{
+    _active_letter.setLetterStatus(status);
+    _index_selected_letter = 10000;
+    _just_selected = true;
 }

@@ -341,6 +341,7 @@ bool GameNode::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                         current_node->setVisible(true);
                         removeLetter(node);
                         current_node->setPosition(local);
+
                     }
 
                     break;
@@ -471,16 +472,28 @@ void GameNode::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent*)
                 }
 
             }
-            current_node->setLetterIsSelected(true);
-            current_node->setSelectedLetter(_selected_letter->getActiveLetter());
-            current_node->setIndexSelectedLetter(_selected_letter->getIndexSelectedLetter());
-
             Letter active_letter = current_node->getActiveLetter();
-            Letter  selected_letter = current_node->getSelectedLetter();
+            Letter selected_letter = _selected_letter->getActiveLetter();
             std::string active_letter_str = active_letter.getLetterString().c_str();
             std::string selected_letter_str = selected_letter.getLetterString().c_str();
 
+            if (active_letter_str == selected_letter_str)
+            {
+                current_node->setJustSelected(LetterStatus::Frozen);
+            }
+
+            current_node->setLetterIsSelected(true);
+            current_node->setSelectedLetter(_selected_letter->getActiveLetter());
+
+            if (active_letter_str != selected_letter_str)
+            {
+                current_node->setIndexSelectedLetter(_selected_letter->getIndexSelectedLetter());
+            }
+
+
+
             _selected_letter->setVisible(false);
+
             if (isSetEnd())
             {
                 ADSoundManager::playSoundEffect(InfoStyles::CORRECT_WORD_MUSIC);
