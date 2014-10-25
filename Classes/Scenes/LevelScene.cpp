@@ -160,7 +160,7 @@ bool LevelScene::init()
 }
 void LevelScene::onSignalAudioClicked()
 {
-    CCLog("Level scene");
+    //CCLog("Level scene");
 }
 void LevelScene::onSignalUseHintClicked()
 {
@@ -243,13 +243,12 @@ void LevelScene::EndLevel()
     int star_number = MAX(star_number_old,star_number_current);
     SaveStarsManager::getInstance()->setStars(
                 _collection_id, _difficult, star_number);
-    _pop_up_manager.openWindow(new LevelEnd(this,_collection_id,star_number,_difficult));
+    _pop_up_manager.openWindow(new LevelEnd(this,_collection_id,star_number_current,_difficult));
 
 }
 int LevelScene::getStarNumber()
 {
     return  _current_one_season.getNumberOfHint();
-    ;
 }
 void LevelScene::onSignalNextLesson()
 {
