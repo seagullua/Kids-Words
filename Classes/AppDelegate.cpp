@@ -154,7 +154,35 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     initInAppPurchases();
     initTapJoy();
-    //initHighscoreServer();
+
+    //init statistics
+    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+    {
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            ADStatistics::setApplicationKey("3JDMTDRT8MYN8FVRS8RS");
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            ADStatistics::setApplicationKey("GVFD3KQM6SNX3H44ZJVC");
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            ADStatistics::setApplicationKey("XDRGT5BTKSVNSC4RGDYR");
+    }
+    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+    {
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            ADStatistics::setApplicationKey("R6NY8356WYS3M6BXCC72");
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            ADStatistics::setApplicationKey("SC39K4PZZ5S2YFB2YW89");
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            ADStatistics::setApplicationKey("PHMRC54G7WW2V4N46GTW");
+    }
+    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+    {
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            ADStatistics::setApplicationKey("X75JGG3NZS4KTPXQ8X6X");
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            ADStatistics::setApplicationKey("42P962GG57XP578SCB2V");
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            ADStatistics::setApplicationKey("6P9W8JQ8YG33DJT4RYTS");
+    }
 
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
