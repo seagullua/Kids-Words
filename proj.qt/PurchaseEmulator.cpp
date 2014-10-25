@@ -1,5 +1,5 @@
 #define AD_ADS_NOSIZE
-#include <ADLib/PlatformImpl/ADAds_NoAds.hpp>
+#include <ADLib/PlatformImpl/ADAds_Emulator.hpp>
 #include <Testing/ADDeviceEmulator.h>
 
 cocos2d::CCSize ADAds::Platform::getBannerSize(const BannerType& type)

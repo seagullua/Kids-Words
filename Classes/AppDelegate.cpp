@@ -100,6 +100,18 @@ void initAds()
 
     pid_interstitial << "ca-app-pub-" << 16126979 << 60946304 << "/";
 
+//    Kids Words 1 [English] iOS: 		ca-app-pub-1612697960946304/1494954675
+//    Kids Words 1 [English] Android:	ca-app-pub-1612697960946304/6064755070
+//    Kids Words 1 [English] WP8:		ca-app-pub-1612697960946304/5925154276
+
+//    Kids Words 1 [Russian] iOS: 		ca-app-pub-1612697960946304/5785553477
+//    Kids Words 1 [Russian] Android:	ca-app-pub-1612697960946304/4308820270
+//    Kids Words 1 [Russian] WP8:		ca-app-pub-1612697960946304/8739019877
+
+//    Kids Words 1 [Ukrainian] iOS: 	ca-app-pub-1612697960946304/1355353872
+//    Kids Words 1 [Ukrainian] Android:	ca-app-pub-1612697960946304/8878620677
+//    Kids Words 1 [Ukrainian] WP8:		ca-app-pub-1612697960946304/2832087078
+
     //ca-app-pub-1612697960946304/5795034672
     pid_interstitial << 5795034672;
 
@@ -111,6 +123,7 @@ void initAds()
     else
     {
         ADAds::registerInterstitialType(pid_interstitial.str());
+        ADFullScreenAds::prepare();
     }
 
 }

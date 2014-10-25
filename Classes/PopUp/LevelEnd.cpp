@@ -23,6 +23,7 @@ LevelEnd::LevelEnd(cocos2d::CCNode* parent,CollectionID collection_id,int stars_
 
 void LevelEnd::onCollection()
 {
+    ADFullScreenAds::showHere();
     if (_difficult == 2)
     {
         CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
@@ -38,6 +39,7 @@ void LevelEnd::onCollection()
 
 void LevelEnd::onNextLesson()
 {
+    ADFullScreenAds::showHere();
     CCDirector::sharedDirector()->replaceScene(LevelScene::scene(_collection_id,_difficult));
 }
 
