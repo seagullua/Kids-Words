@@ -328,7 +328,7 @@
 			<level>
 				<image>collections/fruits/drain.jpg</image>
 				<word>
-					<en>DRAIN</en>
+					<en>PLUM</en>
 					<ru>СЛИВА</ru>
 					<uk>СЛИВА</uk>
 				</word>
@@ -365,7 +365,7 @@
 			<level>
 				<image>collections/transport/motorbike.jpg</image>
 				<word>
-					<en>MOTORBIKE</en>
+					<en>MOTORCYCLE</en>
 					<ru>МОТОЦИКЛ</ru>
 					<uk>МОТОЦИКЛ</uk>
 				</word>
@@ -477,7 +477,7 @@
 			<level>
 				<image>collections/transport/subway.jpg</image>
 				<word>
-					<en>SUBWAY</en>
+					<en>UNDERGROUND</en>
 					<ru>МЕТРО</ru>
 					<uk>МЕТРО</uk>
 				</word>
@@ -506,14 +506,14 @@
 					<uk>САНКИ</uk>
 				</word>
 			</level>
-			<level>
+			<!--<level>
 				<image>collections/transport/cart.jpg</image>
 				<word>
 					<en>CART</en>
 					<ru>ТЕЛЕГА</ru>
 					<uk>ПІДВОДА</uk>
 				</word>
-			</level>
+			</level>-->
 			<level>
 				<image>collections/transport/yacht.jpg</image>
 				<word>
@@ -609,14 +609,14 @@
 					<uk>РАКОВИНА</uk>
 				</word>
 			</level>
-			<level>
+			<!--<level>
 				<image>collections/room/toilet.jpg</image>
 				<word>
 					<en>TOILET</en>
 					<ru>УНИТАЗ</ru>
 					<uk>УНІТАЗ</uk>
 				</word>
-			</level>
+			</level>-->
 			<level>
 				<image>collections/room/clock.jpg</image>
 				<word>
@@ -628,7 +628,7 @@
 			<level>
 				<image>collections/room/cabinet.jpg</image>
 				<word>
-					<en>CABINET</en>
+					<en>WARDROBE</en>
 					<ru>ШКАФ</ru>
 					<uk>ШАФА</uk>
 				</word>
@@ -636,7 +636,7 @@
 			<level>
 				<image>collections/room/armchair.jpg</image>
 				<word>
-					<en>ARMCHAIR</en>
+					<en>CHAIR</en>
 					<ru>КРЕСЛО</ru>
 					<uk>КРІСЛО</uk>
 				</word>
@@ -644,7 +644,7 @@
 			<level>
 				<image>collections/room/divan.jpg</image>
 				<word>
-					<en>DIVAN</en>
+					<en>SOFA</en>
 					<ru>ДИВАН</ru>
 					<uk>ДИВАН</uk>
 				</word>
@@ -737,7 +737,7 @@
 			<level>
 				<image>collections/clothes/tights.jpg</image>
 				<word>
-					<en>TIGHTS</en>
+					<en>PANTYHOSE</en>
 					<ru>КОЛГОТКИ</ru>
 					<uk>КОЛГОТКИ</uk>
 				</word>
@@ -769,7 +769,7 @@
 			<level>
 				<image>collections/clothes/coat.jpg</image>
 				<word>
-					<en>COAT</en>
+					<en>TOPCOAT</en>
 					<ru>ПАЛЬТО</ru>
 					<uk>ПАЛЬТО</uk>
 				</word>
