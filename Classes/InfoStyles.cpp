@@ -94,9 +94,70 @@ bool InfoStyles::showPurchase()
 
 std::string InfoStyles::getPurchaseID()
 {
+    if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsEasy)
+    {
+        if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+            return "kids_easy_english";
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+            return "kids_easy_russian";
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+            return "kids_easy_ukrainian";
+    }
+    else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsMedium)
+    {
+        if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+            return "kids_medium_english";
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+            return "kids_medium_russian";
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+            return "kids_medium_ukrainian";
+    }
+    else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
+    {
+        if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+            return "kids_hard_english";
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+            return "kids_hard_russian";
+        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+            return "kids_hard_ukrainian";
+    }
+    assert(false);
     return "disable_ads";
 }
+#include <ADLib/Device/ADInfo.h>
+
 std::string InfoStyles::getStoreID()
 {
-    return "store_id";
+    if(ADInfo::getStore() == ADStore::GooglePlay)
+    {
+        if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsEasy)
+        {
+            if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+                return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgGblxZcYRIW5O6sXEwdESzA7PjkzguQyI5F6aKNAhBW4/KZ49LGJsvKNKA4Y1iWvWSqd8BhbNsNKocBTQkYtni5IkZ0QDU9W/B3Qgcjx2CI4LYUPjXbKvzE7zYYtz6k7YerNwV7/GST1q3OrUMSaCBfcewIF9x6BTfBMjfuJhYWPEnycK6ylQF1cDGpu6+7pKZVBOwFnZovrNMG9On6p80gfmlLRnCl7u8nm+asI1m91y18sJl62+uIiVlPLYIiuTGKXab46fUVQp/k9+8OqeaMEvZp7fHh2YSGb7k5MvyrOk/Cd95evUGh8sNqsFdmKrt0LWY9Imdd4PKqwf+8vCwIDAQAB";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+                return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjMWaN8ud8FSn1p8XqeMYo2gU7djTWrV53F49THa1FbgfCvWwrb8PDKXGi9HoMl8xhZ8DVUykyqIHhpqplXnZdWiD5TLOceDconFF0CpISqkmlMxmaIWqzIQiaVDxHQZNgdad6nbY3LGn2XriRt68h27cM8bLbGiccX4V6ERDRZATTumW0JRBATiJt4bm/4uEiOKGHj1Hmk7yD9X8uP0aFRORomB00NIojpoju4HZq9eILvL0D59507lanw4GbdI4qiwcy3IRnX5j0EnaZ3FbrWormkLr+IqmKJ4YzgWT4N5YlNs2T4bJmC51xNLd1WDsNgzQPabGy7r3pF4Sz+H2sQIDAQAB";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+                return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3JWDN3EF6p/Mt03bKCsoy/+GyKm7dXUYodQUEodLlL5yNBLD6KshP47w6Tf1OKjudl0bltic9FCX1h/8iq0YFgFv/OhzNSfntYQ7EZKeOni3buHoKiH580ZUwsEXfw76rauiVRuahA3HZbXJNtWkiMLYbrud5wWIBqvGTsYIQS+Or2yBbA9wZJKLlvdTdR9cf2y6rOIw88WbhxVVf17pGaEfs7KXtcWsFVVxmlhw9cvc9nIHaRXv3fQgat5z8HXc04+/ZcU4C+LJFHT94CbDTFG+nethz4QjvYxwev2Mi+JjJS8oymg6dBiYSdx3fZMCoSIZuhiuOaOKgDCNPEStjwIDAQAB";
+        }
+        else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsMedium)
+        {
+            if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+                return "";
+        }
+        else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
+        {
+            if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+                return "";
+        }
+    }
+
+    return "";
 }

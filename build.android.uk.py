@@ -15,13 +15,14 @@ if len(sys.argv) < 2:
 ard_mode = sys.argv[1]
 
 
-from build_android_config import *
+
+from build_android_config_uk import *
 project.addModule('android_ADAds_AdMob')
 project.addModule('android_ADInfo_Store_GooglePlay')
 project.addModule('android_ADInApp_GooglePlay')
 project.addModule('android_ADVirtualCurrency_None')
 
-project.output_name = 'proj.android'
+project.output_name = 'proj.android.uk'
 
 if ard_mode == 'debug':
     project.debuggable = True

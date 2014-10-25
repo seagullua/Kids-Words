@@ -24,7 +24,7 @@ project.addModule('android_ADHttp_None')
 
 
 project.project_name = 'KidsWords'
-project.package_name = 'com.x4enjoy.kidswords'
+project.package_name = 'com.x4enjoy.kidswords.ukrainian'
 project.version_name = "1.00"
 project.version_code = "1"
 project.resources_compile_task = createResourceCompilerTask(
@@ -37,7 +37,7 @@ project.resources_compile_task = createResourceCompilerTask(
 project.signature = createAndroidSignature('Resources_storage/android/build.android/key.jks',
 											'mavka',
                                            '', '')
-project.res_dir = 'Resources_storage/android/build.android/res'
+project.res_dir = 'Resources_storage/android/build.android/res.uk'
 project.working_directory = working_directory
 project.addLookUpDir('libraries/ADLib/platform/Android/cpp')
 project.addLookUpDir('libraries/ADLib/platform/Android/libs')
@@ -49,6 +49,6 @@ project.main_activity_definition = project.getMainActivityDeclaration(screenOrie
 
 project.addCppDir('libraries/ADLib/src')
 project.addCppDir('Classes')
-project.addCppDir('Versions/Language/English')
+project.addCppDir('Versions/Language/Ukrainian')
 project.addCppDir('Versions/Edition/AdsPurchase')
 project.addCppDir('Versions/Level/KidsEasy')

@@ -100,20 +100,49 @@ void initAds()
 
     pid_interstitial << "ca-app-pub-" << 16126979 << 60946304 << "/";
 
-//    Kids Words 1 [English] iOS: 		ca-app-pub-1612697960946304/1494954675
-//    Kids Words 1 [English] Android:	ca-app-pub-1612697960946304/6064755070
-//    Kids Words 1 [English] WP8:		ca-app-pub-1612697960946304/5925154276
 
-//    Kids Words 1 [Russian] iOS: 		ca-app-pub-1612697960946304/5785553477
-//    Kids Words 1 [Russian] Android:	ca-app-pub-1612697960946304/4308820270
-//    Kids Words 1 [Russian] WP8:		ca-app-pub-1612697960946304/8739019877
-
-//    Kids Words 1 [Ukrainian] iOS: 	ca-app-pub-1612697960946304/1355353872
-//    Kids Words 1 [Ukrainian] Android:	ca-app-pub-1612697960946304/8878620677
-//    Kids Words 1 [Ukrainian] WP8:		ca-app-pub-1612697960946304/2832087078
 
     //ca-app-pub-1612697960946304/5795034672
-    pid_interstitial << 5795034672;
+
+
+    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+    {
+        //    Kids Words 1 [English] iOS: 		ca-app-pub-1612697960946304/1494954675
+        //    Kids Words 1 [English] Android:	ca-app-pub-1612697960946304/6064755070
+        //    Kids Words 1 [English] WP8:		ca-app-pub-1612697960946304/5925154276
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            pid_interstitial << 6064755070;
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            pid_interstitial << 1494954675;
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            pid_interstitial << 5925154276;
+    }
+    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+    {
+        //    Kids Words 1 [Russian] iOS: 		ca-app-pub-1612697960946304/5785553477
+        //    Kids Words 1 [Russian] Android:	ca-app-pub-1612697960946304/4308820270
+        //    Kids Words 1 [Russian] WP8:		ca-app-pub-1612697960946304/8739019877
+
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            pid_interstitial << 4308820270;
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            pid_interstitial << 5785553477;
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            pid_interstitial << 8739019877;
+    }
+    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+    {
+        //    Kids Words 1 [Ukrainian] iOS: 	ca-app-pub-1612697960946304/1355353872
+        //    Kids Words 1 [Ukrainian] Android:	ca-app-pub-1612697960946304/8878620677
+        //    Kids Words 1 [Ukrainian] WP8:		ca-app-pub-1612697960946304/2832087078
+
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            pid_interstitial << 8878620677;
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            pid_interstitial << 1355353872;
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            pid_interstitial << 2832087078;
+    }
 
 
     if(!InfoStyles::showAds())

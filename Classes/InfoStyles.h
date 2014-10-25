@@ -20,12 +20,20 @@ enum class Version
     NoAds
 };
 
+enum class VersionLevel
+{
+    KidsEasy,
+    KidsMedium,
+    KidsHard
+};
+
 
 class InfoStyles
 {
 public:
     static const Version VERSION;
     static const WordsLanguage WORDS_LANGUAGE;
+    static const VersionLevel VERSION_LEVEL;
     InfoStyles();
     //sizes
     static const int SIZE_SETTINGS_BUTTON;
