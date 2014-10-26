@@ -158,6 +158,36 @@ std::string InfoStyles::getStoreID()
                 return "";
         }
     }
+    else if(ADInfo::getStore() == ADStore::SamsungStore)
+    {
+        if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsEasy)
+        {
+            if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+                return "100000104661";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+                return "100000104662";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+                return "100000104663";
+        }
+        else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsMedium)
+        {
+            if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+                return "";
+        }
+        else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
+        {
+            if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+                return "";
+            else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
+                return "";
+        }
+    }
 
     return "";
 }
