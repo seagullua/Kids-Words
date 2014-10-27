@@ -175,6 +175,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //Language init
     std::string latin_font = "fonts/Comfortaa Bold.ttf";
     std::string latin_bmfont = "fonts/Comfortaa Bold.fnt";
+    
+    if(ADInfo::getPlatform() == ADPlatform::iOS)
+    {
+        latin_font = "fonts/Comfortaa.ttf";
+        latin_bmfont = "fonts/Comfortaa.fnt";
+    }
 
     //std::string cyrilic_font = "fonts/Comfortaa.ttf";
     //std::string cyrilic_bmfont = "fonts/Comfortaa.fnt";

@@ -56,8 +56,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>fonts/Comfortaa Bold.ttf</string>
-		<string>fonts/Roboto Slab Bold.ttf</string>
+		<string>fonts/Comfortaa.ttf</string>
+		<string>fonts/Roboto Slab.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>

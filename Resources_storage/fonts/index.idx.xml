@@ -7,6 +7,14 @@
 		<name>Roboto Slab Bold.ttf</name>
 	</file>
 	<file>
+		<name>Comfortaa.ttf</name>
+		<platform>ios</platform>
+	</file>
+	<file>
+		<name>Roboto Slab.ttf</name>
+		<platform>ios</platform>
+	</file>
+	<file>
 		<name>arial.ttf</name>
 		<platform>windows</platform>
 	</file>
