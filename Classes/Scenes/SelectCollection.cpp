@@ -144,7 +144,7 @@ bool SelectCollection::init()
     collections_scroll_view->updateInset();
     collections_scroll_view->setDirection(ADScrollView::Direction::Horizontal);
     collections_scroll_view->setContentOffset(collections_scroll_view->maxContainerOffset(), false);
-    collections_scroll_view->addHighPriorityTouchListener(menu);
+    collections_scroll_view->addRedirectTouchDelegate(menu);
     return true;
 
 }
