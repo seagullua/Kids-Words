@@ -16,6 +16,7 @@ ard_mode = sys.argv[1]
 
 
 from build_android_config import *
+project.addModule('android_ADAds_AdMob')
 project.addModule('android_ADInfo_Store_GooglePlay')
 project.addModule('android_ADInApp_GooglePlay')
 project.addModule('android_ADVirtualCurrency_None')

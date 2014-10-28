@@ -4,7 +4,7 @@
 
 class AdsManager: public HasSlots
 {
-    static const int BLOCK_ADS = 60001;
+    static const int BLOCK_ADS = 60002;
 public:
 
     static AdsManager* getInstance();

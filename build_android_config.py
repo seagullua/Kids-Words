@@ -14,7 +14,7 @@ project = AndroidProject(env)
 project.modules = modules
 
 #Modules
-project.addModule('android_ADAds_None')
+
 project.addModule('android_ADStatistics_Flurry')
 project.addModule('android_ADLanguage')
 project.addModule('android_ADNotification')
@@ -50,4 +50,5 @@ project.main_activity_definition = project.getMainActivityDeclaration(screenOrie
 project.addCppDir('libraries/ADLib/src')
 project.addCppDir('Classes')
 project.addCppDir('Versions/Language/English')
-project.addCppDir('Versions/Edition/NoAds')
+project.addCppDir('Versions/Edition/AdsPurchase')
+project.addCppDir('Versions/Level/KidsEasy')

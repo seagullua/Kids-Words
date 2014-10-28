@@ -1,7 +1,7 @@
 #include "Letter.h"
 #include "StatusLetter.h"
 
-Letter::Letter(std::string string_letter="")
+Letter::Letter(std::string string_letter)
 
 {
     _string_letter = string_letter;

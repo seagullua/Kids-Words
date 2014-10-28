@@ -1,5 +1,5 @@
 #define AD_ADS_NOSIZE
-#include <ADLib/PlatformImpl/ADAds_NoAds.hpp>
+#include <ADLib/PlatformImpl/ADAds_Emulator.hpp>
 #include <Testing/ADDeviceEmulator.h>
 
 cocos2d::CCSize ADAds::Platform::getBannerSize(const BannerType& type)
@@ -37,6 +37,8 @@ std::string ADLanguage::platformGetDeviceLanguage()
 const Version InfoStyles::VERSION = Version::AdsPurchase;
 //const WordsLanguage InfoStyles::WORDS_LANGUAGE = WordsLanguage::English;
 const WordsLanguage InfoStyles::WORDS_LANGUAGE = WordsLanguage::Ukrainian;
+const VersionLevel InfoStyles::VERSION_LEVEL = VersionLevel::KidsEasy;
+
 
 
 
