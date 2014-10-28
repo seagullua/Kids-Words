@@ -26,7 +26,7 @@ project.addModule('android_ADHttp_None')
 project.project_name = 'KidsWords'
 project.package_name = 'com.x4enjoy.kidswords.ukrainian'
 project.version_name = "1.00"
-project.version_code = "1"
+project.version_code = "2"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'kids-easy',
