@@ -5,11 +5,13 @@ working_directory = os.path.dirname(os.path.realpath(__file__))
 screen_directory = os.path.join(working_directory, 'Resources')
 
 devices = [ #'IPhone3GS',
-    'IPhone4GS',
-    'IPhone5',
 	'IPhone6',
-	'IPhone6Plus',
-    'IPad2',
+	'IPhone6Plus'
+    #'IPhone4GS',
+    #'IPhone5',
+	#'IPhone6',
+	#'IPhone6Plus',
+    #'IPad2',
     #'IPad4',
     #'Galaxy_Ace2',
     #'Galaxy_Mini2',
@@ -17,8 +19,8 @@ devices = [ #'IPhone3GS',
     #'Motorola_Droid',
     #'Galaxy_Y',
     #'Galaxy_Tab2_7',
-    'Galaxy_Tab2_10',
-	'WindowsPhone_WXGA'
+    #'Galaxy_Tab2_10',
+	#'WindowsPhone_WXGA'
 	#'Kindle_Fire',
     #'Google_Nexus_10',
     #'Sony_Xperia_Z',
@@ -28,7 +30,7 @@ devices = [ #'IPhone3GS',
     #'Custom'
 ]
 
-languages = [ 'uk']#,'en', 'uk']
+languages = [ 'uk','en', 'uk']
 orientations = ['landscape']
 
 maker = ScreenMaker(env, 'Kids-Words.exe', screen_directory)

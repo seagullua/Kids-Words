@@ -113,7 +113,7 @@ int CALLBACK WinMain(
 void openAllCollectionsScene(TestInfo info)
 {
     CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
-    ADDeviceEmulator::runLater(1.5f, [info](){
+    ADDeviceEmulator::runLater(2.5f, [info](){
 
         ADDeviceEmulator::createScreenShoot(info);
         info.finish();
@@ -123,7 +123,7 @@ void openAllCollectionsScene(TestInfo info)
 void openSelectLevelScene(TestInfo info,CollectionID id)
 {
     CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
-    ADDeviceEmulator::runLater(1.5f, [info](){
+    ADDeviceEmulator::runLater(2.5f, [info](){
 
         ADDeviceEmulator::createScreenShoot(info);
         info.finish();
@@ -134,7 +134,7 @@ void openSelectLevelScene(TestInfo info,CollectionID id)
 void openLevelScene(TestInfo info, CollectionID id, int difficulty)
 {
     CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,difficulty));
-    ADDeviceEmulator::runLater(1.5f, [info](){
+    ADDeviceEmulator::runLater(2.5f, [info](){
 
         ADDeviceEmulator::createScreenShoot(info);
         info.finish();
