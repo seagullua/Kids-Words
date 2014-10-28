@@ -2,7 +2,12 @@
 #include "../Classes/AppDelegate.h"
 #include <Testing/ADDeviceEmulator.h>
 #include <ADLib/Device/ADAds.h>
+#include "Logic/LevelSaves.h"
 using namespace cocos2d;
+
+void openAllCollectionsScene(TestInfo info);
+void openSelectLevelScene(TestInfo info, CollectionID id);
+void openLevelScene(TestInfo info, CollectionID id, int difficulty);
 
 int CALLBACK WinMain(
         _In_  HINSTANCE,
@@ -35,7 +40,103 @@ int CALLBACK WinMain(
     emulator->setLanguage("uk");
     emulator->setOrientation(Orientation::Landscape);
 
+    //open all collections
+    emulator->addTestCase([](TestInfo info)
+    {
+        openAllCollectionsScene(info);
+    });
+
+    //open one collection
+
+    CollectionID collection_id;
+    emulator->addTestCase([&collection_id](TestInfo info)
+    {
+        const std::vector<Collection>& collections = LevelSaves::getInstance().getCollections();
+        collection_id=collections[0].getID();
+        openSelectLevelScene(info,collection_id);
+    });
+    emulator->addTestCase([&collection_id](TestInfo info)
+    {
+        const std::vector<Collection>& collections = LevelSaves::getInstance().getCollections();
+        collection_id=collections[1].getID();
+        openSelectLevelScene(info,collection_id);
+    });
+    emulator->addTestCase([&collection_id](TestInfo info)
+    {
+        const std::vector<Collection>& collections = LevelSaves::getInstance().getCollections();
+        collection_id=collections[2].getID();
+        openSelectLevelScene(info,collection_id);
+    });
+
+    //open one level
+    int difficulty = 0;
+
+    emulator->addTestCase([&collection_id,&difficulty](TestInfo info)
+    {
+        const std::vector<Collection>& collections = LevelSaves::getInstance().getCollections();
+        collection_id=collections[1].getID();
+        openLevelScene(info,collection_id,difficulty);
+    });
+    //difficulty = 1;
+    emulator->addTestCase([&collection_id,&difficulty](TestInfo info)
+    {
+        openLevelScene(info,collection_id,difficulty);
+    });
+    //difficulty = 2;
+    emulator->addTestCase([&collection_id,&difficulty](TestInfo info)
+    {
+        openLevelScene(info,collection_id,difficulty);
+    });
+
+
+
+    emulator->addTestCase([&collection_id,&difficulty](TestInfo info)
+    {
+        const std::vector<Collection>& collections = LevelSaves::getInstance().getCollections();
+        collection_id=collections[0].getID();
+        openLevelScene(info,collection_id,difficulty);
+    });
+    //difficulty = 1;
+    emulator->addTestCase([&collection_id,&difficulty](TestInfo info)
+    {
+        openLevelScene(info,collection_id,difficulty);
+    });
+    //difficulty = 2;
+    emulator->addTestCase([&collection_id,&difficulty](TestInfo info)
+    {
+        openLevelScene(info,collection_id,difficulty);
+    });
 
     return emulator->run();
 }
+#include "Scenes/SelectCollection.h"
+void openAllCollectionsScene(TestInfo info)
+{
+    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+    ADDeviceEmulator::runLater(1.5f, [info](){
 
+        ADDeviceEmulator::createScreenShoot(info);
+        info.finish();
+    });
+}
+#include "Scenes/SelectLevel.h"
+void openSelectLevelScene(TestInfo info,CollectionID id)
+{
+    CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
+    ADDeviceEmulator::runLater(1.5f, [info](){
+
+        ADDeviceEmulator::createScreenShoot(info);
+        info.finish();
+    });
+}
+
+#include "Scenes/LevelScene.h"
+void openLevelScene(TestInfo info, CollectionID id, int difficulty)
+{
+    CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,difficulty));
+    ADDeviceEmulator::runLater(1.5f, [info](){
+
+        ADDeviceEmulator::createScreenShoot(info);
+        info.finish();
+    });
+}

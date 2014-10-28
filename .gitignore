@@ -3,6 +3,8 @@
 *.lo
 *.o
 
+TestScreens
+
 *.opensdf
 *.sdf
 *.suo
