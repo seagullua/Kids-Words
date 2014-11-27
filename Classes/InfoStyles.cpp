@@ -172,11 +172,11 @@ std::string InfoStyles::getStoreID()
         else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsMedium)
         {
             if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
-                return "";
+                return "100000104804";
             else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
                 return "";
             else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
-                return "";
+                return "100000104805";
         }
         else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
         {

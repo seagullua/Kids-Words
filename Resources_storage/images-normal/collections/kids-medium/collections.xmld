@@ -407,7 +407,7 @@
 				<word>
 					<en>PAPER</en>
 					<ru>БУМАГА</ru>
-					<uk>БУМАГА</uk>
+					<uk>ПАПІР</uk>
 				</word>
 			</level>
 			<level>
@@ -580,7 +580,7 @@
 				<word>
 					<en>PIZZA</en>
 					<ru>ПИЦЦА</ru>
-					<uk>піца</uk>
+					<uk>ПІЦА</uk>
 				</word>
 			</level>
 			<level>
@@ -860,10 +860,10 @@
 			<ru>Числа</ru>
 			<uk>Числа</uk>
 		</collection_name>
-		<collection_image>collections/numbers/title_c.jpg</collection_image>
-		<middle>collections/numbers/title_l1.jpg</middle>
-		<difficult>collections/numbers/title_l2.jpg</difficult>
-		<easy>collections/numbers/title_l3.jpg</easy>
+		<collection_image>collections/numbers/title_c_numbers.jpg</collection_image>
+		<middle>collections/numbers/title_l1_numbers.jpg</middle>
+		<difficult>collections/numbers/title_l2_numbers.jpg</difficult>
+		<easy>collections/numbers/title_l3_numbers.jpg</easy>
 		<levels>
 			<level>
 				<image>collections/numbers/zero.png</image>

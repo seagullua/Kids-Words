@@ -6,7 +6,7 @@ project = ResourceOnlyProject(env)
 project.resource_output = os.path.join(working_directory, 'Resources')
 project.resource_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
-    'kids-easy',
+    'kids-medium',
     'android_win',
     ['en']
 )
