@@ -56,7 +56,6 @@
 		84182F1B19FE378F00A5BDAC /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182EF819FE378F00A5BDAC /* Settings.cpp */; };
 		84182F1E19FE37A400A5BDAC /* English_Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F1D19FE37A400A5BDAC /* English_Version.cpp */; };
 		84182F2119FE37B000A5BDAC /* AdsPurchase_Edition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2019FE37B000A5BDAC /* AdsPurchase_Edition.cpp */; };
-		84182F2419FE37BA00A5BDAC /* KidsEasy_Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */; };
 		84182F9B19FE393B00A5BDAC /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2619FE393A00A5BDAC /* ADRandom.cpp */; };
 		84182F9C19FE393B00A5BDAC /* ADCocosThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2B19FE393A00A5BDAC /* ADCocosThread.cpp */; };
 		84182F9D19FE393B00A5BDAC /* ADThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2E19FE393A00A5BDAC /* ADThreadPool.cpp */; };
@@ -93,16 +92,16 @@
 		84182FBC19FE393B00A5BDAC /* ADStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F8D19FE393B00A5BDAC /* ADStorage.cpp */; };
 		84182FBD19FE393B00A5BDAC /* ADStorageListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F8F19FE393B00A5BDAC /* ADStorageListener.cpp */; };
 		84182FBE19FE393B00A5BDAC /* ADUTF8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F9419FE393B00A5BDAC /* ADUTF8.cpp */; };
-		84182FC519FEBF0B00A5BDAC /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC119FEBF0B00A5BDAC /* fonts */; };
-		84182FC619FEBF0B00A5BDAC /* images-normal in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC219FEBF0B00A5BDAC /* images-normal */; };
-		84182FC719FEBF0B00A5BDAC /* music in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC319FEBF0B00A5BDAC /* music */; };
-		84182FC819FEBF0B00A5BDAC /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC419FEBF0B00A5BDAC /* translations */; };
 		841B2C6018D5B6ED0064AA59 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */; };
 		841B2C6118D5B6ED0064AA59 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5F18D5B6ED0064AA59 /* iAd.framework */; };
+		8479D1601A28CFDE002C716F /* KidsMedium_Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8479D15F1A28CFDE002C716F /* KidsMedium_Level.cpp */; };
+		8479D1651A28D033002C716F /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8479D1611A28D033002C716F /* fonts */; };
+		8479D1661A28D033002C716F /* images-normal in Resources */ = {isa = PBXBuildFile; fileRef = 8479D1621A28D033002C716F /* images-normal */; };
+		8479D1671A28D033002C716F /* music in Resources */ = {isa = PBXBuildFile; fileRef = 8479D1631A28D033002C716F /* music */; };
+		8479D1681A28D033002C716F /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 8479D1641A28D033002C716F /* translations */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
 		84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */; };
 		84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */; };
-		84B0AA9D18D5C61900E0C39A /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA9918D5C61900E0C39A /* libAdapterIAd.a */; };
 		84B0AA9E18D5C61900E0C39A /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA9A18D5C61900E0C39A /* libGoogleAdMobAds.a */; };
 		84B0AA9F18D5C61900E0C39A /* HOW_TO_INTEGRATE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84B0AA9B18D5C61900E0C39A /* HOW_TO_INTEGRATE.txt */; };
 		84B0AAA218D5C73C00E0C39A /* ADInApp_iTunes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AAA118D5C73C00E0C39A /* ADInApp_iTunes.mm */; };
@@ -241,7 +240,6 @@
 		84182EF919FE378F00A5BDAC /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		84182F1D19FE37A400A5BDAC /* English_Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = English_Version.cpp; sourceTree = "<group>"; };
 		84182F2019FE37B000A5BDAC /* AdsPurchase_Edition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdsPurchase_Edition.cpp; sourceTree = "<group>"; };
-		84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KidsEasy_Level.cpp; sourceTree = "<group>"; };
 		84182F2619FE393A00A5BDAC /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
 		84182F2719FE393A00A5BDAC /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
 		84182F2819FE393A00A5BDAC /* ADSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSignals.h; sourceTree = "<group>"; };
@@ -348,12 +346,13 @@
 		84182F9819FE393B00A5BDAC /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		84182F9919FE393B00A5BDAC /* unchecked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unchecked.h; sourceTree = "<group>"; };
 		84182F9A19FE393B00A5BDAC /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
-		84182FC119FEBF0B00A5BDAC /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
-		84182FC219FEBF0B00A5BDAC /* images-normal */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "images-normal"; path = "Resources/images-normal"; sourceTree = SOURCE_ROOT; };
-		84182FC319FEBF0B00A5BDAC /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
-		84182FC419FEBF0B00A5BDAC /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
 		841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		841B2C5F18D5B6ED0064AA59 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		8479D15F1A28CFDE002C716F /* KidsMedium_Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KidsMedium_Level.cpp; sourceTree = "<group>"; };
+		8479D1611A28D033002C716F /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
+		8479D1621A28D033002C716F /* images-normal */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "images-normal"; path = "Resources/images-normal"; sourceTree = SOURCE_ROOT; };
+		8479D1631A28D033002C716F /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
+		8479D1641A28D033002C716F /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADAds_AdMob.mm; sourceTree = "<group>"; };
@@ -401,7 +400,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8402CE6D18A411D000703CF7 /* SystemConfiguration.framework in Frameworks */,
-				84B0AA9D18D5C61900E0C39A /* libAdapterIAd.a in Frameworks */,
 				84F198DC18D5ACB2006A5221 /* StoreKit.framework in Frameworks */,
 				84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */,
 				84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */,
@@ -480,10 +478,10 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84182FC119FEBF0B00A5BDAC /* fonts */,
-				84182FC219FEBF0B00A5BDAC /* images-normal */,
-				84182FC319FEBF0B00A5BDAC /* music */,
-				84182FC419FEBF0B00A5BDAC /* translations */,
+				8479D1611A28D033002C716F /* fonts */,
+				8479D1621A28D033002C716F /* images-normal */,
+				8479D1631A28D033002C716F /* music */,
+				8479D1641A28D033002C716F /* translations */,
 				84F198CA18D5A9C9006A5221 /* Default-Portrait.png */,
 				84F198B318D59E85006A5221 /* Default-568h@2x.png */,
 				84F198B418D59E85006A5221 /* Default.png */,
@@ -707,15 +705,6 @@
 			path = ../Versions/Edition/AdsPurchase;
 			sourceTree = "<group>";
 		};
-		84182F2219FE37BA00A5BDAC /* KidsEasy */ = {
-			isa = PBXGroup;
-			children = (
-				84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */,
-			);
-			name = KidsEasy;
-			path = ../Versions/Level/KidsEasy;
-			sourceTree = "<group>";
-		};
 		84182F2519FE393A00A5BDAC /* ADLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -918,6 +907,15 @@
 			path = utf8;
 			sourceTree = "<group>";
 		};
+		8479D15E1A28CFDE002C716F /* KidsMedium */ = {
+			isa = PBXGroup;
+			children = (
+				8479D15F1A28CFDE002C716F /* KidsMedium_Level.cpp */,
+			);
+			name = KidsMedium;
+			path = ../Versions/Level/KidsMedium;
+			sourceTree = "<group>";
+		};
 		84B0AA8D18D5C61900E0C39A /* ADAds_AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,7 +965,7 @@
 		84EBD26A1971681B007241CD /* _Version */ = {
 			isa = PBXGroup;
 			children = (
-				84182F2219FE37BA00A5BDAC /* KidsEasy */,
+				8479D15E1A28CFDE002C716F /* KidsMedium */,
 				84182F1F19FE37B000A5BDAC /* AdsPurchase */,
 				84182F1C19FE37A400A5BDAC /* English */,
 			);
@@ -1025,7 +1023,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords2En" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords2en" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -1077,7 +1075,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F198C018D59E85006A5221 /* Icon-57.png in Resources */,
-				84182FC519FEBF0B00A5BDAC /* fonts in Resources */,
+				8479D1651A28D033002C716F /* fonts in Resources */,
 				84F198BF18D59E85006A5221 /* Default@2x.png in Resources */,
 				84F198C218D59E85006A5221 /* Icon-76.png in Resources */,
 				84F198C418D59E85006A5221 /* Icon-120.png in Resources */,
@@ -1087,10 +1085,10 @@
 				84F198BD18D59E85006A5221 /* Default-568h@2x.png in Resources */,
 				84F198C618D59E85006A5221 /* Icon-152.png in Resources */,
 				84F198C318D59E85006A5221 /* Icon-114.png in Resources */,
-				84182FC619FEBF0B00A5BDAC /* images-normal in Resources */,
-				84182FC719FEBF0B00A5BDAC /* music in Resources */,
+				8479D1661A28D033002C716F /* images-normal in Resources */,
+				8479D1671A28D033002C716F /* music in Resources */,
 				84F198C518D59E85006A5221 /* Icon-144.png in Resources */,
-				84182FC819FEBF0B00A5BDAC /* translations in Resources */,
+				8479D1681A28D033002C716F /* translations in Resources */,
 				84F198BE18D59E85006A5221 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1159,6 +1157,7 @@
 				84182F9C19FE393B00A5BDAC /* ADCocosThread.cpp in Sources */,
 				84182FB319FE393B00A5BDAC /* ADMenuItem.cpp in Sources */,
 				84182EFE19FE378F00A5BDAC /* Stars.cpp in Sources */,
+				8479D1601A28CFDE002C716F /* KidsMedium_Level.cpp in Sources */,
 				D4ABB4B313B4395300552E6E /* main.m in Sources */,
 				84182F0119FE378F00A5BDAC /* Alphabete.cpp in Sources */,
 				84182F0919FE378F00A5BDAC /* StatusLetter.cpp in Sources */,
@@ -1175,7 +1174,6 @@
 				8402CE7018A4174800703CF7 /* ADInfo.mm in Sources */,
 				8402CE7818A41DD600703CF7 /* ADBrowser.mm in Sources */,
 				84182FA819FE393B00A5BDAC /* ADSoundManager.cpp in Sources */,
-				84182F2419FE37BA00A5BDAC /* KidsEasy_Level.cpp in Sources */,
 				84182FAE19FE393B00A5BDAC /* ADBakeNode.cpp in Sources */,
 				84182F9B19FE393B00A5BDAC /* ADRandom.cpp in Sources */,
 				8402CE5A18A4072500703CF7 /* ADLanguage.mm in Sources */,
@@ -1197,7 +1195,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1240,7 +1238,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 arm64";
 			};
 			name = Debug;
 		};
@@ -1248,7 +1246,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1289,7 +1287,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 arm64";
 			};
 			name = Release;
 		};
@@ -1334,7 +1332,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords2En" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords2en" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
