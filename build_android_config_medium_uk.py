@@ -37,7 +37,7 @@ project.resources_compile_task = createResourceCompilerTask(
 project.signature = createAndroidSignature('Resources_storage/android/build.android/key.jks',
 											'mavka',
                                            '', '')
-project.res_dir = 'Resources_storage/android/build.android/res.uk'
+project.res_dir = 'Resources_storage/android/build.android/res2.uk'
 project.working_directory = working_directory
 project.addLookUpDir('libraries/ADLib/platform/Android/cpp')
 project.addLookUpDir('libraries/ADLib/platform/Android/libs')
