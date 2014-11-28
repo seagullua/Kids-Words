@@ -1230,7 +1230,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK"
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = KidsWords2En;
@@ -1277,7 +1277,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK"
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = KidsWords2En;
