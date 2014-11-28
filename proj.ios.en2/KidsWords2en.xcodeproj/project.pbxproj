@@ -1229,9 +1229,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"/Volumes/VMware\\ Shared\\ Folders/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK"
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = KidsWords2En;
@@ -1277,9 +1276,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"/Volumes/VMware\\ Shared\\ Folders/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK"
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = KidsWords2En;
