@@ -15,4 +15,9 @@
 		<project>kids-hard</project>
 	</file>
 	
+	<file>
+		<name>kids-basic1/collections.xmld</name>
+		<project>kids-basic1</project>
+	</file>
+	
 </directory>

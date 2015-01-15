@@ -114,7 +114,7 @@ std::string InfoStyles::getPurchaseID()
         else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
             return "kids_medium_ukrainian";
     }
-    else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
+    else if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
     {
         if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
             return "kids_hard_english";
@@ -150,7 +150,7 @@ std::string InfoStyles::getStoreID()
             else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
                 return "";
         }
-        else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
+        else if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
         {
             if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
                 return "";
@@ -180,7 +180,7 @@ std::string InfoStyles::getStoreID()
             else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
                 return "100000104805";
         }
-        else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsHard)
+        else if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
         {
             if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
                 return "";

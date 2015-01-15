@@ -24,7 +24,8 @@ enum class VersionLevel
 {
     KidsEasy,
     KidsMedium,
-    KidsHard
+    KidsHard,
+    NewBasics1
 };
 
 
