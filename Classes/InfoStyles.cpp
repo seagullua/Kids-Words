@@ -54,6 +54,8 @@ const cocos2d::ccColor3B InfoStyles::COLOR_YELLOW_LIGHT = cocos2d::ccc3(255,255,
 const cocos2d::ccColor3B InfoStyles::COLOR_DARK = cocos2d::ccc3(0,0,0);
 const cocos2d::ccColor3B InfoStyles::COLOR_PINK = cocos2d::ccc3(250,0,120);
 
+const cocos2d::ccColor3B InfoStyles::COLOR_TITLE = cocos2d::ccc3(224,94,174);
+
 bool InfoStyles::showAds()
 {
     bool show_ads = false;

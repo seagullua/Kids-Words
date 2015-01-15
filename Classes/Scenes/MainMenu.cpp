@@ -65,36 +65,53 @@ bool MainMenu::init()
     const float SCALE = ADScreen::getScaleFactor();
 
     showBackground(BackgroundType::Light);
-    std::string GAME_VERSION = "uk";
     std::string image_name;
 
     //logo
-
-    if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
-    {
-        image_name = "main-menu/name_en.png";
-    }
-    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
-    {
-        image_name = "main-menu/name_uk.png";
-    }
-    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
-    {
-        image_name = "main-menu/name_ru.png";
-    }
-
+    image_name = "main-menu/name_en.png";
     CCSprite* logo = CCSprite::create(image_name.c_str());
 
-    logo->setPositionX(ORIGIN.x + VISIBLE_SIZE.width*0.5f);
-    logo->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.75f);
+    logo->setPositionX(ORIGIN.x + VISIBLE_SIZE.width*0.7f);
+    logo->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.6f);
     this->addChild(logo);
+
+    //////////////////////////////////////////////////////////
+    //main logo
+    CCSprite* l = CCSprite::create("main-menu/l.png");
+    l->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.2,
+                             ORIGIN.y+VISIBLE_SIZE.height*0.85));
+    this->addChild(l);
+
+
+    CCSprite* e = CCSprite::create("main-menu/e.png");
+    e->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.35,
+                             ORIGIN.y+VISIBLE_SIZE.height*0.9));
+    this->addChild(e);
+
+    CCSprite* a = CCSprite::create("main-menu/a.png");
+    a->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.5,
+                             ORIGIN.y+VISIBLE_SIZE.height*0.85));
+    this->addChild(a);
+
+    CCSprite* r = CCSprite::create("main-menu/r.png");
+    r->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.65,
+                             ORIGIN.y+VISIBLE_SIZE.height*0.84));
+    this->addChild(r);
+
+    CCSprite* n = CCSprite::create("main-menu/n.png");
+    n->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.8,
+                             ORIGIN.y+VISIBLE_SIZE.height*0.9));
+    this->addChild(n);
+
+    ///////////////////////////////////////////////////////////
     //menu
     CCMenu* menu =CCMenu::create();
     menu->setPosition(ccp(0,0));
-
     this->addChild(menu);
-    CCSprite* button_play_image = CCSprite::create("main-menu/play-button.png");
 
+
+    ////////////////////////////////////////////////////
+    CCSprite* button_play_image = CCSprite::create("main-menu/play-button.png");
     ADMenuItem* button_play = ADMenuItem::create(button_play_image);
     button_play->setPositionX(ORIGIN.x + VISIBLE_SIZE.width*0.5f);
     button_play->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.35f);
@@ -102,19 +119,17 @@ bool MainMenu::init()
 
     menu->addChild(button_play);
 
+    /////////////////////////////////////////////////
     CCSprite* button_settings_image = CCSprite::create("main-menu/settings-button.png");
-
     ADMenuItem* button_settings = ADMenuItem::create(button_settings_image);
     float padding = 35/SCALE;
     button_settings->setPositionX(
                 ORIGIN.x + VISIBLE_SIZE.width
                 - padding
                 - button_settings->getContentSize().width*0.5f);
-
     button_settings->setPositionY(ORIGIN.y + padding +
                                   button_settings->getContentSize().height*0.5f);
     CONNECT(button_settings->signalOnClick, this, &MainMenu::onSettingsClick);
-
     menu->addChild(button_settings);
 
     return true;

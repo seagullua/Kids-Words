@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
-
-
 	<file>
-		<name>logo.png</name>
+		<name>background.png</name>
 	</file>
 	<file>
-		<name>background_day.jpg</name>
-	</file>
-	<file>
-		<name>background_night.jpg</name>
+		<name>background_up.png</name>
 	</file>
 	<file>
 		<name>back-button.png</name>

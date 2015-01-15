@@ -81,16 +81,15 @@ bool SelectCollection::init()
     title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
 
     title_select_collection->setPositionY(ORIGIN.y +
-                                          + VISIBLE_SIZE.height-padding*0.25f -
+                                          + VISIBLE_SIZE.height-70/SCALE -
                                           title_select_collection->getContentSize().height*0.5f);
 
-    title_select_collection->setColor(InfoStyles::COLOR_WHITE);
+    title_select_collection->setColor(InfoStyles::COLOR_TITLE);
     this->addChild(title_select_collection);
     const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
     //menu
     CCMenu* menu =CCMenu::create();
-    float padding_title = padding*0.25f +
-            title_select_collection->getContentSize().height*0.5f;
+    float padding_title = 40/SCALE + title_select_collection->getContentSize().height*0.5f;
 
     float position_menu_y = VISIBLE_SIZE.height -padding_title;
     float collection_width = 0;
@@ -150,5 +149,5 @@ bool SelectCollection::init()
 }
 void SelectCollection::onCardClick()
 {
-    CCLog("CardClick Clicked");
+    //CCLog("CardClick Clicked");
 }

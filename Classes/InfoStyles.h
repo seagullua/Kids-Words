@@ -74,6 +74,7 @@ public:
     static const cocos2d::ccColor3B COLOR_DARK;
     static const cocos2d::ccColor3B COLOR_PINK;
     static const cocos2d::ccColor3B COLOR_ORANGE_LIGHT;
+    static const cocos2d::ccColor3B COLOR_TITLE;
 
     static const char* CORRECT_LETTER_MUSIC;
     static const char* CORRECT_WORD_MUSIC;

@@ -29,7 +29,7 @@ void SceneStyle::showButtonBack()
                 + button_back->getContentSize().width*0.5f);
 
     button_back->setPositionY(ORIGIN.y +
-                              + VISIBLE_SIZE.height-padding -
+                              + VISIBLE_SIZE.height-100/SCALE -
                               button_back->getContentSize().height*0.5f);
 
 
@@ -40,31 +40,23 @@ void SceneStyle::showButtonBack()
 }
 void SceneStyle::showBackground(const BackgroundType type)
 {
-    if(type != BackgroundType::None)
-    {
-        std::string image_name;
-        if(type  == BackgroundType::Light)
-        {
-            image_name = "universal/background_day.jpg";
-        }
-        else if(type  == BackgroundType::Dark)
-        {
-            image_name = "universal/background_night.jpg";
-        }
+ //   if(type != BackgroundType::None)
+//    {
         const CCPoint ORIGIN = ADScreen::getOrigin();
         const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
-        //background
-        CCSprite* background = CCSprite::create(image_name.c_str());
 
-        background->setPosition(ORIGIN + VISIBLE_SIZE*0.5f);
-        this->addChild(background);
+        CCSprite* background_up = CCSprite::create("universal/background_up.png");
+        background_up->setAnchorPoint(ccp(0.5f,0.85f));
+        background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
+                                       ORIGIN.y+VISIBLE_SIZE.height));
+        this->addChild(background_up);
 
-    }
+//    }
 }
 
 bool SceneStyle::init()
 {
-    bool res = initWithColor(ccc4(255,255,255,255));
+    bool res = initWithColor(ccc4(246,223,195,255));
     this->setKeypadEnabled(true);
 
     return res;

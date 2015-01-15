@@ -9,14 +9,23 @@
 	<file>
 		<name>name_en.png</name>
 	</file>
-		
+	
 	<file>
-		<name>name_ru.png</name>
+		<name>l.png</name>
+	</file>
+	<file>
+		<name>e.png</name>
+	</file>
+	<file>
+		<name>a.png</name>
+	</file>
+	<file>
+		<name>r.png</name>
+	</file>
+	<file>
+		<name>n.png</name>
 	</file>
 		
-	<file>
-		<name>name_uk.png</name>
-	</file>
 		
 	<file>
 		<name>play-button.png</name>
