@@ -81,7 +81,14 @@ bool MainMenu::init()
     l->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.2,
                              ORIGIN.y+VISIBLE_SIZE.height*0.85));
     this->addChild(l);
-
+//    l->runAction(CCRepeatForever::create(
+//                               CCSequence::create(
+//                                    (CCRotateTo::create(0.3,-10.0f)),
+//                                    (CCRotateTo::create(0.6,+20.0f)),
+//                                    (CCRotateTo::create(0.3,-10.0f)),
+//                                    NULL)
+//                               )
+//                            );
 
     CCSprite* e = CCSprite::create("main-menu/e.png");
     e->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.35,
@@ -113,11 +120,20 @@ bool MainMenu::init()
     ////////////////////////////////////////////////////
     CCSprite* button_play_image = CCSprite::create("main-menu/play-button.png");
     ADMenuItem* button_play = ADMenuItem::create(button_play_image);
-    button_play->setPositionX(ORIGIN.x + VISIBLE_SIZE.width*0.5f);
-    button_play->setPositionY(ORIGIN.y + VISIBLE_SIZE.height*0.35f);
+    button_play->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
+                                 ORIGIN.y + VISIBLE_SIZE.height + button_play_image->getContentSize().height));
+    CCPoint button_play_position = (ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
+                                        ORIGIN.y + VISIBLE_SIZE.height*0.35f));
     CONNECT(button_play->signalOnClick, this, &MainMenu::onPlayClick);
-
     menu->addChild(button_play);
+
+    //animation
+    button_play->runAction(CCSequence::create(
+                               CCDelayTime::create(0.2f),
+                               CCEaseElasticOut::create(
+                                 CCMoveTo::create(1.0f,button_play_position)),
+                               NULL
+                           ));
 
     /////////////////////////////////////////////////
     CCSprite* button_settings_image = CCSprite::create("main-menu/settings-button.png");
