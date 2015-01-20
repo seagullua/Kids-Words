@@ -92,7 +92,7 @@ bool MainMenu::init()
 
     CCSprite* e = CCSprite::create("main-menu/e.png");
     e->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.35,
-                             ORIGIN.y+VISIBLE_SIZE.height*0.9));
+                             ORIGIN.y+VISIBLE_SIZE.height*0.85));
     this->addChild(e);
 
     CCSprite* a = CCSprite::create("main-menu/a.png");
@@ -102,12 +102,12 @@ bool MainMenu::init()
 
     CCSprite* r = CCSprite::create("main-menu/r.png");
     r->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.65,
-                             ORIGIN.y+VISIBLE_SIZE.height*0.84));
+                             ORIGIN.y+VISIBLE_SIZE.height*0.85));
     this->addChild(r);
 
     CCSprite* n = CCSprite::create("main-menu/n.png");
     n->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.8,
-                             ORIGIN.y+VISIBLE_SIZE.height*0.9));
+                             ORIGIN.y+VISIBLE_SIZE.height*0.85));
     this->addChild(n);
 
     ///////////////////////////////////////////////////////////
@@ -123,7 +123,7 @@ bool MainMenu::init()
     button_play->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
                                  ORIGIN.y + VISIBLE_SIZE.height + button_play_image->getContentSize().height));
     CCPoint button_play_position = (ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
-                                        ORIGIN.y + VISIBLE_SIZE.height*0.35f));
+                                        ORIGIN.y + VISIBLE_SIZE.height*0.3f));
     CONNECT(button_play->signalOnClick, this, &MainMenu::onPlayClick);
     menu->addChild(button_play);
 

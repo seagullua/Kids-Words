@@ -12,24 +12,22 @@ void SceneStyle::showButtonBack()
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     const float SCALE = ADScreen::getScaleFactor();
     float padding = 25/SCALE;
+
     //menu
     CCMenu* menu =CCMenu::create();
     menu->setPosition(ccp(0,0));
-
     this->addChild(menu);
+
     //button back
     CCSprite* button_back_image = CCSprite::create("universal/back-button.png");
-
     ADMenuItem* button_back = ADMenuItem::create(button_back_image);
-
-    //  button_back->setAnchorPoint(ccp(0,1));
     button_back->setPositionX(
                 ORIGIN.x
                 + padding
                 + button_back->getContentSize().width*0.5f);
 
     button_back->setPositionY(ORIGIN.y +
-                              + VISIBLE_SIZE.height-100/SCALE -
+                              + VISIBLE_SIZE.height-30/SCALE -
                               button_back->getContentSize().height*0.5f);
 
 
@@ -44,11 +42,13 @@ void SceneStyle::showBackground(const BackgroundType type)
 //    {
         const CCPoint ORIGIN = ADScreen::getOrigin();
         const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+        const float SCALE = ADScreen::getScaleFactor();
 
         CCSprite* background_up = CCSprite::create("universal/background_up.png");
-        background_up->setAnchorPoint(ccp(0.5f,0.85f));
+        background_up->setAnchorPoint(ccp(0.5f,0.0f));
         background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
-                                       ORIGIN.y+VISIBLE_SIZE.height));
+                                       ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/5-35/SCALE));
+
         this->addChild(background_up);
 
 //    }

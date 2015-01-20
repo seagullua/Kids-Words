@@ -89,7 +89,7 @@ bool SelectLevel::init()
     title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
 
     title_select_collection->setPositionY(ORIGIN.y +
-                                          + VISIBLE_SIZE.height-70/SCALE -
+                                          + VISIBLE_SIZE.height-25/SCALE -
                                           title_select_collection->getContentSize().height*0.5f);
 
     title_select_collection->setColor(InfoStyles::COLOR_TITLE);
