@@ -6,7 +6,107 @@
 #include "Managers/SettingsManager.h"
 #include "PopUp/TurnOffPopUp.h"
 #include "Managers/AdsManager.h"
-//using namespace cocos2d;
+using namespace cocos2d;
+
+
+class TurnOffPopUp: public IADStandardWindow
+{
+
+public:
+    TurnOffPopUp()
+        : IADStandardWindow(getSize(),
+                           ccc3(230,103,181),
+                           Animation::TopToDown)
+    {
+
+    }
+    static cocos2d::CCSize getSize()
+    {
+        CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+        return CCSize(VISIBLE_SIZE.width, VISIBLE_SIZE.height*0.4f);
+    }
+
+private:
+    void onCreate(cocos2d::CCNode* parent)
+    {
+        CCMenu* menu = CCMenu::create();
+        menu->setPosition(ccp(0,0));
+        parent->addChild(menu);
+
+        CCPoint ORIGIN = ADScreen::getOrigin();
+        CCSize size = parent->getContentSize();
+        float SCALE = ADScreen::getScaleFactor();
+
+        //title
+        CCLabelTTF* exit_title = CCLabelTTF::create(_("pop_up_turn_off.title"),
+                                                    ADLanguage::getFontName(),
+                                                    80);
+        CCPoint target_exit_position(ccp(size.width*0.5f,
+                                         size.height*0.5f + 50/SCALE));
+        exit_title->setPosition(ccp(ORIGIN.x-exit_title->getContentSize().width,
+                                    size.height*0.5f + 50/SCALE));
+        parent->addChild(exit_title);
+        exit_title->runAction(CCEaseBackOut::create(
+                            CCMoveTo::create(1.2f,target_exit_position))
+                         );
+
+        CCLabelTTF* yes_button_title = CCLabelTTF::create(_("pop_up_turn_off.no"),
+                                                          ADLanguage::getFontName(),
+                                                          InfoStyles::SIZE_BUTTON_POP_UP);
+        ADMenuItem* yes_button = ADMenuItem::create(yes_button_title);
+        CONNECT(yes_button->signalOnClick,
+                this,
+                &TurnOffPopUp::onNo);
+        CCPoint yes_position(ccp(size.width*0.25f,
+                                 size.height*0.5f - 70/SCALE));
+        yes_button->setPosition(ccp(size.width*0.45f,
+                                    size.height+yes_button->getContentSize().height));
+        menu->addChild(yes_button);
+        yes_button->runAction(CCEaseBackOut::create(
+                                  CCMoveTo::create(0.8f,yes_position))
+                               );
+
+
+        CCLabelTTF* no_button_title = CCLabelTTF::create(_("pop_up_turn_off.add"),
+                                                          ADLanguage::getFontName(),
+                                                          InfoStyles::SIZE_BUTTON_POP_UP);
+        ADMenuItem* no_button = ADMenuItem::create(no_button_title);
+        CONNECT(no_button->signalOnClick,
+                this,
+                &TurnOffPopUp::onAdd);
+        CCPoint no_position(ccp(size.width*0.75f,
+                                size.height*0.5f - 70/SCALE));
+        no_button->setPosition(ccp(size.width*0.55f,
+                                   size.height+no_button->getContentSize().height));
+        no_button->runAction(CCEaseBackOut::create(
+                                  CCMoveTo::create(0.8f,no_position))
+                               );
+        menu->addChild(no_button);
+
+    }
+
+
+    void onNo()
+    {
+        CCDirector::sharedDirector()->replaceScene(Settings::scene());
+
+    }
+
+    void onAdd()
+    {
+
+        ADInApp::buyProduct(InfoStyles::getPurchaseID());
+        //
+
+    }
+    void setPrice(std::string price)
+    {
+        //_price = price;
+        //_price_label->setString(_price.c_str());
+
+    }
+
+};
 
 Settings::Settings()
 {
@@ -280,7 +380,7 @@ void Settings::onRestorePurchaseClick()
 void Settings::onTurnOffAdsClick()
 {
 
-    _pop_up_manager.openWindow(new TurnOffPopUp(this));
+    _pop_up_manager.openWindow(new TurnOffPopUp());
 
 }
 void Settings::onX4EnjoyClick()
