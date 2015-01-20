@@ -123,7 +123,7 @@ void LetterNode::ShowLetter()
     static std::string LETTER_FONT = "fonts/Berlin Sans FB.ttf";
     if(ADInfo::getPlatform() == ADPlatform::iOS)
     {
-        LETTER_FONT = "fonts/Roboto Slab.ttf";
+        //LETTER_FONT = "fonts/Roboto Slab.ttf";
     }
     if(!_current_letter)
     {

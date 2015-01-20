@@ -56,11 +56,11 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
 
         _number_words = CCLabelTTF::create(_title_number_word.c_str(),
-                                           ADLanguage::getFontName(),
+                                           "fonts/Berlin Sans FB.ttf",
                                            InfoStyles::SIZE_DEVELOPERS_TITLE);
 
 
-        _number_words->setColor(InfoStyles::COLOR_ORANGE);
+        _number_words->setColor(ccc3(246,223,195));
 
         _number_words->setAnchorPoint(ccp(0,0.5f));
         _number_words->setPositionX(padding*7);
@@ -119,7 +119,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     ADMenuItem* hint_lamp = ADMenuItem::create(hint_lamp_image);
     hint_lamp->setAnchorPoint(ccp(0.5f,0.5f));
 
-    hint_lamp->setPositionX(button_audio->getPositionX()+button_audio->getContentSize().width+padding*5.5f);
+    hint_lamp->setPositionX(button_audio->getPositionX()+padding*5.5f);
 
     hint_lamp->setPositionY(padding_node_y*0.5f);
 
