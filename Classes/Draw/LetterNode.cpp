@@ -120,7 +120,7 @@ void LetterNode::ShowLetter()
 
     this->setContentSize(ccp(padding_node_x, padding_node_y));
 
-    static std::string LETTER_FONT = "fonts/Roboto Slab Bold.ttf";
+    static std::string LETTER_FONT = "fonts/Berlin Sans FB.ttf";
     if(ADInfo::getPlatform() == ADPlatform::iOS)
     {
         LETTER_FONT = "fonts/Roboto Slab.ttf";
