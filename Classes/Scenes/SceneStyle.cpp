@@ -21,20 +21,25 @@ void SceneStyle::showButtonBack()
     //button back
     CCSprite* button_back_image = CCSprite::create("universal/back-button.png");
     ADMenuItem* button_back = ADMenuItem::create(button_back_image);
-    button_back->setPositionX(
-                ORIGIN.x
-                + padding
-                + button_back->getContentSize().width*0.5f);
+    button_back->setPositionX(ORIGIN.x+ padding + button_back->getContentSize().width*0.5f);
+    button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height + button_back_image->getContentSize().height);
 
-    button_back->setPositionY(ORIGIN.y +
-                              + VISIBLE_SIZE.height-30/SCALE -
-                              button_back->getContentSize().height*0.5f);
-
-
-
-    CONNECT(button_back->signalOnClick, (SceneStyle*)this, &SceneStyle::simulateBackClick);
+    CCPoint back_target_pos = ccp(ORIGIN.x+ padding + button_back->getContentSize().width*0.5f,
+                                  ORIGIN.y + VISIBLE_SIZE.height-30/SCALE -
+                                         button_back->getContentSize().height*0.5f
+                                  );
+    CONNECT(button_back->signalOnClick,
+            (SceneStyle*)this,
+            &SceneStyle::simulateBackClick);
 
     menu->addChild(button_back);
+
+    //animation
+    button_back->runAction(CCSequence::create(
+                               CCEaseElasticOut::create(
+                                 CCMoveTo::create(1.0f,back_target_pos)),
+                               NULL
+                           ));
 }
 void SceneStyle::showBackground(const BackgroundType type)
 {

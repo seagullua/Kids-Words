@@ -88,12 +88,19 @@ bool SelectLevel::init()
                                                  InfoStyles::SIZE_MENU_TITLE);
     title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
 
-    title_select_collection->setPositionY(ORIGIN.y +
-                                          + VISIBLE_SIZE.height-25/SCALE -
-                                          title_select_collection->getContentSize().height*0.5f);
+    title_select_collection->setPositionY(ORIGIN.y + VISIBLE_SIZE.height+25);
 
     title_select_collection->setColor(InfoStyles::COLOR_TITLE);
     this->addChild(title_select_collection);
+    title_select_collection->runAction(CCSequence::create(
+                     CCEaseElasticOut::create(
+                        CCMoveTo::create(1.0f,
+                                         ccp(x_middle_of_sheet+padding*2,
+                                           (ORIGIN.y + VISIBLE_SIZE.height-25/SCALE -
+                                           title_select_collection->getContentSize().height*0.5f)))
+                         ),
+                     NULL
+                 ));
 
     //menu
     CCMenu* menu =CCMenu::create();

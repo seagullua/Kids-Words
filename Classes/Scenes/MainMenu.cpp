@@ -38,7 +38,7 @@ private:
 
         //title
         CCLabelTTF* exit_title = CCLabelTTF::create(_("ExitGame.Sure"),
-                                                    "fonts/Fredoka One.ttf",
+                                                    ADLanguage::getFontName(),
                                                     80);
         CCPoint target_exit_position(ccp(size.width*0.5f,
                                          size.height*0.5f + 50/SCALE));

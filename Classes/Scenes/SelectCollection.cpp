@@ -78,14 +78,23 @@ bool SelectCollection::init()
     title_select_collection = CCLabelTTF::create(_("select_collection.title"),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
-    title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
-
-    //ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/5-35/SCALE
-    title_select_collection->setPositionY(ORIGIN.y + VISIBLE_SIZE.height-25/SCALE -
-                                          title_select_collection->getContentSize().height*0.5f);
+    title_select_collection->setPosition(ccp(x_middle_of_sheet+padding*2,
+                                          (ORIGIN.y + VISIBLE_SIZE.height + 25)));
 
     title_select_collection->setColor(InfoStyles::COLOR_TITLE);
     this->addChild(title_select_collection);
+    title_select_collection->runAction(CCSequence::create(
+                     CCEaseElasticOut::create(
+                        CCMoveTo::create(1.0f,
+                                         ccp(x_middle_of_sheet+padding*2,
+                                           (ORIGIN.y + VISIBLE_SIZE.height-25/SCALE -
+                                           title_select_collection->getContentSize().height*0.5f)))
+                         ),
+                     NULL
+                 ));
+
+
+
     const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
     //menu
     CCMenu* menu =CCMenu::create();
@@ -94,6 +103,7 @@ bool SelectCollection::init()
     float position_menu_y = VISIBLE_SIZE.height -padding_title;
     float collection_width = 0;
     float card_height = 0;
+    float delay_time = 0.0f;
     for(unsigned int i = 0; i < collect.size(); ++i)
     {
 
@@ -122,6 +132,21 @@ bool SelectCollection::init()
 
         card->setCardColor(collect[i].getColor());
         card->setTitleColor(InfoStyles::COLOR_WHITE);
+
+        /////////////////////////////////////
+        float target_scale = card->getScale();
+        float first_scale  = target_scale*0.9f;
+        button_card->setScale(first_scale);
+
+        //animation
+        button_card->runAction(CCSequence::create(
+                                   CCDelayTime::create(delay_time),
+                                   CCEaseElasticOut::create(
+                                     CCScaleTo::create(0.7f,target_scale),
+                                       0.4f),
+                                   NULL
+                               ));
+       //delay_time += 0.2f;
     }
 
     menu->setAnchorPoint(ccp(0,0));

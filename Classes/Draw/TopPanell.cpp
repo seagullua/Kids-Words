@@ -77,7 +77,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
                                                  InfoStyles::SIZE_BUTTON_POP_UP);
 
 
-    _translation_word_label->setColor(InfoStyles::COLOR_BLUE);
+    _translation_word_label->setColor(ccc3(246,206,195));
 
     _translation_word_label->setAnchorPoint(ccp(0,0.5f));
     _translation_word_label->setPositionX(padding*12);
