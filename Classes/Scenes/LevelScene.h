@@ -26,6 +26,13 @@ private:
     void onSignalUseHintClicked();
     void onSignalNextLesson();
     void setOneGame(const OneGame *one_game);
+
+    void hideEverything(ADCallFunc::Action action);
+
+    void openNextLevel();
+    int getStarNumber();
+
+
     CollectionID _collection_id;
     int _difficult;
     int _current_number_of_word;
@@ -36,8 +43,6 @@ private:
     float _use_h;
     float _use_w;
     TopPanell* _top_panel;
-    void openNextLevel();
-    int getStarNumber();
     bool _tutorial;
     bool _end_game_touch;
 

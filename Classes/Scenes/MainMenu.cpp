@@ -157,12 +157,12 @@ bool MainMenu::init()
     ///////////////////////////////////
     //english word
     image_name = "main-menu/name_en.png";
-    CCSprite* logo = CCSprite::create(image_name.c_str());
+    _english_logo = CCSprite::create(image_name.c_str());
 
-    logo->setPosition(ccp(ORIGIN.x - 200,
+    _english_logo->setPosition(ccp(ORIGIN.x - _english_logo->getContentSize().width,
                           ORIGIN.y + VISIBLE_SIZE.height*0.6f));
-    this->addChild(logo);
-    logo->runAction(CCSequence::create(
+    this->addChild(_english_logo);
+    _english_logo->runAction(CCSequence::create(
                      CCDelayTime::create(2.1f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.4f,
@@ -178,12 +178,12 @@ bool MainMenu::init()
     float letter_y = ORIGIN.y+VISIBLE_SIZE.height*0.9;
     float letter_scale = (VISIBLE_SIZE.height/6);
 
-    CCSprite* l = CCSprite::create("main-menu/l.png");
-    l->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.2,
+    _l = CCSprite::create("main-menu/l.png");
+    _l->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.2,
                              ORIGIN.y+VISIBLE_SIZE.height+100));
-    this->addChild(l);
-    l->setScale(letter_scale/l->getContentSize().height);
-    l->runAction(CCSequence::create(
+    this->addChild(_l);
+    _l->setScale(letter_scale/_l->getContentSize().height);
+    _l->runAction(CCSequence::create(
                      CCDelayTime::create(0.5f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
@@ -194,12 +194,12 @@ bool MainMenu::init()
                  ));
     ///////////////////////////////////
 
-    CCSprite* e = CCSprite::create("main-menu/e.png");
-    e->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.35,
+    _e = CCSprite::create("main-menu/e.png");
+    _e->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.35,
                              ORIGIN.y+VISIBLE_SIZE.height+100));
-    this->addChild(e);
-    e->setScale(letter_scale/e->getContentSize().height);
-    e->runAction(CCSequence::create(
+    this->addChild(_e);
+    _e->setScale(letter_scale/_e->getContentSize().height);
+    _e->runAction(CCSequence::create(
                      CCDelayTime::create(0.8f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
@@ -210,12 +210,12 @@ bool MainMenu::init()
                  ));
 
     ///////////////////////////////
-    CCSprite* a = CCSprite::create("main-menu/a.png");
-    a->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.5,
+    _a = CCSprite::create("main-menu/a.png");
+    _a->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.5,
                              ORIGIN.y+VISIBLE_SIZE.height+100));
-    this->addChild(a);
-    a->setScale(letter_scale/a->getContentSize().height);
-    a->runAction(CCSequence::create(
+    this->addChild(_a);
+    _a->setScale(letter_scale/_a->getContentSize().height);
+    _a->runAction(CCSequence::create(
                      CCDelayTime::create(1.1f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
@@ -226,12 +226,12 @@ bool MainMenu::init()
                  ));
 
     ////////////////////////////////
-    CCSprite* r = CCSprite::create("main-menu/r.png");
-    r->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.65,
+    _r = CCSprite::create("main-menu/r.png");
+    _r->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.65,
                              ORIGIN.y+VISIBLE_SIZE.height+100));
-    this->addChild(r);
-    r->setScale(letter_scale/r->getContentSize().height);
-    r->runAction(CCSequence::create(
+    this->addChild(_r);
+    _r->setScale(letter_scale/_r->getContentSize().height);
+    _r->runAction(CCSequence::create(
                      CCDelayTime::create(1.4f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
@@ -242,12 +242,12 @@ bool MainMenu::init()
                  ));
 
     ////////////////////////////////
-    CCSprite* n = CCSprite::create("main-menu/n.png");
-    n->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.8,
+    _n = CCSprite::create("main-menu/n.png");
+    _n->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width*0.8,
                              ORIGIN.y+VISIBLE_SIZE.height+100));
-    this->addChild(n);
-    n->setScale(letter_scale/n->getContentSize().height);
-    n->runAction(CCSequence::create(
+    this->addChild(_n);
+    _n->setScale(letter_scale/_n->getContentSize().height);
+    _n->runAction(CCSequence::create(
                      CCDelayTime::create(1.7f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
@@ -266,36 +266,37 @@ bool MainMenu::init()
 
     ////////////////////////////////////////////////////
     CCSprite* button_play_image = CCSprite::create("main-menu/play-button.png");
-    ADMenuItem* button_play = ADMenuItem::create(button_play_image);
-    button_play->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
+    _button_play = ADMenuItem::create(button_play_image);
+    _button_play->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
                                  ORIGIN.y + VISIBLE_SIZE.height + button_play_image->getContentSize().height));
     CCPoint button_play_position = (ccp(ORIGIN.x + VISIBLE_SIZE.width*0.5f,
                                         ORIGIN.y + VISIBLE_SIZE.height*0.3f));
-    CONNECT(button_play->signalOnClick, this, &MainMenu::onPlayClick);
-    menu->addChild(button_play);
+    CONNECT(_button_play->signalOnClick, this, &MainMenu::onPlayClick);
+    menu->addChild(_button_play);
 
     //animation
-    button_play->runAction(CCSequence::create(
+    _button_play->runAction(CCSequence::create(
                                CCEaseElasticOut::create(
                                  CCMoveTo::create(1.0f,button_play_position)),
                                NULL
                            ));
 
     /////////////////////////////////////////////////
+
     CCSprite* button_settings_image = CCSprite::create("main-menu/settings-button.png");
-    ADMenuItem* button_settings = ADMenuItem::create(button_settings_image);
+    _button_settings = ADMenuItem::create(button_settings_image);
     float padding = 35/SCALE;
 
-    CCPoint button_settings_position = (ccp(ORIGIN.x + VISIBLE_SIZE.width - padding - button_settings->getContentSize().width*0.5f,
-                                            ORIGIN.y + padding + button_settings->getContentSize().height*0.5f));
+    CCPoint button_settings_position = (ccp(ORIGIN.x + VISIBLE_SIZE.width - padding - _button_settings->getContentSize().width*0.5f,
+                                            ORIGIN.y + padding + _button_settings->getContentSize().height*0.5f));
 
-    button_settings->setPosition(ccp(button_settings_position.x,
-                                     ORIGIN.y + VISIBLE_SIZE.height + button_settings->getContentSize().height/2));
-    CONNECT(button_settings->signalOnClick, this, &MainMenu::onSettingsClick);
-    menu->addChild(button_settings);
+    _button_settings->setPosition(ccp(button_settings_position.x,
+                                     ORIGIN.y + VISIBLE_SIZE.height + _button_settings->getContentSize().height/2));
+    CONNECT(_button_settings->signalOnClick, this, &MainMenu::onSettingsClick);
+    menu->addChild(_button_settings);
 
     //animation
-    button_settings->runAction(CCSequence::create(
+    _button_settings->runAction(CCSequence::create(
                                CCDelayTime::create(0.6f),
                                CCEaseElasticOut::create(
                                  CCMoveTo::create(1.0f,button_settings_position)),
@@ -308,11 +309,115 @@ bool MainMenu::init()
 
 void MainMenu::onPlayClick()
 {
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+    hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+        });
 
 }
 void MainMenu::onSettingsClick()
 {
+    hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(Settings::scene());
+        });
+}
 
-    CCDirector::sharedDirector()->replaceScene(Settings::scene());
+void MainMenu::hideEverything(ADCallFunc::Action action)
+{
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+    const float SCALE = ADScreen::getScaleFactor();
+
+
+    this->stopAllActions();
+    //_english_logo
+    CCPoint english_logo_position = CCPoint(ORIGIN.x+VISIBLE_SIZE.width+_english_logo->getContentSize().width,
+                                            _english_logo->getPositionY());
+    _english_logo->runAction(CCSequence::create(
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,english_logo_position)),
+                                   NULL
+                               ));
+
+    /////////////////////////////////////////////////////////
+    //settings -> down
+    CCPoint settings_position = CCPoint(_button_settings->getPositionX(),
+                                            ORIGIN.y-_button_settings->getContentSize().height);
+    _button_settings->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.1f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,settings_position)),
+                                   NULL
+                               ));
+
+    ////////////////////////////////////////////////////////
+    //play -> down
+    CCPoint play_position = CCPoint(_button_play->getPositionX(),
+                                            ORIGIN.y-_button_play->getContentSize().height);
+    _button_play->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.2f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,play_position)),
+                                   NULL
+                               ));
+
+    //////////////////////////////////////////////////////////
+    //word -> fade out
+    CCPoint l_position = CCPoint(_l->getPositionX(),
+                                    ORIGIN.y-300/SCALE);
+    _l->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.3f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,l_position)),
+                                   NULL
+                               ));
+
+
+    CCPoint e_position = CCPoint(_e->getPositionX(),
+                                    ORIGIN.y-300/SCALE);
+    _e->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.4f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,e_position)),
+                                   NULL
+                               ));
+
+
+    CCPoint a_position = CCPoint(_a->getPositionX(),
+                                    ORIGIN.y-300/SCALE);
+    _a->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.5f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,a_position)),
+                                   NULL
+                               ));
+
+
+    CCPoint r_position = CCPoint(_r->getPositionX(),
+                                    ORIGIN.y-300/SCALE);
+    _r->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.6f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,r_position)),
+                                   NULL
+                               ));
+
+
+    CCPoint n_position = CCPoint(_n->getPositionX(),
+                                    ORIGIN.y-300/SCALE);
+    _n->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.7f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,n_position)),
+                                   NULL
+                               ));
+
+    ///////////////////////////////////////////////////////////
+    //next action
+    this->runAction(
+                CCSequence::createWithTwoActions(
+                    CCDelayTime::create(0.9f),
+                    ADCallFunc::create(action)
+                    )
+                );
+
 }

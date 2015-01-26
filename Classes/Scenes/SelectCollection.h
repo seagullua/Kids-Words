@@ -12,7 +12,11 @@ public:
 private:
     bool init();
     void onBackClick();
-    void onCardClick();
+
+    void hideEverything(ADCallFunc::Action action);
+
+    cocos2d::CCLabelTTF* _title_select_collection;
+    std::vector<ADMenuItem*> _cards;
 };
 
 #endif // SELECTCOLLECTION_H

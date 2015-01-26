@@ -53,7 +53,9 @@ SelectLevel* SelectLevel::create(CollectionID id)
 
 void SelectLevel::onBackClick()
 {
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+    hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+        });
 }
 
 
@@ -157,8 +159,11 @@ bool SelectLevel::init()
         button_card->setPositionY(ORIGIN.y+button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*j + button_card->getContentSize().width*0.5f);
         CollectionID id = current_collection->getID();
-        button_card->setClickAction([id,current_dificult](){
-            CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,current_dificult));
+
+        button_card->setClickAction([id,current_dificult,this](){
+            hideEverything([id,current_dificult](){
+                    CCDirector::sharedDirector()->replaceScene(LevelScene::scene(id,current_dificult));
+                });
 
         });
         menu->addChild(button_card);
@@ -177,6 +182,19 @@ bool SelectLevel::init()
         {
             card->setBorderType(BorderType::Difficult);
         }
+
+        /////////////////////////////
+        float target_scale = card->getScale();
+        float first_scale  = target_scale*0.9f;
+        button_card->setScale(first_scale);
+
+        button_card->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.0f),
+                                   CCEaseElasticOut::create(
+                                     CCScaleTo::create(0.7f,target_scale),
+                                       0.4f),
+                                   NULL
+                               ));
     }
 
     menu->setAnchorPoint(ccp(0,0));
@@ -187,7 +205,15 @@ bool SelectLevel::init()
     return true;
 
 }
-void SelectLevel::onCardClick()
+
+void SelectLevel::hideEverything(ADCallFunc::Action action)
 {
-    CCLog("CardClick Clicked");
+    ///////////////////////////////////////////////////////////
+    //next action
+    this->runAction(
+                CCSequence::createWithTwoActions(
+                    CCDelayTime::create(0.6f),
+                    ADCallFunc::create(action)
+                    )
+                );
 }

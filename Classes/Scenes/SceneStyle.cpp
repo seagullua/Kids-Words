@@ -1,6 +1,8 @@
 #include "SceneStyle.h"
 #include <ADLib/Device/ADDeviceEvents.h>
 using namespace cocos2d;
+#include "InfoStyles.h"
+
 SceneStyle::SceneStyle()
     : _pop_up_manager(this)
 {
@@ -28,6 +30,9 @@ void SceneStyle::showButtonBack()
                                   ORIGIN.y + VISIBLE_SIZE.height-30/SCALE -
                                          button_back->getContentSize().height*0.5f
                                   );
+
+    button_back->setColor(InfoStyles::COLOR_TITLE);
+
     CONNECT(button_back->signalOnClick,
             (SceneStyle*)this,
             &SceneStyle::simulateBackClick);

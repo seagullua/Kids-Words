@@ -49,8 +49,9 @@ SelectCollection* SelectCollection::create()
 
 void SelectCollection::onBackClick()
 {
-
-    CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+    hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+        });
 }
 
 
@@ -74,21 +75,20 @@ bool SelectCollection::init()
     showButtonBack();
 
     //window title
-    cocos2d::CCLabelTTF* title_select_collection;
-    title_select_collection = CCLabelTTF::create(_("select_collection.title"),
+    _title_select_collection = CCLabelTTF::create(_("select_collection.title"),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
-    title_select_collection->setPosition(ccp(x_middle_of_sheet+padding*2,
+    _title_select_collection->setPosition(ccp(x_middle_of_sheet+padding*2,
                                           (ORIGIN.y + VISIBLE_SIZE.height + 25)));
 
-    title_select_collection->setColor(InfoStyles::COLOR_TITLE);
-    this->addChild(title_select_collection);
-    title_select_collection->runAction(CCSequence::create(
+    _title_select_collection->setColor(InfoStyles::COLOR_TITLE);
+    this->addChild(_title_select_collection);
+    _title_select_collection->runAction(CCSequence::create(
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
                                          ccp(x_middle_of_sheet+padding*2,
                                            (ORIGIN.y + VISIBLE_SIZE.height-25/SCALE -
-                                           title_select_collection->getContentSize().height*0.5f)))
+                                           _title_select_collection->getContentSize().height*0.5f)))
                          ),
                      NULL
                  ));
@@ -98,7 +98,7 @@ bool SelectCollection::init()
     const std::vector<Collection>& collect = LevelSaves::getInstance().getCollections();
     //menu
     CCMenu* menu =CCMenu::create();
-    float padding_title = 40/SCALE + title_select_collection->getContentSize().height*0.5f;
+    float padding_title = 40/SCALE + _title_select_collection->getContentSize().height*0.5f;
 
     float position_menu_y = VISIBLE_SIZE.height -padding_title;
     float collection_width = 0;
@@ -123,12 +123,15 @@ bool SelectCollection::init()
         collection_width += one_card_width*1.05f;
         button_card->setPositionY(button_card->getContentSize().height*0.5f);
         button_card->setPositionX(one_card_width*i + button_card->getContentSize().width*0.5f);
-        button_card->setClickAction([id](){
-            CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
+        button_card->setClickAction([id, this](){
+            hideEverything([id](){
+                    CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(id));
+                });
         });
 
 
         menu->addChild(button_card);
+        _cards.push_back(button_card);
 
         card->setCardColor(collect[i].getColor());
         card->setTitleColor(InfoStyles::COLOR_WHITE);
@@ -172,7 +175,45 @@ bool SelectCollection::init()
     return true;
 
 }
-void SelectCollection::onCardClick()
+
+void SelectCollection::hideEverything(ADCallFunc::Action action)
 {
-    //CCLog("CardClick Clicked");
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+    const float SCALE = ADScreen::getScaleFactor();
+
+
+    this->stopAllActions();
+
+    ///////////////////////////////////////////////////
+    //title
+
+    //CCPoint logo_position = CCPoint(_title_select_collection->getPositionX(),
+     //                                       ORIGIN.y-300/SCALE);
+    _title_select_collection->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.3f),
+                                   CCFadeOut::create(0.3f),
+                                   NULL
+                               ));
+
+    /////////////////////////////////////////////////////
+    //cards
+    for(unsigned int i=0; i<_cards.size(); ++i)
+    {
+        ADMenuItem* curr_card = _cards[i];
+        curr_card->runAction(CCSequence::create(
+                                       CCDelayTime::create(0.1f),
+                                       CCFadeOut::create(0.3f),
+                                       NULL
+                                   ));
+    }
+
+    ///////////////////////////////////////////////////////////
+    //next action
+    this->runAction(
+                CCSequence::createWithTwoActions(
+                    CCDelayTime::create(0.6f),
+                    ADCallFunc::create(action)
+                    )
+                );
 }

@@ -58,9 +58,11 @@ LevelScene* LevelScene::create(CollectionID id, int difficult)
 
 void LevelScene::onBackClick()
 {
-    CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
-
+    //hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(_collection_id));
+        //});
 }
+
 void LevelScene::onOneGameEnd()
 {
 
@@ -253,4 +255,16 @@ int LevelScene::getStarNumber()
 void LevelScene::onSignalNextLesson()
 {
     selectNextSeason();
+}
+
+void LevelScene::hideEverything(ADCallFunc::Action action)
+{
+    ///////////////////////////////////////////////////////////
+    //next action
+    this->runAction(
+                CCSequence::createWithTwoActions(
+                    CCDelayTime::create(0.6f),
+                    ADCallFunc::create(action)
+                    )
+                );
 }

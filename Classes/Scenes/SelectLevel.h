@@ -12,10 +12,13 @@ public:
     static SelectLevel* create(CollectionID id);
 private:
 
-    CollectionID _collection_id;
     bool init();
     void onBackClick();
-    void onCardClick();
+
+    void hideEverything(ADCallFunc::Action action);
+
+
+    CollectionID _collection_id;
 };
 
 #endif // SELECTLEVEL_H

@@ -60,7 +60,8 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
                                            InfoStyles::SIZE_DEVELOPERS_TITLE);
 
 
-        _number_words->setColor(ccc3(246,223,195));
+        //_number_words->setColor(ccc3(246,223,195));
+        _number_words->setColor(InfoStyles::COLOR_TITLE);
 
         _number_words->setAnchorPoint(ccp(0,0.5f));
         _number_words->setPositionX(padding*7);
@@ -77,7 +78,9 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
                                                  InfoStyles::SIZE_BUTTON_POP_UP);
 
 
-    _translation_word_label->setColor(ccc3(246,206,195));
+    //_translation_word_label->setColor(ccc3(246,206,195));
+    _translation_word_label->setColor(InfoStyles::COLOR_TITLE);
+
 
     _translation_word_label->setAnchorPoint(ccp(0,0.5f));
     _translation_word_label->setPositionX(padding*12);
