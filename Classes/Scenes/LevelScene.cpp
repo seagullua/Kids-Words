@@ -132,7 +132,7 @@ bool LevelScene::init()
     const float SCALE = ADScreen::getScaleFactor();
     float padding = 25/SCALE;
 
-    showBackground(BackgroundType::None);
+    showBackground(BackgroundType::LevelScene);
     int star_number = 10;
 
     _number_of_word = _current_one_season.getNumberWord(_difficult);
@@ -149,7 +149,7 @@ bool LevelScene::init()
         _use_h=VISIBLE_SIZE.height - _top_panel->getContentSize().height;
         this->addChild(_top_panel);
     }
-    showButtonBack();
+    showButtonBack(BackgroundType::LevelScene);
     _tutorial = false;
 
     if(TutorialManager::getInstance()->isFirstGame())

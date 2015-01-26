@@ -8,7 +8,7 @@ SceneStyle::SceneStyle()
 {
     CONNECT(ADDeviceEvents::signalOnBackClicked, this, &SceneStyle::simulateBackClick);
 }
-void SceneStyle::showButtonBack()
+void SceneStyle::showButtonBack(const BackgroundType type)
 {
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
@@ -31,6 +31,12 @@ void SceneStyle::showButtonBack()
                                          button_back->getContentSize().height*0.5f
                                   );
 
+    if(type==BackgroundType::LevelScene)
+    {
+        back_target_pos.y = ORIGIN.y + VISIBLE_SIZE.height-10/SCALE -
+                            button_back->getContentSize().height*0.5f;
+    }
+
     button_back->setColor(InfoStyles::COLOR_TITLE);
 
     CONNECT(button_back->signalOnClick,
@@ -48,20 +54,24 @@ void SceneStyle::showButtonBack()
 }
 void SceneStyle::showBackground(const BackgroundType type)
 {
- //   if(type != BackgroundType::None)
-//    {
-        const CCPoint ORIGIN = ADScreen::getOrigin();
-        const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
-        const float SCALE = ADScreen::getScaleFactor();
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+    const float SCALE = ADScreen::getScaleFactor();
 
-        CCSprite* background_up = CCSprite::create("universal/background_up.png");
-        background_up->setAnchorPoint(ccp(0.5f,0.0f));
+    CCSprite* background_up = CCSprite::create("universal/background_up.png");
+    background_up->setAnchorPoint(ccp(0.5f,0.0f));
+    this->addChild(background_up);
+
+    if(type==BackgroundType::LevelScene)
+    {
+        background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
+                                       ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/6-35/SCALE));
+    }
+    else
+    {
         background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
                                        ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/5-35/SCALE));
-
-        this->addChild(background_up);
-
-//    }
+     }
 }
 
 bool SceneStyle::init()

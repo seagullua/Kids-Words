@@ -10,6 +10,7 @@ enum class BackgroundType
 {
     Dark,
     Light,
+    LevelScene,
     None
 };
 
@@ -21,7 +22,7 @@ protected:
     SceneStyle();
     bool init();
     void showBackground(const BackgroundType );
-    void showButtonBack();
+    void showButtonBack(const BackgroundType type=BackgroundType::None);
     ADPopUpWindowManager _pop_up_manager;
     virtual void onBackClick()=0;
 

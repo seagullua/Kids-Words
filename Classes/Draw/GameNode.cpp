@@ -644,7 +644,7 @@ void GameNode::showHint()
                 _current_node_in_use->runAction(
                             CCRepeatForever::create(
                                 CCSequence::create(
-                                    CCScaleTo::create(duration, _base_scale*1.4f),
+                                    CCScaleTo::create(duration, _base_scale*1.2f),
                                     CCScaleTo::create(duration, _base_scale),
                                     NULL
                                     )
@@ -653,7 +653,7 @@ void GameNode::showHint()
                 _node->runAction(
                             CCRepeatForever::create(
                                 CCSequence::create(
-                                    CCScaleTo::create(duration, _base_scale_n*1.4f),
+                                    CCScaleTo::create(duration, _base_scale_n*1.2f),
                                     CCScaleTo::create(duration, _base_scale_n),
                                     NULL
                                     )

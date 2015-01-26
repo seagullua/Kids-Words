@@ -66,7 +66,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
         _number_words->setAnchorPoint(ccp(0,0.5f));
         _number_words->setPositionX(padding*7);
 
-        _number_words->setPositionY(padding_node_y*0.5f);
+        _number_words->setPositionY(padding_node_y*0.6f);
 
         _panel_image->addChild(_number_words);
     }
@@ -85,7 +85,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     _translation_word_label->setAnchorPoint(ccp(0,0.5f));
     _translation_word_label->setPositionX(padding*12);
 
-    _translation_word_label->setPositionY(padding_node_y*0.5f);
+    _translation_word_label->setPositionY(padding_node_y*0.6f);
 
     _panel_image->addChild(_translation_word_label);
     //menu
@@ -104,7 +104,7 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     button_audio->setPositionX(padding*7+_number_words->getContentSize().width+
                                padding*17);
 
-    button_audio->setPositionY(padding_node_y*0.5f);
+    button_audio->setPositionY(padding_node_y*0.6f);
 
     CONNECT(button_audio->signalOnClick, this, &TopPanell::signalAudioOnClicked);
     button_audio->setVisible(false);
@@ -124,7 +124,8 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
     hint_lamp->setPositionX(button_audio->getPositionX()+padding*5.5f);
 
-    hint_lamp->setPositionY(padding_node_y*0.5f);
+    hint_lamp->setPositionY(padding_node_y*0.6f);
+    hint_lamp->setScaleBase(hint_lamp->getScale()*0.8f);
 
     CONNECT(hint_lamp->signalOnClick, this, &TopPanell::signalUseHintOnClicked);
 //    float translation_label_size_free = hint_lamp->getPositionX()-_number_words->getPositionX();
@@ -149,7 +150,7 @@ void TopPanell::drawStarsNode(int star_number)
     _stars_node = Stars::create(star_number);
     _stars_node->setAnchorPoint(ccp(0,0.5f));
     _stars_node->setPositionX(_padding_node_star_x);
-    _stars_node->setPositionY(_padding_node_star_y*0.5f);
+    _stars_node->setPositionY(_padding_node_star_y*0.6f);
 
     _panel_image->addChild(_stars_node);
 
