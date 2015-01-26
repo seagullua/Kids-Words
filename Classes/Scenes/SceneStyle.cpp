@@ -65,7 +65,7 @@ void SceneStyle::showBackground(const BackgroundType type)
     if(type==BackgroundType::LevelScene)
     {
         background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
-                                       ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/6-35/SCALE));
+                                       ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/6-45/SCALE));
     }
     else
     {

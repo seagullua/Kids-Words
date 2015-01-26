@@ -30,6 +30,8 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
 {
     const float SCALE = ADScreen::getScaleFactor();
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     float padding = 25/SCALE;
     float padding_node_x = 0;
     float padding_node_y = 0;
@@ -66,9 +68,19 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
         _number_words->setAnchorPoint(ccp(0,0.5f));
         _number_words->setPositionX(padding*7);
 
-        _number_words->setPositionY(padding_node_y*0.6f);
+        _number_words->setPositionY(ORIGIN.y+VISIBLE_SIZE.height+_number_words->getContentSize().height);
 
         _panel_image->addChild(_number_words);
+
+        CCPoint number_words_position = CCPoint(_number_words->getPositionX(),
+                                        padding_node_y*0.6f);
+        _number_words->runAction(CCSequence::create(
+                                       CCDelayTime::create(0.0f),
+                                       CCEaseBackOut::create(
+                                            CCMoveTo::create(0.4f,number_words_position)),
+                                       NULL
+                                   ));
+
     }
 
     static std::string LETTER_FONT = "fonts/Roboto Slab Bold.ttf";
@@ -85,9 +97,20 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
     _translation_word_label->setAnchorPoint(ccp(0,0.5f));
     _translation_word_label->setPositionX(padding*12);
 
-    _translation_word_label->setPositionY(padding_node_y*0.6f);
+    _translation_word_label->setPositionY(ORIGIN.y+VISIBLE_SIZE.height+_translation_word_label->getContentSize().height);
 
     _panel_image->addChild(_translation_word_label);
+
+    CCPoint trans_words_position = CCPoint(_translation_word_label->getPositionX(),
+                                    padding_node_y*0.6f);
+    _translation_word_label->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.2f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,trans_words_position)),
+                                   NULL
+                               ));
+
+
     //menu
     CCMenu* menu =CCMenu::create();
     menu->setPosition(ccp(0,0));
@@ -119,15 +142,15 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
     hint_lamp_image->setAnchorPoint(ccp(0,0.5f));
 
-    ADMenuItem* hint_lamp = ADMenuItem::create(hint_lamp_image);
-    hint_lamp->setAnchorPoint(ccp(0.5f,0.5f));
+    _hint_lamp = ADMenuItem::create(hint_lamp_image);
+    _hint_lamp->setAnchorPoint(ccp(0.5f,0.5f));
 
-    hint_lamp->setPositionX(button_audio->getPositionX()+padding*5.5f);
+    _hint_lamp->setPositionX(button_audio->getPositionX()+padding*8.5f);
 
-    hint_lamp->setPositionY(padding_node_y*0.6f);
-    hint_lamp->setScaleBase(hint_lamp->getScale()*0.8f);
+    _hint_lamp->setPositionY(ORIGIN.y+VISIBLE_SIZE.height+_hint_lamp->getContentSize().height);
+    _hint_lamp->setScaleBase(_hint_lamp->getScale()*0.8f);
 
-    CONNECT(hint_lamp->signalOnClick, this, &TopPanell::signalUseHintOnClicked);
+    CONNECT(_hint_lamp->signalOnClick, this, &TopPanell::signalUseHintOnClicked);
 //    float translation_label_size_free = hint_lamp->getPositionX()-_number_words->getPositionX();
 //    float translation_label_size =_translation_word_label->getContentSize().width;
 
@@ -136,23 +159,44 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 //        _translation_word_label->setScale(translation_label_size/ translation_label_size_free);
 //    }
 
-    menu->addChild(hint_lamp);
+    menu->addChild(_hint_lamp);
+    CCPoint hint_position = CCPoint(_hint_lamp->getPositionX(),
+                                    padding_node_y*0.6f);
+    _hint_lamp->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.4f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,hint_position)),
+                                   NULL
+                               ));
+
 
     _padding_node_star_y = padding_node_y;
-    _padding_node_star_x = hint_lamp->getPositionX()+hint_lamp->getContentSize().width*0.5f;
+    _padding_node_star_x = _hint_lamp->getPositionX()+_hint_lamp->getContentSize().width*0.5f;
     drawStarsNode(_star_number);
 
 
 }
 void TopPanell::drawStarsNode(int star_number)
 {
+    const float SCALE = ADScreen::getScaleFactor();
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
 
     _stars_node = Stars::create(star_number);
     _stars_node->setAnchorPoint(ccp(0,0.5f));
     _stars_node->setPositionX(_padding_node_star_x);
-    _stars_node->setPositionY(_padding_node_star_y*0.6f);
+    _stars_node->setPositionY(ORIGIN.y+VISIBLE_SIZE.height+_stars_node->getContentSize().height);
 
     _panel_image->addChild(_stars_node);
+
+    CCPoint stars_position = CCPoint(_stars_node->getPositionX(),
+                                    _padding_node_star_y*0.6f);
+    _stars_node->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.6f),
+                                   CCEaseBackOut::create(
+                                        CCMoveTo::create(0.4f,stars_position)),
+                                   NULL
+                               ));
 
 }
 

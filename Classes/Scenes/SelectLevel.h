@@ -19,6 +19,8 @@ private:
 
 
     CollectionID _collection_id;
+    cocos2d::CCLabelTTF* _title_select_collection;
+    std::vector<ADMenuItem*> _cards;
 };
 
 #endif // SELECTLEVEL_H

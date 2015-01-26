@@ -155,7 +155,8 @@ bool SelectCollection::init()
     menu->setAnchorPoint(ccp(0,0));
     menu->setPosition(ccp(100/SCALE,(position_menu_y-card_height)*0.5f));
 
-    CCSize zone_size(VISIBLE_SIZE.width, VISIBLE_SIZE.height-padding_title*3);
+    //CCSize zone_size(VISIBLE_SIZE.width, VISIBLE_SIZE.height-padding_title*3);
+    CCSize zone_size(VISIBLE_SIZE.width, VISIBLE_SIZE.height - _title_select_collection->getContentSize().height*2.0f);
     CCSize collections_size(collection_width, zone_size.height);
 
     //Create layer to fit all tiles

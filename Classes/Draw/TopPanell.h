@@ -1,7 +1,7 @@
 #ifndef TOPPANELL_H
 #define TOPPANELL_H
 #include "cocos2d.h"
-#include <ADLib/ADSignals.h>
+#include <ADLib.h>
 #include "Stars.h"
 
 using namespace cocos2d;
@@ -30,6 +30,9 @@ public:
     void setTitleNumberWord(int word_number);
     void setTranslationWord(std::string translation_word);
     void drawStarsNode(int star_number);
+
+private:
+    ADMenuItem* _hint_lamp;
 
 };
 #endif // TOPPANELL_H

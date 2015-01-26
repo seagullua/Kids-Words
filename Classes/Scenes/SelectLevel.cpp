@@ -82,24 +82,21 @@ bool SelectLevel::init()
 
     showButtonBack();
     //window title
-    cocos2d::CCLabelTTF* title_select_collection;
-
-
-    title_select_collection = CCLabelTTF::create(current_collection->getName().c_str(),
+    _title_select_collection = CCLabelTTF::create(current_collection->getName().c_str(),
                                                  ADLanguage::getFontName(),
                                                  InfoStyles::SIZE_MENU_TITLE);
-    title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
+    _title_select_collection->setPositionX(x_middle_of_sheet+padding*2);
 
-    title_select_collection->setPositionY(ORIGIN.y + VISIBLE_SIZE.height+25);
+    _title_select_collection->setPositionY(ORIGIN.y + VISIBLE_SIZE.height+25);
 
-    title_select_collection->setColor(InfoStyles::COLOR_TITLE);
-    this->addChild(title_select_collection);
-    title_select_collection->runAction(CCSequence::create(
+    _title_select_collection->setColor(InfoStyles::COLOR_TITLE);
+    this->addChild(_title_select_collection);
+    _title_select_collection->runAction(CCSequence::create(
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
                                          ccp(x_middle_of_sheet+padding*2,
                                            (ORIGIN.y + VISIBLE_SIZE.height-25/SCALE -
-                                           title_select_collection->getContentSize().height*0.5f)))
+                                           _title_select_collection->getContentSize().height*0.5f)))
                          ),
                      NULL
                  ));
@@ -107,7 +104,7 @@ bool SelectLevel::init()
     //menu
     CCMenu* menu =CCMenu::create();
     float position_menu_y = VISIBLE_SIZE.height -padding*0.25f -
-            title_select_collection->getContentSize().height*0.5f;
+            _title_select_collection->getContentSize().height*0.5f;
 
 
     float collection_width = 0;
@@ -195,6 +192,8 @@ bool SelectLevel::init()
                                        0.4f),
                                    NULL
                                ));
+
+        _cards.push_back(button_card);
     }
 
     menu->setAnchorPoint(ccp(0,0));
@@ -208,6 +207,31 @@ bool SelectLevel::init()
 
 void SelectLevel::hideEverything(ADCallFunc::Action action)
 {
+    this->stopAllActions();
+
+    ///////////////////////////////////////////////////
+    //title
+
+    //CCPoint logo_position = CCPoint(_title_select_collection->getPositionX(),
+     //                                       ORIGIN.y-300/SCALE);
+    _title_select_collection->runAction(CCSequence::create(
+                                   CCDelayTime::create(0.3f),
+                                   CCFadeOut::create(0.3f),
+                                   NULL
+                               ));
+
+    /////////////////////////////////////////////////////
+    //cards
+    for(unsigned int i=0; i<_cards.size(); ++i)
+    {
+        ADMenuItem* curr_card = _cards[i];
+        curr_card->runAction(CCSequence::create(
+                                       CCDelayTime::create(0.1f),
+                                       CCFadeOut::create(0.3f),
+                                       NULL
+                                   ));
+    }
+
     ///////////////////////////////////////////////////////////
     //next action
     this->runAction(

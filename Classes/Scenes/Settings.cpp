@@ -149,8 +149,9 @@ Settings* Settings::create()
 
 void Settings::onBackClick()
 {
-
-    CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+    hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+        });
 }
 
 
@@ -179,48 +180,48 @@ bool Settings::init()
     // 4 enjoy
     CCSprite* button_x4enjoy_image = CCSprite::create("universal/x4enjoy_small.png");
 
-    ADMenuItem* button_x4enjoy = ADMenuItem::create(button_x4enjoy_image);
+    _button_x4enjoy = ADMenuItem::create(button_x4enjoy_image);
     float padding4enjoy = 5/SCALE;
     float padding = 20/SCALE;
-    button_x4enjoy->setAnchorPoint(ccp(0,0));
-    button_x4enjoy->setPositionX(
+    _button_x4enjoy->setAnchorPoint(ccp(0,0));
+    _button_x4enjoy->setScale(_button_x4enjoy->getScale()*0.9f);
+    _button_x4enjoy->setPositionX(
                 ORIGIN.x + VISIBLE_SIZE.width
                 - padding4enjoy
-                - button_x4enjoy->getContentSize().width);
+                - _button_x4enjoy->getContentSize().width);
 
-    button_x4enjoy->setPositionY(ORIGIN.y + padding4enjoy );
-    CONNECT(button_x4enjoy->signalOnClick, this, &Settings::onX4EnjoyClick);
+    _button_x4enjoy->setPositionY(ORIGIN.y + padding4enjoy );
+    CONNECT(_button_x4enjoy->signalOnClick, this, &Settings::onX4EnjoyClick);
 
-    menu->addChild(button_x4enjoy);
+    menu->addChild(_button_x4enjoy);
     //animation
-    button_x4enjoy->setOpacity(0);
-    button_x4enjoy->runAction(CCSequence::create(
+    _button_x4enjoy->setOpacity(0);
+    _button_x4enjoy->runAction(CCSequence::create(
                      CCDelayTime::create(0.2f),
-                     CCFadeTo::create(0.8,255),
+                     CCFadeTo::create(0.8f,255),
                      NULL
                  ));
 
 
     ////////////////////////////////////////////////
     // author of music
-    cocos2d::CCLabelTTF* author_of_music_title;
-    author_of_music_title = CCLabelTTF::create(" Music MarcoKuell Cute",
+    _author_of_music_title = CCLabelTTF::create(" Music MarcoKuell Cute",
                                                ADLanguage::getFontName(),
                                                InfoStyles::SIZE_LINE_TITLE);
 
-    author_of_music_title->setColor(InfoStyles::COLOR_WHITE);
-    author_of_music_title->setAnchorPoint(ccp(0,0));
-    author_of_music_title->setPositionX(
+    _author_of_music_title->setColor(InfoStyles::COLOR_WHITE);
+    _author_of_music_title->setAnchorPoint(ccp(0,0));
+    _author_of_music_title->setPositionX(
                 ORIGIN.x + padding4enjoy*4);
 
-    author_of_music_title->setPositionY(ORIGIN.y
+    _author_of_music_title->setPositionY(ORIGIN.y
                                         + padding4enjoy);
 
-    this->addChild(author_of_music_title);
+    this->addChild(_author_of_music_title);
 
     //animation
-    author_of_music_title->setOpacity(0);
-    author_of_music_title->runAction(CCSequence::create(
+    _author_of_music_title->setOpacity(0);
+    _author_of_music_title->runAction(CCSequence::create(
                      CCDelayTime::create(0.4f),
                      CCFadeTo::create(0.8f,255),
                      NULL
@@ -231,24 +232,24 @@ bool Settings::init()
     //music_on
     _button_music_on_image = CCSprite::create("settings/music-on.png");
 
-    ADMenuItem* button_music_on = ADMenuItem::create(_button_music_on_image);
+    _button_music_on = ADMenuItem::create(_button_music_on_image);
     //music_off
     _button_music_off_image = CCSprite::create("settings/music-off.png");
     _button_music_off_image->setAnchorPoint(ccp(0,0));
     float padding_x2 = VISIBLE_SIZE.width/2;
     float padding_music_x = 160/SCALE;
     float padding_music_y = 30/SCALE;
-    button_music_on->setPosition(ccp(ORIGIN.x + padding_x2-padding_music_x,
-                                    ORIGIN.y + VISIBLE_SIZE.height+ button_music_on->getContentSize().height));
-    CONNECT(button_music_on->signalOnClick, this, &Settings::onMusicOnClick);
+    _button_music_on->setPosition(ccp(ORIGIN.x + padding_x2-padding_music_x,
+                                    ORIGIN.y + VISIBLE_SIZE.height+ _button_music_on->getContentSize().height));
+    CONNECT(_button_music_on->signalOnClick, this, &Settings::onMusicOnClick);
 
-    menu->addChild(button_music_on);
-    button_music_on->addChild(_button_music_off_image);
+    menu->addChild(_button_music_on);
+    _button_music_on->addChild(_button_music_off_image);
     //animation
     CCPoint music_target_pos = ccp(ORIGIN.x + padding_x2-padding_music_x,
                                    ORIGIN.y + VISIBLE_SIZE.height- padding_music_y -
-                                 button_music_on->getContentSize().height*0.5f);
-    button_music_on->runAction(CCSequence::create(
+                                 _button_music_on->getContentSize().height*0.5f);
+    _button_music_on->runAction(CCSequence::create(
                                CCEaseElasticOut::create(
                                  CCMoveTo::create(1.0f,music_target_pos)),
                                NULL
@@ -263,19 +264,19 @@ bool Settings::init()
     _button_sounds_off_image = CCSprite::create("settings/sounds-off.png");
     _button_sounds_off_image->setAnchorPoint(ccp(0,0));
 
-    ADMenuItem* button_sounds_on = ADMenuItem::create(_button_sounds_on_image);
+    _button_sounds_on = ADMenuItem::create(_button_sounds_on_image);
 
-    button_sounds_on->setPosition(ccp(ORIGIN.x +  padding_x2+padding_music_x,
-                                      ORIGIN.y + VISIBLE_SIZE.height + button_music_on->getContentSize().height));
-    CONNECT(button_sounds_on->signalOnClick, this, &Settings::onSoundsOnClick);
+    _button_sounds_on->setPosition(ccp(ORIGIN.x +  padding_x2+padding_music_x,
+                                      ORIGIN.y + VISIBLE_SIZE.height + _button_music_on->getContentSize().height));
+    CONNECT(_button_sounds_on->signalOnClick, this, &Settings::onSoundsOnClick);
 
-    button_sounds_on->addChild(_button_sounds_off_image);
-    menu->addChild(button_sounds_on);
+    _button_sounds_on->addChild(_button_sounds_off_image);
+    menu->addChild(_button_sounds_on);
 
     CCPoint sound_target_pos = ccp(ORIGIN.x +  padding_x2+padding_music_x,
                                    ORIGIN.y + VISIBLE_SIZE.height- padding_music_y -
-                                   button_music_on->getContentSize().height*0.5f);
-    button_sounds_on->runAction(CCSequence::create(
+                                   _button_music_on->getContentSize().height*0.5f);
+    _button_sounds_on->runAction(CCSequence::create(
                                CCEaseElasticOut::create(
                                  CCMoveTo::create(1.0f,sound_target_pos)),
                                NULL
@@ -286,7 +287,7 @@ bool Settings::init()
 
     correctMusicEffects(EffectsType::Sound);
     correctMusicEffects(EffectsType::Music);
-    float empty_space = VISIBLE_SIZE.height - button_music_on->getContentSize().height
+    float empty_space = VISIBLE_SIZE.height - _button_music_on->getContentSize().height
             - padding_music_y - button_x4enjoy_image->getContentSize().height;
     bool show_purchase = InfoStyles::showPurchase();
 
@@ -299,30 +300,29 @@ bool Settings::init()
                                                          InfoStyles::SIZE_SETTINGS_BUTTON);
 
     settings_scene_developers_title->setColor(InfoStyles::COLOR_WHITE);
-    ADMenuItem* button_developers = ADMenuItem::create(settings_scene_developers_title);
+    _button_developers = ADMenuItem::create(settings_scene_developers_title);
 
-    button_developers->setPositionX(ORIGIN.x - settings_scene_developers_title->getContentSize().width);
-    empty_space -= button_developers->getContentSize().height*3;
+    _button_developers->setPositionX(ORIGIN.x - settings_scene_developers_title->getContentSize().width);
+    empty_space -= _button_developers->getContentSize().height*3;
     if(empty_space < 0)
     {
         empty_space = 0;
     }
     float button_sounds_on_position =0;
-    button_sounds_on_position = sound_target_pos.y-button_sounds_on->getContentSize().height*0.5f - empty_space;
+    button_sounds_on_position = sound_target_pos.y-_button_sounds_on->getContentSize().height*0.5f - empty_space;
     if (!show_purchase)
     {
-        button_sounds_on_position -= button_developers->getContentSize().height;
+        button_sounds_on_position -= _button_developers->getContentSize().height;
 
     }
 
+    _button_developers->setPositionY(button_sounds_on_position);
+    CONNECT(_button_developers->signalOnClick, this, &Settings::onDevelopersClick);
 
-    button_developers->setPositionY(button_sounds_on_position);
-    CONNECT(button_developers->signalOnClick, this, &Settings::onDevelopersClick);
+    menu->addChild(_button_developers);
+    float button_developers_height = _button_developers->getContentSize().height;
 
-    menu->addChild(button_developers);
-    float button_developers_height = button_developers->getContentSize().height;
-
-    button_developers->runAction(CCSequence::create(
+    _button_developers->runAction(CCSequence::create(
                      CCDelayTime::create(0.5f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.4f,
@@ -344,20 +344,20 @@ bool Settings::init()
                                                                    InfoStyles::SIZE_SETTINGS_BUTTON);
 
         settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_WHITE);
-        ADMenuItem* button_restore_purchase = ADMenuItem::create(settings_scene_restore_purchase_title);
+        _button_restore_purchase = ADMenuItem::create(settings_scene_restore_purchase_title);
 
-        button_restore_purchase->setPositionX(ORIGIN.x - settings_scene_developers_title->getContentSize().width);
+        _button_restore_purchase->setPositionX(ORIGIN.x - settings_scene_developers_title->getContentSize().width);
 
 
-        float button_developers_position = button_developers->getPositionY()-button_developers_height;
+        float button_developers_position = _button_developers->getPositionY()-button_developers_height;
 
-        button_restore_purchase->setPositionY(button_developers_position);
-        CONNECT(button_restore_purchase->signalOnClick,
+        _button_restore_purchase->setPositionY(button_developers_position);
+        CONNECT(_button_restore_purchase->signalOnClick,
                 this,
                 &Settings::onRestorePurchaseClick);
 
-        menu->addChild(button_restore_purchase);
-        button_restore_purchase->runAction(CCSequence::create(
+        menu->addChild(_button_restore_purchase);
+        _button_restore_purchase->runAction(CCSequence::create(
                          CCDelayTime::create(1.1f),
                          CCEaseElasticOut::create(
                             CCMoveTo::create(1.4f,
@@ -372,13 +372,13 @@ bool Settings::init()
         //turn_off_ads
         CCSprite* button_turn_off_ads_image = CCSprite::create("settings/no_ads_tile.png");
 
-        ADMenuItem* button_turn_off_ads = ADMenuItem::create(button_turn_off_ads_image);
+        _button_turn_off_ads = ADMenuItem::create(button_turn_off_ads_image);
 
-        button_turn_off_ads->setPositionX(ORIGIN.x -  settings_scene_developers_title->getContentSize().width);
-        float button_restore_purchase_position = button_restore_purchase->getPositionY()-button_developers_height-padding;
+        _button_turn_off_ads->setPositionX(ORIGIN.x -  settings_scene_developers_title->getContentSize().width);
+        float button_restore_purchase_position = _button_restore_purchase->getPositionY()-button_developers_height-padding;
 
-        button_turn_off_ads->setPositionY(button_restore_purchase_position);
-        CONNECT(button_turn_off_ads->signalOnClick, this, &Settings::onTurnOffAdsClick);
+        _button_turn_off_ads->setPositionY(button_restore_purchase_position);
+        CONNECT(_button_turn_off_ads->signalOnClick, this, &Settings::onTurnOffAdsClick);
 
 
         CCSprite* button_pinguine_image = CCSprite::create("settings/pinguine.png");
@@ -387,7 +387,7 @@ bool Settings::init()
         button_pinguine_image->setScale(0.8f * button_size.height / button_pinguine_image->getContentSize().height);
         float button_half_height = button_size.height * 0.5f;
         button_pinguine_image->setPosition(ccp(button_half_height, button_half_height));
-        button_turn_off_ads->addChild(button_pinguine_image);
+        _button_turn_off_ads->addChild(button_pinguine_image);
 
         cocos2d::CCLabelTTF* turn_off_ads_title;
         turn_off_ads_title = CCLabelTTF::create(_("settings_scene_turn_off_ads_title.title"),
@@ -405,12 +405,12 @@ bool Settings::init()
             turn_off_ads_title->setScale(label_max_width/turn_off_ads_title->getContentSize().width);
         }
 
-        button_turn_off_ads->addChild(turn_off_ads_title);
+        _button_turn_off_ads->addChild(turn_off_ads_title);
         //settings_scene_turn_off_ads_title->setPositionX();
-        menu->addChild(button_turn_off_ads);
+        menu->addChild(_button_turn_off_ads);
 
         //animation
-        button_turn_off_ads->runAction(CCSequence::create(
+        _button_turn_off_ads->runAction(CCSequence::create(
                          CCDelayTime::create(1.6f),
                          CCEaseElasticOut::create(
                             CCMoveTo::create(1.4f,
@@ -438,7 +438,9 @@ void Settings::onSoundsOnClick()
 
 void Settings::onDevelopersClick()
 {
-    CCDirector::sharedDirector()->replaceScene(Developers::scene());
+    hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(Developers::scene());
+        });
 }
 
 void Settings::onRestorePurchaseClick()
@@ -490,4 +492,100 @@ void Settings::correctMusicEffects(EffectsType type)
 void Settings::onAdsWasDisabled()
 {
     CCDirector::sharedDirector()->replaceScene(Settings::scene());
+}
+
+void Settings::hideEverything(ADCallFunc::Action action)
+{
+    //Get the screen start of cordinates
+    const CCPoint ORIGIN = ADScreen::getOrigin();
+    const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+    const float SCALE = ADScreen::getScaleFactor();
+
+    bool show_purchase = InfoStyles::showPurchase();
+
+
+    this->stopAllActions();
+    /////////////////////////////////////////////////
+    //sound
+    CCPoint sound_target_pos = ccp(_button_sounds_on->getPositionX(),
+                                   ORIGIN.y - _button_sounds_on->getContentSize().height);
+    _button_sounds_on->runAction(CCSequence::create(
+                               CCDelayTime::create(0.5f),
+                               CCEaseElasticOut::create(
+                                 CCMoveTo::create(0.6f,sound_target_pos)),
+                               NULL
+                           ));
+
+    ///////////////////////////////////////////////
+    //music
+    CCPoint music_target_pos = ccp(_button_music_on->getPositionX(),
+                                   ORIGIN.y - _button_music_on->getContentSize().height);
+    _button_music_on->runAction(CCSequence::create(
+                               CCDelayTime::create(0.5f),
+                               CCEaseElasticOut::create(
+                                 CCMoveTo::create(0.6f,music_target_pos)),
+                               NULL
+                           ));
+
+    /////////////////////////////////////////////////////
+    //music author
+    _author_of_music_title->runAction(CCSequence::create(
+                     CCDelayTime::create(0.0f),
+                     CCFadeTo::create(0.6f,0),
+                     NULL
+                 ));
+
+    ////////////////////////////////////////
+    //x4enjoy
+    _button_x4enjoy->runAction(CCSequence::create(
+                     CCDelayTime::create(0.0f),
+                     CCFadeTo::create(0.6f,0),
+                     NULL
+                 ));
+
+    //////////////////////////////////////
+    //developers
+    CCPoint dev_target_pos = ccp(ORIGIN.x+VISIBLE_SIZE.width+_button_developers->getContentSize().width,
+                                 _button_developers->getPositionY());
+    _button_developers->runAction(CCSequence::create(
+                     CCDelayTime::create(0.0f),
+                     CCEaseElasticOut::create(
+                        CCMoveTo::create(1.0f,dev_target_pos)
+                         ),
+                     NULL
+                 ));
+
+    /////////////////////////////////////////
+    if(show_purchase)
+    {
+        CCPoint dev_restore_pos = ccp(ORIGIN.x+VISIBLE_SIZE.width+_button_restore_purchase->getContentSize().width,
+                                     _button_restore_purchase->getPositionY());
+        _button_restore_purchase->runAction(CCSequence::create(
+                         CCDelayTime::create(0.2f),
+                         CCEaseElasticOut::create(
+                            CCMoveTo::create(1.0f,dev_restore_pos)
+                             ),
+                         NULL
+                     ));
+
+        CCPoint dev_turnoff_pos = ccp(ORIGIN.x+VISIBLE_SIZE.width+_button_turn_off_ads->getContentSize().width,
+                                     _button_turn_off_ads->getPositionY());
+        _button_turn_off_ads->runAction(CCSequence::create(
+                         CCDelayTime::create(0.3f),
+                         CCEaseElasticOut::create(
+                            CCMoveTo::create(1.0f,dev_turnoff_pos)
+                             ),
+                         NULL
+                     ));
+    }
+
+
+    ///////////////////////////////////////////////////////////
+    //next action
+    this->runAction(
+                CCSequence::createWithTwoActions(
+                    CCDelayTime::create(1.0f),
+                    ADCallFunc::create(action)
+                    )
+                );
 }
