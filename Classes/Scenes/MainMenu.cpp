@@ -163,7 +163,7 @@ bool MainMenu::init()
                           ORIGIN.y + VISIBLE_SIZE.height*0.6f));
     this->addChild(_english_logo);
     _english_logo->runAction(CCSequence::create(
-                     CCDelayTime::create(2.1f),
+                     CCDelayTime::create(1.4f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.4f,
                                          ccp(ORIGIN.x + VISIBLE_SIZE.width*0.7f,
@@ -200,7 +200,7 @@ bool MainMenu::init()
     this->addChild(_e);
     _e->setScale(letter_scale/_e->getContentSize().height);
     _e->runAction(CCSequence::create(
-                     CCDelayTime::create(0.8f),
+                     CCDelayTime::create(0.7f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
                                          ccp(ORIGIN.x+VISIBLE_SIZE.width*0.35,
@@ -216,7 +216,7 @@ bool MainMenu::init()
     this->addChild(_a);
     _a->setScale(letter_scale/_a->getContentSize().height);
     _a->runAction(CCSequence::create(
-                     CCDelayTime::create(1.1f),
+                     CCDelayTime::create(0.9f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
                                          ccp(ORIGIN.x+VISIBLE_SIZE.width*0.5,
@@ -232,7 +232,7 @@ bool MainMenu::init()
     this->addChild(_r);
     _r->setScale(letter_scale/_r->getContentSize().height);
     _r->runAction(CCSequence::create(
-                     CCDelayTime::create(1.4f),
+                     CCDelayTime::create(1.1f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
                                          ccp(ORIGIN.x+VISIBLE_SIZE.width*0.65,
@@ -248,7 +248,7 @@ bool MainMenu::init()
     this->addChild(_n);
     _n->setScale(letter_scale/_n->getContentSize().height);
     _n->runAction(CCSequence::create(
-                     CCDelayTime::create(1.7f),
+                     CCDelayTime::create(1.3f),
                      CCEaseElasticOut::create(
                         CCMoveTo::create(1.0f,
                                          ccp(ORIGIN.x+VISIBLE_SIZE.width*0.8,
