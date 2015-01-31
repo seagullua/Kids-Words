@@ -178,7 +178,6 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 }
 void TopPanell::drawStarsNode(int star_number)
 {
-    const float SCALE = ADScreen::getScaleFactor();
     const CCPoint ORIGIN = ADScreen::getOrigin();
     const CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
 

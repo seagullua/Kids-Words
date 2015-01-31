@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
-
-
 	<file>
 		<name>audio.png</name>
 	</file>
@@ -9,11 +7,16 @@
 	<file>
 		<name>hint-lamp.png</name>
 	</file>
-		
-	
 	<file>
 		<name>top-panel.png</name>
 	</file>
-
-	
+	<file>
+		<name>photo_left.png</name>
+	</file>
+	<file>
+		<name>photo_right.png</name>
+	</file>
+	<file>
+		<name>photo_center.png</name>
+	</file>
 </directory>

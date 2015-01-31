@@ -83,31 +83,77 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     this->addChild(node_qiuz_word);
 
     // word_image
-    CCSprite* word_image = CCSprite::create(word_image_name.c_str());
+    CCNodeRGBA* word_image = CCSprite::create(word_image_name.c_str());
     word_image->setAnchorPoint(ccp(0.5f,0.5f));
 
     float word_image_y = ORIGIN.y + padding + node_qiuz_word->getContentSize().height* node_scale;
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
-    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale-padding )/word_image_height;
+    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale-padding  - 120/SCALE )/word_image_height;
     float word_image_scale = 1;
-    float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding)/word_image_width;
+    float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding - 50/SCALE)/word_image_width;
 
     word_image_scale = MIN(word_image_scale_x, word_image_scale_y);
-
+    CCLog("Image Scale: %f", word_image_scale);
     word_image->setScale(word_image_scale);
-
 
     float hn = node_qiuz_word->getContentSize().height* node_scale;
     float word_image_h = (_use_h -hn)*0.5f;
     float word_image_w = (VISIBLE_SIZE.width*0.5f-padding)*0.5f;
     word_image->setPositionX(ORIGIN.x+word_image_w+ VISIBLE_SIZE.width*0.5f );
-    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f);
+    word_image->setPositionY(ORIGIN.y + word_image_h+hn+padding*0.5f + 20/SCALE);
+
+
+    /////////////////////////////////////////////////////
+
+
+    float scale_parameter = 1.05f;
+    float new_word_size = word_image->getContentSize().height;
+    float img_h = 521;
+    float polariod_h = new_word_size / img_h * 675;
+
+
+    //add polaroid
+    CCSprite* polaroid_left = CCSprite::create("level-scene/photo_left.png");
+    float polaroid_h_scale = polariod_h/polaroid_left->getContentSize().height;
+    float polaroid_y = new_word_size / img_h * 109;
+
+    polaroid_left->setAnchorPoint(ccp(1.0f,0.0f));
+    polaroid_left->setScale(polaroid_h_scale);
+    polaroid_left->setPositionY(-polaroid_y);
+    polaroid_left->setPositionX(0);
+    word_image->addChild(polaroid_left);
+
+    CCSprite* polaroid_right = CCSprite::create("level-scene/photo_right.png");
+    polaroid_right->setAnchorPoint(ccp(0.0f,0.0f));
+    polaroid_right->setScale(polaroid_h_scale);
+    polaroid_right->setPositionY(-polaroid_y);
+    polaroid_right->setPositionX(word_image->getContentSize().width);
+    word_image->addChild(polaroid_right);
+
+    CCSprite* polaroid_center = CCSprite::create("level-scene/photo_center.png");
+    polaroid_center->setAnchorPoint(ccp(0.0f,0.0f));
+    polaroid_center->setScaleY(polaroid_h_scale);
+    polaroid_center->setScaleX(word_image->getContentSize().width/polaroid_center->getContentSize().width);
+    polaroid_center->setPositionY(-polaroid_y);
+    polaroid_center->setPositionX(0);
+    word_image->addChild(polaroid_center);
+
+    float number = rand() % 1000;
+    float max_angle = 10;
+    number = number / 1000 * max_angle - max_angle/2;
+
+    word_image->setRotation(number);
+
+
+    /////////////////////////////////////////////////////
+    //continue image setting
     _word_image = word_image;
     word_image->setZOrder(-5);
     this->addChild(word_image);
 
+    ///////////////////////////////////////////////////
     // node_in_use_letters
 
     float w_node = VISIBLE_SIZE.width*0.5f;

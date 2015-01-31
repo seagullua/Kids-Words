@@ -60,7 +60,7 @@ private:
     void removeLetterAndMoveBack(LetterNode* node);
     LetterNode* _current_node_in_use ;
     LetterNode* _node  ;
-    cocos2d::CCSprite* _word_image;
+    cocos2d::CCNodeRGBA* _word_image;
     float _base_scale;
     float _base_scale_n;
 };
