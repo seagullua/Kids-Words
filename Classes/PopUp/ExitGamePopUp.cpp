@@ -2,8 +2,8 @@
 #include <ADLib/PopUp/ADPopUpWindow.h>
 #include "InfoStyles.h"
 #include <ADLib.h>
-
 using namespace cocos2d;
+
 
 ExitGamePopUp::ExitGamePopUp(cocos2d::CCNode* parent):
     IADStandardWindow(CCSize(1,1),
