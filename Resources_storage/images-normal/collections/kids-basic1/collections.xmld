@@ -690,7 +690,7 @@
 		<collection_image>collections/clothes_new/title_c_clothes.png</collection_image>
 		<middle>collections/2.png</middle>
 		<difficult>collections/3.png</difficult>
-		<easy>collections/clothes_new/1.png</easy>
+		<easy>collections/1.png</easy>
 		<levels>
 			<level>
 				<image>collections/clothes_new/blouse.jpg</image>

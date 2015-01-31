@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-09-21 20:39+0200\n"
+"POT-Creation-Date: 2015-01-31 17:57+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,104 +9,110 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
 
-#: ../../Classes/AppDelegate.cpp:37
+#: ../../Classes/AppDelegate.cpp:43
 msgid "iap.error.billing_unavaliable"
 msgstr "Error"
 
-#: ../../Classes/AppDelegate.cpp:42
+#: ../../Classes/AppDelegate.cpp:48
 msgid "iap.error.purchase_error"
 msgstr "Restore Purchase error"
 
-#: ../../Classes/AppDelegate.cpp:50
+#: ../../Classes/AppDelegate.cpp:56
 msgid "iap.restore_purchases.success"
 msgstr "Successfully restored purchases"
 
-#: ../../Classes/AppDelegate.cpp:55
+#: ../../Classes/AppDelegate.cpp:61
 msgid "iap.restore_purchases.failed"
 msgstr "Restore Purchase failed"
 
 #: ../../Classes/PopUp/ExitGamePopUp.cpp:35
+#: ../../Classes/Scenes/MainMenu.cpp:40
 msgid "ExitGame.Sure"
 msgstr "Leave the game?"
 
 #: ../../Classes/PopUp/ExitGamePopUp.cpp:65
+#: ../../Classes/Scenes/MainMenu.cpp:52
 msgid "ExitGame.Yes"
 msgstr "Yes"
 
 #: ../../Classes/PopUp/ExitGamePopUp.cpp:88
+#: ../../Classes/Scenes/MainMenu.cpp:69
 msgid "ExitGame.No"
 msgstr "No"
 
-#: ../../Classes/PopUp/LevelEnd.cpp:79
+#: ../../Classes/PopUp/LevelEnd.cpp:114
 msgid "pop_up_end_level.collection.title"
 msgstr "Collections"
 
-#: ../../Classes/PopUp/LevelEnd.cpp:102
+#: ../../Classes/PopUp/LevelEnd.cpp:131
 msgid "pop_up_end_level.lesson.title"
 msgstr "Next Lesson"
 
-#: ../../Classes/PopUp/TurnOffPopUp.cpp:33
-msgid "pop_up_turn_off.title"
-msgstr "Turn Off Ads"
-
-#: ../../Classes/PopUp/TurnOffPopUp.cpp:62
-msgid "pop_up_turn_off.no"
-msgstr "No Later"
-
-#: ../../Classes/PopUp/TurnOffPopUp.cpp:85
-msgid "pop_up_turn_off.add"
-msgstr "Turn Off Ads"
-
-#: ../../Classes/PopUp/TurnOffPopUp.cpp:107
-msgid "pop_up_turn_off.text"
-msgstr ""
-"Feed the pinguine. \n"
-"Your kids will like it."
-
-#: ../../Classes/Scenes/SelectCollection.cpp:74
-msgid "select_collection.title"
-msgstr "Collections"
-
-#: ../../Classes/Scenes/SelectLevel.cpp:124
-msgid "select_level.easy"
-msgstr "Easy"
-
-#: ../../Classes/Scenes/SelectLevel.cpp:131
-msgid "select_level.middle"
-msgstr "Middle"
-
-#: ../../Classes/Scenes/SelectLevel.cpp:138
-msgid "select_level.difficult"
-msgstr "Difficult"
-
-#: ../../Classes/Scenes/Settings.cpp:142
-msgid "settings_scene_developers.title"
-msgstr "Developers"
-
-#: ../../Classes/Scenes/Settings.cpp:169
-msgid "settings_scene_restore_purchase.title"
-msgstr "Restore Purchase"
-
-#: ../../Classes/Scenes/Settings.cpp:209
-msgid "settings_scene_turn_off_ads_title.title"
-msgstr "Turn Off Ads"
-
-#: ../../Classes/Scenes/developers.cpp:90
+#: ../../Classes/Scenes/Developers.cpp:91
 msgid "developers_scene_ruslana.title"
 msgstr "Ruslana Chaika"
 
-#: ../../Classes/Scenes/developers.cpp:106
+#: ../../Classes/Scenes/Developers.cpp:107
 msgid "developers_scene_andrii.title"
 msgstr "Andrii Chaika"
 
-#: ../../Classes/Scenes/developers.cpp:136
+#: ../../Classes/Scenes/Developers.cpp:137
 msgid "developers_scene_diana.title"
 msgstr "Diana Sirenko"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:78
+msgid "select_collection.title"
+msgstr "Collections"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:125
+msgid "select_level.easy"
+msgstr "Easy"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:135
+msgid "select_level.middle"
+msgstr "Middle"
+
+#: ../../Classes/Scenes/SelectLevel.cpp:145
+msgid "select_level.difficult"
+msgstr "Difficult"
+
+#: ../../Classes/Scenes/Settings.cpp:41 ../../Classes/Scenes/Settings.cpp:165
+msgid "pop_up_turn_off.title"
+msgstr "Turn Off Ads"
+
+#: ../../Classes/Scenes/Settings.cpp:53
+msgid "pop_up_turn_off.click_green_button"
+msgstr "(click BLUE button)"
+
+#: ../../Classes/Scenes/Settings.cpp:177
+msgid "pop_up_turn_off.no"
+msgstr "No Later"
+
+#: ../../Classes/Scenes/Settings.cpp:195
+msgid "pop_up_turn_off.add"
+msgstr "Turn Off Ads"
+
+#: ../../Classes/Scenes/Settings.cpp:422
+msgid "settings_scene_developers.title"
+msgstr "Developers"
+
+#: ../../Classes/Scenes/Settings.cpp:466
+msgid "settings_scene_restore_purchase.title"
+msgstr "Restore Purchase"
+
+#: ../../Classes/Scenes/Settings.cpp:517
+msgid "settings_scene_turn_off_ads_title.title"
+msgstr "Turn Off Ads"
+
+#~ msgid "pop_up_turn_off.text"
+#~ msgstr ""
+#~ "Feed the pinguine. \n"
+#~ "Your kids will like it."
 
 #, fuzzy
 #~ msgid "select_level.title"

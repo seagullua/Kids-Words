@@ -9,6 +9,130 @@
 using namespace cocos2d;
 
 
+class TurnOffPopUpSure: public IADStandardWindow
+{
+
+public:
+    TurnOffPopUpSure()
+        : IADStandardWindow(getSize(),
+                           ccc3(230,103,181),
+                           Animation::TopToDown)
+    {
+
+    }
+    static cocos2d::CCSize getSize()
+    {
+        CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+        return CCSize(VISIBLE_SIZE.width, VISIBLE_SIZE.height*0.4f);
+    }
+
+private:
+    void onCreate(cocos2d::CCNode* parent)
+    {
+        CCMenu* menu = CCMenu::create();
+        menu->setPosition(ccp(0,0));
+        parent->addChild(menu);
+
+        CCPoint ORIGIN = ADScreen::getOrigin();
+        CCSize size = parent->getContentSize();
+        float SCALE = ADScreen::getScaleFactor();
+
+        //title
+        CCLabelTTF* exit_title = CCLabelTTF::create(_("pop_up_turn_off.title"),
+                                                    ADLanguage::getFontName(),
+                                                    80);
+        CCPoint target_exit_position(ccp(size.width*0.5f,
+                                         size.height*0.65f + 50/SCALE));
+        exit_title->setPosition(ccp(ORIGIN.x-exit_title->getContentSize().width,
+                                    size.height*0.5f + 50/SCALE));
+        parent->addChild(exit_title);
+        exit_title->runAction(CCEaseBackOut::create(
+                            CCMoveTo::create(1.2f,target_exit_position))
+                         );
+
+        CCLabelTTF* info_title = CCLabelTTF::create(_("pop_up_turn_off.click_green_button"),
+                                                          ADLanguage::getFontName(),
+                                                          40);
+//        ADMenuItem* yes_button = ADMenuItem::create(yes_button_title);
+//        CONNECT(yes_button->signalOnClick,
+//                this,
+//                &TurnOffPopUp::onNo);
+        CCPoint info_title_position(ccp(size.width*0.5f,
+                                 size.height*0.65f - 20/SCALE));
+        info_title->setPosition(ccp(size.width*0.5f,
+                                    size.height+info_title->getContentSize().height));
+        parent->addChild(info_title);
+        info_title->runAction(CCEaseBackOut::create(
+                                  CCMoveTo::create(0.8f,info_title_position))
+                               );
+
+        /////////////////////////////////
+        CCSprite* bouble_1 = CCSprite::create("level-scene/bouble.png");
+        bouble_1->setScale(0.8f);
+        bouble_1->setColor(ccc3(43,255,21));
+        ADMenuItem* bouble_1_button = ADMenuItem::create(bouble_1);
+        CONNECT(bouble_1_button->signalOnClick,
+                this,
+                &TurnOffPopUpSure::onAdd);
+        CCPoint bouble_1_position(ccp(size.width*0.35f,
+                                 size.height*0.45f - 70/SCALE));
+        bouble_1_button->setPosition(ccp(size.width*0.45f,
+                                    size.height+bouble_1_button->getContentSize().height));
+        menu->addChild(bouble_1_button);
+        bouble_1_button->runAction(CCEaseBackOut::create(
+                                  CCMoveTo::create(0.8f,bouble_1_position))
+                               );
+
+        /////////////////////////////////
+        CCSprite* bouble_2 = CCSprite::create("level-scene/bouble.png");
+        bouble_2->setColor(ccc3(98,216,255));
+        bouble_2->setScale(0.8f);
+        ADMenuItem* bouble_2_button = ADMenuItem::create(bouble_2);
+        CONNECT(bouble_2_button->signalOnClick,
+                this,
+                &TurnOffPopUpSure::onNo);
+        CCPoint bouble_2_position(ccp(size.width*0.5f,
+                                 size.height*0.45f - 70/SCALE));
+        bouble_2_button->setPosition(ccp(size.width*0.45f,
+                                    size.height+bouble_2_button->getContentSize().height));
+        menu->addChild(bouble_2_button);
+        bouble_2_button->runAction(CCEaseBackOut::create(
+                                  CCMoveTo::create(0.8f,bouble_2_position))
+                               );
+
+        /////////////////////////////////
+        CCSprite* bouble_3 = CCSprite::create("level-scene/bouble.png");
+        bouble_3->setColor(ccc3(255,138,0));
+        bouble_3->setScale(0.8f);
+        ADMenuItem* bouble_3_button = ADMenuItem::create(bouble_3);
+        CONNECT(bouble_3_button->signalOnClick,
+                this,
+                &TurnOffPopUpSure::onNo);
+        CCPoint bouble_3_position(ccp(size.width*0.65f,
+                                 size.height*0.45f - 70/SCALE));
+        bouble_3_button->setPosition(ccp(size.width*0.45f,
+                                    size.height+bouble_3_button->getContentSize().height));
+        menu->addChild(bouble_3_button);
+        bouble_3_button->runAction(CCEaseBackOut::create(
+                                  CCMoveTo::create(0.8f,bouble_3_position))
+                               );
+
+    }
+
+
+    void onNo()
+    {
+        CCDirector::sharedDirector()->replaceScene(Settings::scene());
+    }
+
+    void onAdd()
+    {
+        ADInApp::buyProduct(InfoStyles::getPurchaseID());
+
+    }
+
+};
+
 class TurnOffPopUp: public IADStandardWindow
 {
 
@@ -451,7 +575,7 @@ void Settings::onRestorePurchaseClick()
 void Settings::onTurnOffAdsClick()
 {
 
-    _pop_up_manager.openWindow(new TurnOffPopUp());
+    _pop_up_manager.openWindow(new TurnOffPopUpSure());
 
 }
 void Settings::onX4EnjoyClick()
