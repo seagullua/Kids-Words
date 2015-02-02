@@ -3,10 +3,10 @@ from libraries.ADLib.buildutil.ResourceOnlyProject import *
 
 working_directory = os.path.dirname(os.path.realpath(__file__))
 project = ResourceOnlyProject(env)
-project.resource_output = os.path.join(working_directory, 'proj.ios.en/Resources')
+project.resource_output = os.path.join(working_directory, 'proj.ios/Resources')
 project.resource_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
-    'kids-easy',
+    'kids-basic1',
     'ios',
     ['en']
 )
