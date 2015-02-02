@@ -27,13 +27,13 @@ void SceneStyle::showButtonBack(const BackgroundType type)
     button_back->setPositionY(ORIGIN.y + VISIBLE_SIZE.height + button_back_image->getContentSize().height);
 
     CCPoint back_target_pos = ccp(ORIGIN.x+ padding + button_back->getContentSize().width*0.5f,
-                                  ORIGIN.y + VISIBLE_SIZE.height-30/SCALE -
+                                  ORIGIN.y + VISIBLE_SIZE.height-35/SCALE -
                                          button_back->getContentSize().height*0.5f
                                   );
 
     if(type==BackgroundType::LevelScene)
     {
-        back_target_pos.y = ORIGIN.y + VISIBLE_SIZE.height-10/SCALE -
+        back_target_pos.y = ORIGIN.y + VISIBLE_SIZE.height-20/SCALE -
                             button_back->getContentSize().height*0.5f;
     }
 
@@ -65,12 +65,12 @@ void SceneStyle::showBackground(const BackgroundType type)
     if(type==BackgroundType::LevelScene)
     {
         background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
-                                       ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/6-45/SCALE));
+                                       ORIGIN.y+VISIBLE_SIZE.height-180/SCALE));
     }
     else
     {
         background_up->setPosition(ccp(ORIGIN.x+VISIBLE_SIZE.width/2,
-                                       ORIGIN.y+VISIBLE_SIZE.height-VISIBLE_SIZE.height/5-35/SCALE));
+                                       ORIGIN.y+VISIBLE_SIZE.height-220/SCALE));
      }
 }
 

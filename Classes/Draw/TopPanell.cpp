@@ -83,7 +83,11 @@ void TopPanell::drawPanel(int word_number, int all_words, int star_number)
 
     }
 
-    static std::string LETTER_FONT = "fonts/Roboto Slab Bold.ttf";
+    std::string LETTER_FONT = "fonts/Comfortaa Bold.ttf";
+    if(ADInfo::getPlatform() == ADPlatform::iOS)
+    {
+        LETTER_FONT = "fonts/Comfortaa.ttf";
+    }
 
     _translation_word_label = CCLabelTTF::create(" ",
                                                  LETTER_FONT.c_str(),
