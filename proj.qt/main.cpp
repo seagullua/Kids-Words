@@ -37,7 +37,7 @@ int CALLBACK WinMain(
     //emulator->setDevice(Device::Galaxy_Tab2_10);
  //   emulator->setLanguage("en");
  //   emulator->setLanguage("ru");
-    emulator->setLanguage("uk");
+    emulator->setLanguage("en");
     emulator->setOrientation(Orientation::Landscape);
 
     //open all collections

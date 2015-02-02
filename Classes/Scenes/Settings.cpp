@@ -73,7 +73,7 @@ private:
         ADMenuItem* bouble_1_button = ADMenuItem::create(bouble_1);
         CONNECT(bouble_1_button->signalOnClick,
                 this,
-                &TurnOffPopUpSure::onAdd);
+                &TurnOffPopUpSure::onNo);
         CCPoint bouble_1_position(ccp(size.width*0.35f,
                                  size.height*0.45f - 70/SCALE));
         bouble_1_button->setPosition(ccp(size.width*0.45f,
@@ -90,7 +90,7 @@ private:
         ADMenuItem* bouble_2_button = ADMenuItem::create(bouble_2);
         CONNECT(bouble_2_button->signalOnClick,
                 this,
-                &TurnOffPopUpSure::onNo);
+                &TurnOffPopUpSure::onAdd);
         CCPoint bouble_2_position(ccp(size.width*0.5f,
                                  size.height*0.45f - 70/SCALE));
         bouble_2_button->setPosition(ccp(size.width*0.45f,
@@ -333,7 +333,7 @@ bool Settings::init()
                                                ADLanguage::getFontName(),
                                                InfoStyles::SIZE_LINE_TITLE);
 
-    _author_of_music_title->setColor(InfoStyles::COLOR_WHITE);
+    _author_of_music_title->setColor(InfoStyles::COLOR_TITLE);
     _author_of_music_title->setAnchorPoint(ccp(0,0));
     _author_of_music_title->setPositionX(
                 ORIGIN.x + padding4enjoy*4);
@@ -423,7 +423,7 @@ bool Settings::init()
                                                          ADLanguage::getFontName(),
                                                          InfoStyles::SIZE_SETTINGS_BUTTON);
 
-    settings_scene_developers_title->setColor(InfoStyles::COLOR_WHITE);
+    settings_scene_developers_title->setColor(InfoStyles::COLOR_TITLE);
     _button_developers = ADMenuItem::create(settings_scene_developers_title);
 
     _button_developers->setPositionX(ORIGIN.x - settings_scene_developers_title->getContentSize().width);
@@ -467,7 +467,7 @@ bool Settings::init()
                                                                    ADLanguage::getFontName(),
                                                                    InfoStyles::SIZE_SETTINGS_BUTTON);
 
-        settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_WHITE);
+        settings_scene_restore_purchase_title->setColor(InfoStyles::COLOR_TITLE);
         _button_restore_purchase = ADMenuItem::create(settings_scene_restore_purchase_title);
 
         _button_restore_purchase->setPositionX(ORIGIN.x - settings_scene_developers_title->getContentSize().width);

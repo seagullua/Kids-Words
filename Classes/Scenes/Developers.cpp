@@ -92,7 +92,7 @@ bool Developers::init()
                                                         ADLanguage::getFontName(),
                                                         InfoStyles::SIZE_DEVELOPERS_TITLE);
 
-    developers_scene_ruslana_title->setColor(InfoStyles::COLOR_WHITE);
+    developers_scene_ruslana_title->setColor(InfoStyles::COLOR_TITLE);
 
     developers_scene_ruslana_title->setAnchorPoint(ccp(0,0));
     developers_scene_ruslana_title->setPositionX(
@@ -107,7 +107,7 @@ bool Developers::init()
     developers_scene_andrii_title = CCLabelTTF::create(_("developers_scene_andrii.title"),
                                                        ADLanguage::getFontName(),
                                                        InfoStyles::SIZE_DEVELOPERS_TITLE);
-    developers_scene_andrii_title->setColor(InfoStyles::COLOR_WHITE);
+    developers_scene_andrii_title->setColor(InfoStyles::COLOR_TITLE);
     developers_scene_andrii_title->setPositionX(padding);
     developers_scene_andrii_title->setAnchorPoint(ccp(0,0));
     node->addChild(developers_scene_andrii_title);
@@ -138,7 +138,7 @@ bool Developers::init()
                                                       ADLanguage::getFontName(),
                                                       InfoStyles::SIZE_DEVELOPERS_TITLE);
 
-    developers_scene_diana_title->setColor(InfoStyles::COLOR_WHITE);
+    developers_scene_diana_title->setColor(InfoStyles::COLOR_TITLE);
 
     developers_scene_diana_title->setAnchorPoint(ccp(0,0));
     developers_scene_diana_title->setPositionX(
