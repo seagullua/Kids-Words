@@ -106,7 +106,7 @@ void LevelEnd::onCreate(cocos2d::CCNode* parent)
     stars_node->setPosition(stars_target_position);
     //stars_node->setVisible(false);
     //stars_node->runAction(CCFadeTo::create(0.4,255));
-    stars_node->setScale(2);
+    stars_node->setScale(1.2f);
     parent->addChild(stars_node);
 
     ////////////////////////////////////
