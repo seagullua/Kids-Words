@@ -3,9 +3,7 @@
 	<file>
 		<name>Comfortaa Bold.ttf</name>
 	</file>
-	<file>
-		<name>Roboto Slab Bold.ttf</name>
-	</file>
+	
 	<file>
 		<name>Berlin Sans FB.ttf</name>
 	</file>
@@ -14,10 +12,7 @@
 		<name>Comfortaa.ttf</name>
 		<platform>ios</platform>
 	</file>
-	<file>
-		<name>Roboto Slab.ttf</name>
-		<platform>ios</platform>
-	</file>
+	
 	<file>
 		<name>arial.ttf</name>
 		<platform>windows</platform>

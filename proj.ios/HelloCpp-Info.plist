@@ -19,6 +19,7 @@
 		<string>Icon-76.png</string>
 		<string>Icon-120.png</string>
 		<string>Icon-152.png</string>
+		<string>Icon-180.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -33,13 +34,14 @@
 				<string>Icon-76.png</string>
 				<string>Icon-120.png</string>
 				<string>Icon-152.png</string>
+				<string>Icon-180.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.x4enjoy.kidswords</string>
+	<string>com.x4enjoy.abc</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -57,7 +59,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>fonts/Comfortaa.ttf</string>
-		<string>fonts/Roboto Slab.ttf</string>
+		<string>fonts/Berlin Sans FB.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
