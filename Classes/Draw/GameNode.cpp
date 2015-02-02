@@ -90,12 +90,12 @@ GameNode::GameNode(const OneGame *one_game, int use_h):
     float word_image_height = word_image->getContentSize().height;
     float word_image_width = word_image->getContentSize().width;
 
-    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale-padding  - 120/SCALE )/word_image_height;
+    float word_image_scale_y = (use_h- node_qiuz_word->getContentSize().height* node_scale )/word_image_height * 0.8f;
     float word_image_scale = 1;
     float word_image_scale_x = (VISIBLE_SIZE.width*0.5f-padding - 50/SCALE)/word_image_width;
 
     word_image_scale = MIN(word_image_scale_x, word_image_scale_y);
-    CCLog("Image Scale: %f", word_image_scale);
+    CCLog("Image Scale:x %f y %f", word_image_scale_x, word_image_scale_y);
     word_image->setScale(word_image_scale);
 
     float hn = node_qiuz_word->getContentSize().height* node_scale;

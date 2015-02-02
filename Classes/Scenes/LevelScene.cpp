@@ -146,7 +146,7 @@ bool LevelScene::init()
         CONNECT(_top_panel->signalAudioClicked, this, &LevelScene::onSignalAudioClicked);
         CONNECT(_top_panel->signalUseHint, this, &LevelScene::onSignalUseHintClicked);
 
-        _use_h=VISIBLE_SIZE.height - _top_panel->getContentSize().height;
+        _use_h=VISIBLE_SIZE.height - 180/SCALE;
         this->addChild(_top_panel);
     }
     showButtonBack(BackgroundType::LevelScene);
