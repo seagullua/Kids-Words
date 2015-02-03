@@ -96,32 +96,9 @@ bool InfoStyles::showPurchase()
 
 std::string InfoStyles::getPurchaseID()
 {
-    if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsEasy)
+    if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
     {
-        if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
-            return "kids_easy_english";
-        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
-            return "kids_easy_russian";
-        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
-            return "kids_easy_ukrainian";
-    }
-    else if(InfoStyles::VERSION_LEVEL == VersionLevel::KidsMedium)
-    {
-        if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
-            return "kids_medium_english";
-        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
-            return "kids_medium_russian";
-        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
-            return "kids_medium_ukrainian";
-    }
-    else if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
-    {
-        if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
-            return "kids_hard_english";
-        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
-            return "kids_hard_russian";
-        else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
-            return "kids_hard_ukrainian";
+        return "abc_words_english";
     }
     assert(false);
     return "disable_ads";

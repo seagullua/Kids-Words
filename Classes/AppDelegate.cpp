@@ -75,7 +75,7 @@ class VirtualCurrencyDelegate : public ADVirtualCurrency::Delegate
 void initInAppPurchases()
 {
     typedef ADInApp::Product Product;
-    Product disable_ads(InfoStyles::getPurchaseID(), "$0.99");
+    Product disable_ads(InfoStyles::getPurchaseID(), "$1.99");
     ADInApp::setStoreKey(InfoStyles::getStoreID());
     ADStore store = ADInfo::getStore();
     if(store == ADStore::GooglePlay)
