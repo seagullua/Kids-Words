@@ -26,9 +26,8 @@
 #import "cocos2d.h"
 #import "EAGLView.h"
 #import "AppDelegate.h"
-
 #import "RootViewController.h"
-
+#include "../libraries/ADLib/platform/iOS/ADAppEvents/ADAppEvents.h"
 @implementation AppController
 
 #pragma mark -
@@ -112,6 +111,22 @@ static AppDelegate s_sharedApplication;
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+}
+
+// system push notification registration success callback, delegate to pushManager
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    emit ADAppEvents::getInstance().signalDidRegisterForRemoteNotificationsWithDeviceToken(deviceToken);
+    
+}
+
+// system push notification registration error callback, delegate to pushManager
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    emit ADAppEvents::getInstance().signalDidFailToRegisterForRemoteNotificationsWithError(error);
+}
+
+// system push notifications callback, delegate to pushManager
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    emit ADAppEvents::getInstance().siganlDidReceiveRemoteNotification(userInfo);
 }
 
 

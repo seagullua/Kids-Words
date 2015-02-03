@@ -22,7 +22,6 @@
 		840AE31E18A030A900189085 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840AE31D18A02F5200189085 /* libcocos2dx.a */; };
 		84182F1E19FE37A400A5BDAC /* English_Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F1D19FE37A400A5BDAC /* English_Version.cpp */; };
 		84182F2119FE37B000A5BDAC /* AdsPurchase_Edition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2019FE37B000A5BDAC /* AdsPurchase_Edition.cpp */; };
-		84182F2419FE37BA00A5BDAC /* KidsEasy_Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */; };
 		84182F9B19FE393B00A5BDAC /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2619FE393A00A5BDAC /* ADRandom.cpp */; };
 		84182F9C19FE393B00A5BDAC /* ADCocosThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2B19FE393A00A5BDAC /* ADCocosThread.cpp */; };
 		84182F9D19FE393B00A5BDAC /* ADThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2E19FE393A00A5BDAC /* ADThreadPool.cpp */; };
@@ -100,6 +99,9 @@
 		847F679E1A7FE4330073557C /* SelectLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F677A1A7FE4330073557C /* SelectLevel.cpp */; };
 		847F679F1A7FE4330073557C /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F677C1A7FE4330073557C /* Settings.cpp */; };
 		847F67AD1A7FEE190073557C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 847F67AC1A7FEE190073557C /* Default-Landscape.png */; };
+		847F67B61A8108570073557C /* KidsBasics_Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F67B51A8108570073557C /* KidsBasics_Level.cpp */; };
+		847F67C21A810F1C0073557C /* ADPushWoosh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 847F67C01A810F1C0073557C /* ADPushWoosh.mm */; };
+		847F67C31A810F1C0073557C /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F67C11A810F1C0073557C /* Pushwoosh.framework */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
 		84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */; };
 		84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */; };
@@ -172,7 +174,6 @@
 		840AE31818A02F4D00189085 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		84182F1D19FE37A400A5BDAC /* English_Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = English_Version.cpp; sourceTree = "<group>"; };
 		84182F2019FE37B000A5BDAC /* AdsPurchase_Edition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdsPurchase_Edition.cpp; sourceTree = "<group>"; };
-		84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KidsEasy_Level.cpp; sourceTree = "<group>"; };
 		84182F2619FE393A00A5BDAC /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
 		84182F2719FE393A00A5BDAC /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
 		84182F2819FE393A00A5BDAC /* ADSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSignals.h; sourceTree = "<group>"; };
@@ -356,6 +357,9 @@
 		847F677C1A7FE4330073557C /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
 		847F677D1A7FE4330073557C /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		847F67AC1A7FEE190073557C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = SOURCE_ROOT; };
+		847F67B51A8108570073557C /* KidsBasics_Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KidsBasics_Level.cpp; sourceTree = "<group>"; };
+		847F67C01A810F1C0073557C /* ADPushWoosh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADPushWoosh.mm; sourceTree = "<group>"; };
+		847F67C11A810F1C0073557C /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADAds_AdMob.mm; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 				840AE31E18A030A900189085 /* libcocos2dx.a in Frameworks */,
 				84B0AA9E18D5C61900E0C39A /* libGoogleAdMobAds.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				847F67C31A810F1C0073557C /* Pushwoosh.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */,
 				BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */,
@@ -506,6 +511,7 @@
 		8402CE5618A4071700703CF7 /* ADLibImpl */ = {
 			isa = PBXGroup;
 			children = (
+				847F67BF1A810F1C0073557C /* ADPushWoosh */,
 				84B0AAA018D5C73C00E0C39A /* ADInApp_iTunes */,
 				84B0AA8D18D5C61900E0C39A /* ADAds_AdMob */,
 				8402CE7618A41DD600703CF7 /* ADBrowser */,
@@ -590,15 +596,6 @@
 			);
 			name = AdsPurchase;
 			path = ../Versions/Edition/AdsPurchase;
-			sourceTree = "<group>";
-		};
-		84182F2219FE37BA00A5BDAC /* KidsEasy */ = {
-			isa = PBXGroup;
-			children = (
-				84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */,
-			);
-			name = KidsEasy;
-			path = ../Versions/Level/KidsEasy;
 			sourceTree = "<group>";
 		};
 		84182F2519FE393A00A5BDAC /* ADLib */ = {
@@ -921,6 +918,25 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		847F67B41A8108570073557C /* KidsBasics */ = {
+			isa = PBXGroup;
+			children = (
+				847F67B51A8108570073557C /* KidsBasics_Level.cpp */,
+			);
+			name = KidsBasics;
+			path = ../Versions/Level/KidsBasics;
+			sourceTree = "<group>";
+		};
+		847F67BF1A810F1C0073557C /* ADPushWoosh */ = {
+			isa = PBXGroup;
+			children = (
+				847F67C01A810F1C0073557C /* ADPushWoosh.mm */,
+				847F67C11A810F1C0073557C /* Pushwoosh.framework */,
+			);
+			name = ADPushWoosh;
+			path = ../libraries/ADLib/platform/iOS/ADPushWoosh;
+			sourceTree = "<group>";
+		};
 		84B0AA8D18D5C61900E0C39A /* ADAds_AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,7 +986,7 @@
 		84EBD26A1971681B007241CD /* _Version */ = {
 			isa = PBXGroup;
 			children = (
-				84182F2219FE37BA00A5BDAC /* KidsEasy */,
+				847F67B41A8108570073557C /* KidsBasics */,
 				84182F1F19FE37B000A5BDAC /* AdsPurchase */,
 				84182F1C19FE37A400A5BDAC /* English */,
 			);
@@ -1152,6 +1168,8 @@
 				84182FA019FE393B00A5BDAC /* ADDeviceEvents.cpp in Sources */,
 				847F67901A7FE4330073557C /* AdsManager.cpp in Sources */,
 				847F67951A7FE4330073557C /* ExitGamePopUp.cpp in Sources */,
+				847F67B61A8108570073557C /* KidsBasics_Level.cpp in Sources */,
+				847F67C21A810F1C0073557C /* ADPushWoosh.mm in Sources */,
 				84182F9C19FE393B00A5BDAC /* ADCocosThread.cpp in Sources */,
 				84182FB319FE393B00A5BDAC /* ADMenuItem.cpp in Sources */,
 				847F67861A7FE4330073557C /* Collection.cpp in Sources */,
@@ -1174,7 +1192,6 @@
 				847F679E1A7FE4330073557C /* SelectLevel.cpp in Sources */,
 				84182FA819FE393B00A5BDAC /* ADSoundManager.cpp in Sources */,
 				847F67841A7FE4330073557C /* InfoStyles.cpp in Sources */,
-				84182F2419FE37BA00A5BDAC /* KidsEasy_Level.cpp in Sources */,
 				84182FAE19FE393B00A5BDAC /* ADBakeNode.cpp in Sources */,
 				84182F9B19FE393B00A5BDAC /* ADRandom.cpp in Sources */,
 				847F67961A7FE4330073557C /* LevelEnd.cpp in Sources */,
@@ -1207,6 +1224,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/admin/cocos2d-x/projects/Kids-Words/libraries/ADLib/platform/iOS/ADPushWoosh",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1257,6 +1278,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/admin/cocos2d-x/projects/Kids-Words/libraries/ADLib/platform/iOS/ADPushWoosh",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HelloCpp_Prefix.pch;
