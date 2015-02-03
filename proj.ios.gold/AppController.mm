@@ -27,6 +27,7 @@
 #import "EAGLView.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#include <ADlib/PlatformImpl/ADAds_NoAds.hpp>
 #include "../libraries/ADLib/platform/iOS/ADAppEvents/ADAppEvents.h"
 @implementation AppController
 
