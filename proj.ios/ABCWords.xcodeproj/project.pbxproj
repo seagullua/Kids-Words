@@ -102,6 +102,7 @@
 		847F67B61A8108570073557C /* KidsBasics_Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F67B51A8108570073557C /* KidsBasics_Level.cpp */; };
 		847F67C21A810F1C0073557C /* ADPushWoosh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 847F67C01A810F1C0073557C /* ADPushWoosh.mm */; };
 		847F67C31A810F1C0073557C /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847F67C11A810F1C0073557C /* Pushwoosh.framework */; };
+		847F67CB1A811A900073557C /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 847F67CA1A811A900073557C /* Icon-180.png */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
 		84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */; };
 		84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */; };
@@ -360,6 +361,7 @@
 		847F67B51A8108570073557C /* KidsBasics_Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KidsBasics_Level.cpp; sourceTree = "<group>"; };
 		847F67C01A810F1C0073557C /* ADPushWoosh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADPushWoosh.mm; sourceTree = "<group>"; };
 		847F67C11A810F1C0073557C /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
+		847F67CA1A811A900073557C /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = SOURCE_ROOT; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADAds_AdMob.mm; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				847F67CA1A811A900073557C /* Icon-180.png */,
 				847F67AC1A7FEE190073557C /* Default-Landscape.png */,
 				847F672A1A7FE41F0073557C /* fonts */,
 				847F672B1A7FE41F0073557C /* images-normal */,
@@ -1111,6 +1114,7 @@
 				84F198C518D59E85006A5221 /* Icon-144.png in Resources */,
 				847F67311A7FE41F0073557C /* translations in Resources */,
 				847F67AD1A7FEE190073557C /* Default-Landscape.png in Resources */,
+				847F67CB1A811A900073557C /* Icon-180.png in Resources */,
 				84F198BE18D59E85006A5221 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1264,7 +1268,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 arm64";
 			};
 			name = Debug;
 		};
@@ -1316,7 +1320,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 arm64";
 			};
 			name = Release;
 		};
