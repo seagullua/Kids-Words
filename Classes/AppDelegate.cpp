@@ -105,43 +105,22 @@ void initAds()
     //ca-app-pub-1612697960946304/5795034672
 
 
-    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English)
+    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English
+            && InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
     {
-        //    Kids Words 1 [English] iOS: 		ca-app-pub-1612697960946304/1494954675
-        //    Kids Words 1 [English] Android:	ca-app-pub-1612697960946304/6064755070
-        //    Kids Words 1 [English] WP8:		ca-app-pub-1612697960946304/5925154276
+        //   ABC Words [English] iOS: 		ca-app-pub-1612697960946304/9144034273
+        //   ABC Words [English] Android:	ca-app-pub-1612697960946304/1760368271
+        //   ABC Words [English] WP8:		ca-app-pub-1612697960946304/3097500672
         if(ADInfo::getPlatform() == ADPlatform::Android)
-            pid_interstitial << 6064755070;
+            pid_interstitial << 1760368271;
         else if(ADInfo::getPlatform() == ADPlatform::iOS)
-            pid_interstitial << 1494954675;
+            pid_interstitial << 9144034273;
         else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
-            pid_interstitial << 5925154276;
+            pid_interstitial << 3097500672;
     }
-    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Russian)
+    else
     {
-        //    Kids Words 1 [Russian] iOS: 		ca-app-pub-1612697960946304/5785553477
-        //    Kids Words 1 [Russian] Android:	ca-app-pub-1612697960946304/4308820270
-        //    Kids Words 1 [Russian] WP8:		ca-app-pub-1612697960946304/8739019877
-
-        if(ADInfo::getPlatform() == ADPlatform::Android)
-            pid_interstitial << 4308820270;
-        else if(ADInfo::getPlatform() == ADPlatform::iOS)
-            pid_interstitial << 5785553477;
-        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
-            pid_interstitial << 8739019877;
-    }
-    else if (InfoStyles::WORDS_LANGUAGE == WordsLanguage::Ukrainian)
-    {
-        //    Kids Words 1 [Ukrainian] iOS: 	ca-app-pub-1612697960946304/1355353872
-        //    Kids Words 1 [Ukrainian] Android:	ca-app-pub-1612697960946304/8878620677
-        //    Kids Words 1 [Ukrainian] WP8:		ca-app-pub-1612697960946304/2832087078
-
-        if(ADInfo::getPlatform() == ADPlatform::Android)
-            pid_interstitial << 8878620677;
-        else if(ADInfo::getPlatform() == ADPlatform::iOS)
-            pid_interstitial << 1355353872;
-        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
-            pid_interstitial << 2832087078;
+        CCLog("ERROR: Configure ADMOB");
     }
 
 
@@ -169,7 +148,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     //Statistics in
     //init statistics
-    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English && InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
+    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English
+            && InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
     {
         if(ADInfo::getPlatform() == ADPlatform::Android)
             ADStatistics::setApplicationKey("GS5YS5P2RGG23FRJ83KJ");
