@@ -11,6 +11,7 @@
 #include <ADLib.h>
 #include "InfoStyles.h"
 #include "Managers/AdsManager.h"
+#include <ADLib/Device/ADPushWoosh.h>
 USING_NS_CC;
 
 
@@ -261,6 +262,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 
     initAds();
+
+    if(InfoStyles::VERSION != Version::NoAds)
+    {
+        ADPushWoosh::inizialize("FC464-C9DF1", "511773446712");
+    }
+
 
     //Init ADMenuItem
     ADMenuItem::setAllClicksAction([](){
