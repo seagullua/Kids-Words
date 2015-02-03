@@ -21,15 +21,15 @@ project.addModule('android_ADNotification')
 project.addModule('android_ADBrowser')
 project.addModule('android_ADFacebook_None')
 project.addModule('android_ADHttp_None')
+project.addModule('android_ADPushWoosh')
 
-
-project.project_name = 'KidsWords'
-project.package_name = 'com.x4enjoy.kidswords'
+project.project_name = 'ABCWords'
+project.package_name = 'com.x4enjoy.abc'
 project.version_name = "1.00"
 project.version_code = "2"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
-    'kids-easy',
+    'kids-basic1',
     'android',
     ['en']
 )
