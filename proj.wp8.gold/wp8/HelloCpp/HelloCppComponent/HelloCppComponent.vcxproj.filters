@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Direct3DContentProvider.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Direct3DContentProviderBase.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Direct3DInterop.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\DirectXBase.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Cocos2dRenderer.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\InputEvent.cpp" />
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\ADRandom.cpp">
+      <Filter>ADLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADAds.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADBrowser.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADInApp.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADInfo.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADLanguage.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADScreen.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADVirtualCurrency.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADBakeNode.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADBlurSprite.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADBMFont.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADColoredSprite.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADShaderSprite.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="PlatformImpl.cpp" />
+    <ClCompile Include="EditBoxEvent.cpp" />
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADLanguage_impl.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADBrowser_impl.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADInfo_WP8.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADNotification_impl.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADDeviceEvents.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADAds_AdMob.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADStatistics_Flurry.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\ADInApp_wp8.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\platform\wp8\WP8Adlib.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\PopUp\ADPopUpWindow.cpp">
+      <Filter>ADLib\PopUp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\PopUp\IADStandardWindow.cpp">
+      <Filter>ADLib\PopUp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADPackageName.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADSoundManager.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADStatistics.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADBinaryData.cpp">
+      <Filter>ADLib\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADStorage.cpp">
+      <Filter>ADLib\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADStorageListener.cpp">
+      <Filter>ADLib\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADCallFunc.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADMenuItem.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADScrollView.cpp">
+      <Filter>ADLib\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\InfoStyles.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Draw\Card.cpp">
+      <Filter>Classes\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Draw\GameNode.cpp">
+      <Filter>Classes\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Draw\LetterNode.cpp">
+      <Filter>Classes\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Draw\Stars.cpp">
+      <Filter>Classes\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Draw\TopPanell.cpp">
+      <Filter>Classes\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\Alphabete.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\Collection.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\CollectionPart.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\Letter.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\Level.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\LevelSaves.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\OneGame.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\OneSeason.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\StatusLetter.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\Task.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Logic\Word.cpp">
+      <Filter>Classes\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Managers\AdsManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Managers\SaveStarsManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Managers\SettingsManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Managers\StarsCollectionManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Managers\TutorialManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\developers.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\LevelScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\Loading.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\MainMenu.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\SceneStyle.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\SelectCollection.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\SelectLevel.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\Scenes\Settings.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\PopUp\ExitGamePopUp.cpp">
+      <Filter>Classes\PopUp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\PopUp\LevelEnd.cpp">
+      <Filter>Classes\PopUp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Classes\PopUp\TurnOffPopUp.cpp">
+      <Filter>Classes\PopUp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Versions\Language\English\English_Version.cpp">
+      <Filter>Version</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Versions\Level\KidsBasics\KidsBasics_Level.cpp">
+      <Filter>Version</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADFullScreenAds.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADMonetization.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADOrientation.cpp">
+      <Filter>ADLib\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADFileNameUTF8.cpp">
+      <Filter>ADLib\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libraries\ADLib\src\ADLib\UTF8\ADUTF8.cpp">
+      <Filter>ADLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Versions\Edition\NoAds\NoAds_Edition.cpp">
+      <Filter>Version</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Direct3DContentProvider.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Direct3DContentProviderBase.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Direct3DInterop.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\DirectXBase.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\Cocos2dRenderer.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\DirectXHelper.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\InputEvent.h" />
+    <ClInclude Include="..\..\..\..\..\..\cocos2dx\platform\wp8-xaml\InputEventTypes.h" />
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\ADRandom.h">
+      <Filter>ADLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\ADString.h">
+      <Filter>ADLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADAds.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADBrowser.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADInApp.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADInfo.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADLanguage.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADNotification.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADScreen.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADStatistics.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADVirtualCurrency.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADBakeNode.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADBlurSprite.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADBMFont.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADColoredSprite.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADShaderSprite.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="EditBoxEvent.h" />
+    <ClInclude Include="..\..\..\..\libraries\ADLib\platform\wp8\WP8Adlib.h">
+      <Filter>ADLibImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\PopUp\ADPopUpWindow.h">
+      <Filter>ADLib\PopUp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\PopUp\IADStandardWindow.h">
+      <Filter>ADLib\PopUp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADDeviceEvents.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADPackageName.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADSoundManager.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADBinaryData.h">
+      <Filter>ADLib\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADStorage.h">
+      <Filter>ADLib\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADStorageListener.h">
+      <Filter>ADLib\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Storage\ADStream.h">
+      <Filter>ADLib\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADCallFunc.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADMenuItem.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Rendering\ADScrollView.h">
+      <Filter>ADLib\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\cocos2d-A.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\InfoStyles.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Draw\Card.h">
+      <Filter>Classes\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Draw\GameNode.h">
+      <Filter>Classes\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Draw\LetterNode.h">
+      <Filter>Classes\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Draw\Stars.h">
+      <Filter>Classes\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Draw\TopPanell.h">
+      <Filter>Classes\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\Alphabete.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\Collection.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\CollectionPart.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\Letter.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\Level.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\LevelSaves.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\OneGame.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\OneSeason.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\StatusLetter.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\Task.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Logic\Word.h">
+      <Filter>Classes\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Managers\AdsManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Managers\SaveStarsManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Managers\SettingsManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Managers\StarsCollectionManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Managers\TutorialManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\Developers.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\LevelScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\Loading.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\MainMenu.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\SceneStyle.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\SelectCollection.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\SelectLevel.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\Scenes\Settings.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\PopUp\ExitGamePopUp.h">
+      <Filter>Classes\PopUp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\PopUp\LevelEnd.h">
+      <Filter>Classes\PopUp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Classes\PopUp\TurnOffPopUp.h">
+      <Filter>Classes\PopUp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADFullScreenAds.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADMonetization.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADMonetizationVersionsSelector.hpp">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADOrientation.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libraries\ADLib\src\ADLib\Device\ADPushWoosh.h">
+      <Filter>ADLib\Device</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{f9f8df92-c45f-4fb0-b53e-44782c0e0ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADLib">
+      <UniqueIdentifier>{15158fb1-1284-402c-9456-36103707fc71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADLib\Device">
+      <UniqueIdentifier>{2e5dde43-7a76-4c8b-95be-d9f6af5a076b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADLib\Rendering">
+      <UniqueIdentifier>{11f1ea73-6368-4060-bab4-9b54d82d85b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADLibImpl">
+      <UniqueIdentifier>{67412bc6-eedc-4b98-b2ba-6e3ea1bc9e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Version">
+      <UniqueIdentifier>{fb939743-587e-4291-a499-504bea85b72d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADLib\PopUp">
+      <UniqueIdentifier>{e923fddb-d081-4afd-b65d-bc93344c4de2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADLib\Storage">
+      <UniqueIdentifier>{23679cdc-eefe-4064-8d1d-2bdec5b89125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Draw">
+      <UniqueIdentifier>{dc107893-1e8b-4d1d-b7d1-44c6a3b1338b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Logic">
+      <UniqueIdentifier>{f31de02d-f7e5-483e-8245-79ebc25d347a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Manager">
+      <UniqueIdentifier>{4e5a0b45-6325-4f44-8927-3083cd3f5780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\PopUp">
+      <UniqueIdentifier>{9b3a55b9-75b1-4803-9402-ba15243c9c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes">
+      <UniqueIdentifier>{d7f4c594-d3d0-4782-a584-9d92905af63c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
