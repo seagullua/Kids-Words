@@ -96,12 +96,8 @@ bool InfoStyles::showPurchase()
 
 std::string InfoStyles::getPurchaseID()
 {
-    if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
-    {
-        return "abc_words_english";
-    }
-    assert(false);
-    return "disable_ads";
+     return "abc_words_english";
+
 }
 #include <ADLib/Device/ADInfo.h>
 
@@ -109,25 +105,11 @@ std::string InfoStyles::getStoreID()
 {
     if(ADInfo::getStore() == ADStore::GooglePlay)
     {
-        if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
-        {
-            return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAguP1yjaQD89uz4XGIYUr6w0DSQ14YzQbXKvhD29w0TCZVm5rDQete30nOH8w+Dqu2aTWuKFbLu/VmCeSSBRy4yvIfPyhKtlPghiQdKGZPlGWOlIbuoZ0XvnWi/ftsP7f9IuCrjq8dyXCQwf21T9t/00oIQOuMb3bMMbKJlXGwf99JOSw2GFUq//p4PT3fI8MaQK/g/xgt7ZpFiH4ACKYLkfETUZAZHiSOugclxzAtanS92hZQZCHsgme7qOppiYkR+sAUUenArkSwB4hH3P+noVZA01X02VYqt2+xQt/XJKGmqsOr/Isju8OmATltgfLJWL6Xpxs36wBLKYbmIyhUwIDAQAB";
-        }
-        else
-        {
-            cocos2d::CCLog("ERROR: Configure Google ID");
-        }
+        return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAguP1yjaQD89uz4XGIYUr6w0DSQ14YzQbXKvhD29w0TCZVm5rDQete30nOH8w+Dqu2aTWuKFbLu/VmCeSSBRy4yvIfPyhKtlPghiQdKGZPlGWOlIbuoZ0XvnWi/ftsP7f9IuCrjq8dyXCQwf21T9t/00oIQOuMb3bMMbKJlXGwf99JOSw2GFUq//p4PT3fI8MaQK/g/xgt7ZpFiH4ACKYLkfETUZAZHiSOugclxzAtanS92hZQZCHsgme7qOppiYkR+sAUUenArkSwB4hH3P+noVZA01X02VYqt2+xQt/XJKGmqsOr/Isju8OmATltgfLJWL6Xpxs36wBLKYbmIyhUwIDAQAB";
     }
     else if(ADInfo::getStore() == ADStore::SamsungStore)
     {
-        if(InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
-        {
-            return "100000104962";
-        }
-        else
-        {
-            cocos2d::CCLog("ERROR: Configure Google ID");
-        }
+        return "100000104962";
     }
 
     return "";

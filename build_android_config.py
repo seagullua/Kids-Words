@@ -25,8 +25,8 @@ project.addModule('android_ADPushWoosh')
 
 project.project_name = 'ABCWords'
 project.package_name = 'com.x4enjoy.abc'
-project.version_name = "1.00"
-project.version_code = "2"
+project.version_name = "1.10"
+project.version_code = "3"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'kids-basic1',

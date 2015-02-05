@@ -106,23 +106,16 @@ void initAds()
     //ca-app-pub-1612697960946304/5795034672
 
 
-    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English
-            && InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
-    {
-        //   ABC Words [English] iOS: 		ca-app-pub-1612697960946304/9144034273
-        //   ABC Words [English] Android:	ca-app-pub-1612697960946304/1760368271
-        //   ABC Words [English] WP8:		ca-app-pub-1612697960946304/3097500672
-        if(ADInfo::getPlatform() == ADPlatform::Android)
-            pid_interstitial << 1760368271;
-        else if(ADInfo::getPlatform() == ADPlatform::iOS)
-            pid_interstitial << 9144034273;
-        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
-            pid_interstitial << 3097500672;
-    }
-    else
-    {
-        CCLog("ERROR: Configure ADMOB");
-    }
+    //   ABC Words [English] iOS: 		ca-app-pub-1612697960946304/9144034273
+    //   ABC Words [English] Android:	ca-app-pub-1612697960946304/1760368271
+    //   ABC Words [English] WP8:		ca-app-pub-1612697960946304/3097500672
+    if(ADInfo::getPlatform() == ADPlatform::Android)
+        pid_interstitial << 1760368271;
+    else if(ADInfo::getPlatform() == ADPlatform::iOS)
+        pid_interstitial << 9144034273;
+    else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+        pid_interstitial << 3097500672;
+
 
 
     if(!InfoStyles::showAds())
@@ -149,20 +142,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     //Statistics in
     //init statistics
-    if(InfoStyles::WORDS_LANGUAGE == WordsLanguage::English
-            && InfoStyles::VERSION_LEVEL == VersionLevel::NewBasics1)
-    {
-        if(ADInfo::getPlatform() == ADPlatform::Android)
-            ADStatistics::setApplicationKey("GS5YS5P2RGG23FRJ83KJ");
-        else if(ADInfo::getPlatform() == ADPlatform::iOS)
-            ADStatistics::setApplicationKey("98NSHB3Q5BKKHTCQPXHY");
-        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
-            ADStatistics::setApplicationKey("H9343PB6S9J594P3XWNZ");
-    }
-    else
-    {
-        CCLog("ERROR: Configure FLURY");
-    }
+
+    if(ADInfo::getPlatform() == ADPlatform::Android)
+        ADStatistics::setApplicationKey("GS5YS5P2RGG23FRJ83KJ");
+    else if(ADInfo::getPlatform() == ADPlatform::iOS)
+        ADStatistics::setApplicationKey("98NSHB3Q5BKKHTCQPXHY");
+    else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+        ADStatistics::setApplicationKey("H9343PB6S9J594P3XWNZ");
+
 
 
 
