@@ -3,8 +3,6 @@
   <DefaultLanguage xmlns="" code="en" />
   <Languages xmlns="">
     <Language code="en" />
-    <Language code="uk" />
-    <Language code="ru" />
   </Languages>
   <App xmlns="" ProductID="{1af4d00f-fdc7-44e5-9486-1ab72d602e70}" Title="Learn ABC Words: Gold Edition" RuntimeType="Silverlight" Version="1.2.0.0" Genre="apps.normal" Author="4Enjoy: Diana Sirenko, Andrii Chaika" Description="Lear ABC Words is an educational app to help children and babies learn basic words. If you have a toddler or a young child use this app for learning words. Learn ABC Words will help to increase the vocabulary of your kids." Publisher="4Enjoy" PublisherID="{be025a6e-6b64-4724-95d0-ed19445d9bdb}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
