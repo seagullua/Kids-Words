@@ -580,7 +580,7 @@ void Settings::onTurnOffAdsClick()
 }
 void Settings::onX4EnjoyClick()
 {
-    ADBrowser::openWebURL("http://4enjoy.com");
+    //ADBrowser::openWebURL("http://4enjoy.com");
 
 }
 void Settings::correctMusicEffects(EffectsType type)
