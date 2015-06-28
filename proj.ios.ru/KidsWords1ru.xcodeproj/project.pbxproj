@@ -10,6 +10,11 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		46C929B11B40204E001F3240 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 46C929AD1B40204E001F3240 /* fonts */; };
+		46C929B21B40204E001F3240 /* images-normal in Resources */ = {isa = PBXBuildFile; fileRef = 46C929AE1B40204E001F3240 /* images-normal */; };
+		46C929B31B40204E001F3240 /* music in Resources */ = {isa = PBXBuildFile; fileRef = 46C929AF1B40204E001F3240 /* music */; };
+		46C929B41B40204E001F3240 /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 46C929B01B40204E001F3240 /* translations */; };
+		46C929B71B40216B001F3240 /* Russian_Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46C929B61B40216B001F3240 /* Russian_Version.cpp */; };
 		8402CE5A18A4072500703CF7 /* ADLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8402CE5918A4072500703CF7 /* ADLanguage.mm */; };
 		8402CE6318A40E6100703CF7 /* ADUIThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8402CE6218A40E6100703CF7 /* ADUIThread.mm */; };
 		8402CE6818A4118D00703CF7 /* ADStatistics_Flurry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8402CE6518A4118D00703CF7 /* ADStatistics_Flurry.mm */; };
@@ -54,7 +59,6 @@
 		84182F1919FE378F00A5BDAC /* SelectCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182EF419FE378F00A5BDAC /* SelectCollection.cpp */; };
 		84182F1A19FE378F00A5BDAC /* SelectLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182EF619FE378F00A5BDAC /* SelectLevel.cpp */; };
 		84182F1B19FE378F00A5BDAC /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182EF819FE378F00A5BDAC /* Settings.cpp */; };
-		84182F1E19FE37A400A5BDAC /* English_Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F1D19FE37A400A5BDAC /* English_Version.cpp */; };
 		84182F2119FE37B000A5BDAC /* AdsPurchase_Edition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2019FE37B000A5BDAC /* AdsPurchase_Edition.cpp */; };
 		84182F2419FE37BA00A5BDAC /* KidsEasy_Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */; };
 		84182F9B19FE393B00A5BDAC /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F2619FE393A00A5BDAC /* ADRandom.cpp */; };
@@ -93,10 +97,6 @@
 		84182FBC19FE393B00A5BDAC /* ADStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F8D19FE393B00A5BDAC /* ADStorage.cpp */; };
 		84182FBD19FE393B00A5BDAC /* ADStorageListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F8F19FE393B00A5BDAC /* ADStorageListener.cpp */; };
 		84182FBE19FE393B00A5BDAC /* ADUTF8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84182F9419FE393B00A5BDAC /* ADUTF8.cpp */; };
-		84182FC519FEBF0B00A5BDAC /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC119FEBF0B00A5BDAC /* fonts */; };
-		84182FC619FEBF0B00A5BDAC /* images-normal in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC219FEBF0B00A5BDAC /* images-normal */; };
-		84182FC719FEBF0B00A5BDAC /* music in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC319FEBF0B00A5BDAC /* music */; };
-		84182FC819FEBF0B00A5BDAC /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 84182FC419FEBF0B00A5BDAC /* translations */; };
 		841B2C6018D5B6ED0064AA59 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */; };
 		841B2C6118D5B6ED0064AA59 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5F18D5B6ED0064AA59 /* iAd.framework */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
@@ -154,6 +154,11 @@
 		1D6058910D05DD3D006BFB54 /* KidsWords1Ru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsWords1Ru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		46C929AD1B40204E001F3240 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
+		46C929AE1B40204E001F3240 /* images-normal */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "images-normal"; path = "Resources/images-normal"; sourceTree = SOURCE_ROOT; };
+		46C929AF1B40204E001F3240 /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
+		46C929B01B40204E001F3240 /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
+		46C929B61B40216B001F3240 /* Russian_Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Russian_Version.cpp; sourceTree = "<group>"; };
 		781C33B11547F06B00633F88 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		781C33B31547F06B00633F88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		781C33B51547F06B00633F88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -239,7 +244,6 @@
 		84182EF719FE378F00A5BDAC /* SelectLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLevel.h; sourceTree = "<group>"; };
 		84182EF819FE378F00A5BDAC /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
 		84182EF919FE378F00A5BDAC /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		84182F1D19FE37A400A5BDAC /* English_Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = English_Version.cpp; sourceTree = "<group>"; };
 		84182F2019FE37B000A5BDAC /* AdsPurchase_Edition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdsPurchase_Edition.cpp; sourceTree = "<group>"; };
 		84182F2319FE37BA00A5BDAC /* KidsEasy_Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KidsEasy_Level.cpp; sourceTree = "<group>"; };
 		84182F2619FE393A00A5BDAC /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
@@ -348,10 +352,6 @@
 		84182F9819FE393B00A5BDAC /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		84182F9919FE393B00A5BDAC /* unchecked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unchecked.h; sourceTree = "<group>"; };
 		84182F9A19FE393B00A5BDAC /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
-		84182FC119FEBF0B00A5BDAC /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
-		84182FC219FEBF0B00A5BDAC /* images-normal */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "images-normal"; path = "Resources/images-normal"; sourceTree = SOURCE_ROOT; };
-		84182FC319FEBF0B00A5BDAC /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
-		84182FC419FEBF0B00A5BDAC /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
 		841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		841B2C5F18D5B6ED0064AA59 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -477,13 +477,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		46C929B51B40216B001F3240 /* Russian */ = {
+			isa = PBXGroup;
+			children = (
+				46C929B61B40216B001F3240 /* Russian_Version.cpp */,
+			);
+			name = Russian;
+			path = ../Versions/Language/Russian;
+			sourceTree = "<group>";
+		};
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84182FC119FEBF0B00A5BDAC /* fonts */,
-				84182FC219FEBF0B00A5BDAC /* images-normal */,
-				84182FC319FEBF0B00A5BDAC /* music */,
-				84182FC419FEBF0B00A5BDAC /* translations */,
+				46C929AD1B40204E001F3240 /* fonts */,
+				46C929AE1B40204E001F3240 /* images-normal */,
+				46C929AF1B40204E001F3240 /* music */,
+				46C929B01B40204E001F3240 /* translations */,
 				84F198CA18D5A9C9006A5221 /* Default-Portrait.png */,
 				84F198B318D59E85006A5221 /* Default-568h@2x.png */,
 				84F198B418D59E85006A5221 /* Default.png */,
@@ -687,15 +696,6 @@
 				84182EF919FE378F00A5BDAC /* Settings.h */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		84182F1C19FE37A400A5BDAC /* English */ = {
-			isa = PBXGroup;
-			children = (
-				84182F1D19FE37A400A5BDAC /* English_Version.cpp */,
-			);
-			name = English;
-			path = ../Versions/Language/English;
 			sourceTree = "<group>";
 		};
 		84182F1F19FE37B000A5BDAC /* AdsPurchase */ = {
@@ -967,9 +967,9 @@
 		84EBD26A1971681B007241CD /* _Version */ = {
 			isa = PBXGroup;
 			children = (
+				46C929B51B40216B001F3240 /* Russian */,
 				84182F2219FE37BA00A5BDAC /* KidsEasy */,
 				84182F1F19FE37B000A5BDAC /* AdsPurchase */,
-				84182F1C19FE37A400A5BDAC /* English */,
 			);
 			name = _Version;
 			sourceTree = "<group>";
@@ -1025,7 +1025,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords1Ru" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords1ru" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -1077,7 +1077,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F198C018D59E85006A5221 /* Icon-57.png in Resources */,
-				84182FC519FEBF0B00A5BDAC /* fonts in Resources */,
+				46C929B11B40204E001F3240 /* fonts in Resources */,
 				84F198BF18D59E85006A5221 /* Default@2x.png in Resources */,
 				84F198C218D59E85006A5221 /* Icon-76.png in Resources */,
 				84F198C418D59E85006A5221 /* Icon-120.png in Resources */,
@@ -1087,10 +1087,10 @@
 				84F198BD18D59E85006A5221 /* Default-568h@2x.png in Resources */,
 				84F198C618D59E85006A5221 /* Icon-152.png in Resources */,
 				84F198C318D59E85006A5221 /* Icon-114.png in Resources */,
-				84182FC619FEBF0B00A5BDAC /* images-normal in Resources */,
-				84182FC719FEBF0B00A5BDAC /* music in Resources */,
+				46C929B21B40204E001F3240 /* images-normal in Resources */,
+				46C929B31B40204E001F3240 /* music in Resources */,
 				84F198C518D59E85006A5221 /* Icon-144.png in Resources */,
-				84182FC819FEBF0B00A5BDAC /* translations in Resources */,
+				46C929B41B40204E001F3240 /* translations in Resources */,
 				84F198BE18D59E85006A5221 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1119,6 +1119,7 @@
 				8402CE6818A4118D00703CF7 /* ADStatistics_Flurry.mm in Sources */,
 				84182FBA19FE393B00A5BDAC /* ADBinaryData.cpp in Sources */,
 				84182F9F19FE393B00A5BDAC /* ADBrowser.cpp in Sources */,
+				46C929B71B40216B001F3240 /* Russian_Version.cpp in Sources */,
 				84182F1519FE378F00A5BDAC /* LevelScene.cpp in Sources */,
 				84182F0F19FE378F00A5BDAC /* StarsCollectionManager.cpp in Sources */,
 				84182FAD19FE393B00A5BDAC /* IADStandardWindow.cpp in Sources */,
@@ -1162,7 +1163,6 @@
 				D4ABB4B313B4395300552E6E /* main.m in Sources */,
 				84182F0119FE378F00A5BDAC /* Alphabete.cpp in Sources */,
 				84182F0919FE378F00A5BDAC /* StatusLetter.cpp in Sources */,
-				84182F1E19FE37A400A5BDAC /* English_Version.cpp in Sources */,
 				84182F0B19FE378F00A5BDAC /* Word.cpp in Sources */,
 				84B0AAA218D5C73C00E0C39A /* ADInApp_iTunes.mm in Sources */,
 				84182FB719FE393B00A5BDAC /* ADFacebookFriend.cpp in Sources */,
@@ -1231,16 +1231,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"/Volumes/VMware\\ Shared\\ Folders/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = KidsWords1Ru;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 i386 arm64";
 			};
 			name = Debug;
 		};
@@ -1279,9 +1279,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"/Volumes/VMware\\ Shared\\ Folders/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = KidsWords1Ru;
@@ -1289,7 +1289,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 i386 arm64";
 			};
 			name = Release;
 		};
@@ -1334,7 +1334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords1Ru" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "KidsWords1ru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
